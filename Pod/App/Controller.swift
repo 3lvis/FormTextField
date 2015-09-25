@@ -12,6 +12,7 @@ class Controller: UIViewController {
 
         let textField = TextField(frame: CGRect(x: 20, y: 20, width: 200, height: 60))
         textField.placeholder = "Email"
+        textField.enabled = true
         self.view.addSubview(textField)
     }
 }
