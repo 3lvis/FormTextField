@@ -1,6 +1,6 @@
 @import Foundation;
 
-@interface TextFielDefaultStyle : NSObject
+@interface TextFieldDefaultStyle : NSObject
 
 + (void)applyStyle;
 
