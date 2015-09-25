@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1401CB7F1BB55C0000A7342B /* TextFieldClearButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1401CB7E1BB55C0000A7342B /* TextFieldClearButton.m */; settings = {ASSET_TAGS = (); }; };
 		142A42281B2312B600AFE37D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142A42271B2312B600AFE37D /* AppDelegate.swift */; };
 		142A422A1B2312B600AFE37D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 142A42291B2312B600AFE37D /* Images.xcassets */; };
 		142A422D1B2312B600AFE37D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142A422B1B2312B600AFE37D /* LaunchScreen.xib */; };
@@ -24,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1401CB7D1BB55C0000A7342B /* TextFieldClearButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldClearButton.h; sourceTree = "<group>"; };
+		1401CB7E1BB55C0000A7342B /* TextFieldClearButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldClearButton.m; sourceTree = "<group>"; };
 		142A42231B2312B600AFE37D /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		142A42261B2312B600AFE37D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		142A42271B2312B600AFE37D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +156,8 @@
 				144C4AB11BB53F7E00919747 /* TextFieldTypeManager.m */,
 				14CA36AA1BB543DC004908F1 /* TextFielDefaultStyle.h */,
 				14CA36AB1BB543DC004908F1 /* TextFielDefaultStyle.m */,
+				1401CB7D1BB55C0000A7342B /* TextFieldClearButton.h */,
+				1401CB7E1BB55C0000A7342B /* TextFieldClearButton.m */,
 			);
 			name = Source;
 			path = ../Source;
@@ -374,6 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				142A42281B2312B600AFE37D /* AppDelegate.swift in Sources */,
+				1401CB7F1BB55C0000A7342B /* TextFieldClearButton.m in Sources */,
 				144C4AB51BB53F8D00919747 /* TextFieldTypeManager.m in Sources */,
 				14CA36AC1BB543DC004908F1 /* TextFielDefaultStyle.m in Sources */,
 				144C4AB41BB53F8B00919747 /* TextField.m in Sources */,
