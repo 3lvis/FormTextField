@@ -13,4 +13,5 @@ Pod::Spec.new do |s|
   s.frameworks = 'UIKit'
   s.dependency 'Formatter', '~> 0.1.0'
   s.dependency 'InputValidator', '~> 0.1.0'
+  s.dependency 'Hex', '~> 2.0'
 end
