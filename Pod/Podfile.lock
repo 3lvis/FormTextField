@@ -1,0 +1,16 @@
+PODS:
+  - Formatter (0.1.0)
+  - Hex (2.0)
+  - InputValidator (0.1.0)
+
+DEPENDENCIES:
+  - Formatter
+  - Hex
+  - InputValidator
+
+SPEC CHECKSUMS:
+  Formatter: 16f32f45c91840c69fc66be28247e3803376c37d
+  Hex: 1800bd20206b93b10422d2289baa3787698825ad
+  InputValidator: 7175457f69bac87995d01895a9d0d90710787d62
+
+COCOAPODS: 0.38.2
