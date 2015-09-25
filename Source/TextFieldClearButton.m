@@ -55,8 +55,17 @@
             [verticalHandle stroke];
         }
     }
+}
 
-    [self.backgroundColor setFill];
++ (UIImage *)imageForSize:(CGSize)size andButtonType:(TextFieldButtonType)type {
+    TextFieldClearButton *view = [[TextFieldClearButton alloc] initWithFrame:CGRectMake(0.0, 0.0, size.width, size.height) andButtonType:type];
+    view.backgroundColor = [UIColor clearColor];
+    UIGraphicsBeginImageContextWithOptions(size, NO, 0);
+    [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:YES];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+
+    return image;
 }
 
 @end

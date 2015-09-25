@@ -1,6 +1,7 @@
 #import "TextField.h"
 
 #import "TextFieldTypeManager.h"
+#import "TextFieldClearButton.h"
 
 @import Hex;
 
@@ -307,13 +308,8 @@ static NSString * const TextFieldPlusButtonColorKey = @"plus_button_color";
 #pragma mark - Buttons
 
 - (void)createCountButtons {
-    NSString *bundlePath = [[[NSBundle bundleForClass:self.class] resourcePath] stringByAppendingPathComponent:@"Form.bundle"];
-    NSBundle *bundle = [NSBundle bundleWithPath: bundlePath];
-
-    UITraitCollection *trait = [UITraitCollection traitCollectionWithDisplayScale:2.0];
-
     // Minus Button
-    UIImage *minusImage = [UIImage imageNamed:@"minus" inBundle:bundle compatibleWithTraitCollection:trait];
+    UIImage *minusImage = [TextFieldClearButton imageForSize:CGSizeMake(18, 18) andButtonType:TextFieldButtonTypeMinus];
     UIImage *minusImageTemplate = [minusImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     self.minusButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.minusButton setImage:minusImageTemplate forState:UIControlStateNormal];
@@ -322,7 +318,7 @@ static NSString * const TextFieldPlusButtonColorKey = @"plus_button_color";
     self.minusButton.frame = CGRectMake(0.0f, 0.0f, TextFieldMinusButtonWidth, TextFieldMinusButtonHeight);
 
     // Plus Button
-    UIImage *plusImage = [UIImage imageNamed:@"plus" inBundle:bundle compatibleWithTraitCollection:trait];
+    UIImage *plusImage = [TextFieldClearButton imageForSize:CGSizeMake(18, 18) andButtonType:TextFieldButtonTypePlus];
     UIImage *plusImageTemplate = [plusImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     self.plusButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.plusButton setImage:plusImageTemplate forState:UIControlStateNormal];
@@ -342,12 +338,7 @@ static NSString * const TextFieldPlusButtonColorKey = @"plus_button_color";
 }
 
 - (void)createClearButton {
-    NSString *bundlePath = [[[NSBundle bundleForClass:self.class] resourcePath] stringByAppendingPathComponent:@"Form.bundle"];
-    NSBundle *bundle = [NSBundle bundleWithPath: bundlePath];
-
-    UITraitCollection *trait = [UITraitCollection traitCollectionWithDisplayScale:2.0];
-
-    UIImage *clearImage = [UIImage imageNamed:@"clear" inBundle:bundle compatibleWithTraitCollection:trait];
+    UIImage *clearImage = [TextFieldClearButton imageForSize:CGSizeMake(18, 18) andButtonType:TextFieldButtonTypeClear];
     UIImage *clearImageTemplate = [clearImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     self.clearButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.clearButton setImage:clearImageTemplate forState:UIControlStateNormal];

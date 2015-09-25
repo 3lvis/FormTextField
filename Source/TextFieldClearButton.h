@@ -10,4 +10,6 @@ typedef NS_ENUM(NSInteger, TextFieldButtonType) {
 
 - (instancetype)initWithFrame:(CGRect)frame andButtonType:(TextFieldButtonType)type;
 
++ (UIImage *)imageForSize:(CGSize)size andButtonType:(TextFieldButtonType)type;
+
 @end
