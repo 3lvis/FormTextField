@@ -1,4 +1,5 @@
 import UIKit
+import Formatter
 
 class Controller: UIViewController {
     override func loadView() {
@@ -10,9 +11,20 @@ class Controller: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let textField = TextField(frame: CGRect(x: 20, y: 20, width: 200, height: 60))
-        textField.placeholder = "Email"
-        textField.enabled = true
-        self.view.addSubview(textField)
+        let margin = CGFloat(20)
+        let emailTextField = TextField(frame: CGRect(x: margin, y: 60, width: self.view.frame.width - (margin * 2.0), height: 60))
+        emailTextField.inputTypeString = "email"
+        emailTextField.placeholder = "Email"
+        emailTextField.enabled = true
+        self.view.addSubview(emailTextField)
+
+        var previousFrame = emailTextField.frame
+        previousFrame.origin.y = emailTextField.frame.maxY + margin
+        let phoneNumberTextField = TextField(frame: previousFrame)
+        phoneNumberTextField.inputTypeString = "phone"
+        phoneNumberTextField.placeholder = "Phone number"
+        phoneNumberTextField.enabled = true
+        phoneNumberTextField.formatter = PhoneNumberFormatter()
+        self.view.addSubview(phoneNumberTextField)
     }
 }
