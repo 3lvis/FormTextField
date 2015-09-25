@@ -76,9 +76,10 @@ static NSString * const TextFieldPlusButtonColorKey = @"plus_button_color";
     self = [super initWithFrame:frame];
     if (!self) return nil;
 
-    self.delegate = self;
+    enabledProperty = YES;
 
     self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    self.delegate = self;
 
     UIView *paddingView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, FieldCellLeftMargin, 0.0f)];
     self.leftView = paddingView;
