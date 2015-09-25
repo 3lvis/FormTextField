@@ -58,10 +58,18 @@
 }
 
 + (UIImage *)imageForSize:(CGSize)size andButtonType:(TextFieldButtonType)type {
-    TextFieldClearButton *view = [[TextFieldClearButton alloc] initWithFrame:CGRectMake(0.0, 0.0, size.width, size.height) andButtonType:type];
+    CGRect frame = CGRectMake(0.0, 0.0, size.width, size.height);
+    TextFieldClearButton *view = [[TextFieldClearButton alloc] initWithFrame:frame andButtonType:type];
     view.backgroundColor = [UIColor clearColor];
     UIGraphicsBeginImageContextWithOptions(size, NO, 0);
-    [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:YES];
+
+    @try {
+        [view drawViewHierarchyInRect:frame afterScreenUpdates:YES];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"Shit happens when this method gets called from XCTest");
+    }
+
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
 
