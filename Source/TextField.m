@@ -262,7 +262,7 @@ static NSString * const TextFieldPlusButtonColorKey = @"plus_button_color";
                       [self.inputValidator respondsToSelector:@selector(validateReplacementString:withText:withRange:)]);
 
     if (validator) return [self.inputValidator validateReplacementString:string
-                                                                withText:self.rawText withRange:range];
+                                                                withText:self.text withRange:range];
 
     return YES;
 }
