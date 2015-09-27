@@ -4,23 +4,24 @@
 @interface TextFieldClearButton()
 
 @property (nonatomic) TextFieldButtonType type;
+@property (nonatomic) UIColor *color;
 
 @end
 
 @implementation TextFieldClearButton
 
-- (instancetype)initWithFrame:(CGRect)frame andButtonType:(TextFieldButtonType)type {
+- (instancetype)initWithFrame:(CGRect)frame andButtonType:(TextFieldButtonType)type color:(UIColor *)color {
     self = [super initWithFrame:frame];
 
+    _color = color;
     _type = type;
 
     return self;
 }
 
 - (void)drawRect:(CGRect)rect {
-    UIColor* color = [[UIColor alloc] initWithHex:@"3DAFEB"];
     UIBezierPath* ovalPath = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(0.5, 0.5, rect.size.width - 1.0, rect.size.height - 1.0)];
-    [color setStroke];
+    [self.color setStroke];
     ovalPath.lineWidth = 1;
     [ovalPath stroke];
 
@@ -28,21 +29,21 @@
         UIBezierPath *leftHandle = [UIBezierPath bezierPath];
         [leftHandle moveToPoint: CGPointMake(5.5, 12.5)];
         [leftHandle addCurveToPoint: CGPointMake(12.5, 5.5) controlPoint1: CGPointMake(12.5, 5.5) controlPoint2: CGPointMake(12.5, 5.5)];
-        [color setStroke];
+        [self.color setStroke];
         leftHandle.lineWidth = 1;
         [leftHandle stroke];
 
         UIBezierPath* rightHandle = [UIBezierPath bezierPath];
         [rightHandle moveToPoint: CGPointMake(5.5, 5.5)];
         [rightHandle addCurveToPoint: CGPointMake(12.5, 12.5) controlPoint1: CGPointMake(12.5, 12.5) controlPoint2: CGPointMake(12.5, 12.5)];
-        [color setStroke];
+        [self.color setStroke];
         rightHandle.lineWidth = 1;
         [rightHandle stroke];
     } else {
         UIBezierPath *horizontalHandle = [UIBezierPath bezierPath];
         [horizontalHandle moveToPoint: CGPointMake(5, 9)];
         [horizontalHandle addCurveToPoint: CGPointMake(13, 9) controlPoint1: CGPointMake(14, 9) controlPoint2: CGPointMake(11, 9)];
-        [color setStroke];
+        [self.color setStroke];
         horizontalHandle.lineWidth = 1;
         [horizontalHandle stroke];
 
@@ -50,16 +51,16 @@
             UIBezierPath* verticalHandle = [UIBezierPath bezierPath];
             [verticalHandle moveToPoint: CGPointMake(9, 5)];
             [verticalHandle addCurveToPoint: CGPointMake(9, 13) controlPoint1: CGPointMake(9, 14) controlPoint2: CGPointMake(9, 11)];
-            [color setStroke];
+            [self.color setStroke];
             verticalHandle.lineWidth = 1;
             [verticalHandle stroke];
         }
     }
 }
 
-+ (UIImage *)imageForSize:(CGSize)size andButtonType:(TextFieldButtonType)type {
++ (UIImage *)imageForSize:(CGSize)size andButtonType:(TextFieldButtonType)type color:(UIColor *)color {
     CGRect frame = CGRectMake(0.0, 0.0, size.width, size.height);
-    TextFieldClearButton *view = [[TextFieldClearButton alloc] initWithFrame:frame andButtonType:type];
+    TextFieldClearButton *view = [[TextFieldClearButton alloc] initWithFrame:frame andButtonType:type color:color];
     view.backgroundColor = [UIColor clearColor];
     UIGraphicsBeginImageContextWithOptions(size, NO, 0);
 
