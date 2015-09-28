@@ -34,6 +34,8 @@ typedef NS_ENUM(NSInteger, TextFieldInputType) {
 @property (nonatomic, weak) id <TextFieldDelegate> textFieldDelegate;
 
 - (void)updateActive:(BOOL)active;
+- (void)updateValid:(BOOL)valid;
+- (void)updateEnabled:(BOOL)enabled;
 
 - (BOOL)validate;
 
