@@ -13,8 +13,6 @@ class Controller: UIViewController {
         textField.placeholder = "Email"
 
         let validator = Validation()
-        let count = "CVC".characters.count
-        validator.format = "[\\w._%+-]+@[\\w.-]+\\.\\w{2,}"
         validator.minimumLength = NSNumber(integer: 1)
         let inputValidator = InputValidator(validation: validator)
         textField.inputValidator = inputValidator
@@ -35,7 +33,7 @@ class Controller: UIViewController {
         let count = "1234 5678 1234 5678".characters.count
         validator.maximumLength = NSNumber(integer: count)
         validator.minimumLength = NSNumber(integer: 1)
-        let inputValidator = InputValidator(validation: validator)
+        let inputValidator = NumberInputValidator(validation: validator)
         textField.inputValidator = inputValidator
 
         return textField
@@ -55,7 +53,7 @@ class Controller: UIViewController {
         let count = "MM/YY".characters.count
         validator.maximumLength = NSNumber(integer: count)
         validator.minimumLength = NSNumber(integer: 1)
-        let inputValidator = InputValidator(validation: validator)
+        let inputValidator = NumberInputValidator(validation: validator)
         textField.inputValidator = inputValidator
 
         return textField
@@ -75,7 +73,7 @@ class Controller: UIViewController {
         let count = "CVC".characters.count
         validator.maximumLength = NSNumber(integer: count)
         validator.minimumLength = NSNumber(integer: 1)
-        let inputValidator = InputValidator(validation: validator)
+        let inputValidator = NumberInputValidator(validation: validator)
         textField.inputValidator = inputValidator
 
         return textField
