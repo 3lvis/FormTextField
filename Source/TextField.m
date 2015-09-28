@@ -167,6 +167,28 @@ static BOOL enabledProperty;
     return isValid;
 }
 
+#pragma mark - UITextFieldDelegate
+
+- (void)textFieldDidBeginEditing:(TextField *)textField {
+    [self updateActive:YES];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    [self updateActive:NO];
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    if (!string || [string isEqualToString:@"\n"]) return YES;
+
+    BOOL validator = (self.inputValidator &&
+                      [self.inputValidator respondsToSelector:@selector(validateReplacementString:withText:withRange:)]);
+
+    if (validator) return [self.inputValidator validateReplacementString:string
+                                                                withText:self.text withRange:range];
+
+    return YES;
+}
+
 #pragma mark - Notifications
 
 - (void)textFieldDidUpdate:(UITextField *)textField {
