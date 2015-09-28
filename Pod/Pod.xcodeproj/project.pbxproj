@@ -19,8 +19,8 @@
 		14A139B41AEFC72B00AD732F /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A139B31AEFC72B00AD732F /* Tests.swift */; };
 		14CA36A81BB540F4004908F1 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CA36A71BB540F4004908F1 /* Controller.swift */; settings = {ASSET_TAGS = (); }; };
 		14CA36A91BB540F4004908F1 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CA36A71BB540F4004908F1 /* Controller.swift */; settings = {ASSET_TAGS = (); }; };
-		14CA36AC1BB543DC004908F1 /* TextFielDefaultStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CA36AB1BB543DC004908F1 /* TextFielDefaultStyle.m */; settings = {ASSET_TAGS = (); }; };
-		14CA36AD1BB543DC004908F1 /* TextFielDefaultStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CA36AB1BB543DC004908F1 /* TextFielDefaultStyle.m */; settings = {ASSET_TAGS = (); }; };
+		14CA36AC1BB543DC004908F1 /* TextFieldDefaultStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CA36AB1BB543DC004908F1 /* TextFieldDefaultStyle.m */; settings = {ASSET_TAGS = (); }; };
+		14CA36AD1BB543DC004908F1 /* TextFieldDefaultStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CA36AB1BB543DC004908F1 /* TextFieldDefaultStyle.m */; settings = {ASSET_TAGS = (); }; };
 		B386CB18F4FFAA15E9F58082 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 311980557A3AECC126A2BABA /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F9211B4AE3C516620E550C9E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 311980557A3AECC126A2BABA /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -48,8 +48,8 @@
 		14C136551AB784B200B7B07A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		14CA36A61BB540E0004908F1 /* App-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "App-Bridging-Header.h"; sourceTree = "<group>"; };
 		14CA36A71BB540F4004908F1 /* Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
-		14CA36AA1BB543DC004908F1 /* TextFielDefaultStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFielDefaultStyle.h; sourceTree = "<group>"; };
-		14CA36AB1BB543DC004908F1 /* TextFielDefaultStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFielDefaultStyle.m; sourceTree = "<group>"; };
+		14CA36AA1BB543DC004908F1 /* TextFieldDefaultStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldDefaultStyle.h; sourceTree = "<group>"; };
+		14CA36AB1BB543DC004908F1 /* TextFieldDefaultStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldDefaultStyle.m; sourceTree = "<group>"; };
 		311980557A3AECC126A2BABA /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58390ACCBFD5C4195A9DC419 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C94F45A3EA6ABF137AE874FC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -157,8 +157,8 @@
 				144C4AAF1BB53F7E00919747 /* TextField.m */,
 				144C4AB01BB53F7E00919747 /* TextFieldTypeManager.h */,
 				144C4AB11BB53F7E00919747 /* TextFieldTypeManager.m */,
-				14CA36AA1BB543DC004908F1 /* TextFielDefaultStyle.h */,
-				14CA36AB1BB543DC004908F1 /* TextFielDefaultStyle.m */,
+				14CA36AA1BB543DC004908F1 /* TextFieldDefaultStyle.h */,
+				14CA36AB1BB543DC004908F1 /* TextFieldDefaultStyle.m */,
 				1401CB7D1BB55C0000A7342B /* TextFieldClearButton.h */,
 				1401CB7E1BB55C0000A7342B /* TextFieldClearButton.m */,
 			);
@@ -385,7 +385,7 @@
 				1439B5C91BB8039900140D24 /* CustomStyle.swift in Sources */,
 				1401CB7F1BB55C0000A7342B /* TextFieldClearButton.m in Sources */,
 				144C4AB51BB53F8D00919747 /* TextFieldTypeManager.m in Sources */,
-				14CA36AC1BB543DC004908F1 /* TextFielDefaultStyle.m in Sources */,
+				14CA36AC1BB543DC004908F1 /* TextFieldDefaultStyle.m in Sources */,
 				144C4AB41BB53F8B00919747 /* TextField.m in Sources */,
 				14CA36A81BB540F4004908F1 /* Controller.swift in Sources */,
 			);
@@ -397,7 +397,7 @@
 			files = (
 				14A139B41AEFC72B00AD732F /* Tests.swift in Sources */,
 				144C4AB31BB53F7E00919747 /* TextFieldTypeManager.m in Sources */,
-				14CA36AD1BB543DC004908F1 /* TextFielDefaultStyle.m in Sources */,
+				14CA36AD1BB543DC004908F1 /* TextFieldDefaultStyle.m in Sources */,
 				144C4AB21BB53F7E00919747 /* TextField.m in Sources */,
 				14CA36A91BB540F4004908F1 /* Controller.swift in Sources */,
 			);

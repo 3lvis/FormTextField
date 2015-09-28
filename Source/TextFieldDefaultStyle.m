@@ -1,8 +1,8 @@
-#import "TextFielDefaultStyle.h"
+#import "TextFieldDefaultStyle.h"
 #import "TextField.h"
 @import Hex;
 
-@implementation TextFielDefaultStyle
+@implementation TextFieldDefaultStyle
 
 + (void)applyStyle {
     [[TextField appearance] setActiveBackgroundColor:[[UIColor alloc] initWithHex:@"C0EAFF"]];
