@@ -25,7 +25,7 @@
     [[TextField appearance] setTextColor:[[UIColor alloc] initWithHex:@"455C73"]];
     [[TextField appearance] setValidBackgroundColor:[[UIColor alloc] initWithHex:@"E1F5FF"]];
     [[TextField appearance] setValidBorderColor:[[UIColor alloc] initWithHex:@"3DAFEB"]];
-    [[TextField appearance] setClearButtonColor:[[UIColor alloc] initWithHex:@"3DAFEB"]];
+    [[TextField appearance] setAccessoryButtonColor:[[UIColor alloc] initWithHex:@"3DAFEB"]];
 }
 
 @end

@@ -29,7 +29,7 @@ static const CGFloat TextFieldClearButtonHeight = 20.0f;
 @property (nonatomic) UIColor *validBorderColor;
 @property (nonatomic) UIColor *invalidBackgroundColor;
 @property (nonatomic) UIColor *invalidBorderColor;
-@property (nonatomic) UIColor *clearButtonColor;
+@property (nonatomic) UIColor *accessoryButtonColor;
 
 @end
 
@@ -63,7 +63,7 @@ static const CGFloat TextFieldClearButtonHeight = 20.0f;
 
 - (UIButton *)customClearButton {
     if (!_customClearButton) {
-        UIImage *clearImage = [TextFieldClearButton imageForSize:CGSizeMake(18, 18) andButtonType:TextFieldButtonTypeClear color:self.clearButtonColor];
+        UIImage *clearImage = [TextFieldClearButton imageForSize:CGSizeMake(18, 18) andButtonType:TextFieldButtonTypeClear color:self.accessoryButtonColor];
         _customClearButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_customClearButton setImage:clearImage forState:UIControlStateNormal];
         [_customClearButton addTarget:self action:@selector(clearButtonAction) forControlEvents:UIControlEventTouchUpInside];
@@ -377,8 +377,8 @@ static const CGFloat TextFieldClearButtonHeight = 20.0f;
     _invalidBorderColor = color;
 }
 
-- (void)setClearButtonColor:(UIColor *)color {
-    _clearButtonColor = color;
+- (void)setAccessoryButtonColor:(UIColor *)color {
+    _accessoryButtonColor = color;
 }
 
 @end

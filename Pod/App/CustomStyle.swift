@@ -27,6 +27,6 @@ struct CustomStyle {
         TextField.appearance().setInvalidBackgroundColor(UIColor(hex: "FFC9C8"))
         TextField.appearance().setInvalidBorderColor(UIColor(hex: "FF4B47"))
 
-        TextField.appearance().setClearButtonColor(UIColor(hex: "70D7FF"))
+        TextField.appearance().setAccessoryButtonColor(UIColor(hex: "70D7FF"))
     }
 }

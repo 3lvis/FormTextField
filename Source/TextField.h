@@ -61,7 +61,7 @@ typedef NS_ENUM(NSInteger, TextFieldInputType) {
 - (void)setInvalidBackgroundColor:(UIColor *)backgroundColor UI_APPEARANCE_SELECTOR;
 - (void)setInvalidBorderColor:(UIColor *)borderColor UI_APPEARANCE_SELECTOR;
 
-- (void)setClearButtonColor:(UIColor *)color UI_APPEARANCE_SELECTOR;
+- (void)setAccessoryButtonColor:(UIColor *)color UI_APPEARANCE_SELECTOR;
 
 @end
 
