@@ -4,7 +4,7 @@ import Hex
 struct CustomStyle {
     static func applyStyle() {
         TextField.appearance().setBorderWidth(2)
-        TextField.appearance().setCornerRadius(30)
+        TextField.appearance().setCornerRadius(10)
         TextField.appearance().setCustomFont(UIFont(name: "AvenirNext-Regular", size: 15))
 
         TextField.appearance().setActiveBackgroundColor(UIColor.whiteColor())
