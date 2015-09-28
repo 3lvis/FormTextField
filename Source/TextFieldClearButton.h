@@ -8,8 +8,8 @@ typedef NS_ENUM(NSInteger, TextFieldButtonType) {
 
 @interface TextFieldClearButton : UIView
 
-- (instancetype)initWithFrame:(CGRect)frame andButtonType:(TextFieldButtonType)type;
+- (instancetype)initWithFrame:(CGRect)frame andButtonType:(TextFieldButtonType)type color:(UIColor *)color;
 
-+ (UIImage *)imageForSize:(CGSize)size andButtonType:(TextFieldButtonType)type;
++ (UIImage *)imageForSize:(CGSize)size andButtonType:(TextFieldButtonType)type color:(UIColor *)color;
 
 @end
