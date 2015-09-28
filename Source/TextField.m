@@ -35,7 +35,9 @@ static NSString * const TextFieldValidBackgroundColorKey = @"valid_background_co
 static NSString * const TextFieldValidBorderColorKey = @"valid_border_color";
 static NSString * const TextFieldInvalidBackgroundColorKey = @"invalid_background_color";
 static NSString * const TextFieldInvalidBorderColorKey = @"invalid_border_color";
-static NSString * const TextFieldAccessoryColorKey = @"accessory_color";
+static NSString * const TextFieldClearButtonColorKey = @"clear_button_color";
+static NSString * const TextFieldMinusButtonColorKey = @"minus_button_color";
+static NSString * const TextFieldPlusButtonColorKey = @"plus_button_color";
 
 @interface TextField () <UITextFieldDelegate>
 
@@ -61,14 +63,12 @@ static NSString * const TextFieldAccessoryColorKey = @"accessory_color";
 @property (nonatomic) UIColor *validBorderColor;
 @property (nonatomic) UIColor *invalidBackgroundColor;
 @property (nonatomic) UIColor *invalidBorderColor;
-@property (nonatomic) UIColor *accessoryColor;
 
 @end
 
 @implementation TextField
 
 @synthesize rawText = _rawText;
-@synthesize accessoryColor = _accessoryColor;
 
 #pragma mark - Initializers
 
@@ -90,49 +90,14 @@ static NSString * const TextFieldAccessoryColorKey = @"accessory_color";
 
     self.returnKeyType = UIReturnKeyDone;
 
+    [self createClearButton];
+    [self addClearButton];
+    [self createCountButtons];
+
     return self;
 }
 
-#pragma mark - Getters
-
-- (UIButton *)minusButton {
-    if (!_minusButton) {
-        UIImage *minusImage = [TextFieldClearButton imageForSize:CGSizeMake(18, 18) andButtonType:TextFieldButtonTypeMinus color:self.accessoryColor];
-        _minusButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_minusButton setImage:minusImage forState:UIControlStateNormal];
-
-        [_minusButton addTarget:self action:@selector(minusButtonAction) forControlEvents:UIControlEventTouchUpInside];
-        _minusButton.frame = CGRectMake(0.0f, 0.0f, TextFieldMinusButtonWidth, TextFieldMinusButtonHeight);
-    }
-
-    return _minusButton;
-}
-
-- (UIButton *)plusButton {
-    if (!_plusButton) {
-        UIImage *plusImage = [TextFieldClearButton imageForSize:CGSizeMake(18, 18) andButtonType:TextFieldButtonTypePlus color:self.accessoryColor];
-        _plusButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_plusButton setImage:plusImage forState:UIControlStateNormal];
-
-        [_plusButton addTarget:self action:@selector(plusButtonAction) forControlEvents:UIControlEventTouchUpInside];
-        _plusButton.frame = CGRectMake(0.0f, 0.0f, TextFieldPlusButtonWidth, TextFieldPlusButtonHeight);
-    }
-
-    return _plusButton;
-}
-
-- (UIButton *)clearButton {
-    if (!_clearButton) {
-        UIImage *clearImage = [TextFieldClearButton imageForSize:CGSizeMake(18, 18) andButtonType:TextFieldButtonTypeClear color:self.accessoryColor];
-        _clearButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_clearButton setImage:clearImage forState:UIControlStateNormal];
-
-        [_clearButton addTarget:self action:@selector(clearButtonAction) forControlEvents:UIControlEventTouchUpInside];
-        _clearButton.frame = CGRectMake(0.0f, 0.0f, TextFieldClearButtonWidth, TextFieldClearButtonHeight);
-    }
-
-    return _clearButton;
-}
+#pragma mark - Setters
 
 - (NSRange)currentRange {
     NSInteger startOffset = [self offsetFromPosition:self.beginningOfDocument
@@ -143,16 +108,6 @@ static NSString * const TextFieldAccessoryColorKey = @"accessory_color";
 
     return range;
 }
-
-- (UIColor *)accessoryColor {
-    if (!_accessoryColor) {
-        _accessoryColor = [[UIColor alloc] initWithHex:@"3DAFEB"];
-    }
-
-    return _accessoryColor;
-}
-
-#pragma mark - Setters
 
 - (void)setText:(NSString *)text {
     UITextRange *textRange = self.selectedTextRange;
@@ -299,8 +254,6 @@ static NSString * const TextFieldAccessoryColorKey = @"accessory_color";
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     self.active = YES;
     self.modified = NO;
-
-    [self addClearButton];
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
@@ -363,6 +316,26 @@ static NSString * const TextFieldAccessoryColorKey = @"accessory_color";
 
 #pragma mark - Buttons
 
+- (void)createCountButtons {
+    // Minus Button
+    UIImage *minusImage = [TextFieldClearButton imageForSize:CGSizeMake(18, 18) andButtonType:TextFieldButtonTypeMinus];
+    UIImage *minusImageTemplate = [minusImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    self.minusButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.minusButton setImage:minusImageTemplate forState:UIControlStateNormal];
+
+    [self.minusButton addTarget:self action:@selector(minusButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    self.minusButton.frame = CGRectMake(0.0f, 0.0f, TextFieldMinusButtonWidth, TextFieldMinusButtonHeight);
+
+    // Plus Button
+    UIImage *plusImage = [TextFieldClearButton imageForSize:CGSizeMake(18, 18) andButtonType:TextFieldButtonTypePlus];
+    UIImage *plusImageTemplate = [plusImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    self.plusButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.plusButton setImage:plusImageTemplate forState:UIControlStateNormal];
+
+    [self.plusButton addTarget:self action:@selector(plusButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    self.plusButton.frame = CGRectMake(0.0f, 0.0f, TextFieldPlusButtonWidth, TextFieldPlusButtonHeight);
+}
+
 - (void)addCountButtons {
     self.leftView = self.minusButton;
     self.leftViewMode = UITextFieldViewModeAlways;
@@ -371,6 +344,16 @@ static NSString * const TextFieldAccessoryColorKey = @"accessory_color";
     self.rightViewMode = UITextFieldViewModeAlways;
 
     self.textAlignment = NSTextAlignmentCenter;
+}
+
+- (void)createClearButton {
+    UIImage *clearImage = [TextFieldClearButton imageForSize:CGSizeMake(18, 18) andButtonType:TextFieldButtonTypeClear];
+    UIImage *clearImageTemplate = [clearImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    self.clearButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.clearButton setImage:clearImageTemplate forState:UIControlStateNormal];
+
+    [self.clearButton addTarget:self action:@selector(clearButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    self.clearButton.frame = CGRectMake(0.0f, 0.0f, TextFieldClearButtonWidth, TextFieldClearButtonHeight);
 }
 
 - (void)addClearButton {
@@ -618,13 +601,28 @@ static NSString * const TextFieldAccessoryColorKey = @"accessory_color";
     self.enabled = enabledProperty;
 }
 
-- (void)setAccessoryColor:(UIColor *)color {
-    NSString *style = [self.styles valueForKey:TextFieldAccessoryColorKey];
+- (void)setClearButtonColor:(UIColor *)color {
+    NSString *style = [self.styles valueForKey:TextFieldClearButtonColorKey];
     if ([style length] > 0) {
         color = [[UIColor alloc] initWithHex:style];
     }
+    self.clearButton.tintColor = color;
+}
 
-    _accessoryColor = color;
+- (void)setMinusButtonColor:(UIColor *)color {
+    NSString *style = [self.styles valueForKey:TextFieldMinusButtonColorKey];
+    if ([style length] > 0) {
+        color = [[UIColor alloc] initWithHex:style];
+    }
+    self.minusButton.tintColor = color;
+}
+
+- (void)setPlusButtonColor:(UIColor *)color {
+    NSString *style = [self.styles valueForKey:TextFieldPlusButtonColorKey];
+    if ([style length] > 0) {
+        color = [[UIColor alloc] initWithHex:style];
+    }
+    self.plusButton.tintColor = color;
 }
 
 @end

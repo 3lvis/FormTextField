@@ -13,6 +13,8 @@ class Controller: UIViewController {
         textField.placeholder = "Email"
 
         let validator = Validation()
+        let count = "CVC".characters.count
+        validator.format = "[\\w._%+-]+@[\\w.-]+\\.\\w{2,}"
         validator.minimumLength = NSNumber(integer: 1)
         let inputValidator = InputValidator(validation: validator)
         textField.inputValidator = inputValidator
