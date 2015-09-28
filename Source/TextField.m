@@ -9,13 +9,10 @@ static const CGFloat FieldCellLeftMargin = 10.0f;
 static const CGFloat TextFieldClearButtonWidth = 30.0f;
 static const CGFloat TextFieldClearButtonHeight = 20.0f;
 
-static BOOL enabledProperty;
-
 @interface TextField () <UITextFieldDelegate>
 
-@property (nonatomic) UIButton *clearButton;
+@property (nonatomic) UIButton *customClearButton;
 
-// Style Properties
 @property (nonatomic) UIColor *activeBackgroundColor;
 @property (nonatomic) UIColor *activeBorderColor;
 @property (nonatomic) UIColor *inactiveBackgroundColor;
@@ -32,6 +29,7 @@ static BOOL enabledProperty;
 @property (nonatomic) UIColor *validBorderColor;
 @property (nonatomic) UIColor *invalidBackgroundColor;
 @property (nonatomic) UIColor *invalidBorderColor;
+@property (nonatomic) UIColor *clearButtonColor;
 
 @end
 
@@ -45,8 +43,6 @@ static BOOL enabledProperty;
     self = [super initWithFrame:frame];
     if (!self) return nil;
 
-    enabledProperty = YES;
-
     self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.delegate = self;
 
@@ -58,11 +54,23 @@ static BOOL enabledProperty;
     [self addTarget:self action:@selector(textFieldDidReturn:) forControlEvents:UIControlEventEditingDidEndOnExit];
 
     self.returnKeyType = UIReturnKeyDone;
-
-    [self createClearButton];
-    [self addClearButton];
+    self.rightViewMode = UITextFieldViewModeWhileEditing;
 
     return self;
+}
+
+#pragma mark - Getters
+
+- (UIButton *)customClearButton {
+    if (!_customClearButton) {
+        UIImage *clearImage = [TextFieldClearButton imageForSize:CGSizeMake(18, 18) andButtonType:TextFieldButtonTypeClear color:self.clearButtonColor];
+        _customClearButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_customClearButton setImage:clearImage forState:UIControlStateNormal];
+        [_customClearButton addTarget:self action:@selector(clearButtonAction) forControlEvents:UIControlEventTouchUpInside];
+        _customClearButton.frame = CGRectMake(0.0f, 0.0f, TextFieldClearButtonWidth, TextFieldClearButtonHeight);
+    }
+
+    return _customClearButton;
 }
 
 #pragma mark - Setters
@@ -178,13 +186,17 @@ static BOOL enabledProperty;
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    if (!string || [string isEqualToString:@"\n"]) return YES;
+    if (!string || [string isEqualToString:@"\n"]) {
+        return YES;
+    }
 
     BOOL validator = (self.inputValidator &&
                       [self.inputValidator respondsToSelector:@selector(validateReplacementString:withText:withRange:)]);
 
-    if (validator) return [self.inputValidator validateReplacementString:string
-                                                                withText:self.text withRange:range];
+    if (validator) {
+        return [self.inputValidator validateReplacementString:string
+                                                     withText:self.text withRange:range];
+    }
 
     return YES;
 }
@@ -210,23 +222,6 @@ static BOOL enabledProperty;
     }
 }
 
-#pragma mark - Buttons
-
-- (void)createClearButton {
-    UIImage *clearImage = [TextFieldClearButton imageForSize:CGSizeMake(18, 18) andButtonType:TextFieldButtonTypeClear];
-    UIImage *clearImageTemplate = [clearImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.clearButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.clearButton setImage:clearImageTemplate forState:UIControlStateNormal];
-
-    [self.clearButton addTarget:self action:@selector(clearButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    self.clearButton.frame = CGRectMake(0.0f, 0.0f, TextFieldClearButtonWidth, TextFieldClearButtonHeight);
-}
-
-- (void)addClearButton {
-    self.rightView = self.clearButton;
-    self.rightViewMode = UITextFieldViewModeWhileEditing;
-}
-
 #pragma mark - Actions
 
 - (void)clearButtonAction {
@@ -240,7 +235,23 @@ static BOOL enabledProperty;
 
 #pragma mark - Appearance
 
+- (void)setEnabled:(BOOL)enabled {
+    [super setEnabled:enabled];
+
+    [self updateEnabled:enabled];
+}
+
+- (void)setValid:(BOOL)valid {
+    _valid = valid;
+
+    if (!self.isEnabled) return;
+
+    [self updateValid:valid];
+}
+
 - (void)updateActive:(BOOL)active {
+    self.rightView = self.customClearButton;
+
     if (active) {
         self.backgroundColor = self.activeBackgroundColor;
         self.layer.backgroundColor = self.activeBackgroundColor.CGColor;
@@ -252,27 +263,21 @@ static BOOL enabledProperty;
     }
 }
 
-- (void)setEnabled:(BOOL)enabled {
-    [super setEnabled:enabled];
-
-    enabledProperty = enabled;
-
+- (void)updateEnabled:(BOOL)enabled {
     if (enabled) {
         self.backgroundColor = self.enabledBackgroundColor;
         self.layer.borderColor = self.enabledBorderColor.CGColor;
+        self.layer.backgroundColor = self.enabledBackgroundColor.CGColor;
         self.textColor = self.enabledTextColor;
     } else {
         self.backgroundColor = self.disabledBackgroundColor;
         self.layer.borderColor = self.disabledBorderColor.CGColor;
+        self.layer.backgroundColor = self.disabledBackgroundColor.CGColor;
         self.textColor = self.disabledTextColor;
     }
 }
 
-- (void)setValid:(BOOL)valid {
-    _valid = valid;
-
-    if (!self.isEnabled) return;
-
+- (void)updateValid:(BOOL)valid {
     if (valid) {
         self.backgroundColor = self.validBackgroundColor;
         self.layer.borderColor = self.validBorderColor.CGColor;
@@ -285,7 +290,9 @@ static BOOL enabledProperty;
 #pragma mark - Styling
 
 - (void)setCustomFont:(UIFont *)font {
-    self.font = font;
+    if (font) {
+        self.font = font;
+    }
 }
 
 - (void)setBorderWidth:(CGFloat)borderWidth {
@@ -293,11 +300,9 @@ static BOOL enabledProperty;
 }
 
 - (void)setBorderColor:(UIColor *)borderColor {
-    self.layer.borderColor = borderColor.CGColor;
-}
-
-- (void)setBackgroundColor:(UIColor *)backgroundColor {
-    self.layer.backgroundColor = backgroundColor.CGColor;
+    if (borderColor) {
+        self.layer.borderColor = borderColor.CGColor;
+    }
 }
 
 - (void)setCornerRadius:(CGFloat)cornerRadius {
@@ -322,27 +327,38 @@ static BOOL enabledProperty;
 
 - (void)setEnabledBackgroundColor:(UIColor *)color {
     _enabledBackgroundColor = color;
+
+    [self updateEnabled:self.enabled];
 }
 
 - (void)setEnabledBorderColor:(UIColor *)color {
     _enabledBorderColor = color;
+
+    [self updateEnabled:self.enabled];
 }
 
 - (void)setEnabledTextColor:(UIColor *)color {
     _enabledTextColor = color;
+
+    [self updateEnabled:self.enabled];
 }
 
 - (void)setDisabledBackgroundColor:(UIColor *)color {
     _disabledBackgroundColor = color;
+
+    [self updateEnabled:self.enabled];
 }
 
 - (void)setDisabledBorderColor:(UIColor *)color {
     _disabledBorderColor = color;
+
+    [self updateEnabled:self.enabled];
 }
 
 - (void)setDisabledTextColor:(UIColor *)color {
     _disabledTextColor = color;
-    self.enabled = enabledProperty;
+
+    [self updateEnabled:self.enabled];
 }
 
 - (void)setValidBackgroundColor:(UIColor *)color {
@@ -359,11 +375,10 @@ static BOOL enabledProperty;
 
 - (void)setInvalidBorderColor:(UIColor *)color {
     _invalidBorderColor = color;
-    self.enabled = enabledProperty;
 }
 
 - (void)setClearButtonColor:(UIColor *)color {
-    self.clearButton.tintColor = color;
+    _clearButtonColor = color;
 }
 
 @end
