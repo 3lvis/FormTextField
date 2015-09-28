@@ -229,6 +229,14 @@ static NSString * const TextFieldPlusButtonColorKey = @"plus_button_color";
     return _rawText;
 }
 
+#pragma mark - Public
+
+- (BOOL)validate {
+    BOOL isValid = [self.inputValidator validateString:self.text];
+    self.valid = isValid;
+    return isValid;
+}
+
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldBeginEditing:(TextField *)textField {

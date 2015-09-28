@@ -54,6 +54,8 @@ typedef NS_ENUM(NSInteger, TextFieldInputType) {
 
 @property (nonatomic, weak) id <TextFieldDelegate> textFieldDelegate;
 
+- (BOOL)validate;
+
 - (void)setCustomFont:(UIFont *)font  UI_APPEARANCE_SELECTOR;
 - (void)setBorderWidth:(CGFloat)borderWidth UI_APPEARANCE_SELECTOR;
 - (void)setBorderColor:(UIColor *)borderColor UI_APPEARANCE_SELECTOR;

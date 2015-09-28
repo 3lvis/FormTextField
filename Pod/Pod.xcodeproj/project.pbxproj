@@ -11,6 +11,7 @@
 		142A42281B2312B600AFE37D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142A42271B2312B600AFE37D /* AppDelegate.swift */; };
 		142A422A1B2312B600AFE37D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 142A42291B2312B600AFE37D /* Images.xcassets */; };
 		142A422D1B2312B600AFE37D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142A422B1B2312B600AFE37D /* LaunchScreen.xib */; };
+		1439B5C91BB8039900140D24 /* CustomStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1439B5C81BB8039900140D24 /* CustomStyle.swift */; settings = {ASSET_TAGS = (); }; };
 		144C4AB21BB53F7E00919747 /* TextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 144C4AAF1BB53F7E00919747 /* TextField.m */; settings = {ASSET_TAGS = (); }; };
 		144C4AB31BB53F7E00919747 /* TextFieldTypeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 144C4AB11BB53F7E00919747 /* TextFieldTypeManager.m */; settings = {ASSET_TAGS = (); }; };
 		144C4AB41BB53F8B00919747 /* TextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 144C4AAF1BB53F7E00919747 /* TextField.m */; settings = {ASSET_TAGS = (); }; };
@@ -32,6 +33,7 @@
 		142A42271B2312B600AFE37D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		142A42291B2312B600AFE37D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		142A422C1B2312B600AFE37D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		1439B5C81BB8039900140D24 /* CustomStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomStyle.swift; sourceTree = "<group>"; };
 		144C4AAE1BB53F7E00919747 /* TextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextField.h; sourceTree = "<group>"; };
 		144C4AAF1BB53F7E00919747 /* TextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextField.m; sourceTree = "<group>"; };
 		144C4AB01BB53F7E00919747 /* TextFieldTypeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldTypeManager.h; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			children = (
 				14CA36A61BB540E0004908F1 /* App-Bridging-Header.h */,
 				142A42271B2312B600AFE37D /* AppDelegate.swift */,
+				1439B5C81BB8039900140D24 /* CustomStyle.swift */,
 				142A42291B2312B600AFE37D /* Images.xcassets */,
 				142A422B1B2312B600AFE37D /* LaunchScreen.xib */,
 				142A42251B2312B600AFE37D /* Supporting Files */,
@@ -379,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				142A42281B2312B600AFE37D /* AppDelegate.swift in Sources */,
+				1439B5C91BB8039900140D24 /* CustomStyle.swift in Sources */,
 				1401CB7F1BB55C0000A7342B /* TextFieldClearButton.m in Sources */,
 				144C4AB51BB53F8D00919747 /* TextFieldTypeManager.m in Sources */,
 				14CA36AC1BB543DC004908F1 /* TextFielDefaultStyle.m in Sources */,
