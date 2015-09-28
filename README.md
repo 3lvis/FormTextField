@@ -2,7 +2,7 @@
 
 This a TextField subclass that supports styling for valid / invalid just using a boolean, formatters so you can easily format for example credit card numbers, phone numbers and so on. It supports input validators so you can limit the contents of a UITextField to maximum_length, maximum_value or even regex (perfect for validating emails).
 
-## Payment example:
+## Payment example
 
 ### Demo
 
