@@ -3,22 +3,6 @@
 @import InputValidator;
 @import Formatter;
 
-typedef NS_ENUM(NSInteger, TextFieldType) {
-    TextFieldTypeDefault = 0,
-    TextFieldTypeName,
-    TextFieldTypeUsername,
-    TextFieldTypePhoneNumber,
-    TextFieldTypeNumber,
-    TextFieldTypeFloat,
-    TextFieldTypeAddress,
-    TextFieldTypeEmail,
-    TextFieldTypePassword,
-    TextFieldTypeSelect,
-    TextFieldTypeDate,
-    TextFieldTypeCount,
-    TextFieldTypeUnknown
-};
-
 typedef NS_ENUM(NSInteger, TextFieldInputType) {
     TextFieldInputTypeDefault = 0,
     TextFieldInputTypeName,
@@ -42,17 +26,14 @@ typedef NS_ENUM(NSInteger, TextFieldInputType) {
 @property (nonatomic) InputValidator *inputValidator;
 @property (nonatomic) Formatter *formatter;
 
-@property (nonatomic, copy) NSString *typeString;
-@property (nonatomic) TextFieldType type;
 @property (nonatomic, copy) NSString *inputTypeString;
 @property (nonatomic) TextFieldInputType inputType;
-@property (nonatomic, copy) NSString *info;
-@property (nonatomic, copy) NSDictionary *styles;
 
 @property (nonatomic, getter = isValid)    BOOL valid;
-@property (nonatomic, getter = isActive)   BOOL active;
 
 @property (nonatomic, weak) id <TextFieldDelegate> textFieldDelegate;
+
+- (void)updateActive:(BOOL)active;
 
 - (BOOL)validate;
 
@@ -79,8 +60,6 @@ typedef NS_ENUM(NSInteger, TextFieldInputType) {
 - (void)setInvalidBorderColor:(UIColor *)borderColor UI_APPEARANCE_SELECTOR;
 
 - (void)setClearButtonColor:(UIColor *)color UI_APPEARANCE_SELECTOR;
-- (void)setMinusButtonColor:(UIColor *)color UI_APPEARANCE_SELECTOR;
-- (void)setPlusButtonColor:(UIColor *)color UI_APPEARANCE_SELECTOR;
 
 @end
 

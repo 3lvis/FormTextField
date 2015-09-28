@@ -23,8 +23,6 @@
     [[TextField appearance] setInactiveBorderColor:[[UIColor alloc] initWithHex:@"3DAFEB"]];
     [[TextField appearance] setInvalidBackgroundColor:[[UIColor alloc] initWithHex:@"FFD7D7"]];
     [[TextField appearance] setInvalidBorderColor:[[UIColor alloc] initWithHex:@"EC3031"]];
-    [[TextField appearance] setMinusButtonColor:[[UIColor alloc] initWithHex:@"3DAFEB"]];
-    [[TextField appearance] setPlusButtonColor:[[UIColor alloc] initWithHex:@"3DAFEB"]];
     [[TextField appearance] setTextColor:[[UIColor alloc] initWithHex:@"455C73"]];
     [[TextField appearance] setValidBackgroundColor:[[UIColor alloc] initWithHex:@"E1F5FF"]];
     [[TextField appearance] setValidBorderColor:[[UIColor alloc] initWithHex:@"3DAFEB"]];

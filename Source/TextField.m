@@ -8,43 +8,12 @@
 static const CGFloat FieldCellLeftMargin = 10.0f;
 static const CGFloat TextFieldClearButtonWidth = 30.0f;
 static const CGFloat TextFieldClearButtonHeight = 20.0f;
-static const CGFloat TextFieldMinusButtonWidth = 30.0f;
-static const CGFloat TextFieldMinusButtonHeight = 20.0f;
-static const CGFloat TextFieldPlusButtonWidth = 30.0f;
-static const CGFloat TextFieldPlusButtonHeight = 20.0f;
 
 static BOOL enabledProperty;
 
-static NSString * const TextFieldFontKey = @"font";
-static NSString * const TextFieldFontSizeKey = @"font_size";
-static NSString * const TextFieldBorderWidthKey = @"border_width";
-static NSString * const TextFieldBorderColorKey = @"border_color";
-static NSString * const TextFieldBackgroundColorKey = @"background_color";
-static NSString * const TextFieldCornerRadiusKey = @"corner_radius";
-static NSString * const TextFieldActiveBackgroundColorKey = @"active_background_color";
-static NSString * const TextFieldActiveBorderColorKey = @"active_border_color";
-static NSString * const TextFieldInactiveBackgroundColorKey = @"inactive_background_color";
-static NSString * const TextFieldInactiveBorderColorKey = @"inactive_border_color";
-static NSString * const TextFieldEnabledBackgroundColorKey = @"enabled_background_color";
-static NSString * const TextFieldEnabledBorderColorKey = @"enabled_border_color";
-static NSString * const TextFieldEnabledTextColorKey = @"enabled_text_color";
-static NSString * const TextFieldDisabledBackgroundColorKey = @"disabled_background_color";
-static NSString * const TextFieldDisabledBorderColorKey = @"disabled_border_color";
-static NSString * const TextFieldDisabledTextColorKey = @"disabled_text_color";
-static NSString * const TextFieldValidBackgroundColorKey = @"valid_background_color";
-static NSString * const TextFieldValidBorderColorKey = @"valid_border_color";
-static NSString * const TextFieldInvalidBackgroundColorKey = @"invalid_background_color";
-static NSString * const TextFieldInvalidBorderColorKey = @"invalid_border_color";
-static NSString * const TextFieldClearButtonColorKey = @"clear_button_color";
-static NSString * const TextFieldMinusButtonColorKey = @"minus_button_color";
-static NSString * const TextFieldPlusButtonColorKey = @"plus_button_color";
-
 @interface TextField () <UITextFieldDelegate>
 
-@property (nonatomic, getter = isModified) BOOL modified;
 @property (nonatomic) UIButton *clearButton;
-@property (nonatomic) UIButton *minusButton;
-@property (nonatomic) UIButton *plusButton;
 
 // Style Properties
 @property (nonatomic) UIColor *activeBackgroundColor;
@@ -92,7 +61,6 @@ static NSString * const TextFieldPlusButtonColorKey = @"plus_button_color";
 
     [self createClearButton];
     [self addClearButton];
-    [self createCountButtons];
 
     return self;
 }
@@ -139,44 +107,6 @@ static NSString * const TextFieldPlusButtonColorKey = @"plus_button_color";
     }
 
     _rawText = rawText;
-}
-
-- (void)setTypeString:(NSString *)typeString {
-    _typeString = typeString;
-
-    TextFieldType type;
-    if ([typeString isEqualToString:@"name"]) {
-        type = TextFieldTypeName;
-    } else if ([typeString isEqualToString:@"username"]) {
-        type = TextFieldTypeUsername;
-    } else if ([typeString isEqualToString:@"phone"]) {
-        type = TextFieldTypePhoneNumber;
-    } else if ([typeString isEqualToString:@"number"]) {
-        type = TextFieldTypeNumber;
-    } else if ([typeString isEqualToString:@"float"]) {
-        type = TextFieldTypeFloat;
-    } else if ([typeString isEqualToString:@"address"]) {
-        type = TextFieldTypeAddress;
-    } else if ([typeString isEqualToString:@"email"]) {
-        type = TextFieldTypeEmail;
-    } else if ([typeString isEqualToString:@"date"]) {
-        type = TextFieldTypeDate;
-    } else if ([typeString isEqualToString:@"select"]) {
-        type = TextFieldTypeSelect;
-    } else if ([typeString isEqualToString:@"text"]) {
-        type = TextFieldTypeDefault;
-    } else if ([typeString isEqualToString:@"password"]) {
-        type = TextFieldTypePassword;
-    } else if ([typeString isEqualToString:@"count"]) {
-        type = TextFieldTypeCount;
-        [self addCountButtons];
-    } else if (!typeString.length) {
-        type = TextFieldTypeDefault;
-    } else {
-        type = TextFieldTypeUnknown;
-    }
-
-    self.type = type;
 }
 
 - (void)setInputTypeString:(NSString *)inputTypeString {
@@ -237,61 +167,6 @@ static NSString * const TextFieldPlusButtonColorKey = @"plus_button_color";
     return isValid;
 }
 
-#pragma mark - UITextFieldDelegate
-
-- (BOOL)textFieldShouldBeginEditing:(TextField *)textField {
-    BOOL selectable = (textField.type == TextFieldTypeSelect ||
-                       textField.type == TextFieldTypeDate);
-
-    if (selectable &&
-        [self.textFieldDelegate respondsToSelector:@selector(textFormFieldDidBeginEditing:)]) {
-        [self.textFieldDelegate textFormFieldDidBeginEditing:self];
-    }
-
-    return !selectable;
-}
-
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-    self.active = YES;
-    self.modified = NO;
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-    self.active = NO;
-    if ([self.textFieldDelegate respondsToSelector:@selector(textFormFieldDidEndEditing:)]) {
-        [self.textFieldDelegate textFormFieldDidEndEditing:self];
-    }
-}
-
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    if (!string || [string isEqualToString:@"\n"]) return YES;
-
-    BOOL validator = (self.inputValidator &&
-                      [self.inputValidator respondsToSelector:@selector(validateReplacementString:withText:withRange:)]);
-
-    if (validator) return [self.inputValidator validateReplacementString:string
-                                                                withText:self.text withRange:range];
-
-    return YES;
-}
-
-#pragma mark - UIResponder Overwritables
-
-- (BOOL)becomeFirstResponder {
-    if ([self.textFieldDelegate respondsToSelector:@selector(textFormFieldDidBeginEditing:)]) {
-        [self.textFieldDelegate textFormFieldDidBeginEditing:self];
-    }
-
-    return [super becomeFirstResponder];
-}
-
-- (BOOL)canBecomeFirstResponder {
-    BOOL isTextField = (self.type != TextFieldTypeSelect &&
-                        self.type != TextFieldTypeDate);
-
-    return (isTextField && self.enabled) ?: [super canBecomeFirstResponder];
-}
-
 #pragma mark - Notifications
 
 - (void)textFieldDidUpdate:(UITextField *)textField {
@@ -299,7 +174,6 @@ static NSString * const TextFieldPlusButtonColorKey = @"plus_button_color";
         self.valid = YES;
     }
 
-    self.modified = YES;
     self.rawText = self.text;
 
     if ([self.textFieldDelegate respondsToSelector:@selector(textFormField:didUpdateWithText:)]) {
@@ -315,36 +189,6 @@ static NSString * const TextFieldPlusButtonColorKey = @"plus_button_color";
 }
 
 #pragma mark - Buttons
-
-- (void)createCountButtons {
-    // Minus Button
-    UIImage *minusImage = [TextFieldClearButton imageForSize:CGSizeMake(18, 18) andButtonType:TextFieldButtonTypeMinus];
-    UIImage *minusImageTemplate = [minusImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.minusButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.minusButton setImage:minusImageTemplate forState:UIControlStateNormal];
-
-    [self.minusButton addTarget:self action:@selector(minusButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    self.minusButton.frame = CGRectMake(0.0f, 0.0f, TextFieldMinusButtonWidth, TextFieldMinusButtonHeight);
-
-    // Plus Button
-    UIImage *plusImage = [TextFieldClearButton imageForSize:CGSizeMake(18, 18) andButtonType:TextFieldButtonTypePlus];
-    UIImage *plusImageTemplate = [plusImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.plusButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.plusButton setImage:plusImageTemplate forState:UIControlStateNormal];
-
-    [self.plusButton addTarget:self action:@selector(plusButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    self.plusButton.frame = CGRectMake(0.0f, 0.0f, TextFieldPlusButtonWidth, TextFieldPlusButtonHeight);
-}
-
-- (void)addCountButtons {
-    self.leftView = self.minusButton;
-    self.leftViewMode = UITextFieldViewModeAlways;
-
-    self.rightView = self.plusButton;
-    self.rightViewMode = UITextFieldViewModeAlways;
-
-    self.textAlignment = NSTextAlignmentCenter;
-}
 
 - (void)createClearButton {
     UIImage *clearImage = [TextFieldClearButton imageForSize:CGSizeMake(18, 18) andButtonType:TextFieldButtonTypeClear];
@@ -372,35 +216,9 @@ static NSString * const TextFieldPlusButtonColorKey = @"plus_button_color";
     }
 }
 
-- (void)minusButtonAction {
-    NSNumber *number = @([self.rawText integerValue] - 1);
-    if ([number integerValue] < 0) {
-        self.rawText = @"0";
-    } else {
-        self.rawText = [number stringValue];
-    }
-
-    if ([self.textFieldDelegate respondsToSelector:@selector(textFormField:didUpdateWithText:)]) {
-	[self.textFieldDelegate textFormField:self
-			    didUpdateWithText:self.rawText];
-    }
-}
-
-- (void)plusButtonAction {
-    NSNumber *number = @([self.rawText integerValue] + 1);
-    self.rawText = [number stringValue];
-
-    if ([self.textFieldDelegate respondsToSelector:@selector(textFormField:didUpdateWithText:)]) {
-	[self.textFieldDelegate textFormField:self
-			    didUpdateWithText:self.rawText];
-    }
-}
-
 #pragma mark - Appearance
 
-- (void)setActive:(BOOL)active {
-    _active = active;
-
+- (void)updateActive:(BOOL)active {
     if (active) {
         self.backgroundColor = self.activeBackgroundColor;
         self.layer.backgroundColor = self.activeBackgroundColor.CGColor;
@@ -442,187 +260,88 @@ static NSString * const TextFieldPlusButtonColorKey = @"plus_button_color";
     }
 }
 
+#pragma mark - Styling
+
 - (void)setCustomFont:(UIFont *)font {
-    NSString *styleFont = [self.styles valueForKey:TextFieldFontKey];
-    NSString *styleFontSize = [self.styles valueForKey:TextFieldFontSizeKey];
-    if ([styleFont length] > 0) {
-        if ([styleFontSize length] > 0) {
-            font = [UIFont fontWithName:styleFont size:[styleFontSize floatValue]];
-        } else {
-            font = [UIFont fontWithName:styleFont size:font.pointSize];
-        }
-    }
     self.font = font;
 }
 
 - (void)setBorderWidth:(CGFloat)borderWidth {
-    NSString *style = [self.styles valueForKey:TextFieldBorderWidthKey];
-    if ([style length] > 0) {
-        borderWidth = [style floatValue];
-    }
     self.layer.borderWidth = borderWidth;
 }
 
 - (void)setBorderColor:(UIColor *)borderColor {
-    NSString *style = [self.styles valueForKey:TextFieldBorderColorKey];
-    if ([style length] > 0) {
-        borderColor = [[UIColor alloc] initWithHex:style];
-    }
     self.layer.borderColor = borderColor.CGColor;
 }
 
 - (void)setBackgroundColor:(UIColor *)backgroundColor {
-    NSString *style = [self.styles valueForKey:TextFieldBackgroundColorKey];
-    if ([style length] > 0) {
-        backgroundColor = [[UIColor alloc] initWithHex:style];
-    }
     self.layer.backgroundColor = backgroundColor.CGColor;
 }
 
 - (void)setCornerRadius:(CGFloat)cornerRadius {
-    NSString *style = [self.styles valueForKey:TextFieldCornerRadiusKey];
-    if ([style length] > 0) {
-        cornerRadius = [style floatValue];
-    }
     self.layer.cornerRadius = cornerRadius;
 }
 
 - (void)setActiveBackgroundColor:(UIColor *)color {
-    NSString *style = [self.styles valueForKey:TextFieldActiveBackgroundColorKey];
-    if ([style length] > 0) {
-        color = [[UIColor alloc] initWithHex:style];
-    }
     _activeBackgroundColor = color;
 }
 
 - (void)setActiveBorderColor:(UIColor *)color {
-    NSString *style = [self.styles valueForKey:TextFieldActiveBorderColorKey];
-    if ([style length] > 0) {
-        color = [[UIColor alloc] initWithHex:style];
-    }
     _activeBorderColor = color;
 }
 
 - (void)setInactiveBackgroundColor:(UIColor *)color {
-    NSString *style = [self.styles valueForKey:TextFieldInactiveBackgroundColorKey];
-    if ([style length] > 0) {
-        color = [[UIColor alloc] initWithHex:style];
-    }
     _inactiveBackgroundColor = color;
 }
 
 - (void)setInactiveBorderColor:(UIColor *)color {
-    NSString *style = [self.styles valueForKey:TextFieldInactiveBorderColorKey];
-    if ([style length] > 0) {
-        color = [[UIColor alloc] initWithHex:style];
-    }
     _inactiveBorderColor = color;
 }
 
 - (void)setEnabledBackgroundColor:(UIColor *)color {
-    NSString *style = [self.styles valueForKey:TextFieldEnabledBackgroundColorKey];
-    if ([style length] > 0) {
-        color = [[UIColor alloc] initWithHex:style];
-    }
     _enabledBackgroundColor = color;
 }
 
 - (void)setEnabledBorderColor:(UIColor *)color {
-    NSString *style = [self.styles valueForKey:TextFieldEnabledBorderColorKey];
-    if ([style length] > 0) {
-        color = [[UIColor alloc] initWithHex:style];
-    }
     _enabledBorderColor = color;
 }
 
 - (void)setEnabledTextColor:(UIColor *)color {
-    NSString *style = [self.styles valueForKey:TextFieldEnabledTextColorKey];
-    if ([style length] > 0) {
-        color = [[UIColor alloc] initWithHex:style];
-    }
     _enabledTextColor = color;
 }
 
 - (void)setDisabledBackgroundColor:(UIColor *)color {
-    NSString *style = [self.styles valueForKey:TextFieldDisabledBackgroundColorKey];
-    if ([style length] > 0) {
-        color = [[UIColor alloc] initWithHex:style];
-    }
     _disabledBackgroundColor = color;
 }
 
 - (void)setDisabledBorderColor:(UIColor *)color {
-    NSString *style = [self.styles valueForKey:TextFieldDisabledBorderColorKey];
-    if ([style length] > 0) {
-        color = [[UIColor alloc] initWithHex:style];
-    }
     _disabledBorderColor = color;
 }
 
 - (void)setDisabledTextColor:(UIColor *)color {
-    NSString *style = [self.styles valueForKey:TextFieldDisabledTextColorKey];
-    if ([style length] > 0) {
-        color = [[UIColor alloc] initWithHex:style];
-    }
     _disabledTextColor = color;
     self.enabled = enabledProperty;
 }
 
 - (void)setValidBackgroundColor:(UIColor *)color {
-    NSString *style = [self.styles valueForKey:TextFieldValidBackgroundColorKey];
-    if ([style length] > 0) {
-        color = [[UIColor alloc] initWithHex:style];
-    }
     _validBackgroundColor = color;
 }
 
 - (void)setValidBorderColor:(UIColor *)color {
-    NSString *style = [self.styles valueForKey:TextFieldValidBorderColorKey];
-    if ([style length] > 0) {
-        color = [[UIColor alloc] initWithHex:style];
-    }
     _validBorderColor = color;
 }
 
 - (void)setInvalidBackgroundColor:(UIColor *)color {
-    NSString *style = [self.styles valueForKey:TextFieldInvalidBackgroundColorKey];
-    if ([style length] > 0) {
-        color = [[UIColor alloc] initWithHex:style];
-    }
     _invalidBackgroundColor = color;
 }
 
 - (void)setInvalidBorderColor:(UIColor *)color {
-    NSString *style = [self.styles valueForKey:TextFieldInvalidBorderColorKey];
-    if ([style length] > 0) {
-        color = [[UIColor alloc] initWithHex:style];
-    }
     _invalidBorderColor = color;
     self.enabled = enabledProperty;
 }
 
 - (void)setClearButtonColor:(UIColor *)color {
-    NSString *style = [self.styles valueForKey:TextFieldClearButtonColorKey];
-    if ([style length] > 0) {
-        color = [[UIColor alloc] initWithHex:style];
-    }
     self.clearButton.tintColor = color;
-}
-
-- (void)setMinusButtonColor:(UIColor *)color {
-    NSString *style = [self.styles valueForKey:TextFieldMinusButtonColorKey];
-    if ([style length] > 0) {
-        color = [[UIColor alloc] initWithHex:style];
-    }
-    self.minusButton.tintColor = color;
-}
-
-- (void)setPlusButtonColor:(UIColor *)color {
-    NSString *style = [self.styles valueForKey:TextFieldPlusButtonColorKey];
-    if ([style length] > 0) {
-        color = [[UIColor alloc] initWithHex:style];
-    }
-    self.plusButton.tintColor = color;
 }
 
 @end
