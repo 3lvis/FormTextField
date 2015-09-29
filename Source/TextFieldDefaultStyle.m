@@ -10,7 +10,6 @@
     [[TextField appearance] setBackgroundColor:[UIColor yellowColor]];
     [[TextField appearance] setBorderColor:[[UIColor alloc] initWithHex:@"3DAFEB"]];
     [[TextField appearance] setBorderWidth:1.0f];
-    [[TextField appearance] setClearButtonColor:[[UIColor alloc] initWithHex:@"3DAFEB"]];
     [[TextField appearance] setCornerRadius:5.0f];
     [[TextField appearance] setDisabledBackgroundColor:[[UIColor alloc] initWithHex:@"F5F5F8"]];
     [[TextField appearance] setDisabledBorderColor:[[UIColor alloc] initWithHex:@"DEDEDE"]];
@@ -26,6 +25,7 @@
     [[TextField appearance] setTextColor:[[UIColor alloc] initWithHex:@"455C73"]];
     [[TextField appearance] setValidBackgroundColor:[[UIColor alloc] initWithHex:@"E1F5FF"]];
     [[TextField appearance] setValidBorderColor:[[UIColor alloc] initWithHex:@"3DAFEB"]];
+    [[TextField appearance] setAccessoryButtonColor:[[UIColor alloc] initWithHex:@"3DAFEB"]];
 }
 
 @end
