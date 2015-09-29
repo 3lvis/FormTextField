@@ -14,11 +14,76 @@ public protocol TextFieldDelegate: class {
 }
 
 public class TextField: UITextField, UITextFieldDelegate {
+    dynamic public var customFont: UIFont = UIFont.systemFontOfSize(16) {
+        didSet {
+            self.font = font
+        }
+    }
+    dynamic public var borderWidth: CGFloat = 0 {
+        didSet {
+            self.layer.borderWidth = borderWidth
+        }
+    }
+    dynamic public var borderColor: UIColor = UIColor.redColor() {
+        didSet {
+            self.layer.borderColor = borderColor.CGColor
+        }
+    }
+    dynamic public var cornerRadius: CGFloat = 0 {
+        didSet {
+            self.layer.cornerRadius = cornerRadius
+        }
+    }
+
+    dynamic public var activeBackgroundColor: UIColor = UIColor.redColor()
+    dynamic public var activeBorderColor: UIColor = UIColor.redColor()
+    dynamic public var inactiveBackgroundColor: UIColor = UIColor.redColor()
+    dynamic public var inactiveBorderColor: UIColor = UIColor.redColor()
+
+    dynamic public var enabledBackgroundColor: UIColor = UIColor.redColor() {
+        didSet {
+            self.updateEnabled(self.enabled)
+        }
+    }
+    dynamic public var enabledBorderColor: UIColor = UIColor.redColor() {
+        didSet {
+            self.updateEnabled(self.enabled)
+        }
+    }
+    dynamic public var enabledTextColor: UIColor = UIColor.redColor() {
+        didSet {
+            self.updateEnabled(self.enabled)
+        }
+    }
+    dynamic public var disabledBackgroundColor: UIColor = UIColor.redColor() {
+        didSet {
+            self.updateEnabled(self.enabled)
+        }
+    }
+    dynamic public var disabledBorderColor: UIColor = UIColor.redColor() {
+        didSet {
+            self.updateEnabled(self.enabled)
+        }
+    }
+    dynamic public var disabledTextColor: UIColor = UIColor.redColor() {
+        didSet {
+            self.updateEnabled(self.enabled)
+        }
+    }
+
+    dynamic public var validBackgroundColor: UIColor = UIColor.redColor()
+    dynamic public var validBorderColor: UIColor = UIColor.redColor()
+    dynamic public var invalidBackgroundColor: UIColor = UIColor.redColor()
+    dynamic public var invalidBorderColor: UIColor = UIColor.redColor()
+    dynamic public var accessoryButtonColor: UIColor = UIColor.redColor()
+
     public var inputValidator: Validatable?
     public var formatter: Formattable?
     public weak var textFieldDelegate: TextFieldDelegate?
 
     static let LeftMargin = 10.0
+    static let AccessoryButtonWidth = 30.0
+    static let AccessoryButtonHeight = 20.0
 
     override init(frame: CGRect) {
         self.inputType = .Default
@@ -43,12 +108,20 @@ public class TextField: UITextField, UITextFieldDelegate {
     }
 
     lazy var customClearButton: UIButton = {
-        return UIButton()
+        let image = TextFieldClearButton.imageForSize(CGSize(width: 18, height: 18), color: self.accessoryButtonColor)
+        let button = UIButton(type: .Custom)
+        button.setImage(image, forState: .Normal)
+        button.addTarget(self, action: "clearButtonAction", forControlEvents: .TouchUpInside)
+        button.frame = CGRect(x: 0, y: 0, width: TextField.AccessoryButtonWidth, height: TextField.AccessoryButtonHeight)
+
+        return button
     }()
 
     override public var text: String? {
         didSet {
-
+            if self.formatter != nil {
+                self.text = self.formatter!.formatString(text ?? "", reverse: false)
+            }
         }
     }
 
@@ -68,7 +141,7 @@ public class TextField: UITextField, UITextFieldDelegate {
 
     public var inputType: TextFieldInputType {
         didSet {
-
+            self.updateInputType(inputType)
         }
     }
 
@@ -76,14 +149,42 @@ public class TextField: UITextField, UITextFieldDelegate {
 
     func updateActive(active: Bool) {
         self.rightView = self.customClearButton
-    }
 
-    func updateValid(valid: Bool) {
-
+        if active {
+            self.backgroundColor = self.activeBackgroundColor
+            self.layer.backgroundColor = self.activeBackgroundColor.CGColor
+            self.layer.borderColor = self.activeBorderColor.CGColor
+        } else {
+            self.backgroundColor = self.inactiveBackgroundColor
+            self.layer.backgroundColor = self.inactiveBackgroundColor.CGColor
+            self.layer.borderColor = self.inactiveBorderColor.CGColor
+        }
     }
 
     func updateEnabled(enabled: Bool) {
+        if enabled {
+            self.backgroundColor = self.enabledBackgroundColor
+            self.layer.borderColor = self.enabledBorderColor.CGColor
+            self.layer.backgroundColor = self.enabledBackgroundColor.CGColor
+            self.textColor = self.enabledTextColor
+        } else {
+            self.backgroundColor = self.disabledBackgroundColor
+            self.layer.borderColor = self.disabledBorderColor.CGColor
+            self.layer.backgroundColor = self.disabledBackgroundColor.CGColor
+            self.textColor = self.disabledTextColor
+        }
+    }
 
+    func updateValid(valid: Bool) {
+        if valid {
+            self.backgroundColor = self.validBackgroundColor
+            self.layer.backgroundColor = self.validBackgroundColor.CGColor
+            self.layer.borderColor = self.validBorderColor.CGColor
+        } else {
+            self.backgroundColor = self.invalidBackgroundColor
+            self.layer.backgroundColor = self.invalidBackgroundColor.CGColor
+            self.layer.borderColor = self.invalidBorderColor.CGColor
+        }
     }
 
     public func validate() -> Bool {

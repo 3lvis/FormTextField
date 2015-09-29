@@ -3,28 +3,26 @@ import Hex
 
 struct TextFieldDefaultStyle {
     static func apply() {
-        /*
-        TextField.appearance().setActiveBackgroundColor:[[UIColor alloc] initWithHex:@"C0EAFF"]];
-        TextField.appearance() setActiveBorderColor:[[UIColor alloc] initWithHex:@"3DAFEB"]];
-        TextField.appearance() setBackgroundColor:[UIColor yellowColor]];
-        TextField.appearance() setBorderColor:[[UIColor alloc] initWithHex:@"3DAFEB"]];
-        TextField.appearance() setBorderWidth:1.0f];
-        TextField.appearance() setCornerRadius:5.0f];
-        TextField.appearance() setDisabledBackgroundColor:[[UIColor alloc] initWithHex:@"F5F5F8"]];
-        TextField.appearance() setDisabledBorderColor:[[UIColor alloc] initWithHex:@"DEDEDE"]];
-        TextField.appearance() setDisabledTextColor:[UIColor grayColor]];
-        TextField.appearance() setEnabledBackgroundColor:[[UIColor alloc] initWithHex:@"E1F5FF"]];
-        TextField.appearance() setEnabledBorderColor:[[UIColor alloc] initWithHex:@"3DAFEB"]];
-        TextField.appearance() setEnabledTextColor:[[UIColor alloc] initWithHex:@"455C73"]];
-        TextField.appearance() setFont:[UIFont fontWithName:@"AvenirNext-Regular" size:15.0]];
-        TextField.appearance() setInactiveBackgroundColor:[[UIColor alloc] initWithHex:@"E1F5FF"]];
-        TextField.appearance() setInactiveBorderColor:[[UIColor alloc] initWithHex:@"3DAFEB"]];
-        TextField.appearance() setInvalidBackgroundColor:[[UIColor alloc] initWithHex:@"FFD7D7"]];
-        TextField.appearance() setInvalidBorderColor:[[UIColor alloc] initWithHex:@"EC3031"]];
-        TextField.appearance() setTextColor:[[UIColor alloc] initWithHex:@"455C73"]];
-        TextField.appearance() setValidBackgroundColor:[[UIColor alloc] initWithHex:@"E1F5FF"]];
-        TextField.appearance() setValidBorderColor:[[UIColor alloc] initWithHex:@"3DAFEB"]];
-        TextField.appearance() setAccessoryButtonColor:[[UIColor alloc] initWithHex:@"3DAFEB"]];
-        */
+        TextField.appearance().activeBackgroundColor = UIColor(hex: "C0EAFF")
+        TextField.appearance().activeBorderColor = UIColor(hex: "3DAFEB")
+        TextField.appearance().backgroundColor = UIColor.yellowColor()
+        TextField.appearance().borderColor = UIColor(hex: "3DAFEB")
+        TextField.appearance().borderWidth = 1
+        TextField.appearance().cornerRadius = 5
+        TextField.appearance().disabledBackgroundColor = UIColor(hex: "F5F5F8")
+        TextField.appearance().disabledBorderColor = UIColor(hex: "DEDEDE")
+        TextField.appearance().disabledTextColor = UIColor.grayColor()
+        TextField.appearance().enabledBackgroundColor = UIColor(hex: "E1F5FF")
+        TextField.appearance().enabledBorderColor = UIColor(hex: "3DAFEB")
+        TextField.appearance().enabledTextColor = UIColor(hex: "455C73")
+        TextField.appearance().font = UIFont(name: "AvenirNext-Regular", size: 15)
+        TextField.appearance().inactiveBackgroundColor = UIColor(hex: "E1F5FF")
+        TextField.appearance().inactiveBorderColor = UIColor(hex: "3DAFEB")
+        TextField.appearance().invalidBackgroundColor = UIColor(hex: "FFD7D7")
+        TextField.appearance().invalidBorderColor = UIColor(hex: "EC3031")
+        TextField.appearance().textColor = UIColor(hex: "455C73")
+        TextField.appearance().validBackgroundColor = UIColor(hex: "E1F5FF")
+        TextField.appearance().validBorderColor = UIColor(hex: "3DAFEB")
+        TextField.appearance().accessoryButtonColor = UIColor(hex: "3DAFEB")
     }
 }
