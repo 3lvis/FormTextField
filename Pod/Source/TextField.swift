@@ -16,21 +16,31 @@ public protocol TextFieldDelegate: class {
 public class TextField: UITextField, UITextFieldDelegate {
     dynamic public var borderWidth: CGFloat = 0 { didSet { self.layer.borderWidth = borderWidth } }
     dynamic public var cornerRadius: CGFloat = 0 { didSet { self.layer.cornerRadius = cornerRadius } }
-    dynamic public var activeBackgroundColor: UIColor = UIColor.redColor()
-    dynamic public var activeBorderColor: UIColor = UIColor.redColor()
-    dynamic public var inactiveBackgroundColor: UIColor = UIColor.redColor()
-    dynamic public var inactiveBorderColor: UIColor = UIColor.redColor()
+    dynamic public var accessoryButtonColor: UIColor = UIColor.redColor()
+
     dynamic public var enabledBackgroundColor: UIColor = UIColor.redColor() { didSet { self.updateEnabled(self.enabled) } }
     dynamic public var enabledBorderColor: UIColor = UIColor.redColor() { didSet { self.updateEnabled(self.enabled) } }
     dynamic public var enabledTextColor: UIColor = UIColor.redColor() { didSet { self.updateEnabled(self.enabled) } }
+
+    dynamic public var validBackgroundColor: UIColor = UIColor.redColor()
+    dynamic public var validBorderColor: UIColor = UIColor.redColor()
+    dynamic public var validTextColor: UIColor = UIColor.redColor()
+
+    dynamic public var activeBackgroundColor: UIColor = UIColor.redColor()
+    dynamic public var activeBorderColor: UIColor = UIColor.redColor()
+    dynamic public var activeTextColor: UIColor = UIColor.redColor()
+
+    dynamic public var inactiveBackgroundColor: UIColor = UIColor.redColor()
+    dynamic public var inactiveBorderColor: UIColor = UIColor.redColor()
+    dynamic public var inactiveTextColor: UIColor = UIColor.redColor()
+
     dynamic public var disabledBackgroundColor: UIColor = UIColor.redColor() { didSet { self.updateEnabled(self.enabled) } }
     dynamic public var disabledBorderColor: UIColor = UIColor.redColor() { didSet { self.updateEnabled(self.enabled) } }
     dynamic public var disabledTextColor: UIColor = UIColor.redColor() { didSet { self.updateEnabled(self.enabled) } }
-    dynamic public var validBackgroundColor: UIColor = UIColor.redColor()
-    dynamic public var validBorderColor: UIColor = UIColor.redColor()
+
     dynamic public var invalidBackgroundColor: UIColor = UIColor.redColor()
     dynamic public var invalidBorderColor: UIColor = UIColor.redColor()
-    dynamic public var accessoryButtonColor: UIColor = UIColor.redColor()
+    dynamic public var invalidTextColor: UIColor = UIColor.redColor()
 
     public var inputValidator: Validatable?
     public var formatter: Formattable?
@@ -56,6 +66,7 @@ public class TextField: UITextField, UITextFieldDelegate {
 
         self.returnKeyType = .Done
         self.rightViewMode = .WhileEditing
+        self.backgroundColor = UIColor.clearColor()
     }
 
     required public init?(coder aDecoder: NSCoder) {
@@ -122,24 +133,22 @@ public class TextField: UITextField, UITextFieldDelegate {
         self.rightView = self.customClearButton
 
         if active {
-            self.backgroundColor = self.activeBackgroundColor
             self.layer.backgroundColor = self.activeBackgroundColor.CGColor
             self.layer.borderColor = self.activeBorderColor.CGColor
+            self.textColor = self.activeTextColor
         } else {
-            self.backgroundColor = self.inactiveBackgroundColor
             self.layer.backgroundColor = self.inactiveBackgroundColor.CGColor
             self.layer.borderColor = self.inactiveBorderColor.CGColor
+            self.textColor = self.inactiveTextColor
         }
     }
 
     func updateEnabled(enabled: Bool) {
         if enabled {
-            self.backgroundColor = self.enabledBackgroundColor
             self.layer.borderColor = self.enabledBorderColor.CGColor
             self.layer.backgroundColor = self.enabledBackgroundColor.CGColor
             self.textColor = self.enabledTextColor
         } else {
-            self.backgroundColor = self.disabledBackgroundColor
             self.layer.borderColor = self.disabledBorderColor.CGColor
             self.layer.backgroundColor = self.disabledBackgroundColor.CGColor
             self.textColor = self.disabledTextColor
@@ -148,19 +157,19 @@ public class TextField: UITextField, UITextFieldDelegate {
 
     func updateValid(valid: Bool) {
         if valid {
-            self.backgroundColor = self.validBackgroundColor
             self.layer.backgroundColor = self.validBackgroundColor.CGColor
             self.layer.borderColor = self.validBorderColor.CGColor
+            self.textColor = self.validTextColor
         } else {
-            self.backgroundColor = self.invalidBackgroundColor
             self.layer.backgroundColor = self.invalidBackgroundColor.CGColor
             self.layer.borderColor = self.invalidBorderColor.CGColor
+            self.textColor = self.invalidTextColor
         }
     }
 
     public func validate() -> Bool {
         var isValid = true
-        if let inputValidator = self.inputValidator{
+        if let inputValidator = self.inputValidator {
             isValid = inputValidator.validateString(self.text ?? "")
         }
 
