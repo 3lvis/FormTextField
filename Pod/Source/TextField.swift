@@ -121,16 +121,10 @@ public class TextField: UITextField, UITextFieldDelegate {
 
                 self.text = newRawText
                 self.selectedTextRange = textRange
-            } else if (didAddText && didFormat) {
-                if cursorAtEnd {
-                    print("add text + format || cursor at end")
+            } else if (didAddText && didFormat) || (didAddText && cursorAtEnd) {
+                print("add text + format || add text + cursor at end")
 
-                    self.text = newRawText
-                } else {
-                    print("add text + format || cursor at middle")
-
-                    super.text = newRawText
-                }
+                self.text = newRawText
             } else {
                 print("else")
 
