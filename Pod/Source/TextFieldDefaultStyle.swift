@@ -1,17 +1,17 @@
-import Foundation
+import UIKit
 import Hex
 
-struct CustomStyle {
+struct TextFieldDefaultStyle {
     static func apply() {
-        let enabledBackgroundColor = UIColor.whiteColor()
-        let enabledBorderColor = UIColor(hex: "DFDFDF")
+        let enabledBackgroundColor = UIColor(hex: "E1F5FF")
+        let enabledBorderColor = UIColor(hex: "3DAFEB")
         let enabledTextColor = UIColor(hex: "455C73")
-        let activeBorderColor = UIColor(hex: "70D7FF")
+        let activeBorderColor = UIColor(hex: "3DAFEB")
 
-        TextField.appearance().borderWidth = 2
-        TextField.appearance().cornerRadius = 10
+        TextField.appearance().borderWidth = 1
+        TextField.appearance().cornerRadius = 5
         TextField.appearance().accessoryButtonColor = activeBorderColor
-        TextField.appearance().font = UIFont(name: "AvenirNext-Regular", size: 15)!
+        TextField.appearance().font = UIFont(name: "AvenirNext-Regular", size: 15)
 
         TextField.appearance().enabledBackgroundColor = enabledBackgroundColor
         TextField.appearance().enabledBorderColor = enabledBorderColor
@@ -29,16 +29,12 @@ struct CustomStyle {
         TextField.appearance().inactiveBorderColor = enabledBorderColor
         TextField.appearance().inactiveTextColor = enabledTextColor
 
-        TextField.appearance().disabledBackgroundColor = UIColor(hex: "DFDFDF")
-        TextField.appearance().disabledBorderColor = UIColor(hex: "DFDFDF")
+        TextField.appearance().disabledBackgroundColor = UIColor(hex: "F5F5F8")
+        TextField.appearance().disabledBorderColor = UIColor(hex: "DEDEDE")
         TextField.appearance().disabledTextColor = UIColor.whiteColor()
 
-        TextField.appearance().invalidBackgroundColor = UIColor(hex: "FFC9C8")
-        TextField.appearance().invalidBorderColor = UIColor(hex: "FF4B47")
-        TextField.appearance().invalidTextColor = UIColor(hex: "FF4B47")
+        TextField.appearance().invalidBackgroundColor = UIColor(hex: "FFD7D7")
+        TextField.appearance().invalidBorderColor = UIColor(hex: "EC3031")
+        TextField.appearance().invalidTextColor = UIColor(hex: "EC3031")
     }
 }
-
-
-
-
