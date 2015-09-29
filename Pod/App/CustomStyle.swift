@@ -1,7 +1,7 @@
 import Foundation
 import Hex
 
-struct CustomStyle {
+/*struct CustomStyle {
     static func applyStyle() {
         TextField.appearance().setBorderWidth(2)
         TextField.appearance().setCornerRadius(10)
@@ -30,3 +30,4 @@ struct CustomStyle {
         TextField.appearance().setAccessoryButtonColor(UIColor(hex: "70D7FF"))
     }
 }
+*/

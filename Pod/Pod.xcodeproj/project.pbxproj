@@ -7,49 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1401CB7F1BB55C0000A7342B /* TextFieldClearButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1401CB7E1BB55C0000A7342B /* TextFieldClearButton.m */; settings = {ASSET_TAGS = (); }; };
 		142A42281B2312B600AFE37D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142A42271B2312B600AFE37D /* AppDelegate.swift */; };
 		142A422A1B2312B600AFE37D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 142A42291B2312B600AFE37D /* Images.xcassets */; };
 		142A422D1B2312B600AFE37D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142A422B1B2312B600AFE37D /* LaunchScreen.xib */; };
 		1439B5C91BB8039900140D24 /* CustomStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1439B5C81BB8039900140D24 /* CustomStyle.swift */; settings = {ASSET_TAGS = (); }; };
-		144C4AB21BB53F7E00919747 /* TextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 144C4AAF1BB53F7E00919747 /* TextField.m */; settings = {ASSET_TAGS = (); }; };
-		144C4AB31BB53F7E00919747 /* TextFieldTypeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 144C4AB11BB53F7E00919747 /* TextFieldTypeManager.m */; settings = {ASSET_TAGS = (); }; };
-		144C4AB41BB53F8B00919747 /* TextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 144C4AAF1BB53F7E00919747 /* TextField.m */; settings = {ASSET_TAGS = (); }; };
-		144C4AB51BB53F8D00919747 /* TextFieldTypeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 144C4AB11BB53F7E00919747 /* TextFieldTypeManager.m */; settings = {ASSET_TAGS = (); }; };
+		14925F141BBA84570010D030 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14925F131BBA84570010D030 /* TextField.swift */; settings = {ASSET_TAGS = (); }; };
+		14925F151BBA84570010D030 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14925F131BBA84570010D030 /* TextField.swift */; settings = {ASSET_TAGS = (); }; };
+		14925F171BBA84620010D030 /* TextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14925F161BBA84620010D030 /* TextFieldClearButton.swift */; settings = {ASSET_TAGS = (); }; };
+		14925F181BBA84620010D030 /* TextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14925F161BBA84620010D030 /* TextFieldClearButton.swift */; settings = {ASSET_TAGS = (); }; };
+		14925F1A1BBA846A0010D030 /* TextFieldDefaultStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14925F191BBA846A0010D030 /* TextFieldDefaultStyle.swift */; settings = {ASSET_TAGS = (); }; };
+		14925F1B1BBA846A0010D030 /* TextFieldDefaultStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14925F191BBA846A0010D030 /* TextFieldDefaultStyle.swift */; settings = {ASSET_TAGS = (); }; };
+		14925F1D1BBA847E0010D030 /* TextFieldTypeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14925F1C1BBA847E0010D030 /* TextFieldTypeManager.swift */; settings = {ASSET_TAGS = (); }; };
+		14925F1E1BBA847E0010D030 /* TextFieldTypeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14925F1C1BBA847E0010D030 /* TextFieldTypeManager.swift */; settings = {ASSET_TAGS = (); }; };
 		14A139B41AEFC72B00AD732F /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A139B31AEFC72B00AD732F /* Tests.swift */; };
 		14CA36A81BB540F4004908F1 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CA36A71BB540F4004908F1 /* Controller.swift */; settings = {ASSET_TAGS = (); }; };
 		14CA36A91BB540F4004908F1 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CA36A71BB540F4004908F1 /* Controller.swift */; settings = {ASSET_TAGS = (); }; };
-		14CA36AC1BB543DC004908F1 /* TextFieldDefaultStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CA36AB1BB543DC004908F1 /* TextFieldDefaultStyle.m */; settings = {ASSET_TAGS = (); }; };
-		14CA36AD1BB543DC004908F1 /* TextFieldDefaultStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CA36AB1BB543DC004908F1 /* TextFieldDefaultStyle.m */; settings = {ASSET_TAGS = (); }; };
 		B386CB18F4FFAA15E9F58082 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 311980557A3AECC126A2BABA /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F9211B4AE3C516620E550C9E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 311980557A3AECC126A2BABA /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1401CB7D1BB55C0000A7342B /* TextFieldClearButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldClearButton.h; sourceTree = "<group>"; };
-		1401CB7E1BB55C0000A7342B /* TextFieldClearButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldClearButton.m; sourceTree = "<group>"; };
 		142A42231B2312B600AFE37D /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		142A42261B2312B600AFE37D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		142A42271B2312B600AFE37D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		142A42291B2312B600AFE37D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		142A422C1B2312B600AFE37D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		1439B5C81BB8039900140D24 /* CustomStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomStyle.swift; sourceTree = "<group>"; };
-		144C4AAE1BB53F7E00919747 /* TextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextField.h; sourceTree = "<group>"; };
-		144C4AAF1BB53F7E00919747 /* TextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextField.m; sourceTree = "<group>"; };
-		144C4AB01BB53F7E00919747 /* TextFieldTypeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldTypeManager.h; sourceTree = "<group>"; };
-		144C4AB11BB53F7E00919747 /* TextFieldTypeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldTypeManager.m; sourceTree = "<group>"; };
 		146D72AC1AB782920058798C /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		146D72B11AB782920058798C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		14A139B21AEFC72B00AD732F /* Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Bridging-Header.h"; sourceTree = "<group>"; };
+		14925F131BBA84570010D030 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		14925F161BBA84620010D030 /* TextFieldClearButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldClearButton.swift; sourceTree = "<group>"; };
+		14925F191BBA846A0010D030 /* TextFieldDefaultStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldDefaultStyle.swift; sourceTree = "<group>"; };
+		14925F1C1BBA847E0010D030 /* TextFieldTypeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldTypeManager.swift; sourceTree = "<group>"; };
 		14A139B31AEFC72B00AD732F /* Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		14C136511AB784B200B7B07A /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
 		14C136521AB784B200B7B07A /* CONTRIBUTING.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = CONTRIBUTING.md; path = ../CONTRIBUTING.md; sourceTree = "<group>"; };
 		14C136541AB784B200B7B07A /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = LICENSE.md; path = ../LICENSE.md; sourceTree = "<group>"; };
 		14C136551AB784B200B7B07A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		14CA36A61BB540E0004908F1 /* App-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "App-Bridging-Header.h"; sourceTree = "<group>"; };
 		14CA36A71BB540F4004908F1 /* Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
-		14CA36AA1BB543DC004908F1 /* TextFieldDefaultStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldDefaultStyle.h; sourceTree = "<group>"; };
-		14CA36AB1BB543DC004908F1 /* TextFieldDefaultStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldDefaultStyle.m; sourceTree = "<group>"; };
 		311980557A3AECC126A2BABA /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58390ACCBFD5C4195A9DC419 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C94F45A3EA6ABF137AE874FC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -78,13 +73,12 @@
 		142A42241B2312B600AFE37D /* App */ = {
 			isa = PBXGroup;
 			children = (
-				14CA36A61BB540E0004908F1 /* App-Bridging-Header.h */,
 				142A42271B2312B600AFE37D /* AppDelegate.swift */,
 				1439B5C81BB8039900140D24 /* CustomStyle.swift */,
+				14CA36A71BB540F4004908F1 /* Controller.swift */,
 				142A42291B2312B600AFE37D /* Images.xcassets */,
 				142A422B1B2312B600AFE37D /* LaunchScreen.xib */,
 				142A42251B2312B600AFE37D /* Supporting Files */,
-				14CA36A71BB540F4004908F1 /* Controller.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -101,7 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				14C136501AB7849300B7B07A /* Metadata */,
-				14C1365B1AB784BC00B7B07A /* Source */,
+				14925F121BBA84430010D030 /* Source */,
 				142A42241B2312B600AFE37D /* App */,
 				146D72AF1AB782920058798C /* Tests */,
 				146D72941AB782920058798C /* Products */,
@@ -124,7 +118,6 @@
 		146D72AF1AB782920058798C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				14A139B21AEFC72B00AD732F /* Tests-Bridging-Header.h */,
 				14A139B31AEFC72B00AD732F /* Tests.swift */,
 				146D72B01AB782920058798C /* Supporting Files */,
 			);
@@ -139,6 +132,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		14925F121BBA84430010D030 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				14925F131BBA84570010D030 /* TextField.swift */,
+				14925F161BBA84620010D030 /* TextFieldClearButton.swift */,
+				14925F191BBA846A0010D030 /* TextFieldDefaultStyle.swift */,
+				14925F1C1BBA847E0010D030 /* TextFieldTypeManager.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		14C136501AB7849300B7B07A /* Metadata */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,22 +152,6 @@
 				14C136551AB784B200B7B07A /* README.md */,
 			);
 			name = Metadata;
-			sourceTree = "<group>";
-		};
-		14C1365B1AB784BC00B7B07A /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				144C4AAE1BB53F7E00919747 /* TextField.h */,
-				144C4AAF1BB53F7E00919747 /* TextField.m */,
-				144C4AB01BB53F7E00919747 /* TextFieldTypeManager.h */,
-				144C4AB11BB53F7E00919747 /* TextFieldTypeManager.m */,
-				14CA36AA1BB543DC004908F1 /* TextFieldDefaultStyle.h */,
-				14CA36AB1BB543DC004908F1 /* TextFieldDefaultStyle.m */,
-				1401CB7D1BB55C0000A7342B /* TextFieldClearButton.h */,
-				1401CB7E1BB55C0000A7342B /* TextFieldClearButton.m */,
-			);
-			name = Source;
-			path = ../Source;
 			sourceTree = "<group>";
 		};
 		7FCFC581E42FAEC67DF0F10B /* Pods */ = {
@@ -381,13 +369,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14925F1D1BBA847E0010D030 /* TextFieldTypeManager.swift in Sources */,
 				142A42281B2312B600AFE37D /* AppDelegate.swift in Sources */,
+				14925F1A1BBA846A0010D030 /* TextFieldDefaultStyle.swift in Sources */,
 				1439B5C91BB8039900140D24 /* CustomStyle.swift in Sources */,
-				1401CB7F1BB55C0000A7342B /* TextFieldClearButton.m in Sources */,
-				144C4AB51BB53F8D00919747 /* TextFieldTypeManager.m in Sources */,
-				14CA36AC1BB543DC004908F1 /* TextFieldDefaultStyle.m in Sources */,
-				144C4AB41BB53F8B00919747 /* TextField.m in Sources */,
+				14925F171BBA84620010D030 /* TextFieldClearButton.swift in Sources */,
 				14CA36A81BB540F4004908F1 /* Controller.swift in Sources */,
+				14925F141BBA84570010D030 /* TextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,10 +383,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14925F151BBA84570010D030 /* TextField.swift in Sources */,
+				14925F181BBA84620010D030 /* TextFieldClearButton.swift in Sources */,
 				14A139B41AEFC72B00AD732F /* Tests.swift in Sources */,
-				144C4AB31BB53F7E00919747 /* TextFieldTypeManager.m in Sources */,
-				14CA36AD1BB543DC004908F1 /* TextFieldDefaultStyle.m in Sources */,
-				144C4AB21BB53F7E00919747 /* TextField.m in Sources */,
+				14925F1B1BBA846A0010D030 /* TextFieldDefaultStyle.swift in Sources */,
+				14925F1E1BBA847E0010D030 /* TextFieldTypeManager.swift in Sources */,
 				14CA36A91BB540F4004908F1 /* Controller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,7 +422,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.3lvis.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "App/App-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -450,7 +438,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.3lvis.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "App/App-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -548,7 +535,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bakkenbaeck.labs.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Tests/Tests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -566,7 +552,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bakkenbaeck.labs.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Tests/Tests-Bridging-Header.h";
 			};
 			name = Release;
 		};

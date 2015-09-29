@@ -12,8 +12,8 @@ class Controller: UIViewController {
         textField.inputType = .Email
         textField.placeholder = "Email"
 
-        let validator = Validation()
-        validator.minimumLength = NSNumber(integer: 1)
+        var validator = Validation()
+        validator.minimumLength = 1
         let inputValidator = InputValidator(validation: validator)
         textField.inputValidator = inputValidator
 
@@ -25,15 +25,15 @@ class Controller: UIViewController {
         var previousFrame = self.emailTextField.frame
         previousFrame.origin.y = self.emailTextField.frame.maxY + margin
         let textField = TextField(frame: previousFrame)
-        textField.inputType = .Number
+        textField.inputType = .Integer
         textField.formatter = CardNumberFormatter()
         textField.placeholder = "Card Number"
 
-        let validator = Validation()
+        var validator = Validation()
         let count = "1234 5678 1234 5678".characters.count
-        validator.maximumLength = NSNumber(integer: count)
-        validator.minimumLength = NSNumber(integer: 1)
-        let inputValidator = NumberInputValidator(validation: validator)
+        validator.maximumLength = count
+        validator.minimumLength = 1
+        let inputValidator = IntegerInputValidator(validation: validator)
         textField.inputValidator = inputValidator
 
         return textField
@@ -45,15 +45,15 @@ class Controller: UIViewController {
         previousFrame.origin.y = self.cardNumberTextField.frame.maxY + margin
         previousFrame.size.width = previousFrame.size.width * 0.6
         let textField = TextField(frame: previousFrame)
-        textField.inputType = .Number
+        textField.inputType = .Integer
         textField.formatter = CardExpirationDateFormatter()
         textField.placeholder = "Expiration Date (MM/YY)"
 
-        let validator = Validation()
+        var validator = Validation()
         let count = "MM/YY".characters.count
-        validator.maximumLength = NSNumber(integer: count)
-        validator.minimumLength = NSNumber(integer: 1)
-        let inputValidator = NumberInputValidator(validation: validator)
+        validator.maximumLength = count
+        validator.minimumLength = 1
+        let inputValidator = IntegerInputValidator(validation: validator)
         textField.inputValidator = inputValidator
 
         return textField
@@ -66,14 +66,14 @@ class Controller: UIViewController {
         previousFrame.origin.y = self.cardNumberTextField.frame.maxY + margin
         previousFrame.size.width = previousFrame.size.width * 0.35
         let textField = TextField(frame: previousFrame)
-        textField.inputType = .Number
+        textField.inputType = .Integer
         textField.placeholder = "CVC"
 
-        let validator = Validation()
+        var validator = Validation()
         let count = "CVC".characters.count
-        validator.maximumLength = NSNumber(integer: count)
-        validator.minimumLength = NSNumber(integer: 1)
-        let inputValidator = NumberInputValidator(validation: validator)
+        validator.maximumLength = count
+        validator.minimumLength = 1
+        let inputValidator = IntegerInputValidator(validation: validator)
         textField.inputValidator = inputValidator
 
         return textField
