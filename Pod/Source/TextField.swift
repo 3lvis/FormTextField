@@ -181,6 +181,8 @@ public class TextField: UITextField, UITextFieldDelegate {
     // MARK: UITextFieldDelegate
 
     public func textFieldDidBeginEditing(textField: UITextField) {
+        self.rightView = self.customClearButton
+
         self.updateActive(true)
     }
 

@@ -3,14 +3,16 @@ import Hex
 
 struct CustomStyle {
     static func apply() {
-        TextField.appearance().borderWidth = 2
-        TextField.appearance().cornerRadius = 10
-        TextField.appearance().accessoryButtonColor = UIColor(hex: "70D7FF")
-        TextField.appearance().font = UIFont(name: "AvenirNext-Regular", size: 15)!
-
         let enabledBackgroundColor = UIColor.whiteColor()
         let enabledBorderColor = UIColor(hex: "DFDFDF")
         let enabledTextColor = UIColor(hex: "455C73")
+        let activeBorderColor = UIColor(hex: "70D7FF")
+
+        TextField.appearance().borderWidth = 2
+        TextField.appearance().cornerRadius = 10
+        TextField.appearance().accessoryButtonColor = activeBorderColor
+        TextField.appearance().font = UIFont(name: "AvenirNext-Regular", size: 15)!
+
         TextField.appearance().enabledBackgroundColor = enabledBackgroundColor
         TextField.appearance().enabledBorderColor = enabledBorderColor
         TextField.appearance().enabledTextColor = enabledTextColor
@@ -20,7 +22,7 @@ struct CustomStyle {
         TextField.appearance().validTextColor = enabledTextColor
 
         TextField.appearance().activeBackgroundColor = enabledBackgroundColor
-        TextField.appearance().activeBorderColor = UIColor(hex: "70D7FF")
+        TextField.appearance().activeBorderColor = activeBorderColor
         TextField.appearance().activeTextColor = enabledTextColor
 
         TextField.appearance().inactiveBackgroundColor = enabledBackgroundColor
