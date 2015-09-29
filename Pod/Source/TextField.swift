@@ -94,7 +94,56 @@ public class TextField: UITextField, UITextFieldDelegate {
         }
     }
 
-    // MARK: Public 
+    func currentRange() -> NSRange {
+        let startOffset = self.offsetFromPosition(self.beginningOfDocument, toPosition: self.selectedTextRange!.start)
+        let endOffset = self.offsetFromPosition(self.beginningOfDocument, toPosition: self.selectedTextRange!.end)
+        let range = NSRange(location: startOffset, length: endOffset - startOffset)
+
+        return range
+    }
+
+    func updateText(newValue: String?) {
+        let text = newValue ?? ""
+
+        if self.formatter != nil {
+            let textRange = self.selectedTextRange
+            let newRawText = self.formatter!.formatString(text, reverse: false)
+            let range = self.currentRange()
+
+            print("newRaw: \(newRawText)")
+
+            let didAddText = (newRawText.characters.count > (self.text ?? "").characters.count)
+            let didFormat = (newRawText.characters.count > (self.text ?? "").characters.count)
+            let cursorAtStart = (self.selectedTextRange!.start == self.positionFromPosition(self.beginningOfDocument, offset: 1))
+            let cursorAtEnd = (newRawText.characters.count == range.location)
+            if (didAddText && cursorAtStart) {
+                print("add text + cursor at start")
+
+                self.text = newRawText
+                self.selectedTextRange = textRange
+            } else if (didAddText && didFormat) {
+                if cursorAtEnd {
+                    print("add text + format || cursor at end")
+
+                    self.text = newRawText
+                } else {
+                    print("add text + format || cursor at middle")
+
+                    super.text = newRawText
+                }
+            } else {
+                print("else")
+
+                super.text = newRawText
+                self.selectedTextRange = textRange
+            }
+            print(" ")
+        } else {
+            self.text = text
+        }
+    }
+
+    // MARK: Public
 
     func updateActive(active: Bool) {
         self.rightView = self.customClearButton
@@ -160,22 +209,21 @@ public class TextField: UITextField, UITextFieldDelegate {
             return true
         }
 
+        var valid = true
         if self.inputValidator != nil {
-            return self.inputValidator!.validateReplacementString(string, usingFullString: self.text, inRange: range)
+            valid = self.inputValidator!.validateReplacementString(string, usingFullString: self.text, inRange: range)
         }
 
-        return true
+        return valid
     }
 
     // MARK: Notification
 
     func textFieldDidUpdate(textField: TextField) {
+        self.updateText(self.text)
+
         if self.valid == false {
             self.updateValid(true)
-        }
-
-        if self.formatter != nil {
-            self.text = self.formatter!.formatString(self.text ?? "", reverse: false)
         }
 
         self.textFieldDelegate?.didUpdateWithText(self.text, textField: self)
