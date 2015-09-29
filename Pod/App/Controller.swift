@@ -12,9 +12,9 @@ class Controller: UIViewController {
         textField.inputType = .Email
         textField.placeholder = "Email"
 
-        var validator = Validation()
-        validator.minimumLength = 1
-        let inputValidator = InputValidator(validation: validator)
+        var validation = Validation()
+        validation.minimumLength = 1
+        let inputValidator = InputValidator(validation: validation)
         textField.inputValidator = inputValidator
 
         return textField
@@ -29,11 +29,11 @@ class Controller: UIViewController {
         textField.formatter = CardNumberFormatter()
         textField.placeholder = "Card Number"
 
-        var validator = Validation()
+        var validation = Validation()
         let count = "1234 5678 1234 5678".characters.count
-        validator.maximumLength = count
-        validator.minimumLength = 1
-        let inputValidator = IntegerInputValidator(validation: validator)
+        validation.maximumLength = count
+        validation.minimumLength = 1
+        let inputValidator = IntegerInputValidator(validation: validation)
         textField.inputValidator = inputValidator
 
         return textField
@@ -49,11 +49,11 @@ class Controller: UIViewController {
         textField.formatter = CardExpirationDateFormatter()
         textField.placeholder = "Expiration Date (MM/YY)"
 
-        var validator = Validation()
+        var validation = Validation()
         let count = "MM/YY".characters.count
-        validator.maximumLength = count
-        validator.minimumLength = 1
-        let inputValidator = IntegerInputValidator(validation: validator)
+        validation.maximumLength = count
+        validation.minimumLength = 1
+        let inputValidator = IntegerInputValidator(validation: validation)
         textField.inputValidator = inputValidator
 
         return textField
@@ -69,11 +69,11 @@ class Controller: UIViewController {
         textField.inputType = .Integer
         textField.placeholder = "CVC"
 
-        var validator = Validation()
+        var validation = Validation()
         let count = "CVC".characters.count
-        validator.maximumLength = count
-        validator.minimumLength = 1
-        let inputValidator = IntegerInputValidator(validation: validator)
+        validation.maximumLength = count
+        validation.minimumLength = 1
+        let inputValidator = IntegerInputValidator(validation: validation)
         textField.inputValidator = inputValidator
 
         return textField
