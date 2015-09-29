@@ -197,7 +197,7 @@ public class TextField: UITextField, UITextFieldDelegate {
 
         var valid = true
         if self.inputValidator != nil {
-            valid = self.inputValidator!.validateReplacementString(string, usingFullString: self.text, inRange: range)
+            valid = self.inputValidator!.validateReplacementString(string, usingFullString: self.text, inRange: range, exhaustive: false)
         }
 
         return valid
