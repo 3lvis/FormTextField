@@ -1,33 +1,36 @@
 import Foundation
 import Hex
 
-/*struct CustomStyle {
-    static func applyStyle() {
-        TextField.appearance().setBorderWidth(2)
-        TextField.appearance().setCornerRadius(10)
-        TextField.appearance().setCustomFont(UIFont(name: "AvenirNext-Regular", size: 15))
+struct CustomStyle {
+    static func apply() {
+        TextField.appearance().borderWidth = 2
+        TextField.appearance().cornerRadius = 10
+        TextField.appearance().customFont = UIFont(name: "AvenirNext-Regular", size: 15)!
 
-        TextField.appearance().setActiveBackgroundColor(UIColor.whiteColor())
-        TextField.appearance().setActiveBorderColor(UIColor(hex: "70D7FF"))
+        TextField.appearance().activeBackgroundColor = UIColor.whiteColor()
+        TextField.appearance().activeBorderColor = UIColor(hex: "70D7FF")
 
-        TextField.appearance().setValidBackgroundColor(UIColor.whiteColor())
-        TextField.appearance().setValidBorderColor(UIColor(hex: "70D7FF"))
+        TextField.appearance().validBackgroundColor = UIColor.whiteColor()
+        TextField.appearance().validBorderColor = UIColor(hex: "70D7FF")
 
-        TextField.appearance().setEnabledBackgroundColor(UIColor.whiteColor())
-        TextField.appearance().setEnabledBorderColor(UIColor(hex: "DFDFDF"))
-        TextField.appearance().setEnabledTextColor(UIColor(hex: "455C73"))
+        TextField.appearance().enabledBackgroundColor = UIColor.whiteColor()
+        TextField.appearance().enabledBorderColor = UIColor(hex: "DFDFDF")
+        TextField.appearance().enabledTextColor = UIColor(hex: "455C73")
 
-        TextField.appearance().setDisabledBackgroundColor(UIColor(hex: "DFDFDF"))
-        TextField.appearance().setDisabledBorderColor(UIColor(hex: "DFDFDF"))
-        TextField.appearance().setDisabledTextColor(UIColor.grayColor())
+        TextField.appearance().disabledBackgroundColor = UIColor(hex: "DFDFDF")
+        TextField.appearance().disabledBorderColor = UIColor(hex: "DFDFDF")
+        TextField.appearance().disabledTextColor = UIColor.grayColor()
 
-        TextField.appearance().setInactiveBackgroundColor(UIColor.whiteColor())
-        TextField.appearance().setInactiveBorderColor(UIColor(hex: "DFDFDF"))
+        TextField.appearance().inactiveBackgroundColor = UIColor.whiteColor()
+        TextField.appearance().inactiveBorderColor = UIColor(hex: "DFDFDF")
 
-        TextField.appearance().setInvalidBackgroundColor(UIColor(hex: "FFC9C8"))
-        TextField.appearance().setInvalidBorderColor(UIColor(hex: "FF4B47"))
+        TextField.appearance().invalidBackgroundColor = UIColor(hex: "FFC9C8")
+        TextField.appearance().invalidBorderColor = UIColor(hex: "FF4B47")
 
-        TextField.appearance().setAccessoryButtonColor(UIColor(hex: "70D7FF"))
+        TextField.appearance().accessoryButtonColor = UIColor(hex: "70D7FF")
     }
 }
-*/
+
+
+
+

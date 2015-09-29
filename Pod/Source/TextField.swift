@@ -1,4 +1,4 @@
-import UIKit
+ import UIKit
 import InputValidator
 import Formatter
 
@@ -14,63 +14,20 @@ public protocol TextFieldDelegate: class {
 }
 
 public class TextField: UITextField, UITextFieldDelegate {
-    dynamic public var customFont: UIFont = UIFont.systemFontOfSize(16) {
-        didSet {
-            self.font = font
-        }
-    }
-    dynamic public var borderWidth: CGFloat = 0 {
-        didSet {
-            self.layer.borderWidth = borderWidth
-        }
-    }
-    dynamic public var borderColor: UIColor = UIColor.redColor() {
-        didSet {
-            self.layer.borderColor = borderColor.CGColor
-        }
-    }
-    dynamic public var cornerRadius: CGFloat = 0 {
-        didSet {
-            self.layer.cornerRadius = cornerRadius
-        }
-    }
-
+    dynamic public var customFont: UIFont = UIFont.systemFontOfSize(16) { didSet { self.font = font } }
+    dynamic public var borderWidth: CGFloat = 0 { didSet { self.layer.borderWidth = borderWidth } }
+    dynamic public var borderColor: UIColor = UIColor.redColor() { didSet { self.layer.borderColor = borderColor.CGColor } }
+    dynamic public var cornerRadius: CGFloat = 0 { didSet { self.layer.cornerRadius = cornerRadius } }
     dynamic public var activeBackgroundColor: UIColor = UIColor.redColor()
     dynamic public var activeBorderColor: UIColor = UIColor.redColor()
     dynamic public var inactiveBackgroundColor: UIColor = UIColor.redColor()
     dynamic public var inactiveBorderColor: UIColor = UIColor.redColor()
-
-    dynamic public var enabledBackgroundColor: UIColor = UIColor.redColor() {
-        didSet {
-            self.updateEnabled(self.enabled)
-        }
-    }
-    dynamic public var enabledBorderColor: UIColor = UIColor.redColor() {
-        didSet {
-            self.updateEnabled(self.enabled)
-        }
-    }
-    dynamic public var enabledTextColor: UIColor = UIColor.redColor() {
-        didSet {
-            self.updateEnabled(self.enabled)
-        }
-    }
-    dynamic public var disabledBackgroundColor: UIColor = UIColor.redColor() {
-        didSet {
-            self.updateEnabled(self.enabled)
-        }
-    }
-    dynamic public var disabledBorderColor: UIColor = UIColor.redColor() {
-        didSet {
-            self.updateEnabled(self.enabled)
-        }
-    }
-    dynamic public var disabledTextColor: UIColor = UIColor.redColor() {
-        didSet {
-            self.updateEnabled(self.enabled)
-        }
-    }
-
+    dynamic public var enabledBackgroundColor: UIColor = UIColor.redColor() { didSet { self.updateEnabled(self.enabled) } }
+    dynamic public var enabledBorderColor: UIColor = UIColor.redColor() { didSet { self.updateEnabled(self.enabled) } }
+    dynamic public var enabledTextColor: UIColor = UIColor.redColor() { didSet { self.updateEnabled(self.enabled) } }
+    dynamic public var disabledBackgroundColor: UIColor = UIColor.redColor() { didSet { self.updateEnabled(self.enabled) } }
+    dynamic public var disabledBorderColor: UIColor = UIColor.redColor() { didSet { self.updateEnabled(self.enabled) } }
+    dynamic public var disabledTextColor: UIColor = UIColor.redColor() { didSet { self.updateEnabled(self.enabled) } }
     dynamic public var validBackgroundColor: UIColor = UIColor.redColor()
     dynamic public var validBorderColor: UIColor = UIColor.redColor()
     dynamic public var invalidBackgroundColor: UIColor = UIColor.redColor()
@@ -116,14 +73,6 @@ public class TextField: UITextField, UITextFieldDelegate {
 
         return button
     }()
-
-    override public var text: String? {
-        didSet {
-            if self.formatter != nil {
-                self.text = self.formatter!.formatString(text ?? "", reverse: false)
-            }
-        }
-    }
 
     override public var enabled: Bool {
         didSet {
@@ -223,6 +172,10 @@ public class TextField: UITextField, UITextFieldDelegate {
     func textFieldDidUpdate(textField: TextField) {
         if self.valid == false {
             self.updateValid(true)
+        }
+
+        if self.formatter != nil {
+            self.text = self.formatter!.formatString(self.text ?? "", reverse: false)
         }
 
         self.textFieldDelegate?.didUpdateWithText(self.text, textField: self)
