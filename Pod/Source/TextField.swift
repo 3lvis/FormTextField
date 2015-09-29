@@ -14,9 +14,7 @@ public protocol TextFieldDelegate: class {
 }
 
 public class TextField: UITextField, UITextFieldDelegate {
-    dynamic public var customFont: UIFont = UIFont.systemFontOfSize(16) { didSet { self.font = font } }
     dynamic public var borderWidth: CGFloat = 0 { didSet { self.layer.borderWidth = borderWidth } }
-    dynamic public var borderColor: UIColor = UIColor.redColor() { didSet { self.layer.borderColor = borderColor.CGColor } }
     dynamic public var cornerRadius: CGFloat = 0 { didSet { self.layer.cornerRadius = cornerRadius } }
     dynamic public var activeBackgroundColor: UIColor = UIColor.redColor()
     dynamic public var activeBorderColor: UIColor = UIColor.redColor()
@@ -166,6 +164,8 @@ public class TextField: UITextField, UITextFieldDelegate {
             isValid = inputValidator.validateString(self.text ?? "")
         }
 
+        self.valid = isValid
+
         return isValid
     }
 
@@ -198,7 +198,7 @@ public class TextField: UITextField, UITextFieldDelegate {
         self.updateText(self.text)
 
         if self.valid == false {
-            self.updateValid(true)
+            self.valid = true
         }
 
         self.textFieldDelegate?.didUpdateWithText(self.text, textField: self)

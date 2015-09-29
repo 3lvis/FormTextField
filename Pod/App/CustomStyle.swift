@@ -5,7 +5,8 @@ struct CustomStyle {
     static func apply() {
         TextField.appearance().borderWidth = 2
         TextField.appearance().cornerRadius = 10
-        TextField.appearance().customFont = UIFont(name: "AvenirNext-Regular", size: 15)!
+        TextField.appearance().accessoryButtonColor = UIColor(hex: "70D7FF")
+        TextField.appearance().font = UIFont(name: "AvenirNext-Regular", size: 15)!
 
         TextField.appearance().activeBackgroundColor = UIColor.whiteColor()
         TextField.appearance().activeBorderColor = UIColor(hex: "70D7FF")
@@ -26,8 +27,6 @@ struct CustomStyle {
 
         TextField.appearance().invalidBackgroundColor = UIColor(hex: "FFC9C8")
         TextField.appearance().invalidBorderColor = UIColor(hex: "FF4B47")
-
-        TextField.appearance().accessoryButtonColor = UIColor(hex: "70D7FF")
     }
 }
 
