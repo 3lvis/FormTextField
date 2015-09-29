@@ -18,9 +18,9 @@ lazy var emailTextField: TextField = {
     textField.inputType = .Email
     textField.placeholder = "Email"
 
-    let validator = Validation()
-    validator.minimumLength = NSNumber(integer: 1)
-    let inputValidator = InputValidator(validation: validator)
+    let validation = Validation()
+    validation.required = true
+    let inputValidator = InputValidator(validation: validation)
     textField.inputValidator = inputValidator
 
     return textField
@@ -28,15 +28,14 @@ lazy var emailTextField: TextField = {
 
 lazy var cardNumberTextField: TextField = {
     let textField = TextField(frame: frame)
-    textField.inputType = .Number
+    textField.inputType = .Integer
     textField.formatter = CardNumberFormatter()
     textField.placeholder = "Card Number"
 
-    let validator = Validation()
-    let count = "1234 5678 1234 5678".characters.count
-    validator.maximumLength = NSNumber(integer: count)
-    validator.required = true
-    let inputValidator = NumberInputValidator(validation: validator)
+    let validation = Validation()
+    validation.maximumLength = "1234 5678 1234 5678".characters.count
+    validation.required = true
+    let inputValidator = NumberInputValidator(validation: validation)
     textField.inputValidator = inputValidator
 
     return textField
@@ -44,15 +43,14 @@ lazy var cardNumberTextField: TextField = {
 
 lazy var cardExpirationDateTextField: TextField = {
     let textField = TextField(frame: frame)
-    textField.inputType = .Number
+    textField.inputType = .Integer
     textField.formatter = CardExpirationDateFormatter()
     textField.placeholder = "Expiration Date (MM/YY)"
 
-    let validator = Validation()
-    let count = "MM/YY".characters.count
-    validator.maximumLength = NSNumber(integer: count)
-    validator.required = true
-    let inputValidator = NumberInputValidator(validation: validator)
+    let validation = Validation()
+    validation.maximumLength = "MM/YY".characters.count
+    validation.required = true
+    let inputValidator = NumberInputValidator(validation: validation)
     textField.inputValidator = inputValidator
 
     return textField
@@ -63,11 +61,10 @@ lazy var cvcTextField: TextField = {
     textField.inputType = .Number
     textField.placeholder = "CVC"
 
-    let validator = Validation()
-    let count = "CVC".characters.count
-    validator.maximumLength = NSNumber(integer: count)
-    validator.required = true
-    let inputValidator = NumberInputValidator(validation: validator)
+    let validation = Validation()
+    validation.maximumLength = "CVC".characters.count
+    validation.required = true
+    let inputValidator = NumberInputValidator(validation: validation)
     textField.inputValidator = inputValidator
 
     return textField
