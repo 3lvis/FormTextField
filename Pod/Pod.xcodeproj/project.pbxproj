@@ -14,14 +14,10 @@
 		14A139B41AEFC72B00AD732F /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A139B31AEFC72B00AD732F /* Tests.swift */; };
 		14CA36A81BB540F4004908F1 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CA36A71BB540F4004908F1 /* Controller.swift */; settings = {ASSET_TAGS = (); }; };
 		14CA36A91BB540F4004908F1 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CA36A71BB540F4004908F1 /* Controller.swift */; settings = {ASSET_TAGS = (); }; };
-		14F4442A1BBBB09C006B19BB /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F444261BBBB09C006B19BB /* TextField.swift */; settings = {ASSET_TAGS = (); }; };
-		14F4442B1BBBB09C006B19BB /* TextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F444271BBBB09C006B19BB /* TextFieldClearButton.swift */; settings = {ASSET_TAGS = (); }; };
-		14F4442C1BBBB09C006B19BB /* TextFieldDefaultStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F444281BBBB09C006B19BB /* TextFieldDefaultStyle.swift */; settings = {ASSET_TAGS = (); }; };
-		14F4442D1BBBB09C006B19BB /* TextFieldTypeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F444291BBBB09C006B19BB /* TextFieldTypeManager.swift */; settings = {ASSET_TAGS = (); }; };
-		14F4442E1BBBB0A2006B19BB /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F444261BBBB09C006B19BB /* TextField.swift */; settings = {ASSET_TAGS = (); }; };
-		14F4442F1BBBB0A4006B19BB /* TextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F444271BBBB09C006B19BB /* TextFieldClearButton.swift */; settings = {ASSET_TAGS = (); }; };
-		14F444301BBBB0A7006B19BB /* TextFieldDefaultStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F444281BBBB09C006B19BB /* TextFieldDefaultStyle.swift */; settings = {ASSET_TAGS = (); }; };
-		14F444311BBBB0AA006B19BB /* TextFieldTypeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F444291BBBB09C006B19BB /* TextFieldTypeManager.swift */; settings = {ASSET_TAGS = (); }; };
+		14EAFEF81BBBC5BA00A36B59 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EAFEF41BBBC5BA00A36B59 /* TextField.swift */; settings = {ASSET_TAGS = (); }; };
+		14EAFEF91BBBC5BA00A36B59 /* TextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EAFEF51BBBC5BA00A36B59 /* TextFieldClearButton.swift */; settings = {ASSET_TAGS = (); }; };
+		14EAFEFA1BBBC5BA00A36B59 /* TextFieldDefaultStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EAFEF61BBBC5BA00A36B59 /* TextFieldDefaultStyle.swift */; settings = {ASSET_TAGS = (); }; };
+		14EAFEFB1BBBC5BA00A36B59 /* TextFieldTypeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EAFEF71BBBC5BA00A36B59 /* TextFieldTypeManager.swift */; settings = {ASSET_TAGS = (); }; };
 		B386CB18F4FFAA15E9F58082 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 311980557A3AECC126A2BABA /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F9211B4AE3C516620E550C9E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 311980557A3AECC126A2BABA /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -41,10 +37,10 @@
 		14C136541AB784B200B7B07A /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = LICENSE.md; path = ../LICENSE.md; sourceTree = "<group>"; };
 		14C136551AB784B200B7B07A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		14CA36A71BB540F4004908F1 /* Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
-		14F444261BBBB09C006B19BB /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
-		14F444271BBBB09C006B19BB /* TextFieldClearButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldClearButton.swift; sourceTree = "<group>"; };
-		14F444281BBBB09C006B19BB /* TextFieldDefaultStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldDefaultStyle.swift; sourceTree = "<group>"; };
-		14F444291BBBB09C006B19BB /* TextFieldTypeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldTypeManager.swift; sourceTree = "<group>"; };
+		14EAFEF41BBBC5BA00A36B59 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		14EAFEF51BBBC5BA00A36B59 /* TextFieldClearButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldClearButton.swift; sourceTree = "<group>"; };
+		14EAFEF61BBBC5BA00A36B59 /* TextFieldDefaultStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldDefaultStyle.swift; sourceTree = "<group>"; };
+		14EAFEF71BBBC5BA00A36B59 /* TextFieldTypeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldTypeManager.swift; sourceTree = "<group>"; };
 		311980557A3AECC126A2BABA /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58390ACCBFD5C4195A9DC419 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C94F45A3EA6ABF137AE874FC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -95,7 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				14C136501AB7849300B7B07A /* Metadata */,
-				14F444251BBBB09C006B19BB /* Source */,
+				14EAFEF31BBBC5BA00A36B59 /* Source */,
 				142A42241B2312B600AFE37D /* App */,
 				146D72AF1AB782920058798C /* Tests */,
 				146D72941AB782920058798C /* Products */,
@@ -143,15 +139,16 @@
 			name = Metadata;
 			sourceTree = "<group>";
 		};
-		14F444251BBBB09C006B19BB /* Source */ = {
+		14EAFEF31BBBC5BA00A36B59 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				14F444261BBBB09C006B19BB /* TextField.swift */,
-				14F444271BBBB09C006B19BB /* TextFieldClearButton.swift */,
-				14F444281BBBB09C006B19BB /* TextFieldDefaultStyle.swift */,
-				14F444291BBBB09C006B19BB /* TextFieldTypeManager.swift */,
+				14EAFEF41BBBC5BA00A36B59 /* TextField.swift */,
+				14EAFEF51BBBC5BA00A36B59 /* TextFieldClearButton.swift */,
+				14EAFEF61BBBC5BA00A36B59 /* TextFieldDefaultStyle.swift */,
+				14EAFEF71BBBC5BA00A36B59 /* TextFieldTypeManager.swift */,
 			);
-			path = Source;
+			name = Source;
+			path = ../Source;
 			sourceTree = "<group>";
 		};
 		7FCFC581E42FAEC67DF0F10B /* Pods */ = {
@@ -370,12 +367,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				142A42281B2312B600AFE37D /* AppDelegate.swift in Sources */,
-				14F4442C1BBBB09C006B19BB /* TextFieldDefaultStyle.swift in Sources */,
+				14EAFEFA1BBBC5BA00A36B59 /* TextFieldDefaultStyle.swift in Sources */,
 				1439B5C91BB8039900140D24 /* CustomStyle.swift in Sources */,
-				14F4442B1BBBB09C006B19BB /* TextFieldClearButton.swift in Sources */,
+				14EAFEF91BBBC5BA00A36B59 /* TextFieldClearButton.swift in Sources */,
 				14CA36A81BB540F4004908F1 /* Controller.swift in Sources */,
-				14F4442A1BBBB09C006B19BB /* TextField.swift in Sources */,
-				14F4442D1BBBB09C006B19BB /* TextFieldTypeManager.swift in Sources */,
+				14EAFEF81BBBC5BA00A36B59 /* TextField.swift in Sources */,
+				14EAFEFB1BBBC5BA00A36B59 /* TextFieldTypeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,12 +380,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14F4442E1BBBB0A2006B19BB /* TextField.swift in Sources */,
-				14F4442F1BBBB0A4006B19BB /* TextFieldClearButton.swift in Sources */,
 				14A139B41AEFC72B00AD732F /* Tests.swift in Sources */,
-				14F444301BBBB0A7006B19BB /* TextFieldDefaultStyle.swift in Sources */,
 				14CA36A91BB540F4004908F1 /* Controller.swift in Sources */,
-				14F444311BBBB0AA006B19BB /* TextFieldTypeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -50,7 +50,7 @@ public class TextField: UITextField, UITextFieldDelegate {
     static let AccessoryButtonWidth = 30.0
     static let AccessoryButtonHeight = 20.0
 
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         self.inputType = .Default
 
         super.init(frame: frame)
