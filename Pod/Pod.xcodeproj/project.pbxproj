@@ -7,14 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		142286F31BBB553B0033CE4C /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142286EF1BBB553B0033CE4C /* TextField.swift */; settings = {ASSET_TAGS = (); }; };
-		142286F41BBB553B0033CE4C /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142286EF1BBB553B0033CE4C /* TextField.swift */; settings = {ASSET_TAGS = (); }; };
-		142286F51BBB553B0033CE4C /* TextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142286F01BBB553B0033CE4C /* TextFieldClearButton.swift */; settings = {ASSET_TAGS = (); }; };
-		142286F61BBB553B0033CE4C /* TextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142286F01BBB553B0033CE4C /* TextFieldClearButton.swift */; settings = {ASSET_TAGS = (); }; };
-		142286F71BBB553B0033CE4C /* TextFieldDefaultStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142286F11BBB553B0033CE4C /* TextFieldDefaultStyle.swift */; settings = {ASSET_TAGS = (); }; };
-		142286F81BBB553B0033CE4C /* TextFieldDefaultStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142286F11BBB553B0033CE4C /* TextFieldDefaultStyle.swift */; settings = {ASSET_TAGS = (); }; };
-		142286F91BBB553B0033CE4C /* TextFieldTypeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142286F21BBB553B0033CE4C /* TextFieldTypeManager.swift */; settings = {ASSET_TAGS = (); }; };
-		142286FA1BBB553B0033CE4C /* TextFieldTypeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142286F21BBB553B0033CE4C /* TextFieldTypeManager.swift */; settings = {ASSET_TAGS = (); }; };
 		142A42281B2312B600AFE37D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142A42271B2312B600AFE37D /* AppDelegate.swift */; };
 		142A422A1B2312B600AFE37D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 142A42291B2312B600AFE37D /* Images.xcassets */; };
 		142A422D1B2312B600AFE37D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142A422B1B2312B600AFE37D /* LaunchScreen.xib */; };
@@ -22,15 +14,19 @@
 		14A139B41AEFC72B00AD732F /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A139B31AEFC72B00AD732F /* Tests.swift */; };
 		14CA36A81BB540F4004908F1 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CA36A71BB540F4004908F1 /* Controller.swift */; settings = {ASSET_TAGS = (); }; };
 		14CA36A91BB540F4004908F1 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CA36A71BB540F4004908F1 /* Controller.swift */; settings = {ASSET_TAGS = (); }; };
+		14F4442A1BBBB09C006B19BB /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F444261BBBB09C006B19BB /* TextField.swift */; settings = {ASSET_TAGS = (); }; };
+		14F4442B1BBBB09C006B19BB /* TextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F444271BBBB09C006B19BB /* TextFieldClearButton.swift */; settings = {ASSET_TAGS = (); }; };
+		14F4442C1BBBB09C006B19BB /* TextFieldDefaultStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F444281BBBB09C006B19BB /* TextFieldDefaultStyle.swift */; settings = {ASSET_TAGS = (); }; };
+		14F4442D1BBBB09C006B19BB /* TextFieldTypeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F444291BBBB09C006B19BB /* TextFieldTypeManager.swift */; settings = {ASSET_TAGS = (); }; };
+		14F4442E1BBBB0A2006B19BB /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F444261BBBB09C006B19BB /* TextField.swift */; settings = {ASSET_TAGS = (); }; };
+		14F4442F1BBBB0A4006B19BB /* TextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F444271BBBB09C006B19BB /* TextFieldClearButton.swift */; settings = {ASSET_TAGS = (); }; };
+		14F444301BBBB0A7006B19BB /* TextFieldDefaultStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F444281BBBB09C006B19BB /* TextFieldDefaultStyle.swift */; settings = {ASSET_TAGS = (); }; };
+		14F444311BBBB0AA006B19BB /* TextFieldTypeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F444291BBBB09C006B19BB /* TextFieldTypeManager.swift */; settings = {ASSET_TAGS = (); }; };
 		B386CB18F4FFAA15E9F58082 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 311980557A3AECC126A2BABA /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F9211B4AE3C516620E550C9E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 311980557A3AECC126A2BABA /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		142286EF1BBB553B0033CE4C /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
-		142286F01BBB553B0033CE4C /* TextFieldClearButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldClearButton.swift; sourceTree = "<group>"; };
-		142286F11BBB553B0033CE4C /* TextFieldDefaultStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldDefaultStyle.swift; sourceTree = "<group>"; };
-		142286F21BBB553B0033CE4C /* TextFieldTypeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldTypeManager.swift; sourceTree = "<group>"; };
 		142A42231B2312B600AFE37D /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		142A42261B2312B600AFE37D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		142A42271B2312B600AFE37D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +41,10 @@
 		14C136541AB784B200B7B07A /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = LICENSE.md; path = ../LICENSE.md; sourceTree = "<group>"; };
 		14C136551AB784B200B7B07A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		14CA36A71BB540F4004908F1 /* Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
+		14F444261BBBB09C006B19BB /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		14F444271BBBB09C006B19BB /* TextFieldClearButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldClearButton.swift; sourceTree = "<group>"; };
+		14F444281BBBB09C006B19BB /* TextFieldDefaultStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldDefaultStyle.swift; sourceTree = "<group>"; };
+		14F444291BBBB09C006B19BB /* TextFieldTypeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldTypeManager.swift; sourceTree = "<group>"; };
 		311980557A3AECC126A2BABA /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		58390ACCBFD5C4195A9DC419 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C94F45A3EA6ABF137AE874FC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -70,17 +70,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		142286EE1BBB553B0033CE4C /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				142286EF1BBB553B0033CE4C /* TextField.swift */,
-				142286F01BBB553B0033CE4C /* TextFieldClearButton.swift */,
-				142286F11BBB553B0033CE4C /* TextFieldDefaultStyle.swift */,
-				142286F21BBB553B0033CE4C /* TextFieldTypeManager.swift */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
 		142A42241B2312B600AFE37D /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,7 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				14C136501AB7849300B7B07A /* Metadata */,
-				142286EE1BBB553B0033CE4C /* Source */,
+				14F444251BBBB09C006B19BB /* Source */,
 				142A42241B2312B600AFE37D /* App */,
 				146D72AF1AB782920058798C /* Tests */,
 				146D72941AB782920058798C /* Products */,
@@ -152,6 +141,17 @@
 				14C136551AB784B200B7B07A /* README.md */,
 			);
 			name = Metadata;
+			sourceTree = "<group>";
+		};
+		14F444251BBBB09C006B19BB /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				14F444261BBBB09C006B19BB /* TextField.swift */,
+				14F444271BBBB09C006B19BB /* TextFieldClearButton.swift */,
+				14F444281BBBB09C006B19BB /* TextFieldDefaultStyle.swift */,
+				14F444291BBBB09C006B19BB /* TextFieldTypeManager.swift */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 		7FCFC581E42FAEC67DF0F10B /* Pods */ = {
@@ -370,12 +370,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				142A42281B2312B600AFE37D /* AppDelegate.swift in Sources */,
-				142286F71BBB553B0033CE4C /* TextFieldDefaultStyle.swift in Sources */,
+				14F4442C1BBBB09C006B19BB /* TextFieldDefaultStyle.swift in Sources */,
 				1439B5C91BB8039900140D24 /* CustomStyle.swift in Sources */,
-				142286F51BBB553B0033CE4C /* TextFieldClearButton.swift in Sources */,
+				14F4442B1BBBB09C006B19BB /* TextFieldClearButton.swift in Sources */,
 				14CA36A81BB540F4004908F1 /* Controller.swift in Sources */,
-				142286F31BBB553B0033CE4C /* TextField.swift in Sources */,
-				142286F91BBB553B0033CE4C /* TextFieldTypeManager.swift in Sources */,
+				14F4442A1BBBB09C006B19BB /* TextField.swift in Sources */,
+				14F4442D1BBBB09C006B19BB /* TextFieldTypeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,12 +383,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				142286F41BBB553B0033CE4C /* TextField.swift in Sources */,
-				142286F61BBB553B0033CE4C /* TextFieldClearButton.swift in Sources */,
+				14F4442E1BBBB0A2006B19BB /* TextField.swift in Sources */,
+				14F4442F1BBBB0A4006B19BB /* TextFieldClearButton.swift in Sources */,
 				14A139B41AEFC72B00AD732F /* Tests.swift in Sources */,
-				142286F81BBB553B0033CE4C /* TextFieldDefaultStyle.swift in Sources */,
+				14F444301BBBB0A7006B19BB /* TextFieldDefaultStyle.swift in Sources */,
 				14CA36A91BB540F4004908F1 /* Controller.swift in Sources */,
-				142286FA1BBB553B0033CE4C /* TextFieldTypeManager.swift in Sources */,
+				14F444311BBBB0AA006B19BB /* TextFieldTypeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
