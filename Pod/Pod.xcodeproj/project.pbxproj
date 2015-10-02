@@ -13,7 +13,6 @@
 		1439B5C91BB8039900140D24 /* CustomStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1439B5C81BB8039900140D24 /* CustomStyle.swift */; settings = {ASSET_TAGS = (); }; };
 		14A139B41AEFC72B00AD732F /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A139B31AEFC72B00AD732F /* Tests.swift */; };
 		14CA36A81BB540F4004908F1 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CA36A71BB540F4004908F1 /* Controller.swift */; settings = {ASSET_TAGS = (); }; };
-		14CA36A91BB540F4004908F1 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CA36A71BB540F4004908F1 /* Controller.swift */; settings = {ASSET_TAGS = (); }; };
 		14EAFEF81BBBC5BA00A36B59 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EAFEF41BBBC5BA00A36B59 /* TextField.swift */; settings = {ASSET_TAGS = (); }; };
 		14EAFEF91BBBC5BA00A36B59 /* TextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EAFEF51BBBC5BA00A36B59 /* TextFieldClearButton.swift */; settings = {ASSET_TAGS = (); }; };
 		14EAFEFA1BBBC5BA00A36B59 /* TextFieldDefaultStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EAFEF61BBBC5BA00A36B59 /* TextFieldDefaultStyle.swift */; settings = {ASSET_TAGS = (); }; };
@@ -381,7 +380,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				14A139B41AEFC72B00AD732F /* Tests.swift in Sources */,
-				14CA36A91BB540F4004908F1 /* Controller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,10 +514,7 @@
 			baseConfigurationReference = C94F45A3EA6ABF137AE874FC /* Pods.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -537,10 +532,7 @@
 			baseConfigurationReference = 58390ACCBFD5C4195A9DC419 /* Pods.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bakkenbaeck.labs.$(PRODUCT_NAME:rfc1034identifier)";
