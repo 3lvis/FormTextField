@@ -14,7 +14,7 @@ class Controller: UIViewController {
         textField.placeholder = "Email"
 
         var validation = Validation()
-        validation.minimumLength = 1
+        validation.required = true
         let inputValidator = InputValidator(validation: validation)
         textField.inputValidator = inputValidator
 
@@ -31,9 +31,8 @@ class Controller: UIViewController {
         textField.placeholder = "Card Number"
 
         var validation = Validation()
-        let count = "1234 5678 1234 5678".characters.count
-        validation.maximumLength = count
-        validation.minimumLength = 1
+        validation.maximumLength = "1234 5678 1234 5678".characters.count
+        validation.required = true
         let inputValidator = IntegerInputValidator(validation: validation)
         textField.inputValidator = inputValidator
 
@@ -50,11 +49,7 @@ class Controller: UIViewController {
         textField.formatter = CardExpirationDateFormatter()
         textField.placeholder = "Expiration Date (MM/YY)"
 
-        var validation = Validation()
-        let count = "MM/YY".characters.count
-        validation.maximumLength = count
-        validation.minimumLength = 1
-        let inputValidator = IntegerInputValidator(validation: validation)
+        let inputValidator = CardExpirationDateInputValidator()
         textField.inputValidator = inputValidator
 
         return textField
@@ -71,9 +66,8 @@ class Controller: UIViewController {
         textField.placeholder = "CVC"
 
         var validation = Validation()
-        let count = "CVC".characters.count
-        validation.maximumLength = count
-        validation.minimumLength = 1
+        validation.maximumLength = "CVC".characters.count
+        validation.required = true
         let inputValidator = IntegerInputValidator(validation: validation)
         textField.inputValidator = inputValidator
 
