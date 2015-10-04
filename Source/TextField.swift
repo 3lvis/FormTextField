@@ -42,7 +42,7 @@ public class TextField: UITextField, UITextFieldDelegate {
     dynamic public var invalidBorderColor: UIColor = UIColor.redColor()
     dynamic public var invalidTextColor: UIColor = UIColor.redColor()
 
-    public var inputValidator: Validatable?
+    public var inputValidator: InputValidatable?
     public var formatter: Formattable?
     public weak var textFieldDelegate: TextFieldDelegate?
 
@@ -196,8 +196,8 @@ public class TextField: UITextField, UITextFieldDelegate {
         }
 
         var valid = true
-        if self.inputValidator != nil {
-            valid = self.inputValidator!.validateReplacementString(string, usingFullString: self.text, inRange: range, exhaustive: false)
+        if let inputValidator = self.inputValidator {
+            valid = inputValidator.validateReplacementString(string, fullString: self.text, inRange: range)
         }
 
         return valid
