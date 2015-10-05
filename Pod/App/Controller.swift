@@ -33,7 +33,10 @@ class Controller: UIViewController {
         var validation = Validation()
         validation.maximumLength = "1234 5678 1234 5678".characters.count
         validation.required = true
-        let inputValidator = IntegerInputValidator(validation: validation)
+        let characterSet = NSMutableCharacterSet.decimalDigitCharacterSet()
+        characterSet.addCharactersInString(" ")
+        validation.characterSet = characterSet
+        let inputValidator = InputValidator(validation: validation)
         textField.inputValidator = inputValidator
 
         return textField
@@ -67,8 +70,9 @@ class Controller: UIViewController {
 
         var validation = Validation()
         validation.maximumLength = "CVC".characters.count
-        validation.required = true
-        let inputValidator = IntegerInputValidator(validation: validation)
+        validation.minimumLength = "CVC".characters.count
+        validation.characterSet = NSCharacterSet.decimalDigitCharacterSet()
+        let inputValidator = InputValidator(validation: validation)
         textField.inputValidator = inputValidator
 
         return textField

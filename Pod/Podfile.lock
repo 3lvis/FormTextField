@@ -1,9 +1,9 @@
 PODS:
   - Formatter (0.3.2)
   - Hex (2.0)
-  - InputValidator (0.8.0):
-    - Validation (~> 0.2.0)
-  - Validation (0.2.0)
+  - InputValidator (0.8.2):
+    - Validation (~> 0.3.0)
+  - Validation (0.3.0)
 
 DEPENDENCIES:
   - Formatter
@@ -13,7 +13,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Formatter: 72dd704f3afecc618599b79a44d68b7f78f388ce
   Hex: 1800bd20206b93b10422d2289baa3787698825ad
-  InputValidator: c60e27c33baff89943b1718e940d9a2f50b85a7c
-  Validation: 1010abf2029445d58fa749bccfbd5c2361b61a99
+  InputValidator: 29cd34eb9f3af954318fb8559042af7b8fd47a80
+  Validation: d1ec383698a97d2c7541fa013ddbec239fd0ef41
 
 COCOAPODS: 0.38.2
