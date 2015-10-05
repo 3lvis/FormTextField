@@ -15,6 +15,7 @@ class Controller: UIViewController {
 
         var validation = Validation()
         validation.required = true
+        validation.format = "[\\w._%+-]+@[\\w.-]+\\.\\w{2,}"
         let inputValidator = InputValidator(validation: validation)
         textField.inputValidator = inputValidator
 
@@ -53,7 +54,9 @@ class Controller: UIViewController {
         textField.formatter = CardExpirationDateFormatter()
         textField.placeholder = "Expiration Date (MM/YY)"
 
-        let inputValidator = CardExpirationDateInputValidator()
+        var validation = Validation()
+        validation.required = true
+        let inputValidator = CardExpirationDateInputValidator(validation: validation)
         textField.inputValidator = inputValidator
 
         return textField
