@@ -32,6 +32,7 @@ class Controller: UIViewController {
 
         var validation = Validation()
         validation.maximumLength = "1234 5678 1234 5678".characters.count
+        validation.minimumLength = "1234 5678 1234 5678".characters.count
         validation.required = true
         let characterSet = NSMutableCharacterSet.decimalDigitCharacterSet()
         characterSet.addCharactersInString(" ")
