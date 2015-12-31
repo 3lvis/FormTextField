@@ -1,7 +1,8 @@
-platform :ios, '8.0'
 use_frameworks!
 
-link_with 'App', 'Tests'
+link_with 'iOS'
+
+pod 'FormTextField', path: "."
 
 pod 'InputValidator'
 pod 'Formatter'
