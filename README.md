@@ -1,20 +1,20 @@
-# TextField
+# FormTextField
 
-This a TextField subclass that supports styling for valid / invalid just using a boolean, formatters so you can easily format for example credit card numbers, phone numbers and so on. It supports input validators so you can limit the contents of a UITextField to maximum_length, maximum_value or even regex (perfect for validating emails).
+This a FormTextField subclass that supports styling for valid / invalid just using a boolean, formatters so you can easily format for example credit card numbers, phone numbers and so on. It supports input validators so you can limit the contents of a UITextField to maximum_length, maximum_value or even regex (perfect for validating emails).
 
 ## Payment example
 
 ### Demo
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/3lvis/TextField/master/GitHub/payment2.gif"/>
+  <img src="https://raw.githubusercontent.com/3lvis/FormTextField/master/GitHub/payment2.gif"/>
 </p>
 
 ### Code
 
 ```swift
-lazy var emailTextField: TextField = {
-    let textField = TextField(frame: frame)
+lazy var emailField: FormTextField = {
+    let textField = FormTextField(frame: frame)
     textField.inputType = .Email
     textField.placeholder = "Email"
 
@@ -26,8 +26,8 @@ lazy var emailTextField: TextField = {
     return textField
 }()
 
-lazy var cardNumberTextField: TextField = {
-    let textField = TextField(frame: frame)
+lazy var cardNumberField: FormTextField = {
+    let textField = FormTextField(frame: frame)
     textField.inputType = .Integer
     textField.formatter = CardNumberFormatter()
     textField.placeholder = "Card Number"
@@ -41,8 +41,8 @@ lazy var cardNumberTextField: TextField = {
     return textField
     }()
 
-lazy var cardExpirationDateTextField: TextField = {
-    let textField = TextField(frame: frame)
+lazy var cardExpirationDateField: FormTextField = {
+    let textField = FormTextField(frame: frame)
     textField.inputType = .Integer
     textField.formatter = CardExpirationDateFormatter()
     textField.placeholder = "Expiration Date (MM/YY)"
@@ -56,8 +56,8 @@ lazy var cardExpirationDateTextField: TextField = {
     return textField
     }()
 
-lazy var cvcTextField: TextField = {
-    let textField = TextField(frame: frame)
+lazy var cvcField: FormTextField = {
+    let textField = FormTextField(frame: frame)
     textField.inputType = .Number
     textField.placeholder = "CVC"
 
@@ -73,7 +73,7 @@ lazy var cvcTextField: TextField = {
 
 ### Styling
 
-**TextField** also supports styling using UIAppearance protocol. The example shown above uses this for styling.
+**FormTextField** also supports styling using UIAppearance protocol. The example shown above uses this for styling.
 
 ```swift
 let enabledBackgroundColor = UIColor(hex: "E1F5FF")
@@ -81,48 +81,48 @@ let enabledBorderColor = UIColor(hex: "3DAFEB")
 let enabledTextColor = UIColor(hex: "455C73")
 let activeBorderColor = UIColor(hex: "3DAFEB")
 
-TextField.appearance().borderWidth = 1
-TextField.appearance().cornerRadius = 5
-TextField.appearance().accessoryButtonColor = activeBorderColor
-TextField.appearance().font = UIFont(name: "AvenirNext-Regular", size: 15)
+FormTextField.appearance().borderWidth = 1
+FormTextField.appearance().cornerRadius = 5
+FormTextField.appearance().accessoryButtonColor = activeBorderColor
+FormTextField.appearance().font = UIFont(name: "AvenirNext-Regular", size: 15)
 
-TextField.appearance().enabledBackgroundColor = enabledBackgroundColor
-TextField.appearance().enabledBorderColor = enabledBorderColor
-TextField.appearance().enabledTextColor = enabledTextColor
+FormTextField.appearance().enabledBackgroundColor = enabledBackgroundColor
+FormTextField.appearance().enabledBorderColor = enabledBorderColor
+FormTextField.appearance().enabledTextColor = enabledTextColor
 
-TextField.appearance().validBackgroundColor = enabledBackgroundColor
-TextField.appearance().validBorderColor = enabledBorderColor
-TextField.appearance().validTextColor = enabledTextColor
+FormTextField.appearance().validBackgroundColor = enabledBackgroundColor
+FormTextField.appearance().validBorderColor = enabledBorderColor
+FormTextField.appearance().validTextColor = enabledTextColor
 
-TextField.appearance().activeBackgroundColor = enabledBackgroundColor
-TextField.appearance().activeBorderColor = activeBorderColor
-TextField.appearance().activeTextColor = enabledTextColor
+FormTextField.appearance().activeBackgroundColor = enabledBackgroundColor
+FormTextField.appearance().activeBorderColor = activeBorderColor
+FormTextField.appearance().activeTextColor = enabledTextColor
 
-TextField.appearance().inactiveBackgroundColor = enabledBackgroundColor
-TextField.appearance().inactiveBorderColor = enabledBorderColor
-TextField.appearance().inactiveTextColor = enabledTextColor
+FormTextField.appearance().inactiveBackgroundColor = enabledBackgroundColor
+FormTextField.appearance().inactiveBorderColor = enabledBorderColor
+FormTextField.appearance().inactiveTextColor = enabledTextColor
 
-TextField.appearance().disabledBackgroundColor = UIColor(hex: "F5F5F8")
-TextField.appearance().disabledBorderColor = UIColor(hex: "DEDEDE")
-TextField.appearance().disabledTextColor = UIColor.whiteColor()
+FormTextField.appearance().disabledBackgroundColor = UIColor(hex: "F5F5F8")
+FormTextField.appearance().disabledBorderColor = UIColor(hex: "DEDEDE")
+FormTextField.appearance().disabledTextColor = UIColor.whiteColor()
 
-TextField.appearance().invalidBackgroundColor = UIColor(hex: "FFD7D7")
-TextField.appearance().invalidBorderColor = UIColor(hex: "EC3031")
-TextField.appearance().invalidTextColor = UIColor(hex: "EC3031")
+FormTextField.appearance().invalidBackgroundColor = UIColor(hex: "FFD7D7")
+FormTextField.appearance().invalidBorderColor = UIColor(hex: "EC3031")
+FormTextField.appearance().invalidTextColor = UIColor(hex: "EC3031")
 ```
 
 ## Installation
 
-**TextField** is available through [CocoaPods](http://cocoapods.org). To install
+**FormTextField** is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'TextField'
+pod 'FormTextField'
 ```
 
 ## License
 
-**TextField** is available under the MIT license. See the LICENSE file for more info.
+**FormTextField** is available under the MIT license. See the LICENSE file for more info.
 
 ## Author
 
