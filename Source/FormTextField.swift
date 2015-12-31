@@ -2,18 +2,18 @@
 import InputValidator
 import Formatter
 
-public enum TextFieldInputType {
+public enum FormTextFieldInputType {
     case Default, Name, Username, PhoneNumber, Integer, Decimal, Address, Email, Password, Unknown
 }
 
-public protocol TextFieldDelegate: class {
-    func didBeginEditing(textField: TextField)
-    func didEndEditing(textField: TextField)
-    func didUpdateWithText(text: String?, textField: TextField)
-    func didReturn(textField: TextField)
+public protocol FormTextFieldDelegate: class {
+    func didBeginEditing(textField: FormTextField)
+    func didEndEditing(textField: FormTextField)
+    func didUpdateWithText(text: String?, textField: FormTextField)
+    func didReturn(textField: FormTextField)
 }
 
-public class TextField: UITextField, UITextFieldDelegate {
+public class FormTextField: UITextField, UITextFieldDelegate {
     dynamic public var borderWidth: CGFloat = 0 { didSet { self.layer.borderWidth = borderWidth } }
     dynamic public var cornerRadius: CGFloat = 0 { didSet { self.layer.cornerRadius = cornerRadius } }
     dynamic public var accessoryButtonColor: UIColor = UIColor.redColor()
@@ -44,7 +44,7 @@ public class TextField: UITextField, UITextFieldDelegate {
 
     public var inputValidator: InputValidatable?
     public var formatter: Formattable?
-    public weak var textFieldDelegate: TextFieldDelegate?
+    public weak var textFieldDelegate: FormTextFieldDelegate?
 
     static let LeftMargin = 10.0
     static let AccessoryButtonWidth = 30.0
@@ -57,7 +57,7 @@ public class TextField: UITextField, UITextFieldDelegate {
 
         self.delegate = self
 
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: TextField.LeftMargin, height: 0))
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: FormTextField.LeftMargin, height: 0))
         self.leftView = paddingView
         self.leftViewMode = .Always
 
@@ -74,11 +74,11 @@ public class TextField: UITextField, UITextFieldDelegate {
     }
 
     lazy var customClearButton: UIButton = {
-        let image = TextFieldClearButton.imageForSize(CGSize(width: 18, height: 18), color: self.accessoryButtonColor)
+        let image = FormTextFieldClearButton.imageForSize(CGSize(width: 18, height: 18), color: self.accessoryButtonColor)
         let button = UIButton(type: .Custom)
         button.setImage(image, forState: .Normal)
         button.addTarget(self, action: "clearButtonAction", forControlEvents: .TouchUpInside)
-        button.frame = CGRect(x: 0, y: 0, width: TextField.AccessoryButtonWidth, height: TextField.AccessoryButtonHeight)
+        button.frame = CGRect(x: 0, y: 0, width: FormTextField.AccessoryButtonWidth, height: FormTextField.AccessoryButtonHeight)
 
         return button
     }()
@@ -97,7 +97,7 @@ public class TextField: UITextField, UITextFieldDelegate {
         }
     }
 
-    public var inputType: TextFieldInputType {
+    public var inputType: FormTextFieldInputType {
         didSet {
             self.updateInputType(inputType)
         }
@@ -205,7 +205,7 @@ public class TextField: UITextField, UITextFieldDelegate {
 
     // MARK: Notification
 
-    func textFieldDidUpdate(textField: TextField) {
+    func textFieldDidUpdate(textField: FormTextField) {
         self.updateText(self.text)
 
         if self.valid == false {
@@ -215,7 +215,7 @@ public class TextField: UITextField, UITextFieldDelegate {
         self.textFieldDelegate?.didUpdateWithText(self.text, textField: self)
     }
 
-    func textFieldDidReturn(textField: TextField) {
+    func textFieldDidReturn(textField: FormTextField) {
         self.textFieldDelegate?.didReturn(self)
     }
 

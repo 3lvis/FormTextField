@@ -1,17 +1,17 @@
-import Foundation
+import UIKit
 import Hex
 
-struct CustomStyle {
+struct FormTextFieldDefaultStyle {
     static func apply() {
-        let enabledBackgroundColor = UIColor.whiteColor()
-        let enabledBorderColor = UIColor(hex: "DFDFDF")
+        let enabledBackgroundColor = UIColor(hex: "E1F5FF")
+        let enabledBorderColor = UIColor(hex: "3DAFEB")
         let enabledTextColor = UIColor(hex: "455C73")
-        let activeBorderColor = UIColor(hex: "70D7FF")
+        let activeBorderColor = UIColor(hex: "3DAFEB")
 
-        FormTextField.appearance().borderWidth = 2
-        FormTextField.appearance().cornerRadius = 10
+        FormTextField.appearance().borderWidth = 1
+        FormTextField.appearance().cornerRadius = 5
         FormTextField.appearance().accessoryButtonColor = activeBorderColor
-        FormTextField.appearance().font = UIFont(name: "AvenirNext-Regular", size: 15)!
+        FormTextField.appearance().font = UIFont(name: "AvenirNext-Regular", size: 15)
 
         FormTextField.appearance().enabledBackgroundColor = enabledBackgroundColor
         FormTextField.appearance().enabledBorderColor = enabledBorderColor
@@ -29,16 +29,12 @@ struct CustomStyle {
         FormTextField.appearance().inactiveBorderColor = enabledBorderColor
         FormTextField.appearance().inactiveTextColor = enabledTextColor
 
-        FormTextField.appearance().disabledBackgroundColor = UIColor(hex: "DFDFDF")
-        FormTextField.appearance().disabledBorderColor = UIColor(hex: "DFDFDF")
+        FormTextField.appearance().disabledBackgroundColor = UIColor(hex: "F5F5F8")
+        FormTextField.appearance().disabledBorderColor = UIColor(hex: "DEDEDE")
         FormTextField.appearance().disabledTextColor = UIColor.whiteColor()
 
-        FormTextField.appearance().invalidBackgroundColor = UIColor(hex: "FFC9C8")
-        FormTextField.appearance().invalidBorderColor = UIColor(hex: "FF4B47")
-        FormTextField.appearance().invalidTextColor = UIColor(hex: "FF4B47")
+        FormTextField.appearance().invalidBackgroundColor = UIColor(hex: "FFD7D7")
+        FormTextField.appearance().invalidBorderColor = UIColor(hex: "EC3031")
+        FormTextField.appearance().invalidTextColor = UIColor(hex: "EC3031")
     }
 }
-
-
-
-

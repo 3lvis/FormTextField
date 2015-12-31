@@ -7,9 +7,9 @@ class Controller: UIViewController {
     let height = CGFloat(60)
     let initialY = CGFloat(60)
 
-    lazy var emailTextField: TextField = {
+    lazy var emailField: FormTextField = {
         let margin = CGFloat(20)
-        let textField = TextField(frame: CGRect(x: margin, y: self.initialY, width: self.view.frame.width - (margin * 2.0), height: self.height))
+        let textField = FormTextField(frame: CGRect(x: margin, y: self.initialY, width: self.view.frame.width - (margin * 2.0), height: self.height))
         textField.inputType = .Email
         textField.placeholder = "Email"
 
@@ -22,11 +22,11 @@ class Controller: UIViewController {
         return textField
     }()
 
-    lazy var cardNumberTextField: TextField = {
+    lazy var cardNumberField: FormTextField = {
         let margin = CGFloat(20)
-        var previousFrame = self.emailTextField.frame
-        previousFrame.origin.y = self.emailTextField.frame.maxY + margin
-        let textField = TextField(frame: previousFrame)
+        var previousFrame = self.emailField.frame
+        previousFrame.origin.y = self.emailField.frame.maxY + margin
+        let textField = FormTextField(frame: previousFrame)
         textField.inputType = .Integer
         textField.formatter = CardNumberFormatter()
         textField.placeholder = "Card Number"
@@ -44,12 +44,12 @@ class Controller: UIViewController {
         return textField
         }()
 
-    lazy var cardExpirationDateTextField: TextField = {
+    lazy var cardExpirationDateField: FormTextField = {
         let margin = CGFloat(20)
-        var previousFrame = self.cardNumberTextField.frame
-        previousFrame.origin.y = self.cardNumberTextField.frame.maxY + margin
+        var previousFrame = self.cardNumberField.frame
+        previousFrame.origin.y = self.cardNumberField.frame.maxY + margin
         previousFrame.size.width = previousFrame.size.width * 0.6
-        let textField = TextField(frame: previousFrame)
+        let textField = FormTextField(frame: previousFrame)
         textField.inputType = .Integer
         textField.formatter = CardExpirationDateFormatter()
         textField.placeholder = "Expiration Date (MM/YY)"
@@ -62,13 +62,13 @@ class Controller: UIViewController {
         return textField
         }()
 
-    lazy var cvcTextField: TextField = {
+    lazy var cvcField: FormTextField = {
         let margin = CGFloat(20)
-        var previousFrame = self.cardNumberTextField.frame
-        previousFrame.origin.x = self.cardExpirationDateTextField.frame.maxX + previousFrame.size.width * 0.05
-        previousFrame.origin.y = self.cardNumberTextField.frame.maxY + margin
+        var previousFrame = self.cardNumberField.frame
+        previousFrame.origin.x = self.cardExpirationDateField.frame.maxX + previousFrame.size.width * 0.05
+        previousFrame.origin.y = self.cardNumberField.frame.maxY + margin
         previousFrame.size.width = previousFrame.size.width * 0.35
-        let textField = TextField(frame: previousFrame)
+        let textField = FormTextField(frame: previousFrame)
         textField.inputType = .Integer
         textField.placeholder = "CVC"
 
@@ -84,8 +84,8 @@ class Controller: UIViewController {
 
     lazy var payButton: UIButton = {
         let margin = CGFloat(20)
-        var previousFrame = self.emailTextField.frame
-        previousFrame.origin.y = self.cvcTextField.frame.maxY + margin
+        var previousFrame = self.emailField.frame
+        previousFrame.origin.y = self.cvcField.frame.maxY + margin
         let button = UIButton(frame: previousFrame)
         button.backgroundColor = UIColor(hex: "27C787")
         button.titleLabel?.font = UIFont(name: "AvenirNext-Regular", size: 24)
@@ -110,18 +110,18 @@ class Controller: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.addSubview(self.emailTextField)
-        self.view.addSubview(self.cardNumberTextField)
-        self.view.addSubview(self.cardExpirationDateTextField)
-        self.view.addSubview(self.cvcTextField)
+        self.view.addSubview(self.emailField)
+        self.view.addSubview(self.cardNumberField)
+        self.view.addSubview(self.cardExpirationDateField)
+        self.view.addSubview(self.cvcField)
         self.view.addSubview(self.payButton)
     }
 
     func payAction() {
-        let validEmail = self.emailTextField.validate()
-        let validCardNumber = self.cardNumberTextField.validate()
-        let validCardExpirationDate = self.cardExpirationDateTextField.validate()
-        let validCVC = self.cvcTextField.validate()
+        let validEmail = self.emailField.validate()
+        let validCardNumber = self.cardNumberField.validate()
+        let validCardExpirationDate = self.cardExpirationDateField.validate()
+        let validCVC = self.cvcField.validate()
         if validEmail && validCardNumber && validCardExpirationDate && validCVC {
             let alertController = UIAlertController(title: "Valid!", message: "The payment details are valid", preferredStyle: .Alert)
             let dismissAction = UIAlertAction(title: "Dismiss", style: .Default, handler: nil)

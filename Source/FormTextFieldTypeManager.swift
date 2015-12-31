@@ -1,7 +1,7 @@
 import UIKit
 
 extension UITextField {
-    func updateInputType(type: TextFieldInputType) {
+    func updateInputType(type: FormTextFieldInputType) {
         switch type {
         case .Default, .Unknown:
             self.autocapitalizationType = .Sentences

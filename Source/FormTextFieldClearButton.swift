@@ -1,6 +1,6 @@
 import UIKit
 
-class TextFieldClearButton: UIView {
+class FormTextFieldClearButton: UIView {
     var color: UIColor
 
     init(frame: CGRect, color: UIColor) {
@@ -34,7 +34,7 @@ class TextFieldClearButton: UIView {
 
     class func imageForSize(size: CGSize, color: UIColor) -> UIImage {
         let frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
-        let view = TextFieldClearButton(frame: frame, color: color)
+        let view = FormTextFieldClearButton(frame: frame, color: color)
         view.backgroundColor = UIColor.clearColor()
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
         view.drawViewHierarchyInRect(frame, afterScreenUpdates: true)
