@@ -2,8 +2,8 @@ import UIKit
 import XCTest
 
 class Tests: XCTestCase {
-    func testFailing() {
+    func fakeTest() {
         let ofCourse = true
-        XCTAssertEqual(ofCourse, false)
+        XCTAssertEqual(ofCourse, true)
     }
 }

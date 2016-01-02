@@ -2,6 +2,7 @@ import UIKit
 import Formatter
 import InputValidator
 import Validation
+import FormTextField
 
 class Controller: UIViewController {
     let height = CGFloat(60)

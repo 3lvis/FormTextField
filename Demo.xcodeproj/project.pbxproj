@@ -18,6 +18,16 @@
 		AC3A4F44C609E571792A74F8 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D300087F00C72D2865BFC7 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		14CA98131C38019900F9796C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146D728B1AB782920058798C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14C75B831C376D890068C236;
+			remoteInfo = iOS;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		1423B0811C376E8C0069B3AD /* Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
 		1423B0821C376E8C0069B3AD /* CustomStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomStyle.swift; sourceTree = "<group>"; };
@@ -160,6 +170,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				14CA98141C38019900F9796C /* PBXTargetDependency */,
 			);
 			name = Tests;
 			productName = PodTests;
@@ -357,6 +368,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		14CA98141C38019900F9796C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14C75B831C376D890068C236 /* iOS */;
+			targetProxy = 14CA98131C38019900F9796C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		14C75B8A1C376D890068C236 /* Main.storyboard */ = {
