@@ -1,16 +1,16 @@
 PODS:
   - Formatter (0.3.2)
-  - FormTextField (0.1.0)
-  - Hex (3.0.0)
+  - FormTextField (0.5.3):
+    - Formatter (~> 0.3.2)
+    - Hex (~> 2.0)
+    - InputValidator (~> 0.8.5)
+  - Hex (2.0)
   - InputValidator (0.8.5):
     - Validation (~> 0.3.0)
   - Validation (0.3.0)
 
 DEPENDENCIES:
-  - Formatter
   - FormTextField (from `.`)
-  - Hex
-  - InputValidator
 
 EXTERNAL SOURCES:
   FormTextField:
@@ -18,8 +18,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Formatter: 72dd704f3afecc618599b79a44d68b7f78f388ce
-  FormTextField: 5832749b8f4844b05d4261cddb1aaf4a8e3d18ae
-  Hex: ee430da9c4412d9196366ae5327f279021dc03eb
+  FormTextField: 7fe879bad71d74c1bd9726d142a9322f11d5c762
+  Hex: 1800bd20206b93b10422d2289baa3787698825ad
   InputValidator: 81af24abf60c13f4510e68021ec6fd09f079c819
   Validation: d1ec383698a97d2c7541fa013ddbec239fd0ef41
 
