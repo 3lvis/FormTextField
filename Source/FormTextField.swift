@@ -2,11 +2,11 @@ import UIKit
 import Formatter
 import InputValidator
 
-public enum FormTextFieldInputType {
+@objc public enum FormTextFieldInputType: Int {
     case Default, Name, Username, PhoneNumber, Integer, Decimal, Address, Email, Password, Unknown
 }
 
-public protocol FormTextFieldDelegate: NSObjectProtocol {
+@objc public protocol FormTextFieldDelegate: NSObjectProtocol {
     func formTextFieldDidBeginEditing(textField: FormTextField)
     func formTextFieldDidEndEditing(textField: FormTextField)
     func formTextField(textField: FormTextField, didUpdateWithText text: String?)
@@ -178,33 +178,6 @@ public class FormTextField: UITextField, UITextFieldDelegate {
         return isValid
     }
 
-    // MARK: UITextFieldDelegate
-
-    public func textFieldDidBeginEditing(textField: UITextField) {
-        self.rightView = self.customClearButton
-
-        self.updateActive(true)
-    }
-
-    public func textFieldDidEndEditing(textField: UITextField) {
-        self.updateActive(false)
-
-        self.textFieldDelegate?.formTextFieldDidEndEditing(self)
-    }
-
-    public func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        if string == "\n" {
-            return true
-        }
-
-        var valid = true
-        if let inputValidator = self.inputValidator {
-            valid = inputValidator.validateReplacementString(string, fullString: self.text, inRange: range)
-        }
-
-        return valid
-    }
-
     // MARK: Notification
 
     func textFieldDidUpdate(textField: FormTextField) {
@@ -227,5 +200,34 @@ public class FormTextField: UITextField, UITextFieldDelegate {
         self.text = nil
 
         self.textFieldDelegate?.formTextField(self, didUpdateWithText: self.text)
+    }
+}
+
+// MARK: UITextFieldDelegate
+
+extension FormTextField {
+    public func textFieldDidBeginEditing(textField: UITextField) {
+        self.rightView = self.customClearButton
+
+        self.updateActive(true)
+    }
+
+    public func textFieldDidEndEditing(textField: UITextField) {
+        self.updateActive(false)
+
+        self.textFieldDelegate?.formTextFieldDidEndEditing(self)
+    }
+
+    public func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        if string == "\n" {
+            return true
+        }
+
+        var valid = true
+        if let inputValidator = self.inputValidator {
+            valid = inputValidator.validateReplacementString(string, fullString: self.text, inRange: range)
+        }
+        
+        return valid
     }
 }
