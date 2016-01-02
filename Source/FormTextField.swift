@@ -6,11 +6,11 @@ public enum FormTextFieldInputType {
     case Default, Name, Username, PhoneNumber, Integer, Decimal, Address, Email, Password, Unknown
 }
 
-public protocol FormTextFieldDelegate: class {
-    func didBeginEditing(textField: FormTextField)
-    func didEndEditing(textField: FormTextField)
-    func didUpdateWithText(text: String?, textField: FormTextField)
-    func didReturn(textField: FormTextField)
+public protocol FormTextFieldDelegate: NSObjectProtocol {
+    func formTextFieldDidBeginEditing(textField: FormTextField)
+    func formTextFieldDidEndEditing(textField: FormTextField)
+    func formTextField(textField: FormTextField, didUpdateWithText text: String?)
+    func formTextFieldDidReturn(textField: FormTextField)
 }
 
 public class FormTextField: UITextField, UITextFieldDelegate {
@@ -212,11 +212,11 @@ public class FormTextField: UITextField, UITextFieldDelegate {
             self.valid = true
         }
 
-        self.textFieldDelegate?.didUpdateWithText(self.text, textField: self)
+        self.textFieldDelegate?.formTextField(self, didUpdateWithText: self.text)
     }
 
     func textFieldDidReturn(textField: FormTextField) {
-        self.textFieldDelegate?.didReturn(self)
+        self.textFieldDelegate?.formTextFieldDidReturn(self)
     }
 
     // MARK: Actions
@@ -224,6 +224,6 @@ public class FormTextField: UITextField, UITextFieldDelegate {
     func clearButtonAction() {
         self.text = nil
 
-        self.textFieldDelegate?.didUpdateWithText(self.text, textField: self)
+        self.textFieldDelegate?.formTextField(self, didUpdateWithText: self.text)
     }
 }
