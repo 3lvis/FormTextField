@@ -1,6 +1,6 @@
 # FormTextField
 
-This a FormTextField subclass that supports styling for valid / invalid just using a boolean, formatters so you can easily format for example credit card numbers, phone numbers and so on. It supports input validators so you can limit the contents of a UITextField to maximum_length, maximum_value or even regex (perfect for validating emails).
+This a `UITextField` subclass that supports styling for valid / invalid just using a boolean, formatters so you can easily format credit card numbers, phone numbers and more. It supports input validators so you can limit the contents of a UITextField using maximum length, maximum value or even regex (perfect for validating emails).
 
 ## Payment example
 
