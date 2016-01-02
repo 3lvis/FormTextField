@@ -1,6 +1,6 @@
- import UIKit
-import InputValidator
+import UIKit
 import Formatter
+import InputValidator
 
 public enum FormTextFieldInputType {
     case Default, Name, Username, PhoneNumber, Integer, Decimal, Address, Email, Password, Unknown

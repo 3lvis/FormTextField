@@ -25,6 +25,10 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
+*.xcscmblueprint
+*.gcno
+*.gcda
 
 # CocoaPods
 Pods
+*.lock
