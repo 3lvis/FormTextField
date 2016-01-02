@@ -188,6 +188,8 @@ public class FormTextField: UITextField, UITextFieldDelegate {
 
     public func textFieldDidEndEditing(textField: UITextField) {
         self.updateActive(false)
+
+        self.textFieldDelegate?.formTextFieldDidEndEditing(self)
     }
 
     public func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
