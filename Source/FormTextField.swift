@@ -2,11 +2,11 @@ import UIKit
 import Formatter
 import InputValidator
 
-@objc public enum FormTextFieldInputType: Int {
+public enum FormTextFieldInputType: String {
     case Default, Name, Username, PhoneNumber, Integer, Decimal, Address, Email, Password, Unknown
 }
 
-@objc public protocol FormTextFieldDelegate: NSObjectProtocol {
+public protocol FormTextFieldDelegate: NSObjectProtocol {
     func formTextFieldDidBeginEditing(textField: FormTextField)
     func formTextFieldDidEndEditing(textField: FormTextField)
     func formTextField(textField: FormTextField, didUpdateWithText text: String?)
