@@ -1,6 +1,9 @@
 #import "Controller.h"
 @import FormTextField;
 @import Hex;
+@import Validation;
+@import InputValidator;
+@import Formatter;
 
 @interface Controller () <FormTextFieldDelegate>
 
@@ -14,7 +17,11 @@
     if (!_emailField) {
         CGFloat margin = 20;
         _emailField = [[FormTextField alloc] initWithFrame:CGRectMake(margin, 40, self.view.frame.size.width - (margin * 2), 60)];
+        _emailField.inputType = FormTextFieldInputTypeEmail;
+        _emailField.placeholder = @"email";
         _emailField.textFieldDelegate = self;
+
+        Validation *validation = [Validation new];
     }
 
     return _emailField;
