@@ -117,15 +117,7 @@ class Controller: UITableViewController {
     }
 
     func done() {
-        let valid = self.validate()
-        let title: String
-        if valid {
-            title = "The payment details are valid"
-        } else {
-            title = "The payment details are invalid 😢"
-        }
-
-        let alertController = UIAlertController(title: title, message: nil, preferredStyle: .Alert)
+        let alertController = UIAlertController(title: "The payment details are valid", message: nil, preferredStyle: .Alert)
         let dismissAction = UIAlertAction(title: "Dismiss", style: .Default, handler: nil)
         alertController.addAction(dismissAction)
         self.presentViewController(alertController, animated: true, completion: nil)
