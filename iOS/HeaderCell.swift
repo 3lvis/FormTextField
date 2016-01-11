@@ -6,11 +6,11 @@ class HeaderCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        self.contentView.backgroundColor = UIColor(hex: "EFEFF4")
+        self.contentView.backgroundColor = UIColor(red: 239/255, green: 239/255, blue: 244/255, alpha: 1)
         self.selectionStyle = .None
 
         guard let textLabel = self.textLabel else { return }
-        textLabel.textColor = UIColor(hex: "6D6D72")
+        textLabel.textColor = UIColor(red: 109/255, green: 109/255, blue: 114/255, alpha: 1)
         textLabel.font = UIFont.systemFontOfSize(14)
     }
 

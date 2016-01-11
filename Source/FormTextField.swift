@@ -6,17 +6,17 @@ public enum FormTextFieldInputType: String {
     case Default, Name, Username, PhoneNumber, Integer, Decimal, Address, Email, Password, Unknown
 }
 
-public protocol FormTextFieldDelegate: NSObjectProtocol {
-    func formTextFieldDidBeginEditing(textField: FormTextField)
-    func formTextFieldDidEndEditing(textField: FormTextField)
-    func formTextField(textField: FormTextField, didUpdateWithText text: String?)
-    func formTextFieldDidReturn(textField: FormTextField)
+@objc public protocol FormTextFieldDelegate: NSObjectProtocol {
+    optional func formTextFieldDidBeginEditing(textField: FormTextField)
+    optional func formTextFieldDidEndEditing(textField: FormTextField)
+    optional func formTextField(textField: FormTextField, didUpdateWithText text: String?)
+    optional func formTextFieldDidReturn(textField: FormTextField)
 }
 
 public class FormTextField: UITextField, UITextFieldDelegate {
     dynamic public var borderWidth: CGFloat = 0 { didSet { self.layer.borderWidth = borderWidth } }
     dynamic public var cornerRadius: CGFloat = 0 { didSet { self.layer.cornerRadius = cornerRadius } }
-    dynamic public var accessoryButtonColor: UIColor = UIColor(hex: "007AFF")
+    dynamic public var accessoryButtonColor: UIColor = UIColor(red: 0, green: 122/255, blue: 1, alpha: 1)
 
     dynamic public var enabledBackgroundColor: UIColor = UIColor.clearColor() { didSet { self.updateEnabled(self.enabled) } }
     dynamic public var enabledBorderColor: UIColor = UIColor.clearColor() { didSet { self.updateEnabled(self.enabled) } }
@@ -185,11 +185,11 @@ public class FormTextField: UITextField, UITextFieldDelegate {
             self.valid = true
         }
 
-        self.textFieldDelegate?.formTextField(self, didUpdateWithText: self.text)
+        self.textFieldDelegate?.formTextField?(self, didUpdateWithText: self.text)
     }
 
     func textFieldDidReturn(textField: FormTextField) {
-        self.textFieldDelegate?.formTextFieldDidReturn(self)
+        self.textFieldDelegate?.formTextFieldDidReturn?(self)
     }
 
     // MARK: Actions
@@ -197,7 +197,7 @@ public class FormTextField: UITextField, UITextFieldDelegate {
     func clearButtonAction() {
         self.text = nil
 
-        self.textFieldDelegate?.formTextField(self, didUpdateWithText: self.text)
+        self.textFieldDelegate?.formTextField?(self, didUpdateWithText: self.text)
     }
 }
 
@@ -213,7 +213,7 @@ extension FormTextField {
     public func textFieldDidEndEditing(textField: UITextField) {
         self.updateActive(false)
 
-        self.textFieldDelegate?.formTextFieldDidEndEditing(self)
+        self.textFieldDelegate?.formTextFieldDidEndEditing?(self)
     }
 
     public func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
