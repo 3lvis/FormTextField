@@ -1,8 +1,8 @@
 import UIKit
 import Hex
 
-struct FormTextFieldDefaultStyle {
-    static func apply() {
+public struct FormTextFieldDefaultStyle {
+    public static func apply() {
         let enabledBackgroundColor = UIColor(hex: "E1F5FF")
         let enabledBorderColor = UIColor(hex: "3DAFEB")
         let enabledTextColor = UIColor(hex: "455C73")

@@ -1,7 +1,7 @@
 import UIKit
 
 class FormTextFieldClearButton: UIView {
-    var color: UIColor
+    private var color: UIColor
 
     init(frame: CGRect, color: UIColor) {
         self.color = color

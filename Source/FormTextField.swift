@@ -44,11 +44,11 @@ public class FormTextField: UITextField, UITextFieldDelegate {
 
     public var inputValidator: InputValidatable?
     public var formatter: Formattable?
-    public weak var textFieldDelegate: FormTextFieldDelegate?
+    weak public var textFieldDelegate: FormTextFieldDelegate?
 
-    static let LeftMargin = 10.0
-    static let AccessoryButtonWidth = 30.0
-    static let AccessoryButtonHeight = 20.0
+    static private let LeftMargin = 10.0
+    static private let AccessoryButtonWidth = 30.0
+    static private let AccessoryButtonHeight = 20.0
 
     override public init(frame: CGRect) {
         self.inputType = .Default
@@ -73,7 +73,7 @@ public class FormTextField: UITextField, UITextFieldDelegate {
         fatalError("init(coder:) has not been implemented")
     }
 
-    lazy var customClearButton: UIButton = {
+    private lazy var customClearButton: UIButton = {
         let image = FormTextFieldClearButton.imageForSize(CGSize(width: 18, height: 18), color: self.accessoryButtonColor)
         let button = UIButton(type: .Custom)
         button.setImage(image, forState: .Normal)
@@ -127,9 +127,7 @@ public class FormTextField: UITextField, UITextFieldDelegate {
         }
     }
 
-    // MARK: Public
-
-    func updateActive(active: Bool) {
+    private func updateActive(active: Bool) {
         self.rightView = self.customClearButton
 
         if active {
@@ -143,7 +141,7 @@ public class FormTextField: UITextField, UITextFieldDelegate {
         }
     }
 
-    func updateEnabled(enabled: Bool) {
+    private func updateEnabled(enabled: Bool) {
         if enabled {
             self.layer.borderColor = self.enabledBorderColor.CGColor
             self.layer.backgroundColor = self.enabledBackgroundColor.CGColor
@@ -155,7 +153,7 @@ public class FormTextField: UITextField, UITextFieldDelegate {
         }
     }
 
-    func updateValid(valid: Bool) {
+    private func updateValid(valid: Bool) {
         if valid {
             self.layer.backgroundColor = self.validBackgroundColor.CGColor
             self.layer.borderColor = self.validBorderColor.CGColor
