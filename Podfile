@@ -1,5 +1,5 @@
 use_frameworks!
 
-link_with 'iOS', 'Tests', 'iOS-ObjC'
+link_with 'Native', 'Custom', 'Tests'
 
 pod 'FormTextField', path: "."

@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "14C75B831C376D890068C236"
-               BuildableName = "iOS.app"
-               BlueprintName = "iOS"
+               BlueprintIdentifier = "14647AD61C45063C0046399A"
+               BuildableName = "Custom.app"
+               BlueprintName = "Custom"
                ReferencedContainer = "container:Demo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "14C75B831C376D890068C236"
-            BuildableName = "iOS.app"
-            BlueprintName = "iOS"
+            BlueprintIdentifier = "14647AD61C45063C0046399A"
+            BuildableName = "Custom.app"
+            BlueprintName = "Custom"
             ReferencedContainer = "container:Demo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -55,9 +55,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "14C75B831C376D890068C236"
-            BuildableName = "iOS.app"
-            BlueprintName = "iOS"
+            BlueprintIdentifier = "14647AD61C45063C0046399A"
+            BuildableName = "Custom.app"
+            BlueprintName = "Custom"
             ReferencedContainer = "container:Demo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -74,9 +74,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "14C75B831C376D890068C236"
-            BuildableName = "iOS.app"
-            BlueprintName = "iOS"
+            BlueprintIdentifier = "14647AD61C45063C0046399A"
+            BuildableName = "Custom.app"
+            BlueprintName = "Custom"
             ReferencedContainer = "container:Demo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
