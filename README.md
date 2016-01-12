@@ -16,7 +16,7 @@ This a `UITextField` subclass that supports styling for valid / invalid just usi
 
 ### Styling
 
-**FormTextField** also supports styling using UIAppearance protocol. [The example shown above uses this for styling.](https://github.com/3lvis/FormTextField/blob/master/Custom/CustomStyle.swift)
+**FormTextField** also supports styling using UIAppearance protocol. [The example shown above uses this for styling.](https://github.com/3lvis/FormTextField/blob/master/Custom/CustomStyle.swift#L7-L39)
 
 ## Installation
 
