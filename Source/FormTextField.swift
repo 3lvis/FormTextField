@@ -89,13 +89,7 @@ public class FormTextField: UITextField, UITextFieldDelegate {
         }
     }
 
-    public var valid: Bool = true {
-        didSet {
-            if self.enabled {
-                self.updateValid(self.valid)
-            }
-        }
-    }
+    private(set) public var valid: Bool = true
 
     public var inputType: FormTextFieldInputType {
         didSet {
@@ -163,15 +157,22 @@ public class FormTextField: UITextField, UITextFieldDelegate {
             self.layer.borderColor = self.invalidBorderColor.CGColor
             self.textColor = self.invalidTextColor
         }
+
+        if self.isFirstResponder() {
+            self.updateActive(true)
+        }
     }
 
-    public func validate() -> Bool {
+    public func validate(updatingUI updatingUI: Bool = true) -> Bool {
         var isValid = true
         if let inputValidator = self.inputValidator {
             isValid = inputValidator.validateString(self.text ?? "")
         }
 
         self.valid = isValid
+        if self.enabled && updatingUI {
+            self.updateValid(self.valid)
+        }
 
         return isValid
     }
@@ -183,6 +184,7 @@ public class FormTextField: UITextField, UITextFieldDelegate {
 
         if self.valid == false {
             self.valid = true
+            self.updateValid(self.valid)
         }
 
         self.textFieldDelegate?.formTextField?(self, didUpdateWithText: self.text)
