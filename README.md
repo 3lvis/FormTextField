@@ -2,6 +2,19 @@
 
 This a `UITextField` subclass that supports styling for valid / invalid just using a boolean, formatters so you can easily format credit card numbers, phone numbers and more. It supports input validators so you can limit the contents of a UITextField using maximum length, maximum value or even regex (perfect for validating emails).
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/3lvis/FormTextField/master/GitHub/native-1.gif"/>
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/3lvis/FormTextField/master/GitHub/native-2.gif"/>
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/3lvis/FormTextField/master/GitHub/native-3.gif"/>
+</p>
+
+
 ## Payment example
 
 ### Demo
