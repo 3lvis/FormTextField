@@ -43,7 +43,7 @@ class Controller: UIViewController {
         textField.inputValidator = inputValidator
 
         return textField
-        }()
+    }()
 
     lazy var cardExpirationDateField: FormTextField = {
         let margin = CGFloat(20)
@@ -61,7 +61,7 @@ class Controller: UIViewController {
         textField.inputValidator = inputValidator
 
         return textField
-        }()
+    }()
 
     lazy var cvcField: FormTextField = {
         let margin = CGFloat(20)
@@ -81,7 +81,7 @@ class Controller: UIViewController {
         textField.inputValidator = inputValidator
 
         return textField
-        }()
+    }()
 
     lazy var payButton: UIButton = {
         let margin = CGFloat(20)
@@ -100,7 +100,7 @@ class Controller: UIViewController {
         button.addTarget(self, action: "payAction", forControlEvents: .TouchUpInside)
 
         return button
-        }()
+    }()
 
     override func loadView() {
         let view = UIView(frame: UIScreen.mainScreen().bounds)
