@@ -6,40 +6,40 @@ public enum FormTextFieldInputType: String {
     case Default, Name, Username, PhoneNumber, Integer, Decimal, Address, Email, Password, Unknown
 }
 
-public protocol FormTextFieldDelegate: NSObjectProtocol {
-    func formTextFieldDidBeginEditing(textField: FormTextField)
-    func formTextFieldDidEndEditing(textField: FormTextField)
-    func formTextField(textField: FormTextField, didUpdateWithText text: String?)
-    func formTextFieldDidReturn(textField: FormTextField)
+@objc public protocol FormTextFieldDelegate: NSObjectProtocol {
+    optional func formTextFieldDidBeginEditing(textField: FormTextField)
+    optional func formTextFieldDidEndEditing(textField: FormTextField)
+    optional func formTextField(textField: FormTextField, didUpdateWithText text: String?)
+    optional func formTextFieldDidReturn(textField: FormTextField)
 }
 
 public class FormTextField: UITextField, UITextFieldDelegate {
     dynamic public var borderWidth: CGFloat = 0 { didSet { self.layer.borderWidth = borderWidth } }
     dynamic public var cornerRadius: CGFloat = 0 { didSet { self.layer.cornerRadius = cornerRadius } }
-    dynamic public var accessoryButtonColor: UIColor = UIColor.redColor()
+    dynamic public var accessoryButtonColor: UIColor = UIColor(red: 0, green: 122/255, blue: 1, alpha: 1)
 
-    dynamic public var enabledBackgroundColor: UIColor = UIColor.redColor() { didSet { self.updateEnabled(self.enabled) } }
-    dynamic public var enabledBorderColor: UIColor = UIColor.redColor() { didSet { self.updateEnabled(self.enabled) } }
-    dynamic public var enabledTextColor: UIColor = UIColor.redColor() { didSet { self.updateEnabled(self.enabled) } }
+    dynamic public var enabledBackgroundColor: UIColor = UIColor.clearColor() { didSet { self.updateEnabled(self.enabled) } }
+    dynamic public var enabledBorderColor: UIColor = UIColor.clearColor() { didSet { self.updateEnabled(self.enabled) } }
+    dynamic public var enabledTextColor: UIColor = UIColor.blackColor() { didSet { self.updateEnabled(self.enabled) } }
 
-    dynamic public var validBackgroundColor: UIColor = UIColor.redColor()
-    dynamic public var validBorderColor: UIColor = UIColor.redColor()
-    dynamic public var validTextColor: UIColor = UIColor.redColor()
+    dynamic public var validBackgroundColor: UIColor = UIColor.clearColor()
+    dynamic public var validBorderColor: UIColor = UIColor.clearColor()
+    dynamic public var validTextColor: UIColor = UIColor.blackColor()
 
-    dynamic public var activeBackgroundColor: UIColor = UIColor.redColor()
-    dynamic public var activeBorderColor: UIColor = UIColor.redColor()
-    dynamic public var activeTextColor: UIColor = UIColor.redColor()
+    dynamic public var activeBackgroundColor: UIColor = UIColor.clearColor()
+    dynamic public var activeBorderColor: UIColor = UIColor.clearColor()
+    dynamic public var activeTextColor: UIColor = UIColor.blackColor()
 
-    dynamic public var inactiveBackgroundColor: UIColor = UIColor.redColor()
-    dynamic public var inactiveBorderColor: UIColor = UIColor.redColor()
-    dynamic public var inactiveTextColor: UIColor = UIColor.redColor()
+    dynamic public var inactiveBackgroundColor: UIColor = UIColor.clearColor()
+    dynamic public var inactiveBorderColor: UIColor = UIColor.clearColor()
+    dynamic public var inactiveTextColor: UIColor = UIColor.blackColor()
 
-    dynamic public var disabledBackgroundColor: UIColor = UIColor.redColor() { didSet { self.updateEnabled(self.enabled) } }
-    dynamic public var disabledBorderColor: UIColor = UIColor.redColor() { didSet { self.updateEnabled(self.enabled) } }
-    dynamic public var disabledTextColor: UIColor = UIColor.redColor() { didSet { self.updateEnabled(self.enabled) } }
+    dynamic public var disabledBackgroundColor: UIColor = UIColor.clearColor() { didSet { self.updateEnabled(self.enabled) } }
+    dynamic public var disabledBorderColor: UIColor = UIColor.clearColor() { didSet { self.updateEnabled(self.enabled) } }
+    dynamic public var disabledTextColor: UIColor = UIColor.grayColor() { didSet { self.updateEnabled(self.enabled) } }
 
-    dynamic public var invalidBackgroundColor: UIColor = UIColor.redColor()
-    dynamic public var invalidBorderColor: UIColor = UIColor.redColor()
+    dynamic public var invalidBackgroundColor: UIColor = UIColor.clearColor()
+    dynamic public var invalidBorderColor: UIColor = UIColor.clearColor()
     dynamic public var invalidTextColor: UIColor = UIColor.redColor()
 
     public var inputValidator: InputValidatable?
@@ -185,11 +185,11 @@ public class FormTextField: UITextField, UITextFieldDelegate {
             self.valid = true
         }
 
-        self.textFieldDelegate?.formTextField(self, didUpdateWithText: self.text)
+        self.textFieldDelegate?.formTextField?(self, didUpdateWithText: self.text)
     }
 
     func textFieldDidReturn(textField: FormTextField) {
-        self.textFieldDelegate?.formTextFieldDidReturn(self)
+        self.textFieldDelegate?.formTextFieldDidReturn?(self)
     }
 
     // MARK: Actions
@@ -197,7 +197,7 @@ public class FormTextField: UITextField, UITextFieldDelegate {
     func clearButtonAction() {
         self.text = nil
 
-        self.textFieldDelegate?.formTextField(self, didUpdateWithText: self.text)
+        self.textFieldDelegate?.formTextField?(self, didUpdateWithText: self.text)
     }
 }
 
@@ -213,7 +213,7 @@ extension FormTextField {
     public func textFieldDidEndEditing(textField: UITextField) {
         self.updateActive(false)
 
-        self.textFieldDelegate?.formTextFieldDidEndEditing(self)
+        self.textFieldDelegate?.formTextFieldDidEndEditing?(self)
     }
 
     public func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
