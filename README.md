@@ -8,7 +8,7 @@ This a `UITextField` subclass that supports styling for valid / invalid just usi
   <img src="https://raw.githubusercontent.com/3lvis/FormTextField/master/GitHub/native.gif"/>
 </p>
 
-## [Custom Demo](https://github.com/3lvis/FormTextField/tree/master/Custom)
+## [Custom Demo](https://github.com/3lvis/FormTextField/blob/master/Custom/Controller.swift#L11-L84)
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/3lvis/FormTextField/master/GitHub/custom.gif"/>
