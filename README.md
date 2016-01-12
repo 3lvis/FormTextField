@@ -5,13 +5,13 @@ This a `UITextField` subclass that supports styling for valid / invalid just usi
 ## [Native Demo](https://github.com/3lvis/FormTextField/tree/master/Native)
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/3lvis/FormTextField/master/GitHub/native-3.gif"/>
+  <img src="https://raw.githubusercontent.com/3lvis/FormTextField/master/GitHub/native.gif"/>
 </p>
 
 ## [Custom Demo](https://github.com/3lvis/FormTextField/tree/master/Custom)
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/3lvis/FormTextField/master/GitHub/payment2.gif"/>
+  <img src="https://raw.githubusercontent.com/3lvis/FormTextField/master/GitHub/custom.gif"/>
 </p>
 
 ### Styling
