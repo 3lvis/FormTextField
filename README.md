@@ -2,79 +2,17 @@
 
 This a `UITextField` subclass that supports styling for valid / invalid just using a boolean, formatters so you can easily format credit card numbers, phone numbers and more. It supports input validators so you can limit the contents of a UITextField using maximum length, maximum value or even regex (perfect for validating emails).
 
+## [Native Demo](https://github.com/3lvis/FormTextField/tree/master/Native)
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/3lvis/FormTextField/master/GitHub/native-3.gif"/>
 </p>
 
-
-## Payment example
-
-### Demo
+## [Custom Demo](https://github.com/3lvis/FormTextField/tree/master/Custom)
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/3lvis/FormTextField/master/GitHub/payment2.gif"/>
 </p>
-
-### Code
-
-```swift
-lazy var emailField: FormTextField = {
-    let textField = FormTextField(frame: frame)
-    textField.inputType = .Email
-    textField.placeholder = "Email"
-
-    let validation = Validation()
-    validation.required = true
-    let inputValidator = InputValidator(validation: validation)
-    textField.inputValidator = inputValidator
-
-    return textField
-}()
-
-lazy var cardNumberField: FormTextField = {
-    let textField = FormTextField(frame: frame)
-    textField.inputType = .Integer
-    textField.formatter = CardNumberFormatter()
-    textField.placeholder = "Card Number"
-
-    let validation = Validation()
-    validation.maximumLength = "1234 5678 1234 5678".characters.count
-    validation.required = true
-    let inputValidator = NumberInputValidator(validation: validation)
-    textField.inputValidator = inputValidator
-
-    return textField
-    }()
-
-lazy var cardExpirationDateField: FormTextField = {
-    let textField = FormTextField(frame: frame)
-    textField.inputType = .Integer
-    textField.formatter = CardExpirationDateFormatter()
-    textField.placeholder = "Expiration Date (MM/YY)"
-
-    let validation = Validation()
-    validation.maximumLength = "MM/YY".characters.count
-    validation.required = true
-    let inputValidator = NumberInputValidator(validation: validation)
-    textField.inputValidator = inputValidator
-
-    return textField
-    }()
-
-lazy var cvcField: FormTextField = {
-    let textField = FormTextField(frame: frame)
-    textField.inputType = .Number
-    textField.placeholder = "CVC"
-
-    let validation = Validation()
-    validation.maximumLength = "CVC".characters.count
-    validation.required = true
-    let inputValidator = NumberInputValidator(validation: validation)
-    textField.inputValidator = inputValidator
-
-    return textField
-    }()
-```
 
 ### Styling
 
