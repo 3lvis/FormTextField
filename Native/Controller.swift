@@ -59,12 +59,13 @@ class Controller: UITableViewController {
 
     func validate() -> Bool {
         var valid = true
-        let rows = self.fields.filter({ $0.type == .Field })
-        for (index, _) in rows.enumerate() {
-            let cell = self.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: index, inSection: 0)) as! FormTextFieldCell
-            let validField = cell.textField.validate()
-            if validField == false {
-                valid = validField
+        for (index, field) in self.fields.enumerate() {
+            if field.type == .Field {
+                let cell = self.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: index, inSection: 0)) as! FormTextFieldCell
+                let validField = cell.textField.validate()
+                if validField == false {
+                    valid = validField
+                }
             }
         }
         return valid
