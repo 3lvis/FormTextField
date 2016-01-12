@@ -3,16 +3,9 @@ import UIKit
 extension UITextField {
     func updateInputType(type: FormTextFieldInputType) {
         switch type {
-        case .Default, .Unknown:
-            self.autocapitalizationType = .Sentences
-            self.autocorrectionType = .Default
-            self.keyboardType = .Default
-            break
-
         case .Name:
             self.autocapitalizationType = .Words
             self.autocorrectionType = .No
-            self.keyboardType = .NamePhonePad
             break
 
         case .Username:
@@ -41,7 +34,6 @@ extension UITextField {
 
         case .Address:
             self.autocapitalizationType = .Words
-            self.autocorrectionType = .Default
             self.keyboardType = .ASCIICapable
             break
 
@@ -57,6 +49,7 @@ extension UITextField {
             self.keyboardType = .ASCIICapable
             self.secureTextEntry = true
             break
+        default: break
         }
     }
 }
