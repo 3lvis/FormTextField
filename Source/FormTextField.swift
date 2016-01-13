@@ -157,6 +157,10 @@ public class FormTextField: UITextField, UITextFieldDelegate {
             self.layer.borderColor = self.invalidBorderColor.CGColor
             self.textColor = self.invalidTextColor
         }
+
+        if valid && self.isFirstResponder() {
+            self.updateActive(true)
+        }
     }
 
     public func validate(updatingUI updatingUI: Bool = true) -> Bool {
