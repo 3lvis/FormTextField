@@ -97,7 +97,7 @@ class Controller: UIViewController {
         button.layer.shadowOffset = CGSize(width: 0, height: 3)
         button.layer.shadowRadius = 0
         button.layer.shadowOpacity = 1
-        button.addTarget(self, action: "payAction", forControlEvents: .TouchUpInside)
+        button.addTarget(self, action: #selector(Controller.payAction), forControlEvents: .TouchUpInside)
 
         return button
     }()
