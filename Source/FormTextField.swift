@@ -50,7 +50,21 @@ public class FormTextField: UITextField, UITextFieldDelegate {
     static private let AccessoryButtonWidth = 30.0
     static private let AccessoryButtonHeight = 20.0
 
+    override public init(frame: CGRect) {
+        super.init(frame: frame)
+
+        commonInit()
+    }
+
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+
+        commonInit()
+    }
+
     private func commonInit() {
+        self.updateInputType(self.inputType)
+
         self.delegate = self
 
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: FormTextField.LeftMargin, height: 0))
@@ -63,21 +77,6 @@ public class FormTextField: UITextField, UITextFieldDelegate {
         self.returnKeyType = .Done
         self.rightViewMode = .WhileEditing
         self.backgroundColor = UIColor.clearColor()
-    }
-
-    override public init(frame: CGRect) {
-        self.inputType = .Default
-
-        super.init(frame: frame)
-
-        commonInit()
-    }
-
-    required public init?(coder aDecoder: NSCoder) {
-        self.inputType = .Default
-
-        super.init(coder: aDecoder)
-        commonInit()
     }
 
     private lazy var customClearButton: UIButton = {
@@ -98,7 +97,7 @@ public class FormTextField: UITextField, UITextFieldDelegate {
 
     private(set) public var valid: Bool = true
 
-    public var inputType: FormTextFieldInputType {
+    public var inputType: FormTextFieldInputType = .Default {
         didSet {
             self.updateInputType(inputType)
         }
