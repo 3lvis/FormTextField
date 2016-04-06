@@ -14,7 +14,7 @@ class Controller: UITableViewController {
         self.tableView.registerClass(HeaderCell.self, forCellReuseIdentifier: HeaderCell.Identifier)
         self.tableView.tableFooterView = UIView()
 
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: "done")
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(Controller.done))
         doneButton.enabled = false
         self.navigationItem.rightBarButtonItem = doneButton
     }

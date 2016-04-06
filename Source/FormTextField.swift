@@ -71,8 +71,8 @@ public class FormTextField: UITextField, UITextFieldDelegate {
         self.leftView = paddingView
         self.leftViewMode = .Always
 
-        self.addTarget(self, action: "textFieldDidUpdate:", forControlEvents: .EditingChanged)
-        self.addTarget(self, action: "textFieldDidReturn:", forControlEvents: .EditingDidEndOnExit)
+        self.addTarget(self, action: #selector(FormTextField.textFieldDidUpdate(_:)), forControlEvents: .EditingChanged)
+        self.addTarget(self, action: #selector(FormTextField.textFieldDidReturn(_:)), forControlEvents: .EditingDidEndOnExit)
 
         self.returnKeyType = .Done
         self.rightViewMode = .WhileEditing
@@ -83,7 +83,7 @@ public class FormTextField: UITextField, UITextFieldDelegate {
         let image = FormTextFieldClearButton.imageForSize(CGSize(width: 18, height: 18), color: self.accessoryButtonColor)
         let button = UIButton(type: .Custom)
         button.setImage(image, forState: .Normal)
-        button.addTarget(self, action: "clearButtonAction", forControlEvents: .TouchUpInside)
+        button.addTarget(self, action: #selector(FormTextField.clearButtonAction), forControlEvents: .TouchUpInside)
         button.frame = CGRect(x: 0, y: 0, width: FormTextField.AccessoryButtonWidth, height: FormTextField.AccessoryButtonHeight)
 
         return button
