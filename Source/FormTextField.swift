@@ -19,7 +19,6 @@ public class FormTextField: UITextField, UITextFieldDelegate {
     dynamic public var accessoryButtonColor: UIColor = UIColor(red: 0, green: 122/255, blue: 1, alpha: 1)
 
     dynamic public var accessoryImage: UIImage?
-    dynamic public var isUsingClearButton: Bool = true
     dynamic public var leftMargin : CGFloat = 10.0
     dynamic public var showAccessoryViewMode : UITextFieldViewMode = .WhileEditing { didSet { self.rightViewMode = self.showAccessoryViewMode } }
 
@@ -86,28 +85,16 @@ public class FormTextField: UITextField, UITextFieldDelegate {
     private lazy var customClearButton: UIButton? = {
         var button: UIButton? = nil
 
-        if self.isUsingClearButton {
-            let image = FormTextFieldClearButton.imageForSize(CGSize(width: 18, height: 18), color: self.accessoryButtonColor)
-            button = UIButton(type: .Custom)
-            button?.setImage(image, forState: .Normal)
-            button?.addTarget(self, action: #selector(FormTextField.clearButtonAction), forControlEvents: .TouchUpInside)
-            button?.frame = CGRect(x: 0, y: 0, width: FormTextField.AccessoryButtonWidth, height: FormTextField.AccessoryButtonHeight)
-        }
+        let image = FormTextFieldClearButton.imageForSize(CGSize(width: 18, height: 18), color: self.accessoryButtonColor)
+        button = UIButton(type: .Custom)
+        button?.setImage(image, forState: .Normal)
+        button?.addTarget(self, action: #selector(FormTextField.clearButtonAction), forControlEvents: .TouchUpInside)
+        button?.frame = CGRect(x: 0, y: 0, width: FormTextField.AccessoryButtonWidth, height: FormTextField.AccessoryButtonHeight)
 
         return button
     }()
 
-    private lazy var inputValidationIndicator: UIImageView? = {
-        var imageView: UIImageView? = nil
-
-        if let image = self.accessoryImage {
-            imageView = UIImageView(image: image)
-            imageView?.contentMode = .Center
-            imageView?.frame = CGRect(x: 0, y: 0, width: FormTextField.AccessoryButtonWidth, height: FormTextField.AccessoryButtonHeight)
-    }
-
-        return imageView
-    }()
+    public var accessoryView: UIView?
 
     override public var enabled: Bool {
         didSet {
@@ -154,7 +141,11 @@ public class FormTextField: UITextField, UITextFieldDelegate {
     }
 
     private func updateActive(active: Bool) {
-        self.rightView = self.valid ? self.inputValidationIndicator : self.customClearButton
+        if let accessoryView = self.accessoryView {
+            self.rightView = accessoryView
+        } else {
+            self.rightView = self.customClearButton
+        }
 
         if active {
             self.layer.backgroundColor = self.activeBackgroundColor.CGColor
@@ -181,12 +172,10 @@ public class FormTextField: UITextField, UITextFieldDelegate {
 
     private func updateValid(valid: Bool) {
         if valid {
-            self.rightView = self.inputValidationIndicator
             self.layer.backgroundColor = self.validBackgroundColor.CGColor
             self.layer.borderColor = self.validBorderColor.CGColor
             self.textColor = self.validTextColor
         } else {
-            self.rightView = self.customClearButton
             self.layer.backgroundColor = self.invalidBackgroundColor.CGColor
             self.layer.borderColor = self.invalidBorderColor.CGColor
             self.textColor = self.invalidTextColor
@@ -241,7 +230,11 @@ public class FormTextField: UITextField, UITextFieldDelegate {
 
 extension FormTextField {
     public func textFieldDidBeginEditing(textField: UITextField) {
-        self.rightView = self.valid ? self.inputValidationIndicator : self.customClearButton
+        if let accessoryView = self.accessoryView {
+            self.rightView = accessoryView
+        } else {
+            self.rightView = self.customClearButton
+        }
 
         self.updateActive(true)
     }
