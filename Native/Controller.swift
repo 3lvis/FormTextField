@@ -37,6 +37,13 @@ class Controller: UITableViewController {
             cell.textField.inputType = field.inputType
             cell.textField.inputValidator = field.inputValidator
             cell.textField.formatter = field.formatter
+
+            if field.inputType == .Email {
+                cell.textField.accessoryImage = UIImage(named: "check-icon")
+                cell.textField.isUsingClearButton = false
+                cell.textField.showAccessoryViewMode = .Always
+            }
+
             return cell
         }
     }
