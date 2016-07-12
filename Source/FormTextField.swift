@@ -20,7 +20,7 @@ public class FormTextField: UITextField, UITextFieldDelegate {
 
     dynamic public var accessoryImage: UIImage?
     dynamic public var leftMargin : CGFloat = 10.0
-    dynamic public var showAccessoryViewMode : UITextFieldViewMode = .WhileEditing { didSet { self.rightViewMode = self.showAccessoryViewMode } }
+    dynamic public var accessoryViewMode : UITextFieldViewMode = .WhileEditing { didSet { self.rightViewMode = self.accessoryViewMode } }
 
     dynamic public var enabledBackgroundColor: UIColor = UIColor.clearColor() { didSet { self.updateEnabled(self.enabled) } }
     dynamic public var enabledBorderColor: UIColor = UIColor.clearColor() { didSet { self.updateEnabled(self.enabled) } }
@@ -82,14 +82,12 @@ public class FormTextField: UITextField, UITextFieldDelegate {
         self.backgroundColor = UIColor.clearColor()
     }
 
-    private lazy var customClearButton: UIButton? = {
-        var button: UIButton? = nil
-
+    private lazy var customClearButton: UIButton = {
         let image = FormTextFieldClearButton.imageForSize(CGSize(width: 18, height: 18), color: self.accessoryButtonColor)
-        button = UIButton(type: .Custom)
-        button?.setImage(image, forState: .Normal)
-        button?.addTarget(self, action: #selector(FormTextField.clearButtonAction), forControlEvents: .TouchUpInside)
-        button?.frame = CGRect(x: 0, y: 0, width: FormTextField.AccessoryButtonWidth, height: FormTextField.AccessoryButtonHeight)
+        let button = UIButton(type: .Custom)
+        button.setImage(image, forState: .Normal)
+        button.addTarget(self, action: #selector(FormTextField.clearButtonAction), forControlEvents: .TouchUpInside)
+        button.frame = CGRect(x: 0, y: 0, width: FormTextField.AccessoryButtonWidth, height: FormTextField.AccessoryButtonHeight)
 
         return button
     }()
@@ -143,7 +141,7 @@ public class FormTextField: UITextField, UITextFieldDelegate {
     private func updateActive(active: Bool) {
         if let accessoryView = self.accessoryView {
             self.rightView = accessoryView
-        } else {
+        } else if self.accessoryViewMode != .Never {
             self.rightView = self.customClearButton
         }
 
@@ -232,7 +230,7 @@ extension FormTextField {
     public func textFieldDidBeginEditing(textField: UITextField) {
         if let accessoryView = self.accessoryView {
             self.rightView = accessoryView
-        } else {
+        } else if self.accessoryViewMode != .Never {
             self.rightView = self.customClearButton
         }
 
