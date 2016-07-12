@@ -154,7 +154,7 @@ public class FormTextField: UITextField, UITextFieldDelegate {
     }
 
     private func updateActive(active: Bool) {
-        if self.isUsingClearButton { self.rightView = self.customClearButton }
+        self.rightView = self.valid ? self.inputValidationIndicator : self.customClearButton
 
         if active {
             self.layer.backgroundColor = self.activeBackgroundColor.CGColor
@@ -241,7 +241,7 @@ public class FormTextField: UITextField, UITextFieldDelegate {
 
 extension FormTextField {
     public func textFieldDidBeginEditing(textField: UITextField) {
-        if self.isUsingClearButton { self.rightView = self.customClearButton }
+        self.rightView = self.valid ? self.inputValidationIndicator : self.customClearButton
 
         self.updateActive(true)
     }
