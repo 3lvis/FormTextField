@@ -7,6 +7,14 @@ import FormTextField
 class Controller: UITableViewController {
     let fields = Field.fields()
 
+    lazy var checkAccessoryView: UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: "check-icon")!)
+        imageView.contentMode = .Center
+        imageView.frame = CGRect(x: 0, y: 0, width: 30, height: 20)
+
+        return imageView
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 239/255, green: 239/255, blue: 244/255, alpha: 1)
@@ -38,12 +46,6 @@ class Controller: UITableViewController {
             cell.textField.inputValidator = field.inputValidator
             cell.textField.formatter = field.formatter
 
-            if field.inputType == .Email {
-                cell.textField.accessoryImage = UIImage(named: "check-icon")
-                cell.textField.isUsingClearButton = false
-                cell.textField.showAccessoryViewMode = .Always
-            }
-
             return cell
         }
     }
@@ -72,6 +74,16 @@ class Controller: UITableViewController {
                 let validField = cell.textField.validate()
                 if validField == false {
                     valid = validField
+                }
+
+                if field.inputType == .Email {
+                    if valid {
+                        cell.textField.accessoryView = self.checkAccessoryView
+                        cell.textField.showAccessoryViewMode = .Always
+                    } else {
+                        cell.textField.accessoryView = nil
+                        cell.textField.showAccessoryViewMode = .WhileEditing
+                    }
                 }
             }
         }

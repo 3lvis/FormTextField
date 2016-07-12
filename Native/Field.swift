@@ -32,7 +32,7 @@ struct Field {
         let requiredInputValidator = InputValidator(validation: requiredValidation)
 
         let emailField: Field = {
-            var field = Field(type: .Field, title: "Email adres")
+            var field = Field(type: .Field, title: "Email")
             field.inputType = .Email
 
             var validation = Validation()
