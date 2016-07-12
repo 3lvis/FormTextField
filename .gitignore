@@ -32,3 +32,5 @@ DerivedData
 # CocoaPods
 Pods
 *.lock
+
+*.idea
