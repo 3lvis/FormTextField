@@ -150,6 +150,7 @@ public class FormTextField: UITextField, UITextFieldDelegate {
 
     private func updateActive(active: Bool) {
         if let accessoryView = self.accessoryView {
+            // accessoryView is set as the right view
             self.rightView = accessoryView
         } else if self.accessoryViewMode != .Never {
             self.rightView = self.clearButton
@@ -198,6 +199,10 @@ public class FormTextField: UITextField, UITextFieldDelegate {
         var isValid = true
         if let inputValidator = self.inputValidator {
             isValid = inputValidator.validateString(self.text ?? "")
+        }
+
+        if self.text == "" {
+            isValid = false
         }
 
         self.valid = isValid
