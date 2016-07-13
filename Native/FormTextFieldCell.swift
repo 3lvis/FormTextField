@@ -6,6 +6,8 @@ class FormTextFieldCell: UITableViewCell {
 
     lazy var textField: FormTextField = {
         let textField = FormTextField()
+        textField.defaultColor = UIColor.blackColor()
+
         return textField
     }()
 

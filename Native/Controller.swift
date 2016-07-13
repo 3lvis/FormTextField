@@ -7,14 +7,6 @@ import FormTextField
 class Controller: UITableViewController {
     let fields = Field.fields()
 
-    lazy var checkAccessoryView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "check-icon")!)
-        imageView.contentMode = .Center
-        imageView.frame = CGRect(x: 0, y: 0, width: 30, height: 20)
-
-        return imageView
-    }()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 239/255, green: 239/255, blue: 244/255, alpha: 1)
@@ -45,12 +37,7 @@ class Controller: UITableViewController {
             cell.textField.inputType = field.inputType
             cell.textField.inputValidator = field.inputValidator
             cell.textField.formatter = field.formatter
-
-            if field.inputType == .Email {
-                self.showCheckAccessory(cell.textField)
-                cell.textField.leftMargin = 20.0
-                cell.textField.defaultColor = UIColor.blueColor()
-            }
+            self.showCheckAccessory(cell.textField)
 
             return cell
         }
@@ -81,10 +68,6 @@ class Controller: UITableViewController {
                 if validField == false {
                     valid = validField
                 }
-
-                if field.inputType == .Email {
-                    self.showCheckAccessory(cell.textField)
-                }
             }
         }
         return valid
@@ -93,7 +76,10 @@ class Controller: UITableViewController {
     func showCheckAccessory(textField: FormTextField) {
         let valid = textField.validate()
         if valid {
-            textField.accessoryView = self.checkAccessoryView
+            let imageView = UIImageView(image: UIImage(named: "check-icon")!)
+            imageView.contentMode = .Center
+            imageView.frame = CGRect(x: 0, y: 0, width: 30, height: 20)
+            textField.accessoryView = imageView
             textField.accessoryViewMode = .Always
         } else {
             textField.accessoryView = nil
@@ -104,6 +90,7 @@ class Controller: UITableViewController {
 
 extension Controller: FormTextFieldDelegate {
     func formTextField(textField: FormTextField, didUpdateWithText text: String?) {
+        self.showCheckAccessory(textField)
         let valid = self.validate()
         if let button = self.navigationItem.rightBarButtonItem {
             button.enabled = valid
