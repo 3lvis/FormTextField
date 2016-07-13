@@ -46,6 +46,10 @@ class Controller: UITableViewController {
             cell.textField.inputValidator = field.inputValidator
             cell.textField.formatter = field.formatter
 
+            if field.inputType == .Email {
+                self.showCheckAccessory(cell.textField)
+            }
+
             return cell
         }
     }
@@ -77,17 +81,22 @@ class Controller: UITableViewController {
                 }
 
                 if field.inputType == .Email {
-                    if valid {
-                        cell.textField.accessoryView = self.checkAccessoryView
-                        cell.textField.showAccessoryViewMode = .Always
-                    } else {
-                        cell.textField.accessoryView = nil
-                        cell.textField.showAccessoryViewMode = .WhileEditing
-                    }
+                    self.showCheckAccessory(cell.textField)
                 }
             }
         }
         return valid
+    }
+
+    func showCheckAccessory(textField: FormTextField) {
+        let valid = textField.validate()
+        if valid {
+            textField.accessoryView = self.checkAccessoryView
+            textField.accessoryViewMode = .Always
+        } else {
+            textField.accessoryView = nil
+            textField.accessoryViewMode = .Never
+        }
     }
 }
 
