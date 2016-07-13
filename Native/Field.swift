@@ -31,21 +31,26 @@ struct Field {
         requiredValidation.required = true
         let requiredInputValidator = InputValidator(validation: requiredValidation)
 
-        let firstNameField: Field = {
-            var field = Field(type: .Field, title: "First name")
-            field.inputType = .Name
-            field.inputValidator = requiredInputValidator
-            return field
-        }()
-        items.append(firstNameField)
+        let emailField: Field = {
+            var field = Field(type: .Field, title: "Email")
+            field.inputType = .Email
 
-        let lastNameField: Field = {
-            var field = Field(type: .Field, title: "Last name")
+            var validation = Validation()
+            validation.required = true
+            validation.format = "[\\w._%+-]+@[\\w.-]+\\.\\w{2,}"
+            field.inputValidator = InputValidator(validation: validation)
+
+            return field
+        }()
+        items.append(emailField)
+
+        let UsernameField: Field = {
+            var field = Field(type: .Field, title: "Username")
             field.inputType = .Name
             field.inputValidator = requiredInputValidator
             return field
         }()
-        items.append(lastNameField)
+        items.append(UsernameField)
 
         items.append(Field(type: .Header, title: "Billing info"))
 

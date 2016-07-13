@@ -16,7 +16,7 @@ public enum FormTextFieldInputType: String {
 public class FormTextField: UITextField, UITextFieldDelegate {
     dynamic public var borderWidth: CGFloat = 0 { didSet { self.layer.borderWidth = borderWidth } }
     dynamic public var cornerRadius: CGFloat = 0 { didSet { self.layer.cornerRadius = cornerRadius } }
-    dynamic public var accessoryButtonColor: UIColor = UIColor(red: 0, green: 122/255, blue: 1, alpha: 1)
+    dynamic public var leftMargin : CGFloat = 10.0
 
     dynamic public var enabledBackgroundColor: UIColor = UIColor.clearColor() { didSet { self.updateEnabled(self.enabled) } }
     dynamic public var enabledBorderColor: UIColor = UIColor.clearColor() { didSet { self.updateEnabled(self.enabled) } }
@@ -46,9 +46,13 @@ public class FormTextField: UITextField, UITextFieldDelegate {
     public var formatter: Formattable?
     weak public var textFieldDelegate: FormTextFieldDelegate?
 
-    static private let LeftMargin = 10.0
     static private let AccessoryButtonWidth = 30.0
     static private let AccessoryButtonHeight = 20.0
+    dynamic public var accessoryViewMode : UITextFieldViewMode = .WhileEditing { didSet { self.rightViewMode = self.accessoryViewMode } }
+    dynamic public var accessoryButtonColor: UIColor = UIColor(red: 0, green: 122/255, blue: 1, alpha: 1)
+    public var accessoryView: UIView?
+
+    private(set) public var valid: Bool = true
 
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -67,19 +71,19 @@ public class FormTextField: UITextField, UITextFieldDelegate {
 
         self.delegate = self
 
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: FormTextField.LeftMargin, height: 0))
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: self.leftMargin, height: 0))
         self.leftView = paddingView
         self.leftViewMode = .Always
 
         self.addTarget(self, action: #selector(FormTextField.textFieldDidUpdate(_:)), forControlEvents: .EditingChanged)
         self.addTarget(self, action: #selector(FormTextField.textFieldDidReturn(_:)), forControlEvents: .EditingDidEndOnExit)
 
-        self.returnKeyType = .Done
         self.rightViewMode = .WhileEditing
+        self.returnKeyType = .Done
         self.backgroundColor = UIColor.clearColor()
     }
 
-    private lazy var customClearButton: UIButton = {
+    private lazy var clearButton: UIButton = {
         let image = FormTextFieldClearButton.imageForSize(CGSize(width: 18, height: 18), color: self.accessoryButtonColor)
         let button = UIButton(type: .Custom)
         button.setImage(image, forState: .Normal)
@@ -94,8 +98,6 @@ public class FormTextField: UITextField, UITextFieldDelegate {
             self.updateEnabled(self.enabled)
         }
     }
-
-    private(set) public var valid: Bool = true
 
     public var inputType: FormTextFieldInputType = .Default {
         didSet {
@@ -134,7 +136,11 @@ public class FormTextField: UITextField, UITextFieldDelegate {
     }
 
     private func updateActive(active: Bool) {
-        self.rightView = self.customClearButton
+        if let accessoryView = self.accessoryView {
+            self.rightView = accessoryView
+        } else if self.accessoryViewMode != .Never {
+            self.rightView = self.clearButton
+        }
 
         if active {
             self.layer.backgroundColor = self.activeBackgroundColor.CGColor
@@ -219,7 +225,11 @@ public class FormTextField: UITextField, UITextFieldDelegate {
 
 extension FormTextField {
     public func textFieldDidBeginEditing(textField: UITextField) {
-        self.rightView = self.customClearButton
+        if let accessoryView = self.accessoryView {
+            self.rightView = accessoryView
+        } else if self.accessoryViewMode != .Never {
+            self.rightView = self.clearButton
+        }
 
         self.updateActive(true)
     }
