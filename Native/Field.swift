@@ -74,7 +74,7 @@ struct Field {
         items.append(cardNumberField)
 
         let expirationDateField: Field = {
-            var field = Field(type: .Field, title: "Expires", placeholder: "MM/YYYY")
+            var field = Field(type: .Field, title: "Expires", placeholder: "MM/YY")
             field.formatter = CardExpirationDateFormatter()
             field.inputType = .Integer
             var validation = Validation()
