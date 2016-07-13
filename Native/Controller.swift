@@ -91,8 +91,10 @@ class Controller: UITableViewController {
     }
 
     func showCheckAccessory(textField: FormTextField) {
-        let valid = textField.validate()
+
+        let valid = textField.validate() // this function makes the textField set the accessoryView as its rightView
         if valid {
+            // here the accessory view is set for the first time
             textField.accessoryView = self.checkAccessoryView
             textField.accessoryViewMode = .Always
         } else {
