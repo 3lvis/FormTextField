@@ -48,6 +48,8 @@ class Controller: UITableViewController {
 
             if field.inputType == .Email {
                 self.showCheckAccessory(cell.textField)
+                cell.textField.leftMargin = 20.0
+                cell.textField.defaultColor = UIColor.blueColor()
             }
 
             return cell

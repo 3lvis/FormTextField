@@ -16,7 +16,7 @@ public enum FormTextFieldInputType: String {
 public class FormTextField: UITextField, UITextFieldDelegate {
     dynamic public var borderWidth: CGFloat = 0 { didSet { self.layer.borderWidth = borderWidth } }
     dynamic public var cornerRadius: CGFloat = 0 { didSet { self.layer.cornerRadius = cornerRadius } }
-    dynamic public var leftMargin : CGFloat = 10.0
+    dynamic public var leftMargin : CGFloat = 10.0 { didSet { self.leftView = UIView(frame: CGRect(x: 0, y: 0, width: self.leftMargin, height: 0)) } }
 
     dynamic public var enabledBackgroundColor: UIColor = UIColor.clearColor() { didSet { self.updateEnabled(self.enabled) } }
     dynamic public var enabledBorderColor: UIColor = UIColor.clearColor() { didSet { self.updateEnabled(self.enabled) } }
@@ -41,6 +41,19 @@ public class FormTextField: UITextField, UITextFieldDelegate {
     dynamic public var invalidBackgroundColor: UIColor = UIColor.clearColor()
     dynamic public var invalidBorderColor: UIColor = UIColor.clearColor()
     dynamic public var invalidTextColor: UIColor = UIColor.redColor()
+
+    dynamic public var defaultColor: UIColor? {
+        didSet {
+            if let defaultColor = self.defaultColor {
+                self.enabledTextColor = defaultColor
+                self.validTextColor = defaultColor
+                self.activeTextColor = defaultColor
+                self.inactiveTextColor = defaultColor
+                self.disabledTextColor = defaultColor
+                self.invalidTextColor = defaultColor
+            }
+        }
+    }
 
     public var inputValidator: InputValidatable?
     public var formatter: Formattable?
