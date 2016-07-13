@@ -45,12 +45,7 @@ class Controller: UITableViewController {
             cell.textField.inputType = field.inputType
             cell.textField.inputValidator = field.inputValidator
             cell.textField.formatter = field.formatter
-
-            if field.inputType == .Email {
-                self.showCheckAccessory(cell.textField)
-                cell.textField.leftMargin = 20.0
-                cell.textField.defaultColor = UIColor.blueColor()
-            }
+            self.showCheckAccessory(cell.textField)
 
             return cell
         }
@@ -81,10 +76,6 @@ class Controller: UITableViewController {
                 if validField == false {
                     valid = validField
                 }
-
-                if field.inputType == .Email {
-                    self.showCheckAccessory(cell.textField)
-                }
             }
         }
         return valid
@@ -104,6 +95,7 @@ class Controller: UITableViewController {
 
 extension Controller: FormTextFieldDelegate {
     func formTextField(textField: FormTextField, didUpdateWithText text: String?) {
+        self.showCheckAccessory(textField)
         let valid = self.validate()
         if let button = self.navigationItem.rightBarButtonItem {
             button.enabled = valid

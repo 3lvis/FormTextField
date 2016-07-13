@@ -48,6 +48,7 @@ struct Field {
             var field = Field(type: .Field, title: "Username")
             field.inputType = .Name
             field.inputValidator = requiredInputValidator
+
             return field
         }()
         items.append(UsernameField)
@@ -67,6 +68,7 @@ struct Field {
             validation.characterSet = characterSet
             let inputValidator = InputValidator(validation: validation)
             field.inputValidator = inputValidator
+
             return field
         }()
         items.append(cardNumberField)
@@ -79,6 +81,7 @@ struct Field {
             validation.required = true
             let inputValidator = CardExpirationDateInputValidator(validation: validation)
             field.inputValidator = inputValidator
+
             return field
         }()
         items.append(expirationDateField)
@@ -92,6 +95,7 @@ struct Field {
             validation.characterSet = NSCharacterSet.decimalDigitCharacterSet()
             let inputValidator = InputValidator(validation: validation)
             field.inputValidator = inputValidator
+
             return field
         }()
         items.append(securityCodeField)
