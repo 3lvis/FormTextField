@@ -48,6 +48,7 @@ class Controller: UITableViewController {
 
             if field.inputType == .Email {
                 self.showCheckAccessory(cell.textField)
+                cell.textField.textColorForAllStates = UIColor.blueColor()
             }
 
             return cell

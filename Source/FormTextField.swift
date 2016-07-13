@@ -42,6 +42,19 @@ public class FormTextField: UITextField, UITextFieldDelegate {
     dynamic public var invalidBorderColor: UIColor = UIColor.clearColor()
     dynamic public var invalidTextColor: UIColor = UIColor.redColor()
 
+    dynamic public var textColorForAllStates: UIColor? {
+        didSet {
+            if let textColorForAllStates = self.textColorForAllStates {
+                self.enabledTextColor = textColorForAllStates
+                self.validTextColor = textColorForAllStates
+                self.activeTextColor = textColorForAllStates
+                self.inactiveTextColor = textColorForAllStates
+                self.disabledTextColor = textColorForAllStates
+                self.invalidTextColor = textColorForAllStates
+            }
+        }
+    }
+
     public var inputValidator: InputValidatable?
     public var formatter: Formattable?
     weak public var textFieldDelegate: FormTextFieldDelegate?
