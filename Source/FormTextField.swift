@@ -16,11 +16,7 @@ public enum FormTextFieldInputType: String {
 public class FormTextField: UITextField, UITextFieldDelegate {
     dynamic public var borderWidth: CGFloat = 0 { didSet { self.layer.borderWidth = borderWidth } }
     dynamic public var cornerRadius: CGFloat = 0 { didSet { self.layer.cornerRadius = cornerRadius } }
-    dynamic public var accessoryButtonColor: UIColor = UIColor(red: 0, green: 122/255, blue: 1, alpha: 1)
-
-    dynamic public var accessoryImage: UIImage?
     dynamic public var leftMargin : CGFloat = 10.0
-    dynamic public var accessoryViewMode : UITextFieldViewMode = .WhileEditing { didSet { self.rightViewMode = self.accessoryViewMode } }
 
     dynamic public var enabledBackgroundColor: UIColor = UIColor.clearColor() { didSet { self.updateEnabled(self.enabled) } }
     dynamic public var enabledBorderColor: UIColor = UIColor.clearColor() { didSet { self.updateEnabled(self.enabled) } }
@@ -52,6 +48,11 @@ public class FormTextField: UITextField, UITextFieldDelegate {
 
     static private let AccessoryButtonWidth = 30.0
     static private let AccessoryButtonHeight = 20.0
+    dynamic public var accessoryViewMode : UITextFieldViewMode = .WhileEditing { didSet { self.rightViewMode = self.accessoryViewMode } }
+    dynamic public var accessoryButtonColor: UIColor = UIColor(red: 0, green: 122/255, blue: 1, alpha: 1)
+    public var accessoryView: UIView?
+
+    private(set) public var valid: Bool = true
 
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -82,7 +83,7 @@ public class FormTextField: UITextField, UITextFieldDelegate {
         self.backgroundColor = UIColor.clearColor()
     }
 
-    private lazy var customClearButton: UIButton = {
+    private lazy var clearButton: UIButton = {
         let image = FormTextFieldClearButton.imageForSize(CGSize(width: 18, height: 18), color: self.accessoryButtonColor)
         let button = UIButton(type: .Custom)
         button.setImage(image, forState: .Normal)
@@ -92,15 +93,11 @@ public class FormTextField: UITextField, UITextFieldDelegate {
         return button
     }()
 
-    public var accessoryView: UIView?
-
     override public var enabled: Bool {
         didSet {
             self.updateEnabled(self.enabled)
         }
     }
-
-    private(set) public var valid: Bool = true
 
     public var inputType: FormTextFieldInputType = .Default {
         didSet {
@@ -142,7 +139,7 @@ public class FormTextField: UITextField, UITextFieldDelegate {
         if let accessoryView = self.accessoryView {
             self.rightView = accessoryView
         } else if self.accessoryViewMode != .Never {
-            self.rightView = self.customClearButton
+            self.rightView = self.clearButton
         }
 
         if active {
@@ -231,7 +228,7 @@ extension FormTextField {
         if let accessoryView = self.accessoryView {
             self.rightView = accessoryView
         } else if self.accessoryViewMode != .Never {
-            self.rightView = self.customClearButton
+            self.rightView = self.clearButton
         }
 
         self.updateActive(true)
