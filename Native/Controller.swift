@@ -7,14 +7,6 @@ import FormTextField
 class Controller: UITableViewController {
     let fields = Field.fields()
 
-    lazy var checkAccessoryView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: "check-icon")!)
-        imageView.contentMode = .Center
-        imageView.frame = CGRect(x: 0, y: 0, width: 30, height: 20)
-
-        return imageView
-    }()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 239/255, green: 239/255, blue: 244/255, alpha: 1)
@@ -84,7 +76,10 @@ class Controller: UITableViewController {
     func showCheckAccessory(textField: FormTextField) {
         let valid = textField.validate()
         if valid {
-            textField.accessoryView = self.checkAccessoryView
+            let imageView = UIImageView(image: UIImage(named: "check-icon")!)
+            imageView.contentMode = .Center
+            imageView.frame = CGRect(x: 0, y: 0, width: 30, height: 20)
+            textField.accessoryView = imageView
             textField.accessoryViewMode = .Always
         } else {
             textField.accessoryView = nil
