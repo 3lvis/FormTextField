@@ -201,10 +201,6 @@ public class FormTextField: UITextField, UITextFieldDelegate {
             isValid = inputValidator.validateString(self.text ?? "")
         }
 
-        if self.text == "" {
-            isValid = false
-        }
-
         self.valid = isValid
         if self.enabled && updatingUI {
             self.updateValid(self.valid)
