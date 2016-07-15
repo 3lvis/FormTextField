@@ -11,7 +11,7 @@ struct CustomStyle {
 
         FormTextField.appearance().borderWidth = 2
         FormTextField.appearance().cornerRadius = 10
-        FormTextField.appearance().accessoryButtonColor = activeBorderColor
+        FormTextField.appearance().clearButtonColor = activeBorderColor
         FormTextField.appearance().font = UIFont(name: "AvenirNext-Regular", size: 15)!
 
         FormTextField.appearance().enabledBackgroundColor = enabledBackgroundColor
