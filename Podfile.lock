@@ -14,7 +14,7 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   FormTextField:
-    :path: "."
+    :path: .
 
 SPEC CHECKSUMS:
   Formatter: f69c6639c7b00565e0f85a540cee71e1372d1f0d

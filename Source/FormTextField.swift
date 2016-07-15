@@ -42,9 +42,9 @@ public class FormTextField: UITextField, UITextFieldDelegate {
     dynamic public var invalidBorderColor: UIColor = UIColor.clearColor()
     dynamic public var invalidTextColor: UIColor = UIColor.redColor()
 
-    dynamic public var defaultColor: UIColor? {
+    dynamic public var defaultTextColor: UIColor? {
         didSet {
-            if let defaultColor = self.defaultColor {
+            if let defaultColor = self.defaultTextColor {
                 self.enabledTextColor = defaultColor
                 self.validTextColor = defaultColor
                 self.activeTextColor = defaultColor
@@ -62,7 +62,7 @@ public class FormTextField: UITextField, UITextFieldDelegate {
     static private let AccessoryButtonWidth = 30.0
     static private let AccessoryButtonHeight = 20.0
     dynamic public var accessoryViewMode : UITextFieldViewMode = .WhileEditing { didSet { self.rightViewMode = self.accessoryViewMode } }
-    dynamic public var accessoryButtonColor: UIColor = UIColor(red: 0, green: 122/255, blue: 1, alpha: 1)
+    dynamic public var clearButtonColor: UIColor = UIColor(red: 0, green: 122/255, blue: 1, alpha: 1)
     public var accessoryView: UIView?
 
     private(set) public var valid: Bool = true
@@ -97,7 +97,7 @@ public class FormTextField: UITextField, UITextFieldDelegate {
     }
 
     private lazy var clearButton: UIButton = {
-        let image = FormTextFieldClearButton.imageForSize(CGSize(width: 18, height: 18), color: self.accessoryButtonColor)
+        let image = FormTextFieldClearButton.imageForSize(CGSize(width: 18, height: 18), color: self.clearButtonColor)
         let button = UIButton(type: .Custom)
         button.setImage(image, forState: .Normal)
         button.addTarget(self, action: #selector(FormTextField.clearButtonAction), forControlEvents: .TouchUpInside)
