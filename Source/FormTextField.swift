@@ -42,9 +42,9 @@ public class FormTextField: UITextField, UITextFieldDelegate {
     dynamic public var invalidBorderColor: UIColor = UIColor.clearColor()
     dynamic public var invalidTextColor: UIColor = UIColor.redColor()
 
-    dynamic public var defaultColor: UIColor? {
+    dynamic public var defaultTextColor: UIColor? {
         didSet {
-            if let defaultColor = self.defaultColor {
+            if let defaultColor = self.defaultTextColor {
                 self.enabledTextColor = defaultColor
                 self.validTextColor = defaultColor
                 self.activeTextColor = defaultColor
