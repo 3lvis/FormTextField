@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = "FormTextField"
   s.summary          = "A UITextField that supports formatters and input validators such as maximum length and regex"
-  s.version          = "0.11.0"
+  s.version          = "0.12.0"
   s.homepage         = "https://github.com/3lvis/FormTextField"
   s.license          = 'MIT'
   s.author           = { "Elvis Nuñez" => "elvisnunez@me.com" }
