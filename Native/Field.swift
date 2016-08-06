@@ -87,7 +87,7 @@ struct Field {
         items.append(expirationDateField)
 
         let securityCodeField: Field = {
-            var field = Field(type: .Field, title: "CVV", placeholder: "Security Code")
+            var field = Field(type: .Field, title: "CVC", placeholder: "Security Code")
             field.inputType = .Integer
             var validation = Validation()
             validation.maximumLength = "CVC".characters.count
