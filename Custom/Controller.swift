@@ -103,7 +103,7 @@ class Controller: UIViewController {
     }()
 
     override func loadView() {
-        let view = UIView(frame: UIScreen.mainScreen().bounds)
+        let view = UIView(frame: UIScreen.main.bounds)
         view.backgroundColor = UIColor(hex: "D4F3FF")
         self.view = view
     }
@@ -124,10 +124,10 @@ class Controller: UIViewController {
         let validCardExpirationDate = self.cardExpirationDateField.validate()
         let validCVC = self.cvcField.validate()
         if validEmail && validCardNumber && validCardExpirationDate && validCVC {
-            let alertController = UIAlertController(title: "Valid!", message: "The payment details are valid", preferredStyle: .Alert)
-            let dismissAction = UIAlertAction(title: "Dismiss", style: .Default, handler: nil)
+            let alertController = UIAlertController(title: "Valid!", message: "The payment details are valid", preferredStyle: .alert)
+            let dismissAction = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
             alertController.addAction(dismissAction)
-            self.presentViewController(alertController, animated: true, completion: nil)
+            self.present(alertController, animated: true, completion: nil)
         }
     }
 }
