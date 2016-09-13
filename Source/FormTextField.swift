@@ -7,42 +7,42 @@ public enum FormTextFieldInputType: String {
 }
 
 @objc public protocol FormTextFieldDelegate: NSObjectProtocol {
-    optional func formTextFieldDidBeginEditing(textField: FormTextField)
-    optional func formTextFieldDidEndEditing(textField: FormTextField)
-    optional func formTextField(textField: FormTextField, didUpdateWithText text: String?)
-    optional func formTextFieldDidReturn(textField: FormTextField)
+    @objc optional func formTextFieldDidBeginEditing(_ textField: FormTextField)
+    @objc optional func formTextFieldDidEndEditing(_ textField: FormTextField)
+    @objc optional func formTextField(_ textField: FormTextField, didUpdateWithText text: String?)
+    @objc optional func formTextFieldDidReturn(_ textField: FormTextField)
 }
 
-public class FormTextField: UITextField, UITextFieldDelegate {
-    dynamic public var borderWidth: CGFloat = 0 { didSet { self.layer.borderWidth = borderWidth } }
-    dynamic public var cornerRadius: CGFloat = 0 { didSet { self.layer.cornerRadius = cornerRadius } }
-    dynamic public var leftMargin : CGFloat = 10.0 { didSet { self.leftView = UIView(frame: CGRect(x: 0, y: 0, width: self.leftMargin, height: 0)) } }
+open class FormTextField: UITextField, UITextFieldDelegate {
+    dynamic open var borderWidth: CGFloat = 0 { didSet { self.layer.borderWidth = borderWidth } }
+    dynamic open var cornerRadius: CGFloat = 0 { didSet { self.layer.cornerRadius = cornerRadius } }
+    dynamic open var leftMargin : CGFloat = 10.0 { didSet { self.leftView = UIView(frame: CGRect(x: 0, y: 0, width: self.leftMargin, height: 0)) } }
 
-    dynamic public var enabledBackgroundColor: UIColor = UIColor.clearColor() { didSet { self.updateEnabled(self.enabled) } }
-    dynamic public var enabledBorderColor: UIColor = UIColor.clearColor() { didSet { self.updateEnabled(self.enabled) } }
-    dynamic public var enabledTextColor: UIColor = UIColor.blackColor() { didSet { self.updateEnabled(self.enabled) } }
+    dynamic open var enabledBackgroundColor: UIColor = UIColor.clear { didSet { self.updateEnabled(self.isEnabled) } }
+    dynamic open var enabledBorderColor: UIColor = UIColor.clear { didSet { self.updateEnabled(self.isEnabled) } }
+    dynamic open var enabledTextColor: UIColor = UIColor.black { didSet { self.updateEnabled(self.isEnabled) } }
 
-    dynamic public var validBackgroundColor: UIColor = UIColor.clearColor()
-    dynamic public var validBorderColor: UIColor = UIColor.clearColor()
-    dynamic public var validTextColor: UIColor = UIColor.blackColor()
+    dynamic open var validBackgroundColor: UIColor = UIColor.clear
+    dynamic open var validBorderColor: UIColor = UIColor.clear
+    dynamic open var validTextColor: UIColor = UIColor.black
 
-    dynamic public var activeBackgroundColor: UIColor = UIColor.clearColor()
-    dynamic public var activeBorderColor: UIColor = UIColor.clearColor()
-    dynamic public var activeTextColor: UIColor = UIColor.blackColor()
+    dynamic open var activeBackgroundColor: UIColor = UIColor.clear
+    dynamic open var activeBorderColor: UIColor = UIColor.clear
+    dynamic open var activeTextColor: UIColor = UIColor.black
 
-    dynamic public var inactiveBackgroundColor: UIColor = UIColor.clearColor()
-    dynamic public var inactiveBorderColor: UIColor = UIColor.clearColor()
-    dynamic public var inactiveTextColor: UIColor = UIColor.blackColor()
+    dynamic open var inactiveBackgroundColor: UIColor = UIColor.clear
+    dynamic open var inactiveBorderColor: UIColor = UIColor.clear
+    dynamic open var inactiveTextColor: UIColor = UIColor.black
 
-    dynamic public var disabledBackgroundColor: UIColor = UIColor.clearColor() { didSet { self.updateEnabled(self.enabled) } }
-    dynamic public var disabledBorderColor: UIColor = UIColor.clearColor() { didSet { self.updateEnabled(self.enabled) } }
-    dynamic public var disabledTextColor: UIColor = UIColor.grayColor() { didSet { self.updateEnabled(self.enabled) } }
+    dynamic open var disabledBackgroundColor: UIColor = UIColor.clear { didSet { self.updateEnabled(self.isEnabled) } }
+    dynamic open var disabledBorderColor: UIColor = UIColor.clear { didSet { self.updateEnabled(self.isEnabled) } }
+    dynamic open var disabledTextColor: UIColor = UIColor.gray { didSet { self.updateEnabled(self.isEnabled) } }
 
-    dynamic public var invalidBackgroundColor: UIColor = UIColor.clearColor()
-    dynamic public var invalidBorderColor: UIColor = UIColor.clearColor()
-    dynamic public var invalidTextColor: UIColor = UIColor.redColor()
+    dynamic open var invalidBackgroundColor: UIColor = UIColor.clear
+    dynamic open var invalidBorderColor: UIColor = UIColor.clear
+    dynamic open var invalidTextColor: UIColor = UIColor.red
 
-    dynamic public var defaultTextColor: UIColor? {
+    dynamic open var defaultTextColor: UIColor? {
         didSet {
             if let defaultColor = self.defaultTextColor {
                 self.enabledTextColor = defaultColor
@@ -55,17 +55,17 @@ public class FormTextField: UITextField, UITextFieldDelegate {
         }
     }
 
-    public var inputValidator: InputValidatable?
-    public var formatter: Formattable?
-    weak public var textFieldDelegate: FormTextFieldDelegate?
+    open var inputValidator: InputValidatable?
+    open var formatter: Formattable?
+    weak open var textFieldDelegate: FormTextFieldDelegate?
 
-    static private let AccessoryButtonWidth = 30.0
-    static private let AccessoryButtonHeight = 20.0
-    dynamic public var accessoryViewMode : UITextFieldViewMode = .WhileEditing { didSet { self.rightViewMode = self.accessoryViewMode } }
-    dynamic public var clearButtonColor: UIColor = UIColor(red: 0, green: 122/255, blue: 1, alpha: 1)
-    public var accessoryView: UIView?
+    static fileprivate let AccessoryButtonWidth = 30.0
+    static fileprivate let AccessoryButtonHeight = 20.0
+    dynamic open var accessoryViewMode : UITextFieldViewMode = .whileEditing { didSet { self.rightViewMode = self.accessoryViewMode } }
+    dynamic open var clearButtonColor: UIColor = UIColor(red: 0, green: 122/255, blue: 1, alpha: 1)
+    open var accessoryView: UIView?
 
-    private(set) public var valid: Bool = true
+    fileprivate(set) open var valid: Bool = true
 
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -79,52 +79,52 @@ public class FormTextField: UITextField, UITextFieldDelegate {
         commonInit()
     }
 
-    private func commonInit() {
+    fileprivate func commonInit() {
         self.updateInputType(self.inputType)
 
         self.delegate = self
 
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: self.leftMargin, height: 0))
         self.leftView = paddingView
-        self.leftViewMode = .Always
+        self.leftViewMode = .always
 
-        self.addTarget(self, action: #selector(FormTextField.textFieldDidUpdate(_:)), forControlEvents: .EditingChanged)
-        self.addTarget(self, action: #selector(FormTextField.textFieldDidReturn(_:)), forControlEvents: .EditingDidEndOnExit)
+        self.addTarget(self, action: #selector(FormTextField.textFieldDidUpdate(_:)), for: .editingChanged)
+        self.addTarget(self, action: #selector(FormTextField.textFieldDidReturn(_:)), for: .editingDidEndOnExit)
 
-        self.rightViewMode = .WhileEditing
-        self.returnKeyType = .Done
-        self.backgroundColor = UIColor.clearColor()
+        self.rightViewMode = .whileEditing
+        self.returnKeyType = .done
+        self.backgroundColor = UIColor.clear
     }
 
-    private lazy var clearButton: UIButton = {
+    fileprivate lazy var clearButton: UIButton = {
         let image = FormTextFieldClearButton.imageForSize(CGSize(width: 18, height: 18), color: self.clearButtonColor)
-        let button = UIButton(type: .Custom)
-        button.setImage(image, forState: .Normal)
-        button.addTarget(self, action: #selector(FormTextField.clearButtonAction), forControlEvents: .TouchUpInside)
+        let button = UIButton(type: .custom)
+        button.setImage(image, for: UIControlState())
+        button.addTarget(self, action: #selector(FormTextField.clearButtonAction), for: .touchUpInside)
         button.frame = CGRect(x: 0, y: 0, width: FormTextField.AccessoryButtonWidth, height: FormTextField.AccessoryButtonHeight)
 
         return button
     }()
 
-    override public var enabled: Bool {
+    override open var isEnabled: Bool {
         didSet {
-            self.updateEnabled(self.enabled)
+            self.updateEnabled(self.isEnabled)
         }
     }
 
-    public var inputType: FormTextFieldInputType = .Default {
+    open var inputType: FormTextFieldInputType = .Default {
         didSet {
             self.updateInputType(inputType)
         }
     }
 
     // Sets the textfields at the initial state, clear text and resets appearance too
-    public func reset() {
+    open func reset() {
         self.updateText(nil)
-        self.updateEnabled(self.enabled)
+        self.updateEnabled(self.isEnabled)
     }
 
-    func updateText(newValue: String?) {
+    func updateText(_ newValue: String?) {
         let text = newValue ?? ""
 
         if self.formatter != nil {
@@ -133,7 +133,7 @@ public class FormTextField: UITextField, UITextFieldDelegate {
 
             let didAddText = (newRawText.characters.count > (self.text ?? "").characters.count)
             let didFormat = (newRawText.characters.count > (self.text ?? "").characters.count)
-            let cursorAtStart = (self.selectedTextRange!.start == self.positionFromPosition(self.beginningOfDocument, offset: 1))
+            let cursorAtStart = (self.selectedTextRange!.start == self.position(from: self.beginningOfDocument, offset: 1))
             if (didAddText && cursorAtStart) {
                 self.text = newRawText
                 self.selectedTextRange = textRange
@@ -148,60 +148,60 @@ public class FormTextField: UITextField, UITextFieldDelegate {
         }
     }
 
-    private func updateActive(active: Bool) {
+    fileprivate func updateActive(_ active: Bool) {
         if let accessoryView = self.accessoryView {
             self.rightView = accessoryView
-        } else if self.accessoryViewMode != .Never {
+        } else if self.accessoryViewMode != .never {
             self.rightView = self.clearButton
         }
 
         if active {
-            self.layer.backgroundColor = self.activeBackgroundColor.CGColor
-            self.layer.borderColor = self.activeBorderColor.CGColor
+            self.layer.backgroundColor = self.activeBackgroundColor.cgColor
+            self.layer.borderColor = self.activeBorderColor.cgColor
             self.textColor = self.activeTextColor
         } else {
-            self.layer.backgroundColor = self.inactiveBackgroundColor.CGColor
-            self.layer.borderColor = self.inactiveBorderColor.CGColor
+            self.layer.backgroundColor = self.inactiveBackgroundColor.cgColor
+            self.layer.borderColor = self.inactiveBorderColor.cgColor
             self.textColor = self.inactiveTextColor
         }
     }
 
-    private func updateEnabled(enabled: Bool) {
+    fileprivate func updateEnabled(_ enabled: Bool) {
         if enabled {
-            self.layer.borderColor = self.enabledBorderColor.CGColor
-            self.layer.backgroundColor = self.enabledBackgroundColor.CGColor
+            self.layer.borderColor = self.enabledBorderColor.cgColor
+            self.layer.backgroundColor = self.enabledBackgroundColor.cgColor
             self.textColor = self.enabledTextColor
         } else {
-            self.layer.borderColor = self.disabledBorderColor.CGColor
-            self.layer.backgroundColor = self.disabledBackgroundColor.CGColor
+            self.layer.borderColor = self.disabledBorderColor.cgColor
+            self.layer.backgroundColor = self.disabledBackgroundColor.cgColor
             self.textColor = self.disabledTextColor
         }
     }
 
-    private func updateValid(valid: Bool) {
+    fileprivate func updateValid(_ valid: Bool) {
         if valid {
-            self.layer.backgroundColor = self.validBackgroundColor.CGColor
-            self.layer.borderColor = self.validBorderColor.CGColor
+            self.layer.backgroundColor = self.validBackgroundColor.cgColor
+            self.layer.borderColor = self.validBorderColor.cgColor
             self.textColor = self.validTextColor
         } else {
-            self.layer.backgroundColor = self.invalidBackgroundColor.CGColor
-            self.layer.borderColor = self.invalidBorderColor.CGColor
+            self.layer.backgroundColor = self.invalidBackgroundColor.cgColor
+            self.layer.borderColor = self.invalidBorderColor.cgColor
             self.textColor = self.invalidTextColor
         }
 
-        if valid && self.isFirstResponder() {
+        if valid && self.isFirstResponder {
             self.updateActive(true)
         }
     }
 
-    public func validate(updatingUI updatingUI: Bool = true) -> Bool {
+    open func validate(updatingUI: Bool = true) -> Bool {
         var isValid = true
         if let inputValidator = self.inputValidator {
             isValid = inputValidator.validateString(self.text ?? "")
         }
 
         self.valid = isValid
-        if self.enabled && updatingUI {
+        if self.isEnabled && updatingUI {
             self.updateValid(self.valid)
         }
 
@@ -210,7 +210,7 @@ public class FormTextField: UITextField, UITextFieldDelegate {
 
     // MARK: Notification
 
-    func textFieldDidUpdate(textField: FormTextField) {
+    func textFieldDidUpdate(_ textField: FormTextField) {
         self.updateText(self.text)
 
         if self.valid == false {
@@ -221,7 +221,7 @@ public class FormTextField: UITextField, UITextFieldDelegate {
         self.textFieldDelegate?.formTextField?(self, didUpdateWithText: self.text)
     }
 
-    func textFieldDidReturn(textField: FormTextField) {
+    func textFieldDidReturn(_ textField: FormTextField) {
         self.textFieldDelegate?.formTextFieldDidReturn?(self)
     }
 
@@ -237,23 +237,23 @@ public class FormTextField: UITextField, UITextFieldDelegate {
 // MARK: UITextFieldDelegate
 
 extension FormTextField {
-    public func textFieldDidBeginEditing(textField: UITextField) {
+    public func textFieldDidBeginEditing(_ textField: UITextField) {
         if let accessoryView = self.accessoryView {
             self.rightView = accessoryView
-        } else if self.accessoryViewMode != .Never {
+        } else if self.accessoryViewMode != .never {
             self.rightView = self.clearButton
         }
 
         self.updateActive(true)
     }
 
-    public func textFieldDidEndEditing(textField: UITextField) {
+    public func textFieldDidEndEditing(_ textField: UITextField) {
         self.updateActive(false)
 
         self.textFieldDelegate?.formTextFieldDidEndEditing?(self)
     }
 
-    public func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    @objc(textField:shouldChangeCharactersInRange:replacementString:) public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if string == "\n" {
             return true
         }

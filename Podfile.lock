@@ -1,28 +1,57 @@
 PODS:
   - Formatter (0.3.3)
-  - FormTextField (0.12.0):
+  - FormTextField (0.12.1):
     - Formatter (~> 0.3.3)
     - InputValidator (~> 0.9.1)
-  - Hex (3.0.0)
+  - Hex (4.0.0-beta1)
   - InputValidator (0.9.1):
     - Validation (~> 0.3.3)
   - Validation (0.3.3)
 
 DEPENDENCIES:
+  - Formatter (from `https://github.com/nextforce/Formatter.git`, branch `swift-3`)
   - FormTextField (from `.`)
-  - Hex
+  - Hex (from `https://github.com/3lvis/Hex.git`, branch `feature/swift-3`)
+  - InputValidator (from `https://github.com/nextforce/InputValidator.git`, branch `swift-3`)
+  - Validation (from `https://github.com/nextforce/Validation.git`, branch `swift-3`)
 
 EXTERNAL SOURCES:
+  Formatter:
+    :branch: swift-3
+    :git: https://github.com/nextforce/Formatter.git
   FormTextField:
-    :path: "."
+    :path: .
+  Hex:
+    :branch: feature/swift-3
+    :git: https://github.com/3lvis/Hex.git
+  InputValidator:
+    :branch: swift-3
+    :git: https://github.com/nextforce/InputValidator.git
+  Validation:
+    :branch: swift-3
+    :git: https://github.com/nextforce/Validation.git
+
+CHECKOUT OPTIONS:
+  Formatter:
+    :commit: cb5cc456d8fc04d54c0d758834b9cb64df582b83
+    :git: https://github.com/nextforce/Formatter.git
+  Hex:
+    :commit: 22a705d8bda07ad30b08c8311b83a82960a5d85e
+    :git: https://github.com/3lvis/Hex.git
+  InputValidator:
+    :commit: bfdeb2e47003b3d6667f15856d28a16b3fb62237
+    :git: https://github.com/nextforce/InputValidator.git
+  Validation:
+    :commit: 7798b76f52154dd018cb03424ebe4a79b355d2ca
+    :git: https://github.com/nextforce/Validation.git
 
 SPEC CHECKSUMS:
   Formatter: f69c6639c7b00565e0f85a540cee71e1372d1f0d
-  FormTextField: 02706c3124bf7aa233cef72b42283db8ef4b41fb
-  Hex: ee430da9c4412d9196366ae5327f279021dc03eb
+  FormTextField: 07e8ba04be5d71fa2a50be19089fa70e8632bf34
+  Hex: 5614eb9b465b18cc2ee2c574571960ba5de67917
   InputValidator: 776f89f2565385a61e647306f732984f81307d3d
   Validation: 1c95fb5f250647e7216287c482007fdb13e201b8
 
-PODFILE CHECKSUM: 7c7bedf3656aead4a2246d145d341908159fea25
+PODFILE CHECKSUM: 0f69b04591676634d6caef7d3a94a739fbc1cee4
 
 COCOAPODS: 1.0.1

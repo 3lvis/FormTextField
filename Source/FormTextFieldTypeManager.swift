@@ -1,53 +1,53 @@
 import UIKit
 
 extension UITextField {
-    func updateInputType(type: FormTextFieldInputType) {
+    func updateInputType(_ type: FormTextFieldInputType) {
         switch type {
         case .Name:
-            self.autocapitalizationType = .Words
-            self.autocorrectionType = .No
+            self.autocapitalizationType = .words
+            self.autocorrectionType = .no
             break
 
         case .Username:
-            self.autocapitalizationType = .None
-            self.autocorrectionType = .No
-            self.keyboardType = .NamePhonePad
+            self.autocapitalizationType = .none
+            self.autocorrectionType = .no
+            self.keyboardType = .namePhonePad
             break
 
         case .PhoneNumber:
-            self.autocapitalizationType = .None
-            self.autocorrectionType = .No
-            self.keyboardType = .PhonePad
+            self.autocapitalizationType = .none
+            self.autocorrectionType = .no
+            self.keyboardType = .phonePad
             break
 
         case .Integer:
-            self.autocapitalizationType = .None
-            self.autocorrectionType = .No
-            self.keyboardType = .PhonePad
+            self.autocapitalizationType = .none
+            self.autocorrectionType = .no
+            self.keyboardType = .phonePad
             break
 
         case .Decimal:
-            self.autocapitalizationType = .None
-            self.autocorrectionType = .No
-            self.keyboardType = .NumberPad
+            self.autocapitalizationType = .none
+            self.autocorrectionType = .no
+            self.keyboardType = .numberPad
             break
 
         case .Address:
-            self.autocapitalizationType = .Words
-            self.keyboardType = .ASCIICapable
+            self.autocapitalizationType = .words
+            self.keyboardType = .asciiCapable
             break
 
         case .Email:
-            self.autocapitalizationType = .None
-            self.autocorrectionType = .No
-            self.keyboardType = .EmailAddress
+            self.autocapitalizationType = .none
+            self.autocorrectionType = .no
+            self.keyboardType = .emailAddress
             break
 
         case .Password:
-            self.autocapitalizationType = .None
-            self.autocorrectionType = .No
-            self.keyboardType = .ASCIICapable
-            self.secureTextEntry = true
+            self.autocapitalizationType = .none
+            self.autocorrectionType = .no
+            self.keyboardType = .asciiCapable
+            self.isSecureTextEntry = true
             break
         default: break
         }
