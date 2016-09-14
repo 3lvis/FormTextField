@@ -1,9 +1,9 @@
 PODS:
   - Formatter (0.3.3)
-  - FormTextField (0.12.0):
+  - FormTextField (0.12.1):
     - Formatter (~> 0.3.3)
     - InputValidator (~> 0.9.1)
-  - Hex (3.0.0)
+  - Hex (3.0.1)
   - InputValidator (0.9.1):
     - Validation (~> 0.3.3)
   - Validation (0.3.3)
@@ -18,11 +18,11 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Formatter: f69c6639c7b00565e0f85a540cee71e1372d1f0d
-  FormTextField: 02706c3124bf7aa233cef72b42283db8ef4b41fb
-  Hex: ee430da9c4412d9196366ae5327f279021dc03eb
+  FormTextField: 07e8ba04be5d71fa2a50be19089fa70e8632bf34
+  Hex: 037b6fd6dc7ef33f43d94f990bd56aa4805d8215
   InputValidator: 776f89f2565385a61e647306f732984f81307d3d
   Validation: 1c95fb5f250647e7216287c482007fdb13e201b8
 
 PODFILE CHECKSUM: 7c7bedf3656aead4a2246d145d341908159fea25
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.0.rc.2

@@ -41,6 +41,10 @@ class FormTextFieldClearButton: UIView {
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
 
-        return image
+        #if swift(>=2.3)
+            return image!
+        #else
+            return image
+        #endif
     }
 }
