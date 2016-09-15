@@ -80,10 +80,10 @@ class Controller: UITableViewController {
             imageView.contentMode = .center
             imageView.frame = CGRect(x: 0, y: 0, width: 30, height: 20)
             textField.accessoryView = imageView
-            textField.accessoryViewMode = .Always
+            textField.accessoryViewMode = .always
         } else {
             textField.accessoryView = nil
-            textField.accessoryViewMode = .Never
+            textField.accessoryViewMode = .never
         }
     }
 }

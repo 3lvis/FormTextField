@@ -21,6 +21,9 @@
 		1469B03F1C4511670027138C /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1469B03E1C4511670027138C /* Field.swift */; };
 		14A139B41AEFC72B00AD732F /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A139B31AEFC72B00AD732F /* Tests.swift */; };
 		36F1A36D4E0DCD4D0DA76D39 /* Pods_CocoaPods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C1C0345741E7AB2B034F042 /* Pods_CocoaPods_Tests.framework */; };
+		4446790B1D8A75FB0002A3BD /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444679081D8A75FB0002A3BD /* FormTextField.swift */; };
+		4446790C1D8A75FB0002A3BD /* FormTextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444679091D8A75FB0002A3BD /* FormTextFieldClearButton.swift */; };
+		4446790D1D8A75FB0002A3BD /* FormTextFieldTypeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4446790A1D8A75FB0002A3BD /* FormTextFieldTypeManager.swift */; };
 		5F264C2EF17055B9FB84C229 /* Pods_CocoaPods_Custom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 724AF726159E5D86D051996B /* Pods_CocoaPods_Custom.framework */; };
 		F09E820F0CA26D5E8C5034DB /* Pods_CocoaPods_Native.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8FB22143BCFF71F535D2CF /* Pods_CocoaPods_Native.framework */; };
 /* End PBXBuildFile section */
@@ -53,6 +56,9 @@
 		14C0AF831BD6D4230009ECBE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2EACAD72BB230F6D77A113AE /* Pods-CocoaPods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaPods-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CocoaPods-Tests/Pods-CocoaPods-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		3B515DB15C3B1AF0B4A4845F /* Pods-CocoaPods-Custom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaPods-Custom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CocoaPods-Custom/Pods-CocoaPods-Custom.debug.xcconfig"; sourceTree = "<group>"; };
+		444679081D8A75FB0002A3BD /* FormTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
+		444679091D8A75FB0002A3BD /* FormTextFieldClearButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTextFieldClearButton.swift; sourceTree = "<group>"; };
+		4446790A1D8A75FB0002A3BD /* FormTextFieldTypeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTextFieldTypeManager.swift; sourceTree = "<group>"; };
 		724AF726159E5D86D051996B /* Pods_CocoaPods_Custom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CocoaPods_Custom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B8FB22143BCFF71F535D2CF /* Pods_CocoaPods_Native.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CocoaPods_Native.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C1C0345741E7AB2B034F042 /* Pods_CocoaPods_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CocoaPods_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +126,7 @@
 		146D728A1AB782920058798C = {
 			isa = PBXGroup;
 			children = (
+				444679071D8A75FB0002A3BD /* Source */,
 				14C136501AB7849300B7B07A /* Metadata */,
 				14647AC71C4506360046399A /* Native */,
 				14647AD81C45063C0046399A /* Custom */,
@@ -169,6 +176,16 @@
 				14C0AF831BD6D4230009ECBE /* README.md */,
 			);
 			name = Metadata;
+			sourceTree = "<group>";
+		};
+		444679071D8A75FB0002A3BD /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				444679081D8A75FB0002A3BD /* FormTextField.swift */,
+				444679091D8A75FB0002A3BD /* FormTextFieldClearButton.swift */,
+				4446790A1D8A75FB0002A3BD /* FormTextFieldTypeManager.swift */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 		9062B6463673E6F588458C9A /* Pods */ = {
@@ -499,6 +516,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				14A139B41AEFC72B00AD732F /* Tests.swift in Sources */,
+				4446790B1D8A75FB0002A3BD /* FormTextField.swift in Sources */,
+				4446790C1D8A75FB0002A3BD /* FormTextFieldClearButton.swift in Sources */,
+				4446790D1D8A75FB0002A3BD /* FormTextFieldTypeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

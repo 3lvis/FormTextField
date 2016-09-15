@@ -65,7 +65,7 @@ struct Field {
             validation.required = true
             let characterSet = NSMutableCharacterSet.decimalDigit()
             characterSet.addCharacters(in: " ")
-            validation.characterSet = characterSet
+            validation.characterSet = characterSet as CharacterSet
             let inputValidator = InputValidator(validation: validation)
             field.inputValidator = inputValidator
 
@@ -92,7 +92,7 @@ struct Field {
             var validation = Validation()
             validation.maximumLength = "CVC".characters.count
             validation.minimumLength = "CVC".characters.count
-            validation.characterSet = CharacterSet.decimalDigitCharacterSet()
+            validation.characterSet = CharacterSet.decimalDigits
             let inputValidator = InputValidator(validation: validation)
             field.inputValidator = inputValidator
 
