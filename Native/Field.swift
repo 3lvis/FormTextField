@@ -5,7 +5,7 @@ import Validation
 import FormTextField
 
 enum FieldType {
-    case Header, Field
+    case header, field
 }
 
 struct Field {
@@ -25,14 +25,14 @@ struct Field {
     static func fields() -> [Field] {
         var items = [Field]()
 
-        items.append(Field(type: .Header, title: "Cardholder"))
+        items.append(Field(type: .header, title: "Cardholder"))
 
         var requiredValidation = Validation()
         requiredValidation.required = true
         let requiredInputValidator = InputValidator(validation: requiredValidation)
 
         let emailField: Field = {
-            var field = Field(type: .Field, title: "Email")
+            var field = Field(type: .field, title: "Email")
             field.inputType = .Email
 
             var validation = Validation()
@@ -45,7 +45,7 @@ struct Field {
         items.append(emailField)
 
         let UsernameField: Field = {
-            var field = Field(type: .Field, title: "Username")
+            var field = Field(type: .field, title: "Username")
             field.inputType = .Name
             field.inputValidator = requiredInputValidator
 
@@ -53,18 +53,18 @@ struct Field {
         }()
         items.append(UsernameField)
 
-        items.append(Field(type: .Header, title: "Billing info"))
+        items.append(Field(type: .header, title: "Billing info"))
 
         let cardNumberField: Field = {
-            var field = Field(type: .Field, title: "Number", placeholder: "Card Number")
+            var field = Field(type: .field, title: "Number", placeholder: "Card Number")
             field.inputType = .Integer
             field.formatter = CardNumberFormatter()
             var validation = Validation()
             validation.minimumLength = "1234 5678 1234 5678".characters.count
             validation.maximumLength = "1234 5678 1234 5678".characters.count
             validation.required = true
-            let characterSet = NSMutableCharacterSet.decimalDigitCharacterSet()
-            characterSet.addCharactersInString(" ")
+            let characterSet = NSMutableCharacterSet.decimalDigit()
+            characterSet.addCharacters(in: " ")
             validation.characterSet = characterSet
             let inputValidator = InputValidator(validation: validation)
             field.inputValidator = inputValidator
@@ -74,7 +74,7 @@ struct Field {
         items.append(cardNumberField)
 
         let expirationDateField: Field = {
-            var field = Field(type: .Field, title: "Expires", placeholder: "MM/YY")
+            var field = Field(type: .field, title: "Expires", placeholder: "MM/YY")
             field.formatter = CardExpirationDateFormatter()
             field.inputType = .Integer
             var validation = Validation()
@@ -87,12 +87,12 @@ struct Field {
         items.append(expirationDateField)
 
         let securityCodeField: Field = {
-            var field = Field(type: .Field, title: "CVC", placeholder: "Security Code")
+            var field = Field(type: .field, title: "CVC", placeholder: "Security Code")
             field.inputType = .Integer
             var validation = Validation()
             validation.maximumLength = "CVC".characters.count
             validation.minimumLength = "CVC".characters.count
-            validation.characterSet = NSCharacterSet.decimalDigitCharacterSet()
+            validation.characterSet = CharacterSet.decimalDigitCharacterSet()
             let inputValidator = InputValidator(validation: validation)
             field.inputValidator = inputValidator
 

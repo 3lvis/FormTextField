@@ -10,27 +10,27 @@ class Controller: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(red: 239/255, green: 239/255, blue: 244/255, alpha: 1)
-        self.tableView.registerClass(FormTextFieldCell.self, forCellReuseIdentifier: FormTextFieldCell.Identifier)
-        self.tableView.registerClass(HeaderCell.self, forCellReuseIdentifier: HeaderCell.Identifier)
+        self.tableView.register(FormTextFieldCell.self, forCellReuseIdentifier: FormTextFieldCell.Identifier)
+        self.tableView.register(HeaderCell.self, forCellReuseIdentifier: HeaderCell.Identifier)
         self.tableView.tableFooterView = UIView()
 
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(Controller.done))
-        doneButton.enabled = false
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(Controller.done))
+        doneButton.isEnabled = false
         self.navigationItem.rightBarButtonItem = doneButton
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.fields.count
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let field = self.fields[indexPath.row]
-        if field.type == .Header {
-            let cell = tableView.dequeueReusableCellWithIdentifier(HeaderCell.Identifier, forIndexPath: indexPath) as! HeaderCell
-            cell.textLabel?.text = field.title.uppercaseString
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let field = self.fields[(indexPath as NSIndexPath).row]
+        if field.type == .header {
+            let cell = tableView.dequeueReusableCell(withIdentifier: HeaderCell.Identifier, for: indexPath) as! HeaderCell
+            cell.textLabel?.text = field.title.uppercased()
             return cell
         } else {
-            let cell = tableView.dequeueReusableCellWithIdentifier(FormTextFieldCell.Identifier, forIndexPath: indexPath) as! FormTextFieldCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: FormTextFieldCell.Identifier, for: indexPath) as! FormTextFieldCell
             cell.textField.textFieldDelegate = self
             cell.textLabel?.text = field.title
             cell.textField.placeholder = field.placeholder ?? field.title
@@ -43,9 +43,9 @@ class Controller: UITableViewController {
         }
     }
 
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        let field = self.fields[indexPath.row]
-        if field.type == .Header {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let field = self.fields[(indexPath as NSIndexPath).row]
+        if field.type == .header {
             return 60
         } else {
             return 45
@@ -53,17 +53,17 @@ class Controller: UITableViewController {
     }
 
     func done() {
-        let alertController = UIAlertController(title: "The payment details are valid", message: nil, preferredStyle: .Alert)
-        let dismissAction = UIAlertAction(title: "Dismiss", style: .Default, handler: nil)
+        let alertController = UIAlertController(title: "The payment details are valid", message: nil, preferredStyle: .alert)
+        let dismissAction = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
         alertController.addAction(dismissAction)
-        self.presentViewController(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
     }
 
     func validate() -> Bool {
         var valid = true
-        for (index, field) in self.fields.enumerate() {
-            if field.type == .Field {
-                let cell = self.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: index, inSection: 0)) as! FormTextFieldCell
+        for (index, field) in self.fields.enumerated() {
+            if field.type == .field {
+                let cell = self.tableView.cellForRow(at: IndexPath(row: index, section: 0)) as! FormTextFieldCell
                 let validField = cell.textField.validate()
                 if validField == false {
                     valid = validField
@@ -73,11 +73,11 @@ class Controller: UITableViewController {
         return valid
     }
 
-    func showCheckAccessory(textField: FormTextField) {
+    func showCheckAccessory(_ textField: FormTextField) {
         let valid = textField.validate()
         if valid {
             let imageView = UIImageView(image: UIImage(named: "check-icon")!)
-            imageView.contentMode = .Center
+            imageView.contentMode = .center
             imageView.frame = CGRect(x: 0, y: 0, width: 30, height: 20)
             textField.accessoryView = imageView
             textField.accessoryViewMode = .Always
@@ -89,11 +89,11 @@ class Controller: UITableViewController {
 }
 
 extension Controller: FormTextFieldDelegate {
-    func formTextField(textField: FormTextField, didUpdateWithText text: String?) {
+    func formTextField(_ textField: FormTextField, didUpdateWithText text: String?) {
         self.showCheckAccessory(textField)
         let valid = self.validate()
         if let button = self.navigationItem.rightBarButtonItem {
-            button.enabled = valid
+            button.isEnabled = valid
         }
     }
 }

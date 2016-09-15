@@ -7,11 +7,11 @@ class HeaderCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
         self.contentView.backgroundColor = UIColor(red: 239/255, green: 239/255, blue: 244/255, alpha: 1)
-        self.selectionStyle = .None
+        self.selectionStyle = .none
 
         guard let textLabel = self.textLabel else { return }
         textLabel.textColor = UIColor(red: 109/255, green: 109/255, blue: 114/255, alpha: 1)
-        textLabel.font = UIFont.systemFontOfSize(14)
+        textLabel.font = UIFont.systemFont(ofSize: 14)
     }
 
     required init?(coder aDecoder: NSCoder) {
