@@ -6,7 +6,7 @@ class FormTextFieldCell: UITableViewCell {
 
     lazy var textField: FormTextField = {
         let textField = FormTextField()
-        textField.defaultTextColor = UIColor.blackColor()
+        textField.defaultTextColor = UIColor.black
 
         return textField
     }()
@@ -14,7 +14,7 @@ class FormTextFieldCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        self.selectionStyle = .None
+        self.selectionStyle = .none
         self.contentView.addSubview(self.textField)
     }
 
@@ -32,7 +32,7 @@ class FormTextFieldCell: UITableViewCell {
         textLabelFrame.size.width = 90
         textLabel.frame = textLabelFrame
 
-        let bounds = UIScreen.mainScreen().bounds
+        let bounds = UIScreen.main.bounds
         let x = textLabelFrame.width + textLabelFrame.origin.x
         let rightMargin = CGFloat(10)
         let width = bounds.size.width - x - rightMargin

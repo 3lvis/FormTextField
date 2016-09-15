@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = "FormTextField"
   s.summary          = "A UITextField that supports formatters and input validators such as maximum length and regex"
-  s.version          = "0.13.0"
+  s.version          = "1.0.0"
   s.homepage         = "https://github.com/3lvis/FormTextField"
   s.license          = 'MIT'
   s.author           = { "Elvis Nuñez" => "elvisnunez@me.com" }
@@ -11,6 +11,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.source_files = 'Source/**/*'
   s.frameworks = 'UIKit'
-  s.dependency 'Formatter', '~> 0.3.3'
-  s.dependency 'InputValidator', '~> 0.9.1'
+  s.dependency 'Formatter', '~> 1.0.0'
+  s.dependency 'InputValidator', '~> 1.0.0'
 end

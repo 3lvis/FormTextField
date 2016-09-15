@@ -4,7 +4,7 @@ import FormTextField
 
 struct CustomStyle {
     static func apply() {
-        let enabledBackgroundColor = UIColor.whiteColor()
+        let enabledBackgroundColor = UIColor.white
         let enabledBorderColor = UIColor(hex: "DFDFDF")
         let enabledTextColor = UIColor(hex: "455C73")
         let activeBorderColor = UIColor(hex: "70D7FF")
@@ -32,7 +32,7 @@ struct CustomStyle {
 
         FormTextField.appearance().disabledBackgroundColor = UIColor(hex: "DFDFDF")
         FormTextField.appearance().disabledBorderColor = UIColor(hex: "DFDFDF")
-        FormTextField.appearance().disabledTextColor = UIColor.whiteColor()
+        FormTextField.appearance().disabledTextColor = UIColor.white
 
         FormTextField.appearance().invalidBackgroundColor = UIColor(hex: "FFC9C8")
         FormTextField.appearance().invalidBorderColor = UIColor(hex: "FF4B47")

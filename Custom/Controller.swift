@@ -36,9 +36,9 @@ class Controller: UIViewController {
         validation.maximumLength = "1234 5678 1234 5678".characters.count
         validation.minimumLength = "1234 5678 1234 5678".characters.count
         validation.required = true
-        let characterSet = NSMutableCharacterSet.decimalDigitCharacterSet()
-        characterSet.addCharactersInString(" ")
-        validation.characterSet = characterSet
+        let characterSet = NSMutableCharacterSet.decimalDigit()
+        characterSet.addCharacters(in: " ")
+        validation.characterSet = characterSet as CharacterSet
         let inputValidator = InputValidator(validation: validation)
         textField.inputValidator = inputValidator
 
@@ -76,7 +76,7 @@ class Controller: UIViewController {
         var validation = Validation()
         validation.maximumLength = "CVC".characters.count
         validation.minimumLength = "CVC".characters.count
-        validation.characterSet = NSCharacterSet.decimalDigitCharacterSet()
+        validation.characterSet = NSCharacterSet.decimalDigits
         let inputValidator = InputValidator(validation: validation)
         textField.inputValidator = inputValidator
 
@@ -90,20 +90,20 @@ class Controller: UIViewController {
         let button = UIButton(frame: previousFrame)
         button.backgroundColor = UIColor(hex: "27C787")
         button.titleLabel?.font = UIFont(name: "AvenirNext-Regular", size: 24)
-        button.setTitle("Pay", forState: .Normal)
-        button.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        button.setTitle("Pay", for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
         button.layer.cornerRadius = 30.0
-        button.layer.shadowColor = UIColor(hex: "21B177").CGColor
+        button.layer.shadowColor = UIColor(hex: "21B177").cgColor
         button.layer.shadowOffset = CGSize(width: 0, height: 3)
         button.layer.shadowRadius = 0
         button.layer.shadowOpacity = 1
-        button.addTarget(self, action: #selector(Controller.payAction), forControlEvents: .TouchUpInside)
+        button.addTarget(self, action: #selector(Controller.payAction), for: .touchUpInside)
 
         return button
     }()
 
     override func loadView() {
-        let view = UIView(frame: UIScreen.mainScreen().bounds)
+        let view = UIView(frame: UIScreen.main.bounds)
         view.backgroundColor = UIColor(hex: "D4F3FF")
         self.view = view
     }
@@ -124,10 +124,10 @@ class Controller: UIViewController {
         let validCardExpirationDate = self.cardExpirationDateField.validate()
         let validCVC = self.cvcField.validate()
         if validEmail && validCardNumber && validCardExpirationDate && validCVC {
-            let alertController = UIAlertController(title: "Valid!", message: "The payment details are valid", preferredStyle: .Alert)
-            let dismissAction = UIAlertAction(title: "Dismiss", style: .Default, handler: nil)
+            let alertController = UIAlertController(title: "Valid!", message: "The payment details are valid", preferredStyle: .alert)
+            let dismissAction = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
             alertController.addAction(dismissAction)
-            self.presentViewController(alertController, animated: true, completion: nil)
+            self.present(alertController, animated: true, completion: nil)
         }
     }
 }
