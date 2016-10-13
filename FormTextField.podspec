@@ -12,5 +12,5 @@ Pod::Spec.new do |s|
   s.source_files = 'Source/**/*'
   s.frameworks = 'UIKit'
   s.dependency 'Formatter', '~> 1.0.0'
-  s.dependency 'InputValidator', '~> 1.0.0'
+  s.dependency 'InputValidator', '~> 1.0.1'
 end
