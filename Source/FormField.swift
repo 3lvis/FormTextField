@@ -6,18 +6,10 @@ import Validation
 public protocol FormField {
     var placeholder: String? { get set }
     var inputType: FormTextFieldInputType { get }
+    var value: String? { get set }
     var inputValidator: InputValidatable? { get set }
     var formatter: Formattable? { get set }
-    var value: String? { get set }
 }
-
-class BaseFormField: FormField {
-    var placeholder: String?
-    var inputType = FormTextFieldInputType.Default
-    var inputValidator: InputValidatable?
-    var formatter: Formattable?
-    var value: String?
- }
 
 public extension FormField {
     public func validate() -> Bool {
@@ -27,5 +19,29 @@ public extension FormField {
         }
 
         return isValid
+    }
+}
+
+public struct DefaultFormField: FormField {
+    public var placeholder: String?
+    public var inputType = FormTextFieldInputType.Default
+    public var value: String?
+    public var inputValidator: InputValidatable?
+    public var formatter: Formattable?
+
+    init() {
+    }
+
+    init(placeholder: String?, inputType: FormTextFieldInputType) {
+        self.placeholder = placeholder
+        self.inputType = inputType
+    }
+
+    init(placeholder: String?, inputType: FormTextFieldInputType, initialValue: String?, inputValidator: InputValidatable? = nil, formatter: Formattable? = nil) {
+        self.placeholder = placeholder
+        self.inputType = inputType
+        self.value = initialValue
+        self.inputValidator = inputValidator
+        self.formatter = formatter
     }
 }

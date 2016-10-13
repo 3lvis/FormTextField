@@ -2,7 +2,6 @@ import UIKit
 import Formatter
 import InputValidator
 import Validation
-import FormTextField
 
 class Controller: UIViewController {
     let height = CGFloat(60)
@@ -11,14 +10,14 @@ class Controller: UIViewController {
     lazy var emailField: FormTextField = {
         let margin = CGFloat(20)
         let textField = FormTextField(frame: CGRect(x: margin, y: self.initialY, width: self.view.frame.width - (margin * 2.0), height: self.height))
-        textField.inputType = .Email
-        textField.placeholder = "Email"
 
         var validation = Validation()
         validation.required = true
         validation.format = "[\\w._%+-]+@[\\w.-]+\\.\\w{2,}"
         let inputValidator = InputValidator(validation: validation)
-        textField.inputValidator = inputValidator
+
+        let formField = DefaultFormField(placeholder: "Email", inputType: .Email, initialValue: nil, inputValidator: inputValidator, formatter: nil)
+        textField.formField = formField
 
         return textField
     }()
@@ -28,9 +27,6 @@ class Controller: UIViewController {
         var previousFrame = self.emailField.frame
         previousFrame.origin.y = self.emailField.frame.maxY + margin
         let textField = FormTextField(frame: previousFrame)
-        textField.inputType = .Integer
-        textField.formatter = CardNumberFormatter()
-        textField.placeholder = "Card Number"
 
         var validation = Validation()
         validation.maximumLength = "1234 5678 1234 5678".characters.count
@@ -40,7 +36,9 @@ class Controller: UIViewController {
         characterSet.addCharacters(in: " ")
         validation.characterSet = characterSet as CharacterSet
         let inputValidator = InputValidator(validation: validation)
-        textField.inputValidator = inputValidator
+
+        let formField = DefaultFormField(placeholder: "Card Number", inputType: .Integer, initialValue: nil, inputValidator: inputValidator, formatter: CardNumberFormatter())
+        textField.formField = formField
 
         return textField
     }()
@@ -51,14 +49,13 @@ class Controller: UIViewController {
         previousFrame.origin.y = self.cardNumberField.frame.maxY + margin
         previousFrame.size.width = previousFrame.size.width * 0.6
         let textField = FormTextField(frame: previousFrame)
-        textField.inputType = .Integer
-        textField.formatter = CardExpirationDateFormatter()
-        textField.placeholder = "Expiration Date (MM/YY)"
 
         var validation = Validation()
         validation.required = true
         let inputValidator = CardExpirationDateInputValidator(validation: validation)
-        textField.inputValidator = inputValidator
+
+        let formField = DefaultFormField(placeholder: "Expiration Date (MM/YY)", inputType: .Integer, initialValue: nil, inputValidator: inputValidator, formatter: CardExpirationDateFormatter())
+        textField.formField = formField
 
         return textField
     }()
@@ -70,15 +67,15 @@ class Controller: UIViewController {
         previousFrame.origin.y = self.cardNumberField.frame.maxY + margin
         previousFrame.size.width = previousFrame.size.width * 0.35
         let textField = FormTextField(frame: previousFrame)
-        textField.inputType = .Integer
-        textField.placeholder = "CVC"
 
         var validation = Validation()
         validation.maximumLength = "CVC".characters.count
         validation.minimumLength = "CVC".characters.count
         validation.characterSet = NSCharacterSet.decimalDigits
         let inputValidator = InputValidator(validation: validation)
-        textField.inputValidator = inputValidator
+
+        let formField = DefaultFormField(placeholder: "CVC", inputType: .Integer, initialValue: nil, inputValidator: inputValidator, formatter: nil)
+        textField.formField = formField
 
         return textField
     }()

@@ -78,7 +78,7 @@ open class FormTextField: UITextField, UITextFieldDelegate {
     fileprivate(set) open var valid: Bool = true
 
     override public init(frame: CGRect) {
-        self.formField = BaseFormField()
+        self.formField = DefaultFormField()
 
         super.init(frame: frame)
 
@@ -86,7 +86,7 @@ open class FormTextField: UITextField, UITextFieldDelegate {
     }
 
     required public init?(coder aDecoder: NSCoder) {
-        self.formField = BaseFormField()
+        self.formField = DefaultFormField()
 
         super.init(coder: aDecoder)
 
