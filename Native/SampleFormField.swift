@@ -7,7 +7,7 @@ enum FieldType {
     case header, field
 }
 
-struct SampleFormField: FormField {
+class SampleFormField: FormField {
     var placeholder: String?
     var inputType = FormTextFieldInputType.Default
     var inputValidator: InputValidatable?

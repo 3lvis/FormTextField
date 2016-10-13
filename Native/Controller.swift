@@ -136,10 +136,9 @@ class Controller: UITableViewController {
 
     func validate() -> Bool {
         var valid = true
-        for (index, field) in self.fields.enumerated() {
+        for field in fields {
             if (field as! SampleFormField).type == .field {
-                let cell = self.tableView.cellForRow(at: IndexPath(row: index, section: 0)) as! FormTextFieldCell
-                let validField = cell.textField.validate()
+                let validField = field.validate()
                 if validField == false {
                     valid = validField
                 }

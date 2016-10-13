@@ -65,8 +65,8 @@ open class FormTextField: UITextField, UITextFieldDelegate {
         }
     }
 
-    open var inputValidator: InputValidatable?
-    open var formatter: Formattable?
+    fileprivate var inputValidator: InputValidatable?
+    fileprivate var formatter: Formattable?
     weak open var textFieldDelegate: FormTextFieldDelegate?
 
     static fileprivate let AccessoryButtonWidth = 30.0
@@ -126,7 +126,7 @@ open class FormTextField: UITextField, UITextFieldDelegate {
         }
     }
 
-    open var inputType: FormTextFieldInputType = .Default {
+    fileprivate var inputType: FormTextFieldInputType = .Default {
         didSet {
             self.updateInputType(inputType)
         }

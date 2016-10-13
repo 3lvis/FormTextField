@@ -11,10 +11,21 @@ public protocol FormField {
     var value: String? { get set }
 }
 
-struct BaseFormField: FormField {
+class BaseFormField: FormField {
     var placeholder: String?
     var inputType = FormTextFieldInputType.Default
     var inputValidator: InputValidatable?
     var formatter: Formattable?
     var value: String?
  }
+
+public extension FormField {
+    public func validate() -> Bool {
+        var isValid = true
+        if let inputValidator = self.inputValidator {
+            isValid = inputValidator.validateString(self.value ?? "")
+        }
+
+        return isValid
+    }
+}
