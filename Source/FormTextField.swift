@@ -57,11 +57,11 @@ open class FormTextField: UITextField, UITextFieldDelegate {
 
     public var formField: FormField {
         didSet {
-            self.text = formField.value
-            self.placeholder = formField.placeholder
-            self.inputType = formField.inputType
-            self.inputValidator = formField.inputValidator
-            self.formatter = formField.formatter
+            self.inputType = self.formField.inputType
+            self.inputValidator = self.formField.inputValidator
+            self.formatter = self.formField.formatter
+            self.placeholder = self.formField.placeholder
+            self.text = self.formField.value
         }
     }
 
