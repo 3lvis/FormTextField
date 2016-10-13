@@ -8,6 +8,7 @@ enum FieldType {
 }
 
 class SampleFormField: FormField {
+    var returnKeyType = UIReturnKeyType.default
     var placeholder: String?
     var inputType = FormTextFieldInputType.default
     var inputValidator: InputValidatable?

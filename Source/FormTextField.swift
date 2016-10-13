@@ -60,6 +60,7 @@ open class FormTextField: UITextField, UITextFieldDelegate {
             self.inputType = self.formField.inputType
             self.inputValidator = self.formField.inputValidator
             self.formatter = self.formField.formatter
+            self.returnKeyType = self.formField.returnKeyType
             self.placeholder = self.formField.placeholder
             self.text = self.formField.value
         }
