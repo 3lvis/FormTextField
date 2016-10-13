@@ -4,8 +4,8 @@ import InputValidator
 import Validation
 
 class Controller: UITableViewController {
-    lazy var fields: [FormField] = {
-        var items = [FormField]()
+    lazy var fields: [SampleFormField] = {
+        var items = [SampleFormField]()
 
         items.append(SampleFormField(type: .header, title: "Cardholder"))
 
@@ -16,6 +16,7 @@ class Controller: UITableViewController {
         let emailField: SampleFormField = {
             var field = SampleFormField(type: .field, title: "Email")
             field.inputType = .email
+            field.returnKeyType = .next
 
             var validation = Validation()
             validation.required = true
@@ -26,14 +27,15 @@ class Controller: UITableViewController {
         }()
         items.append(emailField)
 
-        let UsernameField: SampleFormField = {
+        let usernameField: SampleFormField = {
             var field = SampleFormField(type: .field, title: "Username")
             field.inputType = .name
             field.inputValidator = requiredInputValidator
+            field.returnKeyType = .next
 
             return field
         }()
-        items.append(UsernameField)
+        items.append(usernameField)
 
         items.append(SampleFormField(type: .header, title: "Billing info"))
 
@@ -50,6 +52,7 @@ class Controller: UITableViewController {
             validation.characterSet = characterSet as CharacterSet
             let inputValidator = InputValidator(validation: validation)
             field.inputValidator = inputValidator
+            field.returnKeyType = .next
 
             return field
         }()
@@ -63,6 +66,7 @@ class Controller: UITableViewController {
             validation.required = true
             let inputValidator = CardExpirationDateInputValidator(validation: validation)
             field.inputValidator = inputValidator
+            field.returnKeyType = .next
 
             return field
         }()
@@ -77,7 +81,8 @@ class Controller: UITableViewController {
             validation.characterSet = CharacterSet.decimalDigits
             let inputValidator = InputValidator(validation: validation)
             field.inputValidator = inputValidator
-            
+            field.returnKeyType = .done
+
             return field
         }()
         items.append(securityCodeField)
@@ -103,16 +108,19 @@ class Controller: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let field = self.fields[indexPath.row]
-        if (field as! SampleFormField).type == .header {
+        field.indexPath = indexPath
+
+        if field.type == .header {
             let cell = tableView.dequeueReusableCell(withIdentifier: HeaderCell.Identifier, for: indexPath) as! HeaderCell
-            cell.textLabel?.text = (field as! SampleFormField).title.uppercased()
+            cell.textLabel?.text = field.title.uppercased()
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: FormTextFieldCell.Identifier, for: indexPath) as! FormTextFieldCell
             cell.textField.textFieldDelegate = self
-            cell.textLabel?.text = (field as! SampleFormField).title
+            cell.textLabel?.text = field.title
             cell.textField.formField = field
             self.showCheckAccessory(cell.textField)
+            print("title: \(field.title), tag: \(indexPath.row)")
 
             return cell
         }
@@ -120,7 +128,7 @@ class Controller: UITableViewController {
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let field = self.fields[(indexPath as NSIndexPath).row]
-        if (field as! SampleFormField).type == .header {
+        if field.type == .header {
             return 60
         } else {
             return 45
@@ -137,7 +145,7 @@ class Controller: UITableViewController {
     func validate() -> Bool {
         var valid = true
         for field in fields {
-            if (field as! SampleFormField).type == .field {
+            if field.type == .field {
                 let validField = field.validate()
                 if validField == false {
                     valid = validField
@@ -169,6 +177,31 @@ extension Controller: FormTextFieldDelegate {
         let valid = self.validate()
         if let button = self.navigationItem.rightBarButtonItem {
             button.isEnabled = valid
+        }
+    }
+
+    func formTextFieldDidReturn(_ textField: FormTextField) {
+        var nextIndexPath: IndexPath?
+        var found = false
+        for field in self.fields {
+            if found {
+                if field.type == .field {
+                    nextIndexPath = field.indexPath
+                    break
+                }
+            }
+
+            if field.indexPath == (textField.formField as! SampleFormField).indexPath {
+                found = true
+            }
+        }
+
+        if let nextIndexPath = nextIndexPath {
+            let cell = self.tableView(self.tableView, cellForRowAt: nextIndexPath) as! FormTextFieldCell
+            cell.textField.becomeFirstResponder()
+            //cell.textField.perform(#selector(becomeFirstResponder), with: nil, afterDelay: 0.2)
+        } else {
+            self.setEditing(false, animated: true)
         }
     }
 }

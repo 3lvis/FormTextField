@@ -11,6 +11,7 @@ public enum FormTextFieldInputType: String {
     @objc optional func formTextFieldDidEndEditing(_ textField: FormTextField)
     @objc optional func formTextField(_ textField: FormTextField, didUpdateWithText text: String?)
     @objc optional func formTextFieldDidReturn(_ textField: FormTextField)
+    @objc optional func formTextFieldShouldReturn(_ textField: FormTextField) -> Bool
 }
 
 open class FormTextField: UITextField, UITextFieldDelegate {
@@ -236,10 +237,6 @@ open class FormTextField: UITextField, UITextFieldDelegate {
         self.textFieldDelegate?.formTextField?(self, didUpdateWithText: self.text)
     }
 
-    @objc private func textFieldDidReturn(_ textField: FormTextField) {
-        self.textFieldDelegate?.formTextFieldDidReturn?(self)
-    }
-
     // MARK: Actions
 
     func clearButtonAction() {
@@ -279,5 +276,15 @@ extension FormTextField {
         }
         
         return valid
+    }
+
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let shouldReturn = self.textFieldDelegate?.formTextFieldShouldReturn?(self) ?? true
+
+        return shouldReturn
+    }
+
+    public func textFieldDidReturn(_ textField: FormTextField) {
+        self.textFieldDelegate?.formTextFieldDidReturn?(self)
     }
 }

@@ -16,6 +16,7 @@ class SampleFormField: FormField {
     var value: String?
     var type = FieldType.field
     let title: String
+    var indexPath: IndexPath?
 
     init(type: FieldType, title: String, placeholder: String? = nil) {
         self.type = type
