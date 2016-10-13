@@ -2,10 +2,88 @@ import UIKit
 import Formatter
 import InputValidator
 import Validation
-import FormTextField
 
 class Controller: UITableViewController {
-    let fields = Field.fields()
+    lazy var fields: [FormField] = {
+        var items = [FormField]()
+
+        items.append(SampleFormField(type: .header, title: "Cardholder"))
+
+        var requiredValidation = Validation()
+        requiredValidation.required = true
+        let requiredInputValidator = InputValidator(validation: requiredValidation)
+
+        let emailField: SampleFormField = {
+            var field = SampleFormField(type: .field, title: "Email")
+            field.inputType = .Email
+
+            var validation = Validation()
+            validation.required = true
+            validation.format = "[\\w._%+-]+@[\\w.-]+\\.\\w{2,}"
+            field.inputValidator = InputValidator(validation: validation)
+
+            return field
+        }()
+        items.append(emailField)
+
+        let UsernameField: SampleFormField = {
+            var field = SampleFormField(type: .field, title: "Username")
+            field.inputType = .Name
+            field.inputValidator = requiredInputValidator
+
+            return field
+        }()
+        items.append(UsernameField)
+
+        items.append(SampleFormField(type: .header, title: "Billing info"))
+
+        let cardNumberField: SampleFormField = {
+            var field = SampleFormField(type: .field, title: "Number", placeholder: "Card Number")
+            field.inputType = .Integer
+            field.formatter = CardNumberFormatter()
+            var validation = Validation()
+            validation.minimumLength = "1234 5678 1234 5678".characters.count
+            validation.maximumLength = "1234 5678 1234 5678".characters.count
+            validation.required = true
+            let characterSet = NSMutableCharacterSet.decimalDigit()
+            characterSet.addCharacters(in: " ")
+            validation.characterSet = characterSet as CharacterSet
+            let inputValidator = InputValidator(validation: validation)
+            field.inputValidator = inputValidator
+
+            return field
+        }()
+        items.append(cardNumberField)
+
+        let expirationDateField: SampleFormField = {
+            var field = SampleFormField(type: .field, title: "Expires", placeholder: "MM/YY")
+            field.formatter = CardExpirationDateFormatter()
+            field.inputType = .Integer
+            var validation = Validation()
+            validation.required = true
+            let inputValidator = CardExpirationDateInputValidator(validation: validation)
+            field.inputValidator = inputValidator
+
+            return field
+        }()
+        items.append(expirationDateField)
+
+        let securityCodeField: SampleFormField = {
+            var field = SampleFormField(type: .field, title: "CVC", placeholder: "Security Code")
+            field.inputType = .Integer
+            var validation = Validation()
+            validation.maximumLength = "CVC".characters.count
+            validation.minimumLength = "CVC".characters.count
+            validation.characterSet = CharacterSet.decimalDigits
+            let inputValidator = InputValidator(validation: validation)
+            field.inputValidator = inputValidator
+            
+            return field
+        }()
+        items.append(securityCodeField)
+        
+        return items
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,19 +102,16 @@ class Controller: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let field = self.fields[(indexPath as NSIndexPath).row]
-        if field.type == .header {
+        let field = self.fields[indexPath.row]
+        if (field as! SampleFormField).type == .header {
             let cell = tableView.dequeueReusableCell(withIdentifier: HeaderCell.Identifier, for: indexPath) as! HeaderCell
-            cell.textLabel?.text = field.title.uppercased()
+            cell.textLabel?.text = (field as! SampleFormField).title.uppercased()
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: FormTextFieldCell.Identifier, for: indexPath) as! FormTextFieldCell
             cell.textField.textFieldDelegate = self
-            cell.textLabel?.text = field.title
-            cell.textField.placeholder = field.placeholder ?? field.title
-            cell.textField.inputType = field.inputType
-            cell.textField.inputValidator = field.inputValidator
-            cell.textField.formatter = field.formatter
+            cell.textLabel?.text = (field as! SampleFormField).title
+            cell.textField.formField = field
             self.showCheckAccessory(cell.textField)
 
             return cell
@@ -45,7 +120,7 @@ class Controller: UITableViewController {
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let field = self.fields[(indexPath as NSIndexPath).row]
-        if field.type == .header {
+        if (field as! SampleFormField).type == .header {
             return 60
         } else {
             return 45
@@ -62,7 +137,7 @@ class Controller: UITableViewController {
     func validate() -> Bool {
         var valid = true
         for (index, field) in self.fields.enumerated() {
-            if field.type == .field {
+            if (field as! SampleFormField).type == .field {
                 let cell = self.tableView.cellForRow(at: IndexPath(row: index, section: 0)) as! FormTextFieldCell
                 let validField = cell.textField.validate()
                 if validField == false {
@@ -90,6 +165,7 @@ class Controller: UITableViewController {
 
 extension Controller: FormTextFieldDelegate {
     func formTextField(_ textField: FormTextField, didUpdateWithText text: String?) {
+        textField.formField.value = text
         self.showCheckAccessory(textField)
         let valid = self.validate()
         if let button = self.navigationItem.rightBarButtonItem {

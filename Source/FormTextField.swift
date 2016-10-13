@@ -55,6 +55,16 @@ open class FormTextField: UITextField, UITextFieldDelegate {
         }
     }
 
+    public var formField: FormField {
+        didSet {
+            self.text = formField.value
+            self.placeholder = formField.placeholder
+            self.inputType = formField.inputType
+            self.inputValidator = formField.inputValidator
+            self.formatter = formField.formatter
+        }
+    }
+
     open var inputValidator: InputValidatable?
     open var formatter: Formattable?
     weak open var textFieldDelegate: FormTextFieldDelegate?
@@ -68,12 +78,16 @@ open class FormTextField: UITextField, UITextFieldDelegate {
     fileprivate(set) open var valid: Bool = true
 
     override public init(frame: CGRect) {
+        self.formField = FormField()
+
         super.init(frame: frame)
 
         commonInit()
     }
 
     required public init?(coder aDecoder: NSCoder) {
+        self.formField = FormField()
+
         super.init(coder: aDecoder)
 
         commonInit()

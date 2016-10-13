@@ -1,5 +1,4 @@
 import UIKit
-import FormTextField
 
 class FormTextFieldCell: UITableViewCell {
     static let Identifier = "FormTextFieldCell"

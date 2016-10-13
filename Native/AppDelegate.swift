@@ -1,5 +1,4 @@
 import UIKit
-import FormTextField
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

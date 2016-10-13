@@ -18,8 +18,17 @@
 		14647ADA1C45063C0046399A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14647AD91C45063C0046399A /* AppDelegate.swift */; };
 		14647ADC1C45063C0046399A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14647ADB1C45063C0046399A /* Assets.xcassets */; };
 		14647ADF1C45063C0046399A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14647ADD1C45063C0046399A /* LaunchScreen.storyboard */; };
-		1469B03F1C4511670027138C /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1469B03E1C4511670027138C /* Field.swift */; };
+		1469B03F1C4511670027138C /* SampleFormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1469B03E1C4511670027138C /* SampleFormField.swift */; };
+		1469D5B61DB014F40001CE81 /* FormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1469D5B51DB014F40001CE81 /* FormItem.swift */; };
 		14A139B41AEFC72B00AD732F /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A139B31AEFC72B00AD732F /* Tests.swift */; };
+		14EB55AA1DB018DF008D51CB /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444679081D8A75FB0002A3BD /* FormTextField.swift */; };
+		14EB55AB1DB018E0008D51CB /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444679081D8A75FB0002A3BD /* FormTextField.swift */; };
+		14EB55AC1DB018E4008D51CB /* FormTextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444679091D8A75FB0002A3BD /* FormTextFieldClearButton.swift */; };
+		14EB55AD1DB018E4008D51CB /* FormTextFieldTypeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4446790A1D8A75FB0002A3BD /* FormTextFieldTypeManager.swift */; };
+		14EB55AE1DB018E4008D51CB /* FormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1469D5B51DB014F40001CE81 /* FormItem.swift */; };
+		14EB55AF1DB018E5008D51CB /* FormTextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444679091D8A75FB0002A3BD /* FormTextFieldClearButton.swift */; };
+		14EB55B01DB018E5008D51CB /* FormTextFieldTypeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4446790A1D8A75FB0002A3BD /* FormTextFieldTypeManager.swift */; };
+		14EB55B11DB018E5008D51CB /* FormItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1469D5B51DB014F40001CE81 /* FormItem.swift */; };
 		4446790B1D8A75FB0002A3BD /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444679081D8A75FB0002A3BD /* FormTextField.swift */; };
 		4446790C1D8A75FB0002A3BD /* FormTextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444679091D8A75FB0002A3BD /* FormTextFieldClearButton.swift */; };
 		4446790D1D8A75FB0002A3BD /* FormTextFieldTypeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4446790A1D8A75FB0002A3BD /* FormTextFieldTypeManager.swift */; };
@@ -47,7 +56,8 @@
 		14647ADB1C45063C0046399A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14647ADE1C45063C0046399A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14647AE01C45063C0046399A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1469B03E1C4511670027138C /* Field.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
+		1469B03E1C4511670027138C /* SampleFormField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleFormField.swift; sourceTree = "<group>"; };
+		1469D5B51DB014F40001CE81 /* FormItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormItem.swift; sourceTree = "<group>"; };
 		146D72AC1AB782920058798C /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		146D72B11AB782920058798C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14A139B31AEFC72B00AD732F /* Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
@@ -115,7 +125,7 @@
 				14647ACA1C4506360046399A /* Assets.xcassets */,
 				14647ACC1C4506360046399A /* LaunchScreen.storyboard */,
 				14647ACF1C4506360046399A /* Info.plist */,
-				1469B03E1C4511670027138C /* Field.swift */,
+				1469B03E1C4511670027138C /* SampleFormField.swift */,
 			);
 			path = Native;
 			sourceTree = "<group>";
@@ -207,6 +217,7 @@
 				444679081D8A75FB0002A3BD /* FormTextField.swift */,
 				444679091D8A75FB0002A3BD /* FormTextFieldClearButton.swift */,
 				4446790A1D8A75FB0002A3BD /* FormTextFieldTypeManager.swift */,
+				1469D5B51DB014F40001CE81 /* FormItem.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -493,10 +504,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14EB55AC1DB018E4008D51CB /* FormTextFieldClearButton.swift in Sources */,
+				14EB55AE1DB018E4008D51CB /* FormItem.swift in Sources */,
 				145FDD141C4506AF00F9DC70 /* HeaderCell.swift in Sources */,
+				14EB55AA1DB018DF008D51CB /* FormTextField.swift in Sources */,
+				14EB55AD1DB018E4008D51CB /* FormTextFieldTypeManager.swift in Sources */,
 				14647AC91C4506360046399A /* AppDelegate.swift in Sources */,
 				145FDD131C4506AF00F9DC70 /* FormTextFieldCell.swift in Sources */,
-				1469B03F1C4511670027138C /* Field.swift in Sources */,
+				1469B03F1C4511670027138C /* SampleFormField.swift in Sources */,
 				145FDD121C4506AF00F9DC70 /* Controller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,9 +520,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14EB55B11DB018E5008D51CB /* FormItem.swift in Sources */,
 				14647ADA1C45063C0046399A /* AppDelegate.swift in Sources */,
+				14EB55AF1DB018E5008D51CB /* FormTextFieldClearButton.swift in Sources */,
 				145FDD181C4506D800F9DC70 /* CustomStyle.swift in Sources */,
+				14EB55B01DB018E5008D51CB /* FormTextFieldTypeManager.swift in Sources */,
 				145FDD171C4506D800F9DC70 /* Controller.swift in Sources */,
+				14EB55AB1DB018E0008D51CB /* FormTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +534,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1469D5B61DB014F40001CE81 /* FormItem.swift in Sources */,
 				14A139B41AEFC72B00AD732F /* Tests.swift in Sources */,
 				4446790B1D8A75FB0002A3BD /* FormTextField.swift in Sources */,
 				4446790C1D8A75FB0002A3BD /* FormTextFieldClearButton.swift in Sources */,
