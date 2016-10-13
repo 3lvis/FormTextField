@@ -3,7 +3,7 @@ import Formatter
 import InputValidator
 
 public enum FormTextFieldInputType: String {
-    case Default, Name, Username, PhoneNumber, Integer, Decimal, Address, Email, Password, Unknown
+    case `default`, name, username, phoneNumber, integer, decimal, address, email, password, unknown
 }
 
 @objc public protocol FormTextFieldDelegate: NSObjectProtocol {
@@ -126,7 +126,7 @@ open class FormTextField: UITextField, UITextFieldDelegate {
         }
     }
 
-    fileprivate var inputType: FormTextFieldInputType = .Default {
+    fileprivate var inputType = FormTextFieldInputType.default {
         didSet {
             self.updateInputType(inputType)
         }

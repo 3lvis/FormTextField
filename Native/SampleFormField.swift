@@ -9,7 +9,7 @@ enum FieldType {
 
 class SampleFormField: FormField {
     var placeholder: String?
-    var inputType = FormTextFieldInputType.Default
+    var inputType = FormTextFieldInputType.default
     var inputValidator: InputValidatable?
     var formatter: Formattable?
     var value: String?

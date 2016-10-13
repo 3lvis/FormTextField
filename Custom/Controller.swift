@@ -16,7 +16,7 @@ class Controller: UIViewController {
         validation.format = "[\\w._%+-]+@[\\w.-]+\\.\\w{2,}"
         let inputValidator = InputValidator(validation: validation)
 
-        let formField = DefaultFormField(placeholder: "Email", inputType: .Email, initialValue: nil, inputValidator: inputValidator, formatter: nil)
+        let formField = DefaultFormField(placeholder: "Email", inputType: .email, initialValue: nil, inputValidator: inputValidator, formatter: nil)
         textField.formField = formField
 
         return textField
@@ -37,7 +37,7 @@ class Controller: UIViewController {
         validation.characterSet = characterSet as CharacterSet
         let inputValidator = InputValidator(validation: validation)
 
-        let formField = DefaultFormField(placeholder: "Card Number", inputType: .Integer, initialValue: nil, inputValidator: inputValidator, formatter: CardNumberFormatter())
+        let formField = DefaultFormField(placeholder: "Card Number", inputType: .integer, initialValue: nil, inputValidator: inputValidator, formatter: CardNumberFormatter())
         textField.formField = formField
 
         return textField
@@ -54,7 +54,7 @@ class Controller: UIViewController {
         validation.required = true
         let inputValidator = CardExpirationDateInputValidator(validation: validation)
 
-        let formField = DefaultFormField(placeholder: "Expiration Date (MM/YY)", inputType: .Integer, initialValue: nil, inputValidator: inputValidator, formatter: CardExpirationDateFormatter())
+        let formField = DefaultFormField(placeholder: "Expiration Date (MM/YY)", inputType: .integer, initialValue: nil, inputValidator: inputValidator, formatter: CardExpirationDateFormatter())
         textField.formField = formField
 
         return textField
@@ -74,7 +74,7 @@ class Controller: UIViewController {
         validation.characterSet = NSCharacterSet.decimalDigits
         let inputValidator = InputValidator(validation: validation)
 
-        let formField = DefaultFormField(placeholder: "CVC", inputType: .Integer, initialValue: nil, inputValidator: inputValidator, formatter: nil)
+        let formField = DefaultFormField(placeholder: "CVC", inputType: .integer, initialValue: nil, inputValidator: inputValidator, formatter: nil)
         textField.formField = formField
 
         return textField

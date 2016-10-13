@@ -24,7 +24,7 @@ public extension FormField {
 
 public struct DefaultFormField: FormField {
     public var placeholder: String?
-    public var inputType = FormTextFieldInputType.Default
+    public var inputType = FormTextFieldInputType.default
     public var value: String?
     public var inputValidator: InputValidatable?
     public var formatter: Formattable?
