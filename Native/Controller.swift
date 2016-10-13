@@ -180,28 +180,31 @@ extension Controller: FormTextFieldDelegate {
         }
     }
 
-    func formTextFieldDidReturn(_ textField: FormTextField) {
+    func formTextFieldShouldReturn(_ textField: FormTextField) -> Bool {
+        guard let focusedFormField = textField.formField as? SampleFormField else { fatalError("FormField is not SampleFormField") }
+
         var nextIndexPath: IndexPath?
         var found = false
         for field in self.fields {
-            if found {
-                if field.type == .field {
-                    nextIndexPath = field.indexPath
-                    break
-                }
+            if found && field.type == .field {
+                nextIndexPath = field.indexPath
+                break
             }
 
-            if field.indexPath == (textField.formField as! SampleFormField).indexPath {
+            if field.indexPath == focusedFormField.indexPath {
                 found = true
             }
         }
 
         if let nextIndexPath = nextIndexPath {
             let cell = self.tableView(self.tableView, cellForRowAt: nextIndexPath) as! FormTextFieldCell
-            cell.textField.becomeFirstResponder()
-            //cell.textField.perform(#selector(becomeFirstResponder), with: nil, afterDelay: 0.2)
+            if cell.textField.canBecomeFirstResponder {
+                cell.textField.becomeFirstResponder()
+            }
         } else {
             self.setEditing(false, animated: true)
         }
+
+        return false
     }
 }
