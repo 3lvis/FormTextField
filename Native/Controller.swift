@@ -15,7 +15,7 @@ class Controller: UITableViewController {
 
         let emailField: SampleFormField = {
             var field = SampleFormField(type: .field, title: "Email")
-            field.inputType = .Email
+            field.inputType = .email
 
             var validation = Validation()
             validation.required = true
@@ -28,7 +28,7 @@ class Controller: UITableViewController {
 
         let UsernameField: SampleFormField = {
             var field = SampleFormField(type: .field, title: "Username")
-            field.inputType = .Name
+            field.inputType = .name
             field.inputValidator = requiredInputValidator
 
             return field
@@ -39,7 +39,7 @@ class Controller: UITableViewController {
 
         let cardNumberField: SampleFormField = {
             var field = SampleFormField(type: .field, title: "Number", placeholder: "Card Number")
-            field.inputType = .Integer
+            field.inputType = .integer
             field.formatter = CardNumberFormatter()
             var validation = Validation()
             validation.minimumLength = "1234 5678 1234 5678".characters.count
@@ -58,7 +58,7 @@ class Controller: UITableViewController {
         let expirationDateField: SampleFormField = {
             var field = SampleFormField(type: .field, title: "Expires", placeholder: "MM/YY")
             field.formatter = CardExpirationDateFormatter()
-            field.inputType = .Integer
+            field.inputType = .integer
             var validation = Validation()
             validation.required = true
             let inputValidator = CardExpirationDateInputValidator(validation: validation)
@@ -70,7 +70,7 @@ class Controller: UITableViewController {
 
         let securityCodeField: SampleFormField = {
             var field = SampleFormField(type: .field, title: "CVC", placeholder: "Security Code")
-            field.inputType = .Integer
+            field.inputType = .integer
             var validation = Validation()
             validation.maximumLength = "CVC".characters.count
             validation.minimumLength = "CVC".characters.count
