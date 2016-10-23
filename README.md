@@ -1,5 +1,7 @@
 # FormTextField
 
+[![Join the chat at https://gitter.im/FormTextField/Lobby](https://badges.gitter.im/FormTextField/Lobby.svg)](https://gitter.im/FormTextField/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 This a `UITextField` subclass that supports styling for valid / invalid just using a boolean, formatters so you can easily format credit card numbers, phone numbers and more. It supports input validators so you can limit the contents of a UITextField using maximum length, maximum value or even regex (perfect for validating emails).
 
 ## [Native Demo](https://github.com/3lvis/FormTextField/blob/master/Native/Field.swift#L28-L92)
