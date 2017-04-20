@@ -1,59 +1,61 @@
 import UIKit
 
-extension UIColor {
-    /**
-     Base initializer, it creates an instance of `UIColor` using an HEX string.
-     - parameter hex: The base HEX string to create the color.
-     */
+public extension UIColor {
+    /// Base initializer, it creates an instance of `UIColor` using an HEX string.
+    ///
+    /// - Parameter hex: The base HEX string to create the color.
     public convenience init(hex: String) {
-        let noHashString = hex.stringByReplacingOccurrencesOfString("#", withString: "")
-        let scanner = NSScanner(string: noHashString)
-        scanner.charactersToBeSkipped = NSCharacterSet.symbolCharacterSet()
-        
-        var alpha:CGFloat = 1.0
-        if noHashString.characters.count > 6 {
-            let startIndex = noHashString.endIndex.advancedBy(-2)
-            let alphaString = noHashString.substringFromIndex(startIndex)
-            if let value = NSNumberFormatter().numberFromString(alphaString) {
-                alpha = CGFloat(Float(value) * 0.01)
-            }
-        }
+        let noHashString = hex.replacingOccurrences(of: "#", with: "")
+        let scanner = Scanner(string: noHashString)
+        scanner.charactersToBeSkipped = CharacterSet.symbols
 
         var hexInt: UInt32 = 0
-        if (scanner.scanHexInt(&hexInt)) {
+        if (scanner.scanHexInt32(&hexInt)) {
             let red = (hexInt >> 16) & 0xFF
             let green = (hexInt >> 8) & 0xFF
             let blue = (hexInt) & 0xFF
 
-            self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: alpha)
+            self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
         } else {
             self.init(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
         }
     }
 
-    internal func convertToRGBSpace(color: UIColor) -> UIColor {
-        let colorSpaceRGB = CGColorSpaceCreateDeviceRGB()
-
-        if  CGColorSpaceGetModel(CGColorGetColorSpace(color.CGColor)) == CGColorSpaceModel.Monochrome {
-            let oldComponents = CGColorGetComponents(color.CGColor)
-            let colorRef = CGColorCreate(colorSpaceRGB, [oldComponents[0], oldComponents[0], oldComponents[0], oldComponents[1]])!
-            let color = UIColor(CGColor: colorRef)
-
-            return color
-        }
-
-        return self
+    /// Convenience initializers for RGB colors.
+    ///
+    /// - Parameters:
+    ///   - red: The red part, ranging from 0 to 255.
+    ///   - green: The green part, ranging from 0 to 255.
+    ///   - blue: The blue part, ranging from 0 to 255.
+    ///   - alpha: The alpha part, ranging from 0 to 100.
+    public convenience init(r red: Double, g green: Double, b blue: Double, a alpha: Double = 100) {
+        self.init(red: CGFloat(red)/CGFloat(255.0), green: CGFloat(green)/CGFloat(255.0), blue: CGFloat(blue)/CGFloat(255.0), alpha: CGFloat(alpha)/CGFloat(100.0))
     }
 
-    /**
-     Checks if two colors are equal.
-     - parameter color: The color to compare.
-     - returns: `true` if the colors are equal.
-     */
-    public func isEqualTo(color: UIColor) -> Bool {
-        let selfColor = self.convertToRGBSpace(self)
-        let otherColor = self.convertToRGBSpace(color)
+    /// Compares if two colors are equal.
+    ///
+    /// - Parameter color: A UIColor to compare.
+    /// - Returns: A boolean, true if same (or very similar) and false otherwise.
+    public func isEqual(to color: UIColor) -> Bool {
+        let currentRGBA = self.RGBA
+        let comparedRGBA = color.RGBA
 
-        return selfColor.isEqual(otherColor)
+        return self.compareColorComponents(a: currentRGBA[0], b: comparedRGBA[0]) &&
+            self.compareColorComponents(a: currentRGBA[1], b: comparedRGBA[1]) &&
+            self.compareColorComponents(a: currentRGBA[2], b: comparedRGBA[2]) &&
+            self.compareColorComponents(a: currentRGBA[3], b: comparedRGBA[3])
+    }
+
+
+    /// Get the red, green, blue and alpha values.
+    private var RGBA: [CGFloat] {
+        var RGBA: [CGFloat] = [0,0,0,0]
+        self.getRed(&RGBA[0], green: &RGBA[1], blue: &RGBA[2], alpha: &RGBA[3])
+
+        return RGBA
+    }
+
+    private func compareColorComponents(a: CGFloat, b: CGFloat) -> Bool {
+        return abs(b - a) <= 0
     }
 }

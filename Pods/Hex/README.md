@@ -1,4 +1,5 @@
-# Hex
+![Hex](https://raw.githubusercontent.com/3lvis/Hex/master/Images/hex.png)
+
 
 >A hex triplet is a six-digit, three-byte hexadecimal number used in HTML, CSS, SVG, and other computing applications to represent colors. The bytes represent the red, green and blue components of the color. One byte represents a number in the range 00 to FF (in hexadecimal notation), or 0 to 255 in decimal notation. This represents the least (0) to the most (255) intensity of each of the color components. Thus web colors specify colors in the True Color (24-bit RGB) color scheme.
 

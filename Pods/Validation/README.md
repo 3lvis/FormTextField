@@ -3,13 +3,13 @@
 A simple type to perform validations on Strings.
 
 ```swift
-class Validation {
-    var required: Bool?
-    var minimumLength: Int?
+struct Validation {
+    var required = false
+    var minimumLength = 0
     var maximumLength: Int?
     var maximumValue: Double?
     var minimumValue: Double?
-    var characterSet: NSCharacterSet?
+    var characterSet: CharacterSet?
     var format: String?
 }
 ```

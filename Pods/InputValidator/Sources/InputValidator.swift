@@ -8,7 +8,7 @@ public struct InputValidator: InputValidatable {
         self.validation = validation
     }
 
-    public func validateReplacementString(replacementString: String?, fullString: String?, inRange range: NSRange?) -> Bool {
+    public func validateReplacementString(_ replacementString: String?, fullString: String?, inRange range: NSRange?) -> Bool {
         var valid = true
         if let validation = self.validation {
             let evaluatedString = self.composedString(replacementString, fullString: fullString, inRange: range)

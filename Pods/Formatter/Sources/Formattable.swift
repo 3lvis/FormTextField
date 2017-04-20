@@ -1,3 +1,3 @@
 public protocol Formattable {
-    func formatString(string: String, reverse: Bool) -> String
+    func formatString(_ string: String, reverse: Bool) -> String
 }

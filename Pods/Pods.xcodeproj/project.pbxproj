@@ -7,232 +7,345 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		014DC75398C25B4B0AF1B3007D46320C /* Formatter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75220926AC29D921CA3633DF9983B1D3 /* Formatter.framework */; };
-		0333929AE521BFFD38ADFE53FCCF4259 /* Pods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BCC458FDD5F692BBB2BFC64BB5701FC /* Pods-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059D241DF956D38AEAC41FFCE9F1DD91 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04264A1DB9B9D8854967FDCBAEACBDD6 /* Foundation.framework */; };
-		0904B21C1CF0E81C4A6776F5FE4A3F96 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04264A1DB9B9D8854967FDCBAEACBDD6 /* Foundation.framework */; };
-		0B8DCD439AC1F74FB4EE7A0A080B4F36 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04264A1DB9B9D8854967FDCBAEACBDD6 /* Foundation.framework */; };
-		20C9ADC6D2CEFD22ADAE6E9314C93A1E /* Formatter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F177E2C9CB46C399B1845A49E3DB55 /* Formatter-dummy.m */; };
-		2B094F18D29D09D5A8E991A60428B859 /* CardExpirationDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997D7030B0335C4D48F1355CBDC5C605 /* CardExpirationDateFormatter.swift */; };
-		2C599646607DD8CD144C60030C690634 /* Formattable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC35FC43371C0185285972B30249CAD /* Formattable.swift */; };
-		31F910669124E6633A7A32D13702F5DB /* FormTextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FD0A578032C70EF7BF14336BB67CDC /* FormTextFieldClearButton.swift */; };
-		39307F3D87EA9865A830733B7042EFC7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BFAACC292D7F63C5CB3CAFEF50B81B2 /* UIKit.framework */; };
-		4A56F24A3B4625C61DD7DB39211EDBFC /* FormTextField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0245CD039A9E4078F0FD898DB101365E /* FormTextField-dummy.m */; };
-		517FE7171388A03891888693534745E3 /* Validation-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B96AD6B2C161D0193798746BAB047231 /* Validation-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		51CC6F762118D02AA3C9AF110E0C9337 /* InputValidatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F71D80ECC4237E09BAC479FBB28FBA /* InputValidatable.swift */; };
-		579C61C8DD018AC047E1001A81768AE4 /* InputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AED00FB4E0243B299237BC11BA61B2 /* InputValidator.swift */; };
-		5831EEF4A47411D4699943A59F31949D /* DecimalInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AEE5EBE871E17BAA389CF64E145B98 /* DecimalInputValidator.swift */; };
-		6FD9003C48FF399E1C54662624E12EAD /* CardExpirationDateInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4615B41D51FB4544A27E1B54628D976 /* CardExpirationDateInputValidator.swift */; };
-		723A23DD1549FBD93E7549F41678ACAC /* Hex-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9A8A968D7B1C87E570084C1ADE13BA /* Hex-dummy.m */; };
-		7DF08AFA974ED93C0BA5FFE51AFF7299 /* Hex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F54A26FBD5EFE2B23DF1E63890D39650 /* Hex.framework */; };
-		80EF7E0CF7F0E703A0ECA5A8546B6F4B /* RequiredInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9297DA4A1A2CF2D1C1376EECB8788D98 /* RequiredInputValidator.swift */; };
-		8261AE390888C7512CC85632DDCD3045 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 894E5DA93A9F359521A89826BE6DA777 /* Pods-dummy.m */; };
-		86026CC1859345F34BE284178457A290 /* InputValidator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EF97A2FA13AE183AB07A7E48B00D52BE /* InputValidator-dummy.m */; };
-		88B052E75BE1D6EB75B953257CCA5B41 /* CardNumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3B800E9A66BF7F62BE7839AF3F96A8 /* CardNumberFormatter.swift */; };
-		8DACB8FC68BA11502E48026BD426CBCC /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8956FE8059A08682D40D4EDD16094A /* UIColor+Hex.swift */; };
-		975D2C06B9FAB66C21D3CB27E55DEDF2 /* InputValidator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C81D4FB093B0120D32BFA985BE0120E6 /* InputValidator.framework */; };
-		9B542C52EEFB5BB47DA5131331FC4A47 /* FormTextField-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E7213FE7F74FF58623A27B76D7CCD39F /* FormTextField-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A05CCFCDB401BB58939BF7AA976A7588 /* Validation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E9F5D1C5E8BACF71313BDC054A3779 /* Validation-dummy.m */; };
-		A5A54B389CC463C125CA86B0A94A6DE8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04264A1DB9B9D8854967FDCBAEACBDD6 /* Foundation.framework */; };
-		AD794AD988DD1B93AA9A8AEF0800ECE5 /* Hex-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C5A059CD8B9DD1AAEF05AF2F7AA7679C /* Hex-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B216BAA395807FB0FCD9C18620342717 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04264A1DB9B9D8854967FDCBAEACBDD6 /* Foundation.framework */; };
-		B3EDA10C9BF9D97076CCCDED92BEF861 /* FormTextFieldTypeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF722BE117265607D478662C7D612B15 /* FormTextFieldTypeManager.swift */; };
-		BA59161188F972732AFFFED4D6524B4E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BFAACC292D7F63C5CB3CAFEF50B81B2 /* UIKit.framework */; };
-		C0574549C2DEC8526088F9376D827840 /* InputValidator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BC4DEFE7F837E098F179146E3CBD24F /* InputValidator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CCD215593166CCDA86087D8A7057389E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04264A1DB9B9D8854967FDCBAEACBDD6 /* Foundation.framework */; };
-		E5D55534B150111B47C3B8EA1925FE46 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409AA905B549A20247E1DA49A8AFEDC2 /* Validation.swift */; };
-		EEF11C5E908EAE10FEFA35210D42BE82 /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD36A52A7B9D07FB64C73646F127B88 /* FormTextField.swift */; };
-		F53D17AE151727F03D01F88D3BF6ADD4 /* Formatter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DC9731AF663E36B7F0EE443264190226 /* Formatter-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F8DDD5A349A2032780D7AF991EF27C22 /* Validation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D9D3CB89D1AC50C06AAE89B56885490 /* Validation.framework */; };
+		0BFEA3FC71788718B5D7B5F07B6A1539 /* CardExpirationDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997D7030B0335C4D48F1355CBDC5C605 /* CardExpirationDateFormatter.swift */; };
+		1670C5FC44003DDB83BBFD77680F216C /* CardNumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3B800E9A66BF7F62BE7839AF3F96A8 /* CardNumberFormatter.swift */; };
+		18CFC9A495CAF3D18C573F91A18395BD /* Pods-CocoaPods-Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7058A735C338780D2BD9C15993C7BFE9 /* Pods-CocoaPods-Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F528C6BAA1944AE5C8346420F85E31F /* InputValidatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F71D80ECC4237E09BAC479FBB28FBA /* InputValidatable.swift */; };
+		46BC7BE424EE74B7E746FA092E7215D6 /* Validation-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B96AD6B2C161D0193798746BAB047231 /* Validation-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4EB34DC04B77900A38FC79B47936F9C1 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409AA905B549A20247E1DA49A8AFEDC2 /* Validation.swift */; };
+		4F11EE0B5D10F39A5487B1538FF9950F /* Validation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82767020D377B8181A11D9F2D7CFB659 /* Validation.framework */; };
+		4F3CBC065A827C41C4810119FA9940A2 /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD36A52A7B9D07FB64C73646F127B88 /* FormTextField.swift */; };
+		5104A93DA8E50FEEC8E4521CC231C55A /* FormTextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FD0A578032C70EF7BF14336BB67CDC /* FormTextFieldClearButton.swift */; };
+		523AEB93F7D16F34ACC00DACCB513FF6 /* Validation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F4E9F5D1C5E8BACF71313BDC054A3779 /* Validation-dummy.m */; };
+		5AEBAAF71E80EE975A1418A3BDAD0DE8 /* Pods-CocoaPods-Custom-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BB16F3B4F4FE3D0F0F37B778D253C3D /* Pods-CocoaPods-Custom-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5EADE880F3726F353A78A394963A80A3 /* Hex-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9A8A968D7B1C87E570084C1ADE13BA /* Hex-dummy.m */; };
+		6366377EA9E42F4448DB862520BD13D3 /* Formatter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 87F177E2C9CB46C399B1845A49E3DB55 /* Formatter-dummy.m */; };
+		6556C3BADD7090587EFF75DF8FAE18E6 /* InputValidator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BC4DEFE7F837E098F179146E3CBD24F /* InputValidator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		65ED5033163F518F1AE812FEE6BE5DA5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79875AAE63BAA197BB84A2AFA16F2D1F /* UIKit.framework */; };
+		696B0D1616735F09C83C438E207F06D2 /* Hex-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C5A059CD8B9DD1AAEF05AF2F7AA7679C /* Hex-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		72B5AD7DEC656540298DEC3B3824A267 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCDAE3C62295A19A8EDF74B58E108FFE /* Foundation.framework */; };
+		72D8DD09298E96CAFE89A5FD0BB388EB /* Formatter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4622C3AB9281F84DCAF73D26116CA892 /* Formatter.framework */; };
+		74B20DEDD39A139EF436625E4966D28C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCDAE3C62295A19A8EDF74B58E108FFE /* Foundation.framework */; };
+		7F4EEBCC3CE28311399C550A30C63DF5 /* Pods-CocoaPods-Native-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B04D8B5DF916F92F2A2856FEDDEFCA00 /* Pods-CocoaPods-Native-dummy.m */; };
+		852427B1FFEB48519D9F97703DBCB521 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79875AAE63BAA197BB84A2AFA16F2D1F /* UIKit.framework */; };
+		8E47133CC70D15B7CE95FF1F167F6C05 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCDAE3C62295A19A8EDF74B58E108FFE /* Foundation.framework */; };
+		92AB62D05E2109F98FB224F0E3597495 /* InputValidator-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EF97A2FA13AE183AB07A7E48B00D52BE /* InputValidator-dummy.m */; };
+		92B14BB96D14535F226A739A13F90795 /* Pods-CocoaPods-Native-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 87A367A7944AEE96434806FF910F6338 /* Pods-CocoaPods-Native-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		99FAFAF1CDC6FAB8224CC76267645727 /* InputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AED00FB4E0243B299237BC11BA61B2 /* InputValidator.swift */; };
+		A211727F8275EAA320532AFEBFDD2A70 /* Pods-CocoaPods-Custom-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2337B5FE183A3D0224B8060108CEB4E3 /* Pods-CocoaPods-Custom-dummy.m */; };
+		A2A258E5504A3139470177A270916B89 /* FormTextFieldTypeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF722BE117265607D478662C7D612B15 /* FormTextFieldTypeManager.swift */; };
+		A8EA970F3E47B8ED0826E0399E273113 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCDAE3C62295A19A8EDF74B58E108FFE /* Foundation.framework */; };
+		AA3E6D9DA3D1550041AB1B8FF95DE01A /* FormTextField-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E7213FE7F74FF58623A27B76D7CCD39F /* FormTextField-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AB832F38CF6A4ABFC1DD0F236C03FD72 /* Formattable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC35FC43371C0185285972B30249CAD /* Formattable.swift */; };
+		ABD70E24D835750D79EC5F790120047E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCDAE3C62295A19A8EDF74B58E108FFE /* Foundation.framework */; };
+		B4812B5F7592B8B59BBE5A4AA9084E97 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCDAE3C62295A19A8EDF74B58E108FFE /* Foundation.framework */; };
+		C16305B89F8BB7E90D6BAFCEEC2E358A /* RequiredInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9297DA4A1A2CF2D1C1376EECB8788D98 /* RequiredInputValidator.swift */; };
+		C3CD7A17E45618D6CC6C3209CABF289F /* DecimalInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AEE5EBE871E17BAA389CF64E145B98 /* DecimalInputValidator.swift */; };
+		C4ECAEDA3FC5C1AD141BD4008975AB75 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCDAE3C62295A19A8EDF74B58E108FFE /* Foundation.framework */; };
+		CD4E2E93EA1BBCF757135925146713D6 /* InputValidator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2656E22D4D0FDDEE84BB69358389615B /* InputValidator.framework */; };
+		D34E649A6F099BDD23B49E3FBA30DA8F /* CardExpirationDateInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4615B41D51FB4544A27E1B54628D976 /* CardExpirationDateInputValidator.swift */; };
+		DA311F285266B775335C5B4F7B5A13D1 /* Formatter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DC9731AF663E36B7F0EE443264190226 /* Formatter-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E8D2B883FDB8C1E210B3FFCB1556A1D7 /* Pods-CocoaPods-Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EA07DB387DEE01FCFF780C9947B22D8 /* Pods-CocoaPods-Tests-dummy.m */; };
+		EDAD6D8A90FC434F9F9117E09750CFE6 /* Validation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82767020D377B8181A11D9F2D7CFB659 /* Validation.framework */; };
+		EF0D980228E725EE72B1AAE4C859EE41 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8956FE8059A08682D40D4EDD16094A /* UIColor+Hex.swift */; };
+		F760C5B0B1A2DE590E8B2346F3909B99 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCDAE3C62295A19A8EDF74B58E108FFE /* Foundation.framework */; };
+		FB1269709F68CCA1A8EC1A3BF5D3074D /* FormTextField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0245CD039A9E4078F0FD898DB101365E /* FormTextField-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		09450B14976299AD81382D7DBFCBCE35 /* PBXContainerItemProxy */ = {
+		000FCC0278347BCAA9484C305E1BEBA8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 4E406ADA083FE2642E70D6BD9BBA9142;
-			remoteInfo = InputValidator;
+			remoteGlobalIDString = 682C458B69A37816E38465B82FFC3756;
+			remoteInfo = Hex;
 		};
-		6008ABAF9A86BCB52A2ADEA79006108D /* PBXContainerItemProxy */ = {
+		0299ECC003EE7B00B8DD4775BFECDEBE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D55AE45BC1AF8C15262A3E4BD21C6551;
+			remoteGlobalIDString = EEB5306E4243879C44047DA0809AC841;
 			remoteInfo = Formatter;
 		};
-		740524E0238AD0446A7BF82346ADBF12 /* PBXContainerItemProxy */ = {
+		1491A7274CC04332FB347D8F5D9C60A9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 7687C6C3086F8B57AE7259AA542D50E2;
-			remoteInfo = Hex;
+			remoteGlobalIDString = EEB5306E4243879C44047DA0809AC841;
+			remoteInfo = Formatter;
 		};
-		7C59482F3E03D27E4F41644AD571B738 /* PBXContainerItemProxy */ = {
+		224194D0A4D37599B237F254AA991D52 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 7687C6C3086F8B57AE7259AA542D50E2;
-			remoteInfo = Hex;
-		};
-		8A1724976AC6AB342496D17E3F947035 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4E406ADA083FE2642E70D6BD9BBA9142;
-			remoteInfo = InputValidator;
-		};
-		8F6CE7B31455F29B9195B5BB76DDBEF2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 44E035D7E7ED76C58A6354A60409C50F;
+			remoteGlobalIDString = F49A3E1CCB7B636004C684708E51B9FF;
 			remoteInfo = Validation;
 		};
-		AD6D29BD0C0040C5CC733AD4066ED3BF /* PBXContainerItemProxy */ = {
+		519D7EAFF6F3D7FC8AEA1C70418D2EFC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 84F5D0A8619CEE5A756EBE364AF796AD;
+			remoteGlobalIDString = F49A3E1CCB7B636004C684708E51B9FF;
+			remoteInfo = Validation;
+		};
+		6284C9BC3FE73D555FC1CCB1746F6428 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 74A72672FFDFBC68733EBD58ABAF1EFF;
 			remoteInfo = FormTextField;
 		};
-		C1EA2F9142A0D342D366F2D38F0011E3 /* PBXContainerItemProxy */ = {
+		70DC40962865EADE848EEEB8F34BD661 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 44E035D7E7ED76C58A6354A60409C50F;
+			remoteGlobalIDString = ABB22700A27734F955F11687D5A50F2B;
+			remoteInfo = InputValidator;
+		};
+		747E3A89C6A2299D130D32C01838F09F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ABB22700A27734F955F11687D5A50F2B;
+			remoteInfo = InputValidator;
+		};
+		7573B019D9185CC7F569B5EDE1C36B53 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EEB5306E4243879C44047DA0809AC841;
+			remoteInfo = Formatter;
+		};
+		7D1B3F9294A4DBF6A018FE7B14598A30 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F49A3E1CCB7B636004C684708E51B9FF;
 			remoteInfo = Validation;
 		};
-		D471A3C56FCCE08A586587DBBF60E41C /* PBXContainerItemProxy */ = {
+		9B4D26BD398C3F3AFDA43C1AD63C6212 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D55AE45BC1AF8C15262A3E4BD21C6551;
+			remoteGlobalIDString = 74A72672FFDFBC68733EBD58ABAF1EFF;
+			remoteInfo = FormTextField;
+		};
+		9B4E9FD3D6E630C911AADB0056F5013B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ABB22700A27734F955F11687D5A50F2B;
+			remoteInfo = InputValidator;
+		};
+		AC7CC648F9C17CFB143824237B3473E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EEB5306E4243879C44047DA0809AC841;
 			remoteInfo = Formatter;
+		};
+		B15F40C1472559FF8B9106E640809CFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 74A72672FFDFBC68733EBD58ABAF1EFF;
+			remoteInfo = FormTextField;
+		};
+		B4E13A40BE37E675756E7A426BC81FB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 682C458B69A37816E38465B82FFC3756;
+			remoteInfo = Hex;
+		};
+		BBF24C30B2C9B1493079D2669F711F39 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F49A3E1CCB7B636004C684708E51B9FF;
+			remoteInfo = Validation;
+		};
+		C3EC7DBC063203B1A1428E47C7B9D72D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ABB22700A27734F955F11687D5A50F2B;
+			remoteInfo = InputValidator;
+		};
+		CB4BB8C5B75C4718F61078C415061B1E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F49A3E1CCB7B636004C684708E51B9FF;
+			remoteInfo = Validation;
+		};
+		DB746063ECD2F59552BC38132FCD3B51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 682C458B69A37816E38465B82FFC3756;
+			remoteInfo = Hex;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0245CD039A9E4078F0FD898DB101365E /* FormTextField-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FormTextField-dummy.m"; sourceTree = "<group>"; };
-		04264A1DB9B9D8854967FDCBAEACBDD6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		04F71D80ECC4237E09BAC479FBB28FBA /* InputValidatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InputValidatable.swift; path = Sources/InputValidatable.swift; sourceTree = "<group>"; };
-		0AEC747D2B4FD79D618226F87B3A915E /* InputValidator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = InputValidator.modulemap; sourceTree = "<group>"; };
+		0AEC747D2B4FD79D618226F87B3A915E /* InputValidator.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = InputValidator.modulemap; sourceTree = "<group>"; };
 		0D3B800E9A66BF7F62BE7839AF3F96A8 /* CardNumberFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CardNumberFormatter.swift; path = Sources/CardNumberFormatter.swift; sourceTree = "<group>"; };
-		16424FF8372C873C7BD78B61E9F9DA48 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2BCC458FDD5F692BBB2BFC64BB5701FC /* Pods-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-umbrella.h"; sourceTree = "<group>"; };
-		2FB3188433D41141FE118738FA7F7FEE /* FormTextField.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FormTextField.modulemap; sourceTree = "<group>"; };
-		3BFAACC292D7F63C5CB3CAFEF50B81B2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		105A7983B36C36F4F806A3D55512C248 /* Pods-CocoaPods-Custom-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CocoaPods-Custom-frameworks.sh"; sourceTree = "<group>"; };
+		2337B5FE183A3D0224B8060108CEB4E3 /* Pods-CocoaPods-Custom-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CocoaPods-Custom-dummy.m"; sourceTree = "<group>"; };
+		2656E22D4D0FDDEE84BB69358389615B /* InputValidator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InputValidator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		296329BA8498618D03650831EBB1170D /* FormTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FormTextField.framework; path = FormTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FB3188433D41141FE118738FA7F7FEE /* FormTextField.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = FormTextField.modulemap; sourceTree = "<group>"; };
+		37ECF772F623EC1558599A80BD7D5149 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BB16F3B4F4FE3D0F0F37B778D253C3D /* Pods-CocoaPods-Custom-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CocoaPods-Custom-umbrella.h"; sourceTree = "<group>"; };
 		3C8956FE8059A08682D40D4EDD16094A /* UIColor+Hex.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+Hex.swift"; path = "Source/UIColor+Hex.swift"; sourceTree = "<group>"; };
+		401E12B47FF68132F8861047D8BD4490 /* Pods-CocoaPods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CocoaPods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		407C6AB11F0606F13F8E9FAF491DFDD4 /* FormTextField.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FormTextField.xcconfig; sourceTree = "<group>"; };
 		409AA905B549A20247E1DA49A8AFEDC2 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Sources/Validation.swift; sourceTree = "<group>"; };
 		4240C20F622A2208B26F8867A942B86A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4480681A74295CFD40CFF12B0FBC44E9 /* Formatter.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Formatter.xcconfig; sourceTree = "<group>"; };
-		509A3A66DE9651BFF8F10789D3B21182 /* InputValidator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InputValidator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4622C3AB9281F84DCAF73D26116CA892 /* Formatter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Formatter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		505F38F80B5591661EF296C81E152CC1 /* Hex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Hex.framework; path = Hex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50AED00FB4E0243B299237BC11BA61B2 /* InputValidator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InputValidator.swift; path = Sources/InputValidator.swift; sourceTree = "<group>"; };
 		51C4C771E5E6307AE33541EDE18B7656 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53F7311043A0229331ABA66AB6048DED /* Hex.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Hex.xcconfig; sourceTree = "<group>"; };
+		5753A117EACF3B8BD304957BA1A152E7 /* Pods-CocoaPods-Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CocoaPods-Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		5BC4DEFE7F837E098F179146E3CBD24F /* InputValidator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "InputValidator-umbrella.h"; sourceTree = "<group>"; };
 		5DC35FC43371C0185285972B30249CAD /* Formattable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Formattable.swift; path = Sources/Formattable.swift; sourceTree = "<group>"; };
-		6D6949B87386B32597D9AFBBDE2BB432 /* FormTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FormTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		705E68B875F8248BC93AFA856119DE83 /* Formatter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Formatter.modulemap; sourceTree = "<group>"; };
-		74D3AAB54C023881F0EEBC15D27667A8 /* Validation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Validation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		75220926AC29D921CA3633DF9983B1D3 /* Formatter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Formatter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		63795C172CF69AC1FC1B4E569DE66CD4 /* Pods-CocoaPods-Custom.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-CocoaPods-Custom.modulemap"; sourceTree = "<group>"; };
+		67EEE248FB62E0D896B7F9E71AF51867 /* Pods-CocoaPods-Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CocoaPods-Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		685351EEA219164D71E7020B0D0CA487 /* Pods-CocoaPods-Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CocoaPods-Tests-frameworks.sh"; sourceTree = "<group>"; };
+		6AD47D8C5B8AE35DEAB124C760CBA6B1 /* InputValidator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = InputValidator.framework; path = InputValidator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B42B5ACCD275618E70179EAB13E58FF /* Validation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Validation.framework; path = Validation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BADFF6F4FB1D7D80BD185D0E638A980 /* Pods_CocoaPods_Custom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CocoaPods_Custom.framework; path = "Pods-CocoaPods-Custom.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CCFB0526C42061858E1A701DCF44EC9 /* Pods_CocoaPods_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CocoaPods_Tests.framework; path = "Pods-CocoaPods-Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DF16CE9E13649CAF10E42E4EA54A1FD /* Pods-CocoaPods-Custom-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CocoaPods-Custom-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6E0A7C4E55012269C43A9F4AFB506DF1 /* Pods-CocoaPods-Native.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CocoaPods-Native.debug.xcconfig"; sourceTree = "<group>"; };
+		7058A735C338780D2BD9C15993C7BFE9 /* Pods-CocoaPods-Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CocoaPods-Tests-umbrella.h"; sourceTree = "<group>"; };
+		705E68B875F8248BC93AFA856119DE83 /* Formatter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Formatter.modulemap; sourceTree = "<group>"; };
+		73147D3017E0705D63A40097DE28433E /* Pods-CocoaPods-Native.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-CocoaPods-Native.modulemap"; sourceTree = "<group>"; };
 		794CC59E98D9F555F590969EBA101D09 /* Formatter-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Formatter-prefix.pch"; sourceTree = "<group>"; };
-		79A9DEDC89FE8336BF5FEDAAF75BF7FC /* Pods.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Pods.modulemap; sourceTree = "<group>"; };
+		79875AAE63BAA197BB84A2AFA16F2D1F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		79B6A30EDD4149EB40957B944A2296A5 /* Pods-CocoaPods-Native.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CocoaPods-Native.release.xcconfig"; sourceTree = "<group>"; };
 		7CD36A52A7B9D07FB64C73646F127B88 /* FormTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
-		87B213035BAC5F75386F62D3C75D2342 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		810085FFF5F011915C455B41C93762AC /* Formatter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Formatter.framework; path = Formatter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82767020D377B8181A11D9F2D7CFB659 /* Validation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Validation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		87A367A7944AEE96434806FF910F6338 /* Pods-CocoaPods-Native-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CocoaPods-Native-umbrella.h"; sourceTree = "<group>"; };
 		87F177E2C9CB46C399B1845A49E3DB55 /* Formatter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Formatter-dummy.m"; sourceTree = "<group>"; };
-		894E5DA93A9F359521A89826BE6DA777 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
 		8C80DEB78549C84F735A14A9975B90F6 /* Validation.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Validation.xcconfig; sourceTree = "<group>"; };
+		8EA07DB387DEE01FCFF780C9947B22D8 /* Pods-CocoaPods-Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CocoaPods-Tests-dummy.m"; sourceTree = "<group>"; };
 		9297DA4A1A2CF2D1C1376EECB8788D98 /* RequiredInputValidator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequiredInputValidator.swift; path = Sources/RequiredInputValidator.swift; sourceTree = "<group>"; };
-		977577C045EDA9D9D1F46E2598D19FC7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		94AC2CF19839930A62DD0210FB536364 /* Pods-CocoaPods-Native-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CocoaPods-Native-acknowledgements.plist"; sourceTree = "<group>"; };
 		997D7030B0335C4D48F1355CBDC5C605 /* CardExpirationDateFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CardExpirationDateFormatter.swift; path = Sources/CardExpirationDateFormatter.swift; sourceTree = "<group>"; };
-		9D9D3CB89D1AC50C06AAE89B56885490 /* Validation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Validation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A0F4F488F9CDDCA67AD868EDA52E3AE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A066EF405408353E7F17C3EB821A9D64 /* FormTextField-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FormTextField-prefix.pch"; sourceTree = "<group>"; };
 		A1016F55EF2B7D9E3C848ADECD82A792 /* InputValidator.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = InputValidator.xcconfig; sourceTree = "<group>"; };
 		A4615B41D51FB4544A27E1B54628D976 /* CardExpirationDateInputValidator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CardExpirationDateInputValidator.swift; path = Sources/CardExpirationDateInputValidator.swift; sourceTree = "<group>"; };
-		A466C823788AC30BEF147C1CEC58B896 /* Hex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A4D32C7C6CEB26E978890E46B807C964 /* Hex.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Hex.modulemap; sourceTree = "<group>"; };
+		A4D32C7C6CEB26E978890E46B807C964 /* Hex.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Hex.modulemap; sourceTree = "<group>"; };
+		A7EC5E28A43EC3DD42C48C42D156ACA1 /* Pods-CocoaPods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CocoaPods-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A979AB8648454F6B5417DA455FC7CBEE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB807959861C72651FA3041A62233248 /* InputValidator-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "InputValidator-prefix.pch"; sourceTree = "<group>"; };
+		AC1B4C625C6FF27B7BDE0CB939869B9B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B04D8B5DF916F92F2A2856FEDDEFCA00 /* Pods-CocoaPods-Native-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CocoaPods-Native-dummy.m"; sourceTree = "<group>"; };
 		B06BFE7BD76A64A0E5072D3F09848795 /* Hex-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Hex-prefix.pch"; sourceTree = "<group>"; };
 		B352946EDA26A0EC6555FB0607D89737 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B37804C701AFBDBE3A7D5909C93D9447 /* Pods-CocoaPods-Custom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CocoaPods-Custom.release.xcconfig"; sourceTree = "<group>"; };
+		B6D0F44776B9E84E36F7271983047505 /* Pods-CocoaPods-Native-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CocoaPods-Native-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B96AD6B2C161D0193798746BAB047231 /* Validation-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Validation-umbrella.h"; sourceTree = "<group>"; };
-		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BBD28504F3ED2A141E4E1AE41479D9C1 /* Pods-CocoaPods-Custom-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CocoaPods-Custom-acknowledgements.plist"; sourceTree = "<group>"; };
+		BCDAE3C62295A19A8EDF74B58E108FFE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		BE01A7F9D1026B9B9E280EA0C82FF704 /* Validation-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Validation-prefix.pch"; sourceTree = "<group>"; };
+		BF86C35B0279EFAD1B9F7B36CEF2DC83 /* Pods-CocoaPods-Custom-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CocoaPods-Custom-resources.sh"; sourceTree = "<group>"; };
+		C494A8428174EA42EB7772234903751E /* Pods-CocoaPods-Native-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CocoaPods-Native-resources.sh"; sourceTree = "<group>"; };
 		C5A059CD8B9DD1AAEF05AF2F7AA7679C /* Hex-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Hex-umbrella.h"; sourceTree = "<group>"; };
-		C81D4FB093B0120D32BFA985BE0120E6 /* InputValidator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InputValidator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CBC0F7C552B739C909B650A0F42F7F38 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
-		D0405803033A2A777B8E4DFA0C1800ED /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D19568056B558F19B079C42C89DF13A5 /* Pods-CocoaPods-Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-CocoaPods-Tests.modulemap"; sourceTree = "<group>"; };
 		D1A79E6F6E5909631A8D9BEB5F3DC273 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DA312349A49333542E6F4B36B329960E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
 		DC9731AF663E36B7F0EE443264190226 /* Formatter-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Formatter-umbrella.h"; sourceTree = "<group>"; };
+		E1D2B1FCE06166A3002FB95D9B3C425C /* Pods-CocoaPods-Native-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CocoaPods-Native-frameworks.sh"; sourceTree = "<group>"; };
+		E64FC2F08B27D42AD86B421C7A75932E /* Pods-CocoaPods-Custom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CocoaPods-Custom.debug.xcconfig"; sourceTree = "<group>"; };
 		E7213FE7F74FF58623A27B76D7CCD39F /* FormTextField-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FormTextField-umbrella.h"; sourceTree = "<group>"; };
-		E7F21354943D9F42A70697D5A5EF72E9 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
-		E8446514FBAD26C0E18F24A5715AEF67 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8AEE5EBE871E17BAA389CF64E145B98 /* DecimalInputValidator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DecimalInputValidator.swift; path = Sources/DecimalInputValidator.swift; sourceTree = "<group>"; };
+		E8FA1ECDD740F0C4BB3B89ED83F895D2 /* Pods_CocoaPods_Native.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CocoaPods_Native.framework; path = "Pods-CocoaPods-Native.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E93F5C6013B0D537775546CAEC3E48A3 /* Pods-CocoaPods-Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CocoaPods-Tests-resources.sh"; sourceTree = "<group>"; };
 		EF722BE117265607D478662C7D612B15 /* FormTextFieldTypeManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FormTextFieldTypeManager.swift; sourceTree = "<group>"; };
 		EF97A2FA13AE183AB07A7E48B00D52BE /* InputValidator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "InputValidator-dummy.m"; sourceTree = "<group>"; };
-		F22B0B009B5FFDE20F6BD7FBD379B2F8 /* Validation.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Validation.modulemap; sourceTree = "<group>"; };
+		F22B0B009B5FFDE20F6BD7FBD379B2F8 /* Validation.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Validation.modulemap; sourceTree = "<group>"; };
 		F4E9F5D1C5E8BACF71313BDC054A3779 /* Validation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Validation-dummy.m"; sourceTree = "<group>"; };
-		F54A26FBD5EFE2B23DF1E63890D39650 /* Hex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F710D3035C1C502D8E3881AA9ABB0E55 /* Formatter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Formatter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7FD0A578032C70EF7BF14336BB67CDC /* FormTextFieldClearButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FormTextFieldClearButton.swift; sourceTree = "<group>"; };
 		FB9A8A968D7B1C87E570084C1ADE13BA /* Hex-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Hex-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1433E1AD4C1C75DA6A9421CB707A6362 /* Frameworks */ = {
+		0027A9BD2722C64D6A361DFCD38A8BD6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5A54B389CC463C125CA86B0A94A6DE8 /* Foundation.framework in Frameworks */,
+				A8EA970F3E47B8ED0826E0399E273113 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1523836B4A6E7B2CAE403D62F545C834 /* Frameworks */ = {
+		10520C39E411EACAFD58229D77A9DCC2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B8DCD439AC1F74FB4EE7A0A080B4F36 /* Foundation.framework in Frameworks */,
-				39307F3D87EA9865A830733B7042EFC7 /* UIKit.framework in Frameworks */,
+				8E47133CC70D15B7CE95FF1F167F6C05 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5F66292F736CDC182D99F09BA190F7C0 /* Frameworks */ = {
+		481E4C2A1683C3BFEFB4CBFBF3DF659F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				059D241DF956D38AEAC41FFCE9F1DD91 /* Foundation.framework in Frameworks */,
+				74B20DEDD39A139EF436625E4966D28C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AE4F2F117332B8DCAEA6E62367967920 /* Frameworks */ = {
+		7A2173FF1A95E44F4BF6AE64D5A92E82 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				014DC75398C25B4B0AF1B3007D46320C /* Formatter.framework in Frameworks */,
-				0904B21C1CF0E81C4A6776F5FE4A3F96 /* Foundation.framework in Frameworks */,
-				7DF08AFA974ED93C0BA5FFE51AFF7299 /* Hex.framework in Frameworks */,
-				975D2C06B9FAB66C21D3CB27E55DEDF2 /* InputValidator.framework in Frameworks */,
-				BA59161188F972732AFFFED4D6524B4E /* UIKit.framework in Frameworks */,
+				72B5AD7DEC656540298DEC3B3824A267 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E0B49E43C5F6B8D179D82DD3D99E2B1C /* Frameworks */ = {
+		82173C9FA2B8406033B26C23AF9D536C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B216BAA395807FB0FCD9C18620342717 /* Foundation.framework in Frameworks */,
-				F8DDD5A349A2032780D7AF991EF27C22 /* Validation.framework in Frameworks */,
+				ABD70E24D835750D79EC5F790120047E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F1EB4C176B46184C18C313C835B89412 /* Frameworks */ = {
+		A5E9661A6DAA2D95B0EA9D2F4851E393 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCD215593166CCDA86087D8A7057389E /* Foundation.framework in Frameworks */,
+				F760C5B0B1A2DE590E8B2346F3909B99 /* Foundation.framework in Frameworks */,
+				EDAD6D8A90FC434F9F9117E09750CFE6 /* Validation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE49DE2C8148A0CE5474ECD6C5482DC3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4ECAEDA3FC5C1AD141BD4008975AB75 /* Foundation.framework in Frameworks */,
+				852427B1FFEB48519D9F97703DBCB521 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCB59D8503DCE3CBE7E57EF3CA9ABD51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				72D8DD09298E96CAFE89A5FD0BB388EB /* Formatter.framework in Frameworks */,
+				B4812B5F7592B8B59BBE5A4AA9084E97 /* Foundation.framework in Frameworks */,
+				CD4E2E93EA1BBCF757135925146713D6 /* InputValidator.framework in Frameworks */,
+				65ED5033163F518F1AE812FEE6BE5DA5 /* UIKit.framework in Frameworks */,
+				4F11EE0B5D10F39A5487B1538FF9950F /* Validation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +372,7 @@
 				409AA905B549A20247E1DA49A8AFEDC2 /* Validation.swift */,
 				B9C3F2E77337BC0E8AFCCD785EBC16CA /* Support Files */,
 			);
+			name = Validation;
 			path = Validation;
 			sourceTree = "<group>";
 		};
@@ -268,7 +382,26 @@
 				3C8956FE8059A08682D40D4EDD16094A /* UIColor+Hex.swift */,
 				E46F335D709395986EEE1789931F6E59 /* Support Files */,
 			);
+			name = Hex;
 			path = Hex;
+			sourceTree = "<group>";
+		};
+		33941CC56F71B7834F1F5F07ECCBD284 /* Pods-CocoaPods-Tests */ = {
+			isa = PBXGroup;
+			children = (
+				AC1B4C625C6FF27B7BDE0CB939869B9B /* Info.plist */,
+				D19568056B558F19B079C42C89DF13A5 /* Pods-CocoaPods-Tests.modulemap */,
+				67EEE248FB62E0D896B7F9E71AF51867 /* Pods-CocoaPods-Tests-acknowledgements.markdown */,
+				5753A117EACF3B8BD304957BA1A152E7 /* Pods-CocoaPods-Tests-acknowledgements.plist */,
+				8EA07DB387DEE01FCFF780C9947B22D8 /* Pods-CocoaPods-Tests-dummy.m */,
+				685351EEA219164D71E7020B0D0CA487 /* Pods-CocoaPods-Tests-frameworks.sh */,
+				E93F5C6013B0D537775546CAEC3E48A3 /* Pods-CocoaPods-Tests-resources.sh */,
+				7058A735C338780D2BD9C15993C7BFE9 /* Pods-CocoaPods-Tests-umbrella.h */,
+				401E12B47FF68132F8861047D8BD4490 /* Pods-CocoaPods-Tests.debug.xcconfig */,
+				A7EC5E28A43EC3DD42C48C42D156ACA1 /* Pods-CocoaPods-Tests.release.xcconfig */,
+			);
+			name = "Pods-CocoaPods-Tests";
+			path = "Target Support Files/Pods-CocoaPods-Tests";
 			sourceTree = "<group>";
 		};
 		5C3AB97077638AB312034DD71A617583 /* InputValidator */ = {
@@ -281,25 +414,46 @@
 				9297DA4A1A2CF2D1C1376EECB8788D98 /* RequiredInputValidator.swift */,
 				9478215FE035B45047DD7AD1C372AC0B /* Support Files */,
 			);
+			name = InputValidator;
 			path = InputValidator;
 			sourceTree = "<group>";
 		};
-		75D98FF52E597A11900E131B6C4E1ADA /* Pods */ = {
+		5EA47FAAEF5099EBB05DA2249AFA1177 /* Pods-CocoaPods-Custom */ = {
 			isa = PBXGroup;
 			children = (
-				E8446514FBAD26C0E18F24A5715AEF67 /* Info.plist */,
-				79A9DEDC89FE8336BF5FEDAAF75BF7FC /* Pods.modulemap */,
-				D0405803033A2A777B8E4DFA0C1800ED /* Pods-acknowledgements.markdown */,
-				87B213035BAC5F75386F62D3C75D2342 /* Pods-acknowledgements.plist */,
-				894E5DA93A9F359521A89826BE6DA777 /* Pods-dummy.m */,
-				E7F21354943D9F42A70697D5A5EF72E9 /* Pods-frameworks.sh */,
-				CBC0F7C552B739C909B650A0F42F7F38 /* Pods-resources.sh */,
-				2BCC458FDD5F692BBB2BFC64BB5701FC /* Pods-umbrella.h */,
-				977577C045EDA9D9D1F46E2598D19FC7 /* Pods.debug.xcconfig */,
-				DA312349A49333542E6F4B36B329960E /* Pods.release.xcconfig */,
+				9A0F4F488F9CDDCA67AD868EDA52E3AE /* Info.plist */,
+				63795C172CF69AC1FC1B4E569DE66CD4 /* Pods-CocoaPods-Custom.modulemap */,
+				6DF16CE9E13649CAF10E42E4EA54A1FD /* Pods-CocoaPods-Custom-acknowledgements.markdown */,
+				BBD28504F3ED2A141E4E1AE41479D9C1 /* Pods-CocoaPods-Custom-acknowledgements.plist */,
+				2337B5FE183A3D0224B8060108CEB4E3 /* Pods-CocoaPods-Custom-dummy.m */,
+				105A7983B36C36F4F806A3D55512C248 /* Pods-CocoaPods-Custom-frameworks.sh */,
+				BF86C35B0279EFAD1B9F7B36CEF2DC83 /* Pods-CocoaPods-Custom-resources.sh */,
+				3BB16F3B4F4FE3D0F0F37B778D253C3D /* Pods-CocoaPods-Custom-umbrella.h */,
+				E64FC2F08B27D42AD86B421C7A75932E /* Pods-CocoaPods-Custom.debug.xcconfig */,
+				B37804C701AFBDBE3A7D5909C93D9447 /* Pods-CocoaPods-Custom.release.xcconfig */,
 			);
-			name = Pods;
-			path = "Target Support Files/Pods";
+			name = "Pods-CocoaPods-Custom";
+			path = "Target Support Files/Pods-CocoaPods-Custom";
+			sourceTree = "<group>";
+		};
+		6A2B5435495863D7C16F7952075E3916 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4622C3AB9281F84DCAF73D26116CA892 /* Formatter.framework */,
+				2656E22D4D0FDDEE84BB69358389615B /* InputValidator.framework */,
+				82767020D377B8181A11D9F2D7CFB659 /* Validation.framework */,
+				754EC4E1C6E9474517E5FEE7EDB97A37 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		754EC4E1C6E9474517E5FEE7EDB97A37 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				BCDAE3C62295A19A8EDF74B58E108FFE /* Foundation.framework */,
+				79875AAE63BAA197BB84A2AFA16F2D1F /* UIKit.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		779FB90BF68D9B0172752377F6E7B647 /* Formatter */ = {
@@ -310,18 +464,19 @@
 				5DC35FC43371C0185285972B30249CAD /* Formattable.swift */,
 				ACC7EA2AE1EEDD9B0FA8172ABB41A1C6 /* Support Files */,
 			);
+			name = Formatter;
 			path = Formatter;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
-				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				DBE17C2FE52608235215A4B58A33BD9D /* Development Pods */,
-				D19DCAAB91E1F835EE21A07599C411C1 /* Frameworks */,
+				6A2B5435495863D7C16F7952075E3916 /* Frameworks */,
 				EB7CFEEC7586A43C2FCEE4DF40F6728B /* Pods */,
-				CE30565F2161D994CE9C4F2D115124D5 /* Products */,
-				B7B80995527643776607AFFA75B91E24 /* Targets Support Files */,
+				C36686B462B80AA3804D556E05A0BCD2 /* Products */,
+				CC423EBD4DDE28D1171C7772AC04BD20 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -332,7 +487,26 @@
 				F7FD0A578032C70EF7BF14336BB67CDC /* FormTextFieldClearButton.swift */,
 				EF722BE117265607D478662C7D612B15 /* FormTextFieldTypeManager.swift */,
 			);
+			name = Source;
 			path = Source;
+			sourceTree = "<group>";
+		};
+		9067EB030B9D2B7EE2CE029240D04FAC /* Pods-CocoaPods-Native */ = {
+			isa = PBXGroup;
+			children = (
+				37ECF772F623EC1558599A80BD7D5149 /* Info.plist */,
+				73147D3017E0705D63A40097DE28433E /* Pods-CocoaPods-Native.modulemap */,
+				B6D0F44776B9E84E36F7271983047505 /* Pods-CocoaPods-Native-acknowledgements.markdown */,
+				94AC2CF19839930A62DD0210FB536364 /* Pods-CocoaPods-Native-acknowledgements.plist */,
+				B04D8B5DF916F92F2A2856FEDDEFCA00 /* Pods-CocoaPods-Native-dummy.m */,
+				E1D2B1FCE06166A3002FB95D9B3C425C /* Pods-CocoaPods-Native-frameworks.sh */,
+				C494A8428174EA42EB7772234903751E /* Pods-CocoaPods-Native-resources.sh */,
+				87A367A7944AEE96434806FF910F6338 /* Pods-CocoaPods-Native-umbrella.h */,
+				6E0A7C4E55012269C43A9F4AFB506DF1 /* Pods-CocoaPods-Native.debug.xcconfig */,
+				79B6A30EDD4149EB40957B944A2296A5 /* Pods-CocoaPods-Native.release.xcconfig */,
+			);
+			name = "Pods-CocoaPods-Native";
+			path = "Target Support Files/Pods-CocoaPods-Native";
 			sourceTree = "<group>";
 		};
 		9478215FE035B45047DD7AD1C372AC0B /* Support Files */ = {
@@ -373,23 +547,6 @@
 			path = "../Target Support Files/Formatter";
 			sourceTree = "<group>";
 		};
-		B4B70A638C69DAE6EF8C15E3A8C8891B /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				04264A1DB9B9D8854967FDCBAEACBDD6 /* Foundation.framework */,
-				3BFAACC292D7F63C5CB3CAFEF50B81B2 /* UIKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		B7B80995527643776607AFFA75B91E24 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				75D98FF52E597A11900E131B6C4E1ADA /* Pods */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
 		B9C3F2E77337BC0E8AFCCD785EBC16CA /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -404,29 +561,29 @@
 			path = "../Target Support Files/Validation";
 			sourceTree = "<group>";
 		};
-		CE30565F2161D994CE9C4F2D115124D5 /* Products */ = {
+		C36686B462B80AA3804D556E05A0BCD2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F710D3035C1C502D8E3881AA9ABB0E55 /* Formatter.framework */,
-				6D6949B87386B32597D9AFBBDE2BB432 /* FormTextField.framework */,
-				A466C823788AC30BEF147C1CEC58B896 /* Hex.framework */,
-				509A3A66DE9651BFF8F10789D3B21182 /* InputValidator.framework */,
-				16424FF8372C873C7BD78B61E9F9DA48 /* Pods.framework */,
-				74D3AAB54C023881F0EEBC15D27667A8 /* Validation.framework */,
+				810085FFF5F011915C455B41C93762AC /* Formatter.framework */,
+				296329BA8498618D03650831EBB1170D /* FormTextField.framework */,
+				505F38F80B5591661EF296C81E152CC1 /* Hex.framework */,
+				6AD47D8C5B8AE35DEAB124C760CBA6B1 /* InputValidator.framework */,
+				6BADFF6F4FB1D7D80BD185D0E638A980 /* Pods_CocoaPods_Custom.framework */,
+				E8FA1ECDD740F0C4BB3B89ED83F895D2 /* Pods_CocoaPods_Native.framework */,
+				6CCFB0526C42061858E1A701DCF44EC9 /* Pods_CocoaPods_Tests.framework */,
+				6B42B5ACCD275618E70179EAB13E58FF /* Validation.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D19DCAAB91E1F835EE21A07599C411C1 /* Frameworks */ = {
+		CC423EBD4DDE28D1171C7772AC04BD20 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				75220926AC29D921CA3633DF9983B1D3 /* Formatter.framework */,
-				F54A26FBD5EFE2B23DF1E63890D39650 /* Hex.framework */,
-				C81D4FB093B0120D32BFA985BE0120E6 /* InputValidator.framework */,
-				9D9D3CB89D1AC50C06AAE89B56885490 /* Validation.framework */,
-				B4B70A638C69DAE6EF8C15E3A8C8891B /* iOS */,
+				5EA47FAAEF5099EBB05DA2249AFA1177 /* Pods-CocoaPods-Custom */,
+				9067EB030B9D2B7EE2CE029240D04FAC /* Pods-CocoaPods-Native */,
+				33941CC56F71B7834F1F5F07ECCBD284 /* Pods-CocoaPods-Tests */,
 			);
-			name = Frameworks;
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		DBE17C2FE52608235215A4B58A33BD9D /* Development Pods */ = {
@@ -465,121 +622,102 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		13CA848F10F48DDA338D321FEEF1BB40 /* Headers */ = {
+		16D5190DDAA45DA208FB76019677EDA8 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F53D17AE151727F03D01F88D3BF6ADD4 /* Formatter-umbrella.h in Headers */,
+				5AEBAAF71E80EE975A1418A3BDAD0DE8 /* Pods-CocoaPods-Custom-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3BC185424783C78BDB2272BE523D88F7 /* Headers */ = {
+		403132C23FC94094E6F2CFBD89175C3A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0333929AE521BFFD38ADFE53FCCF4259 /* Pods-umbrella.h in Headers */,
+				6556C3BADD7090587EFF75DF8FAE18E6 /* InputValidator-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		705CE62CAE93D2724AC265215FDC7002 /* Headers */ = {
+		4077D5F0C5548857B2873496E6ED70ED /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0574549C2DEC8526088F9376D827840 /* InputValidator-umbrella.h in Headers */,
+				696B0D1616735F09C83C438E207F06D2 /* Hex-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D063880E91FD5F3623DCFA32D30C7C6B /* Headers */ = {
+		4C2AEAC350DCCA5D60DF321C7E1A9262 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B542C52EEFB5BB47DA5131331FC4A47 /* FormTextField-umbrella.h in Headers */,
+				92B14BB96D14535F226A739A13F90795 /* Pods-CocoaPods-Native-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E29A76F76F6734C095392F61DBBAEDE1 /* Headers */ = {
+		9B07508BF0348784439C8929D63EE3C4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				517FE7171388A03891888693534745E3 /* Validation-umbrella.h in Headers */,
+				DA311F285266B775335C5B4F7B5A13D1 /* Formatter-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F0A294CBAB8BB714016E5FDF7AB6960B /* Headers */ = {
+		B776DE6153348D7351F00185958DE531 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD794AD988DD1B93AA9A8AEF0800ECE5 /* Hex-umbrella.h in Headers */,
+				46BC7BE424EE74B7E746FA092E7215D6 /* Validation-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C69EC674AA56E3E5070642F981534F58 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA3E6D9DA3D1550041AB1B8FF95DE01A /* FormTextField-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E891534BC6870CF746B6D006207F5EB9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18CFC9A495CAF3D18C573F91A18395BD /* Pods-CocoaPods-Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		0CD2BF877464B106C00FDACA01226D22 /* Pods */ = {
+		6403E763B57EAB49519C4ACBE56E76AD /* Pods-CocoaPods-Native */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C239BD3C5B06DE5E449A410D1377EEC9 /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildConfigurationList = E1334EA8AE0AB59F41D64D4C862514AC /* Build configuration list for PBXNativeTarget "Pods-CocoaPods-Native" */;
 			buildPhases = (
-				E5BA0332A30A3DB355518AA5BE4E3BA9 /* Sources */,
-				1433E1AD4C1C75DA6A9421CB707A6362 /* Frameworks */,
-				3BC185424783C78BDB2272BE523D88F7 /* Headers */,
+				EC62EE742D099A0BC3857F5990684470 /* Sources */,
+				481E4C2A1683C3BFEFB4CBFBF3DF659F /* Frameworks */,
+				4C2AEAC350DCCA5D60DF321C7E1A9262 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				5FFEA38AE38D9AEADEA67D09850CCBE2 /* PBXTargetDependency */,
-				4E75386E93679ACB675252B913D6BAAF /* PBXTargetDependency */,
-				ABC87A071701F2D75480A1E32EE7D408 /* PBXTargetDependency */,
-				D71E2E5AC262F315D61131C05064F02D /* PBXTargetDependency */,
-				0628E4D090DFC8800D04CB3980EFA314 /* PBXTargetDependency */,
+				C93166C22FE1F8E14E3A31D66EE7A34B /* PBXTargetDependency */,
+				291F10CE93E451841532910E971F6E21 /* PBXTargetDependency */,
+				6C8BD8A43D17920DE65BA60376588206 /* PBXTargetDependency */,
+				4492821D1418E8799587AFFE7280EE4E /* PBXTargetDependency */,
+				AA617C2A72D8D02E827A41DDBE23CAFF /* PBXTargetDependency */,
 			);
-			name = Pods;
-			productName = Pods;
-			productReference = 16424FF8372C873C7BD78B61E9F9DA48 /* Pods.framework */;
+			name = "Pods-CocoaPods-Native";
+			productName = "Pods-CocoaPods-Native";
+			productReference = E8FA1ECDD740F0C4BB3B89ED83F895D2 /* Pods_CocoaPods_Native.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		44E035D7E7ED76C58A6354A60409C50F /* Validation */ = {
+		682C458B69A37816E38465B82FFC3756 /* Hex */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4CB72187B767B231517CE38185C1D655 /* Build configuration list for PBXNativeTarget "Validation" */;
+			buildConfigurationList = 2E9983943E7C9942AEB24D776E12D80C /* Build configuration list for PBXNativeTarget "Hex" */;
 			buildPhases = (
-				2525B2E3CBA6D70D43320193C7A536B6 /* Sources */,
-				F1EB4C176B46184C18C313C835B89412 /* Frameworks */,
-				E29A76F76F6734C095392F61DBBAEDE1 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Validation;
-			productName = Validation;
-			productReference = 74D3AAB54C023881F0EEBC15D27667A8 /* Validation.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		4E406ADA083FE2642E70D6BD9BBA9142 /* InputValidator */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 91D91C00D38F6B6A33DA313FE9C725DA /* Build configuration list for PBXNativeTarget "InputValidator" */;
-			buildPhases = (
-				5197C84E38917617F2CFD4702C16F9AA /* Sources */,
-				E0B49E43C5F6B8D179D82DD3D99E2B1C /* Frameworks */,
-				705CE62CAE93D2724AC265215FDC7002 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D555F4451661585FED1ABA08B1EE3BEF /* PBXTargetDependency */,
-			);
-			name = InputValidator;
-			productName = InputValidator;
-			productReference = 509A3A66DE9651BFF8F10789D3B21182 /* InputValidator.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		7687C6C3086F8B57AE7259AA542D50E2 /* Hex */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 591A49A87879EF29ED7227926DADB52E /* Build configuration list for PBXNativeTarget "Hex" */;
-			buildPhases = (
-				BA7B041B096CBBD0294D3FD1E3ED4BE0 /* Sources */,
-				1523836B4A6E7B2CAE403D62F545C834 /* Frameworks */,
-				F0A294CBAB8BB714016E5FDF7AB6960B /* Headers */,
+				AFE3DF7A575DDF242FF697B0103C8B49 /* Sources */,
+				BE49DE2C8148A0CE5474ECD6C5482DC3 /* Frameworks */,
+				4077D5F0C5548857B2873496E6ED70ED /* Headers */,
 			);
 			buildRules = (
 			);
@@ -587,36 +725,98 @@
 			);
 			name = Hex;
 			productName = Hex;
-			productReference = A466C823788AC30BEF147C1CEC58B896 /* Hex.framework */;
+			productReference = 505F38F80B5591661EF296C81E152CC1 /* Hex.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		84F5D0A8619CEE5A756EBE364AF796AD /* FormTextField */ = {
+		74A72672FFDFBC68733EBD58ABAF1EFF /* FormTextField */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D1DDB7EB9898BE124D1ED7A7BE22472E /* Build configuration list for PBXNativeTarget "FormTextField" */;
+			buildConfigurationList = 15D8CE347267AC08D9E5D707411C4546 /* Build configuration list for PBXNativeTarget "FormTextField" */;
 			buildPhases = (
-				09ACECE2F3D48F49F23010BE1D873B03 /* Sources */,
-				AE4F2F117332B8DCAEA6E62367967920 /* Frameworks */,
-				D063880E91FD5F3623DCFA32D30C7C6B /* Headers */,
+				BAEE3E9F24A14C5EF9456FB3BB1D5AF6 /* Sources */,
+				DCB59D8503DCE3CBE7E57EF3CA9ABD51 /* Frameworks */,
+				C69EC674AA56E3E5070642F981534F58 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C9F5403D020C94320FA6C10FE71052CA /* PBXTargetDependency */,
-				F7EE1D509230892122813806CA19C7AC /* PBXTargetDependency */,
-				060624960CADD6204606E474D906E00B /* PBXTargetDependency */,
+				5008FB0A0332B1679697B85FD6EE6F5E /* PBXTargetDependency */,
+				328C90FA25BAD832EF1C16831020E663 /* PBXTargetDependency */,
+				44427290F5A492FE6C5C32D2494DE0C0 /* PBXTargetDependency */,
 			);
 			name = FormTextField;
 			productName = FormTextField;
-			productReference = 6D6949B87386B32597D9AFBBDE2BB432 /* FormTextField.framework */;
+			productReference = 296329BA8498618D03650831EBB1170D /* FormTextField.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		D55AE45BC1AF8C15262A3E4BD21C6551 /* Formatter */ = {
+		ABB22700A27734F955F11687D5A50F2B /* InputValidator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6AD184C78F01C25307F0EB5578EB9E8E /* Build configuration list for PBXNativeTarget "Formatter" */;
+			buildConfigurationList = D6DCF6DD97FC1993905A0ECDA1DBDF20 /* Build configuration list for PBXNativeTarget "InputValidator" */;
 			buildPhases = (
-				1FC5100BDE6147441DEE5B5CC23EF1D0 /* Sources */,
-				5F66292F736CDC182D99F09BA190F7C0 /* Frameworks */,
-				13CA848F10F48DDA338D321FEEF1BB40 /* Headers */,
+				8C3A8CF72DFB457581E9EAF800201353 /* Sources */,
+				A5E9661A6DAA2D95B0EA9D2F4851E393 /* Frameworks */,
+				403132C23FC94094E6F2CFBD89175C3A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				66CDA2D0CB64AEC5EA6A54116E3C3D12 /* PBXTargetDependency */,
+			);
+			name = InputValidator;
+			productName = InputValidator;
+			productReference = 6AD47D8C5B8AE35DEAB124C760CBA6B1 /* InputValidator.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AD25A7ACEB76841FBC631974D77C2B01 /* Pods-CocoaPods-Custom */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 72FB9C5E9F777735D3CDD1CEA77ECC78 /* Build configuration list for PBXNativeTarget "Pods-CocoaPods-Custom" */;
+			buildPhases = (
+				8A10328B7437C2FD47732F0B603D7B82 /* Sources */,
+				0027A9BD2722C64D6A361DFCD38A8BD6 /* Frameworks */,
+				16D5190DDAA45DA208FB76019677EDA8 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD50EEEBF20B7E886BF6A81E389FFA1A /* PBXTargetDependency */,
+				7A473C4267E97E1E38C1470E0E7DB925 /* PBXTargetDependency */,
+				0CB6A3D756628F0374E120B388023A1D /* PBXTargetDependency */,
+				C22B4C8EAABC2B17902A4FB610D501F4 /* PBXTargetDependency */,
+				360F0F02013F53603F44E27ED55F51BE /* PBXTargetDependency */,
+			);
+			name = "Pods-CocoaPods-Custom";
+			productName = "Pods-CocoaPods-Custom";
+			productReference = 6BADFF6F4FB1D7D80BD185D0E638A980 /* Pods_CocoaPods_Custom.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B26714B8AF832FBD6435FCE123B54A96 /* Pods-CocoaPods-Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFA1CC62F567FEC403D00EADF3A0E421 /* Build configuration list for PBXNativeTarget "Pods-CocoaPods-Tests" */;
+			buildPhases = (
+				322E7F0538477AA03257E9FF414BB8F0 /* Sources */,
+				82173C9FA2B8406033B26C23AF9D536C /* Frameworks */,
+				E891534BC6870CF746B6D006207F5EB9 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				51CB633169F83E3DA6B8675AFB433A07 /* PBXTargetDependency */,
+				B6050D37FE6AAA8EFA4999C595D99CA5 /* PBXTargetDependency */,
+				A3D1FD0656A7D7C2AE3EB25F955369AD /* PBXTargetDependency */,
+				D721E5FC65367AD3AB9224BAEBB3BDDF /* PBXTargetDependency */,
+				9CF8FFCE3A6280A08DD203FEBED83436 /* PBXTargetDependency */,
+			);
+			name = "Pods-CocoaPods-Tests";
+			productName = "Pods-CocoaPods-Tests";
+			productReference = 6CCFB0526C42061858E1A701DCF44EC9 /* Pods_CocoaPods_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EEB5306E4243879C44047DA0809AC841 /* Formatter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C73A466B845B040AB4E8A0B9EC72B23 /* Build configuration list for PBXNativeTarget "Formatter" */;
+			buildPhases = (
+				308AB42470AA66810173303F07EF1BB9 /* Sources */,
+				7A2173FF1A95E44F4BF6AE64D5A92E82 /* Frameworks */,
+				9B07508BF0348784439C8929D63EE3C4 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -624,7 +824,24 @@
 			);
 			name = Formatter;
 			productName = Formatter;
-			productReference = F710D3035C1C502D8E3881AA9ABB0E55 /* Formatter.framework */;
+			productReference = 810085FFF5F011915C455B41C93762AC /* Formatter.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F49A3E1CCB7B636004C684708E51B9FF /* Validation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF48B6828938279376D24B16BBB541CD /* Build configuration list for PBXNativeTarget "Validation" */;
+			buildPhases = (
+				CC20697F27ECFD4A6EC2E76D9EC5A2A2 /* Sources */,
+				10520C39E411EACAFD58229D77A9DCC2 /* Frameworks */,
+				B776DE6153348D7351F00185958DE531 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Validation;
+			productName = Validation;
+			productReference = 6B42B5ACCD275618E70179EAB13E58FF /* Validation.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -633,8 +850,8 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0730;
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -644,348 +861,329 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = CE30565F2161D994CE9C4F2D115124D5 /* Products */;
+			productRefGroup = C36686B462B80AA3804D556E05A0BCD2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D55AE45BC1AF8C15262A3E4BD21C6551 /* Formatter */,
-				84F5D0A8619CEE5A756EBE364AF796AD /* FormTextField */,
-				7687C6C3086F8B57AE7259AA542D50E2 /* Hex */,
-				4E406ADA083FE2642E70D6BD9BBA9142 /* InputValidator */,
-				0CD2BF877464B106C00FDACA01226D22 /* Pods */,
-				44E035D7E7ED76C58A6354A60409C50F /* Validation */,
+				EEB5306E4243879C44047DA0809AC841 /* Formatter */,
+				74A72672FFDFBC68733EBD58ABAF1EFF /* FormTextField */,
+				682C458B69A37816E38465B82FFC3756 /* Hex */,
+				ABB22700A27734F955F11687D5A50F2B /* InputValidator */,
+				AD25A7ACEB76841FBC631974D77C2B01 /* Pods-CocoaPods-Custom */,
+				6403E763B57EAB49519C4ACBE56E76AD /* Pods-CocoaPods-Native */,
+				B26714B8AF832FBD6435FCE123B54A96 /* Pods-CocoaPods-Tests */,
+				F49A3E1CCB7B636004C684708E51B9FF /* Validation */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		09ACECE2F3D48F49F23010BE1D873B03 /* Sources */ = {
+		308AB42470AA66810173303F07EF1BB9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A56F24A3B4625C61DD7DB39211EDBFC /* FormTextField-dummy.m in Sources */,
-				EEF11C5E908EAE10FEFA35210D42BE82 /* FormTextField.swift in Sources */,
-				31F910669124E6633A7A32D13702F5DB /* FormTextFieldClearButton.swift in Sources */,
-				B3EDA10C9BF9D97076CCCDED92BEF861 /* FormTextFieldTypeManager.swift in Sources */,
+				0BFEA3FC71788718B5D7B5F07B6A1539 /* CardExpirationDateFormatter.swift in Sources */,
+				1670C5FC44003DDB83BBFD77680F216C /* CardNumberFormatter.swift in Sources */,
+				AB832F38CF6A4ABFC1DD0F236C03FD72 /* Formattable.swift in Sources */,
+				6366377EA9E42F4448DB862520BD13D3 /* Formatter-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1FC5100BDE6147441DEE5B5CC23EF1D0 /* Sources */ = {
+		322E7F0538477AA03257E9FF414BB8F0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B094F18D29D09D5A8E991A60428B859 /* CardExpirationDateFormatter.swift in Sources */,
-				88B052E75BE1D6EB75B953257CCA5B41 /* CardNumberFormatter.swift in Sources */,
-				2C599646607DD8CD144C60030C690634 /* Formattable.swift in Sources */,
-				20C9ADC6D2CEFD22ADAE6E9314C93A1E /* Formatter-dummy.m in Sources */,
+				E8D2B883FDB8C1E210B3FFCB1556A1D7 /* Pods-CocoaPods-Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2525B2E3CBA6D70D43320193C7A536B6 /* Sources */ = {
+		8A10328B7437C2FD47732F0B603D7B82 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A05CCFCDB401BB58939BF7AA976A7588 /* Validation-dummy.m in Sources */,
-				E5D55534B150111B47C3B8EA1925FE46 /* Validation.swift in Sources */,
+				A211727F8275EAA320532AFEBFDD2A70 /* Pods-CocoaPods-Custom-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5197C84E38917617F2CFD4702C16F9AA /* Sources */ = {
+		8C3A8CF72DFB457581E9EAF800201353 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FD9003C48FF399E1C54662624E12EAD /* CardExpirationDateInputValidator.swift in Sources */,
-				5831EEF4A47411D4699943A59F31949D /* DecimalInputValidator.swift in Sources */,
-				51CC6F762118D02AA3C9AF110E0C9337 /* InputValidatable.swift in Sources */,
-				86026CC1859345F34BE284178457A290 /* InputValidator-dummy.m in Sources */,
-				579C61C8DD018AC047E1001A81768AE4 /* InputValidator.swift in Sources */,
-				80EF7E0CF7F0E703A0ECA5A8546B6F4B /* RequiredInputValidator.swift in Sources */,
+				D34E649A6F099BDD23B49E3FBA30DA8F /* CardExpirationDateInputValidator.swift in Sources */,
+				C3CD7A17E45618D6CC6C3209CABF289F /* DecimalInputValidator.swift in Sources */,
+				1F528C6BAA1944AE5C8346420F85E31F /* InputValidatable.swift in Sources */,
+				92AB62D05E2109F98FB224F0E3597495 /* InputValidator-dummy.m in Sources */,
+				99FAFAF1CDC6FAB8224CC76267645727 /* InputValidator.swift in Sources */,
+				C16305B89F8BB7E90D6BAFCEEC2E358A /* RequiredInputValidator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BA7B041B096CBBD0294D3FD1E3ED4BE0 /* Sources */ = {
+		AFE3DF7A575DDF242FF697B0103C8B49 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				723A23DD1549FBD93E7549F41678ACAC /* Hex-dummy.m in Sources */,
-				8DACB8FC68BA11502E48026BD426CBCC /* UIColor+Hex.swift in Sources */,
+				5EADE880F3726F353A78A394963A80A3 /* Hex-dummy.m in Sources */,
+				EF0D980228E725EE72B1AAE4C859EE41 /* UIColor+Hex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E5BA0332A30A3DB355518AA5BE4E3BA9 /* Sources */ = {
+		BAEE3E9F24A14C5EF9456FB3BB1D5AF6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8261AE390888C7512CC85632DDCD3045 /* Pods-dummy.m in Sources */,
+				FB1269709F68CCA1A8EC1A3BF5D3074D /* FormTextField-dummy.m in Sources */,
+				4F3CBC065A827C41C4810119FA9940A2 /* FormTextField.swift in Sources */,
+				5104A93DA8E50FEEC8E4521CC231C55A /* FormTextFieldClearButton.swift in Sources */,
+				A2A258E5504A3139470177A270916B89 /* FormTextFieldTypeManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC20697F27ECFD4A6EC2E76D9EC5A2A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				523AEB93F7D16F34ACC00DACCB513FF6 /* Validation-dummy.m in Sources */,
+				4EB34DC04B77900A38FC79B47936F9C1 /* Validation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC62EE742D099A0BC3857F5990684470 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F4EEBCC3CE28311399C550A30C63DF5 /* Pods-CocoaPods-Native-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		060624960CADD6204606E474D906E00B /* PBXTargetDependency */ = {
+		0CB6A3D756628F0374E120B388023A1D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = InputValidator;
-			target = 4E406ADA083FE2642E70D6BD9BBA9142 /* InputValidator */;
-			targetProxy = 09450B14976299AD81382D7DBFCBCE35 /* PBXContainerItemProxy */;
+			name = Hex;
+			target = 682C458B69A37816E38465B82FFC3756 /* Hex */;
+			targetProxy = 000FCC0278347BCAA9484C305E1BEBA8 /* PBXContainerItemProxy */;
 		};
-		0628E4D090DFC8800D04CB3980EFA314 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Validation;
-			target = 44E035D7E7ED76C58A6354A60409C50F /* Validation */;
-			targetProxy = 8F6CE7B31455F29B9195B5BB76DDBEF2 /* PBXContainerItemProxy */;
-		};
-		4E75386E93679ACB675252B913D6BAAF /* PBXTargetDependency */ = {
+		291F10CE93E451841532910E971F6E21 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Formatter;
-			target = D55AE45BC1AF8C15262A3E4BD21C6551 /* Formatter */;
-			targetProxy = D471A3C56FCCE08A586587DBBF60E41C /* PBXContainerItemProxy */;
+			target = EEB5306E4243879C44047DA0809AC841 /* Formatter */;
+			targetProxy = 7573B019D9185CC7F569B5EDE1C36B53 /* PBXContainerItemProxy */;
 		};
-		5FFEA38AE38D9AEADEA67D09850CCBE2 /* PBXTargetDependency */ = {
+		328C90FA25BAD832EF1C16831020E663 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = InputValidator;
+			target = ABB22700A27734F955F11687D5A50F2B /* InputValidator */;
+			targetProxy = C3EC7DBC063203B1A1428E47C7B9D72D /* PBXContainerItemProxy */;
+		};
+		360F0F02013F53603F44E27ED55F51BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Validation;
+			target = F49A3E1CCB7B636004C684708E51B9FF /* Validation */;
+			targetProxy = CB4BB8C5B75C4718F61078C415061B1E /* PBXContainerItemProxy */;
+		};
+		44427290F5A492FE6C5C32D2494DE0C0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Validation;
+			target = F49A3E1CCB7B636004C684708E51B9FF /* Validation */;
+			targetProxy = 7D1B3F9294A4DBF6A018FE7B14598A30 /* PBXContainerItemProxy */;
+		};
+		4492821D1418E8799587AFFE7280EE4E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = InputValidator;
+			target = ABB22700A27734F955F11687D5A50F2B /* InputValidator */;
+			targetProxy = 9B4E9FD3D6E630C911AADB0056F5013B /* PBXContainerItemProxy */;
+		};
+		5008FB0A0332B1679697B85FD6EE6F5E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Formatter;
+			target = EEB5306E4243879C44047DA0809AC841 /* Formatter */;
+			targetProxy = 1491A7274CC04332FB347D8F5D9C60A9 /* PBXContainerItemProxy */;
+		};
+		51CB633169F83E3DA6B8675AFB433A07 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FormTextField;
-			target = 84F5D0A8619CEE5A756EBE364AF796AD /* FormTextField */;
-			targetProxy = AD6D29BD0C0040C5CC733AD4066ED3BF /* PBXContainerItemProxy */;
+			target = 74A72672FFDFBC68733EBD58ABAF1EFF /* FormTextField */;
+			targetProxy = 6284C9BC3FE73D555FC1CCB1746F6428 /* PBXContainerItemProxy */;
 		};
-		ABC87A071701F2D75480A1E32EE7D408 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Hex;
-			target = 7687C6C3086F8B57AE7259AA542D50E2 /* Hex */;
-			targetProxy = 740524E0238AD0446A7BF82346ADBF12 /* PBXContainerItemProxy */;
-		};
-		C9F5403D020C94320FA6C10FE71052CA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Formatter;
-			target = D55AE45BC1AF8C15262A3E4BD21C6551 /* Formatter */;
-			targetProxy = 6008ABAF9A86BCB52A2ADEA79006108D /* PBXContainerItemProxy */;
-		};
-		D555F4451661585FED1ABA08B1EE3BEF /* PBXTargetDependency */ = {
+		66CDA2D0CB64AEC5EA6A54116E3C3D12 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Validation;
-			target = 44E035D7E7ED76C58A6354A60409C50F /* Validation */;
-			targetProxy = C1EA2F9142A0D342D366F2D38F0011E3 /* PBXContainerItemProxy */;
+			target = F49A3E1CCB7B636004C684708E51B9FF /* Validation */;
+			targetProxy = 519D7EAFF6F3D7FC8AEA1C70418D2EFC /* PBXContainerItemProxy */;
 		};
-		D71E2E5AC262F315D61131C05064F02D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = InputValidator;
-			target = 4E406ADA083FE2642E70D6BD9BBA9142 /* InputValidator */;
-			targetProxy = 8A1724976AC6AB342496D17E3F947035 /* PBXContainerItemProxy */;
-		};
-		F7EE1D509230892122813806CA19C7AC /* PBXTargetDependency */ = {
+		6C8BD8A43D17920DE65BA60376588206 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Hex;
-			target = 7687C6C3086F8B57AE7259AA542D50E2 /* Hex */;
-			targetProxy = 7C59482F3E03D27E4F41644AD571B738 /* PBXContainerItemProxy */;
+			target = 682C458B69A37816E38465B82FFC3756 /* Hex */;
+			targetProxy = DB746063ECD2F59552BC38132FCD3B51 /* PBXContainerItemProxy */;
+		};
+		7A473C4267E97E1E38C1470E0E7DB925 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Formatter;
+			target = EEB5306E4243879C44047DA0809AC841 /* Formatter */;
+			targetProxy = 0299ECC003EE7B00B8DD4775BFECDEBE /* PBXContainerItemProxy */;
+		};
+		9CF8FFCE3A6280A08DD203FEBED83436 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Validation;
+			target = F49A3E1CCB7B636004C684708E51B9FF /* Validation */;
+			targetProxy = BBF24C30B2C9B1493079D2669F711F39 /* PBXContainerItemProxy */;
+		};
+		A3D1FD0656A7D7C2AE3EB25F955369AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Hex;
+			target = 682C458B69A37816E38465B82FFC3756 /* Hex */;
+			targetProxy = B4E13A40BE37E675756E7A426BC81FB9 /* PBXContainerItemProxy */;
+		};
+		AA617C2A72D8D02E827A41DDBE23CAFF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Validation;
+			target = F49A3E1CCB7B636004C684708E51B9FF /* Validation */;
+			targetProxy = 224194D0A4D37599B237F254AA991D52 /* PBXContainerItemProxy */;
+		};
+		AD50EEEBF20B7E886BF6A81E389FFA1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FormTextField;
+			target = 74A72672FFDFBC68733EBD58ABAF1EFF /* FormTextField */;
+			targetProxy = 9B4D26BD398C3F3AFDA43C1AD63C6212 /* PBXContainerItemProxy */;
+		};
+		B6050D37FE6AAA8EFA4999C595D99CA5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Formatter;
+			target = EEB5306E4243879C44047DA0809AC841 /* Formatter */;
+			targetProxy = AC7CC648F9C17CFB143824237B3473E2 /* PBXContainerItemProxy */;
+		};
+		C22B4C8EAABC2B17902A4FB610D501F4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = InputValidator;
+			target = ABB22700A27734F955F11687D5A50F2B /* InputValidator */;
+			targetProxy = 747E3A89C6A2299D130D32C01838F09F /* PBXContainerItemProxy */;
+		};
+		C93166C22FE1F8E14E3A31D66EE7A34B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FormTextField;
+			target = 74A72672FFDFBC68733EBD58ABAF1EFF /* FormTextField */;
+			targetProxy = B15F40C1472559FF8B9106E640809CFE /* PBXContainerItemProxy */;
+		};
+		D721E5FC65367AD3AB9224BAEBB3BDDF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = InputValidator;
+			target = ABB22700A27734F955F11687D5A50F2B /* InputValidator */;
+			targetProxy = 70DC40962865EADE848EEEB8F34BD661 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0219FBA3A2580654D771266DBFD68227 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8C80DEB78549C84F735A14A9975B90F6 /* Validation.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Validation/Validation-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Validation/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Validation/Validation.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Validation;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		1E18DF9343A937C18FCB28BF790A1E70 /* Release */ = {
+		0404DC540BDED017C65E445129BB6364 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A1016F55EF2B7D9E3C848ADECD82A792 /* InputValidator.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/InputValidator/InputValidator-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/InputValidator/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/InputValidator/InputValidator.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = InputValidator;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		1F283A2812CF4415EA5D0CC37F5BD26A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 407C6AB11F0606F13F8E9FAF491DFDD4 /* FormTextField.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/FormTextField/FormTextField-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FormTextField/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/FormTextField/FormTextField.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = FormTextField;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		1F82E503E6DD5E193DC858EF5C4861B6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA312349A49333542E6F4B36B329960E /* Pods.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods/Pods.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		4778A771BB831901ED90F4EBB30E3B5C /* Debug */ = {
+		3F41EBF036BF76BB067535E2ABCDF06B /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 53F7311043A0229331ABA66AB6048DED /* Hex.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Hex/Hex-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Hex/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Hex/Hex.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = Hex;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		479C2C2BC1448905821813DD73A1B8DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C80DEB78549C84F735A14A9975B90F6 /* Validation.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Validation/Validation-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Validation/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Validation/Validation.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Validation;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		7B4284244A471D5184BEC4643517F34B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 407C6AB11F0606F13F8E9FAF491DFDD4 /* FormTextField.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/FormTextField/FormTextField-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FormTextField/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/FormTextField/FormTextField.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = FormTextField;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		8CBAE1CC9A281840EFE098EE5130418D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4480681A74295CFD40CFF12B0FBC44E9 /* Formatter.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Formatter/Formatter-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Formatter/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Formatter/Formatter.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Formatter;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */ = {
+		4E487F173E6C9664F4E9E26B9635D23C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -993,18 +1191,23 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
 					"DEBUG=1",
 					"$(inherited)",
 				);
@@ -1015,163 +1218,309 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		B93F86B0CA4ADAECD4268A848560D096 /* Release */ = {
+		5C545B717CC4E762D7C39ED4855EFD63 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8C80DEB78549C84F735A14A9975B90F6 /* Validation.xcconfig */;
+			baseConfigurationReference = 6E0A7C4E55012269C43A9F4AFB506DF1 /* Pods-CocoaPods-Native.debug.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Validation/Validation-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Validation/Info.plist";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-CocoaPods-Native/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Validation/Validation.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CocoaPods-Native/Pods-CocoaPods-Native.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Validation;
+				PRODUCT_NAME = Pods_CocoaPods_Native;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5FA7A50655E347032F457898967ED04E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7EC5E28A43EC3DD42C48C42D156ACA1 /* Pods-CocoaPods-Tests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-CocoaPods-Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CocoaPods-Tests/Pods-CocoaPods-Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CocoaPods_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		C6D11CE2671CB2DF9A40478C1CF155B9 /* Release */ = {
+		62A69EE20966C7898030B5E31630E47E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 53F7311043A0229331ABA66AB6048DED /* Hex.xcconfig */;
+			baseConfigurationReference = 407C6AB11F0606F13F8E9FAF491DFDD4 /* FormTextField.xcconfig */;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FormTextField/FormTextField-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FormTextField/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FormTextField/FormTextField.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = FormTextField;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6FF9581A506CD16129B75EDAD0C74922 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 407C6AB11F0606F13F8E9FAF491DFDD4 /* FormTextField.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FormTextField/FormTextField-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FormTextField/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FormTextField/FormTextField.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = FormTextField;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		81091D963BE9F9D7CDEB0B4032E6C746 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C80DEB78549C84F735A14A9975B90F6 /* Validation.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Validation/Validation-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Validation/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Validation/Validation.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Validation;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AFF586FE033257835FA71308703D4428 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E64FC2F08B27D42AD86B421C7A75932E /* Pods-CocoaPods-Custom.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-CocoaPods-Custom/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CocoaPods-Custom/Pods-CocoaPods-Custom.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CocoaPods_Custom;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B22026C9E0C83C5D5DD340D9852653AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1016F55EF2B7D9E3C848ADECD82A792 /* InputValidator.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/InputValidator/InputValidator-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/InputValidator/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/InputValidator/InputValidator.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = InputValidator;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BAC2B84C415A08534A884F5F89A78473 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53F7311043A0229331ABA66AB6048DED /* Hex.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Hex/Hex-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Hex/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Hex/Hex.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = Hex;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		D1E43DB896DDD23F6E0F2D01C765E074 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 977577C045EDA9D9D1F46E2598D19FC7 /* Pods.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods/Pods.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		ECBC2468270E9C1269700134D1E995D7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A1016F55EF2B7D9E3C848ADECD82A792 /* InputValidator.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/InputValidator/InputValidator-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/InputValidator/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/InputValidator/InputValidator.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = InputValidator;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		FA9D056AA18DA5444C0E9E5EE860504C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4480681A74295CFD40CFF12B0FBC44E9 /* Formatter.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Formatter/Formatter-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Formatter/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Formatter/Formatter.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Formatter;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
+		BDD0139D6EB93FA375F887ABD62DAB2E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1179,91 +1528,301 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
+		C945F22754F8282C7E09CD6EC8BD85D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4480681A74295CFD40CFF12B0FBC44E9 /* Formatter.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Formatter/Formatter-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Formatter/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Formatter/Formatter.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Formatter;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D4DBA59A43DBDEFDC5AA770F8560245E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 401E12B47FF68132F8861047D8BD4490 /* Pods-CocoaPods-Tests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-CocoaPods-Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CocoaPods-Tests/Pods-CocoaPods-Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CocoaPods_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D9DDE52A64DED41DF2F2801136765CCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79B6A30EDD4149EB40957B944A2296A5 /* Pods-CocoaPods-Native.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-CocoaPods-Native/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CocoaPods-Native/Pods-CocoaPods-Native.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CocoaPods_Native;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E59B938BDB105F6EA2B4A2B96579723B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B37804C701AFBDBE3A7D5909C93D9447 /* Pods-CocoaPods-Custom.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-CocoaPods-Custom/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CocoaPods-Custom/Pods-CocoaPods-Custom.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_CocoaPods_Custom;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F9DD857E31B48D113BBE2AF1422CD7C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4480681A74295CFD40CFF12B0FBC44E9 /* Formatter.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Formatter/Formatter-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Formatter/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Formatter/Formatter.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Formatter;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0C73A466B845B040AB4E8A0B9EC72B23 /* Build configuration list for PBXNativeTarget "Formatter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C945F22754F8282C7E09CD6EC8BD85D6 /* Debug */,
+				F9DD857E31B48D113BBE2AF1422CD7C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		15D8CE347267AC08D9E5D707411C4546 /* Build configuration list for PBXNativeTarget "FormTextField" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FF9581A506CD16129B75EDAD0C74922 /* Debug */,
+				62A69EE20966C7898030B5E31630E47E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */,
-				FB45FFD90572718D82AB9092B750F0CA /* Release */,
+				4E487F173E6C9664F4E9E26B9635D23C /* Debug */,
+				BDD0139D6EB93FA375F887ABD62DAB2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4CB72187B767B231517CE38185C1D655 /* Build configuration list for PBXNativeTarget "Validation" */ = {
+		2E9983943E7C9942AEB24D776E12D80C /* Build configuration list for PBXNativeTarget "Hex" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0219FBA3A2580654D771266DBFD68227 /* Debug */,
-				B93F86B0CA4ADAECD4268A848560D096 /* Release */,
+				BAC2B84C415A08534A884F5F89A78473 /* Debug */,
+				3F41EBF036BF76BB067535E2ABCDF06B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		591A49A87879EF29ED7227926DADB52E /* Build configuration list for PBXNativeTarget "Hex" */ = {
+		72FB9C5E9F777735D3CDD1CEA77ECC78 /* Build configuration list for PBXNativeTarget "Pods-CocoaPods-Custom" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4778A771BB831901ED90F4EBB30E3B5C /* Debug */,
-				C6D11CE2671CB2DF9A40478C1CF155B9 /* Release */,
+				AFF586FE033257835FA71308703D4428 /* Debug */,
+				E59B938BDB105F6EA2B4A2B96579723B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6AD184C78F01C25307F0EB5578EB9E8E /* Build configuration list for PBXNativeTarget "Formatter" */ = {
+		CFA1CC62F567FEC403D00EADF3A0E421 /* Build configuration list for PBXNativeTarget "Pods-CocoaPods-Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FA9D056AA18DA5444C0E9E5EE860504C /* Debug */,
-				8CBAE1CC9A281840EFE098EE5130418D /* Release */,
+				D4DBA59A43DBDEFDC5AA770F8560245E /* Debug */,
+				5FA7A50655E347032F457898967ED04E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		91D91C00D38F6B6A33DA313FE9C725DA /* Build configuration list for PBXNativeTarget "InputValidator" */ = {
+		D6DCF6DD97FC1993905A0ECDA1DBDF20 /* Build configuration list for PBXNativeTarget "InputValidator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				ECBC2468270E9C1269700134D1E995D7 /* Debug */,
-				1E18DF9343A937C18FCB28BF790A1E70 /* Release */,
+				B22026C9E0C83C5D5DD340D9852653AD /* Debug */,
+				0404DC540BDED017C65E445129BB6364 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C239BD3C5B06DE5E449A410D1377EEC9 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+		DF48B6828938279376D24B16BBB541CD /* Build configuration list for PBXNativeTarget "Validation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D1E43DB896DDD23F6E0F2D01C765E074 /* Debug */,
-				1F82E503E6DD5E193DC858EF5C4861B6 /* Release */,
+				479C2C2BC1448905821813DD73A1B8DE /* Debug */,
+				81091D963BE9F9D7CDEB0B4032E6C746 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D1DDB7EB9898BE124D1ED7A7BE22472E /* Build configuration list for PBXNativeTarget "FormTextField" */ = {
+		E1334EA8AE0AB59F41D64D4C862514AC /* Build configuration list for PBXNativeTarget "Pods-CocoaPods-Native" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1F283A2812CF4415EA5D0CC37F5BD26A /* Debug */,
-				7B4284244A471D5184BEC4643517F34B /* Release */,
+				5C545B717CC4E762D7C39ED4855EFD63 /* Debug */,
+				D9DDE52A64DED41DF2F2801136765CCC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
