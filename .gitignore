@@ -28,9 +28,4 @@ DerivedData
 *.xcscmblueprint
 *.gcno
 *.gcda
-
-# CocoaPods
-Pods
-*.lock
-
 *.idea
