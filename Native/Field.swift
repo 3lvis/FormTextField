@@ -12,7 +12,7 @@ struct Field {
     let type: FieldType
     let title: String
     let placeholder: String?
-    var inputType: FormTextFieldInputType = .Default
+    var inputType: FormTextFieldInputType = .default
     var inputValidator: InputValidatable?
     var formatter: Formattable?
 
@@ -33,7 +33,7 @@ struct Field {
 
         let emailField: Field = {
             var field = Field(type: .field, title: "Email")
-            field.inputType = .Email
+            field.inputType = .email
 
             var validation = Validation()
             validation.required = true
@@ -46,7 +46,7 @@ struct Field {
 
         let UsernameField: Field = {
             var field = Field(type: .field, title: "Username")
-            field.inputType = .Name
+            field.inputType = .name
             field.inputValidator = requiredInputValidator
 
             return field
@@ -57,7 +57,7 @@ struct Field {
 
         let cardNumberField: Field = {
             var field = Field(type: .field, title: "Number", placeholder: "Card Number")
-            field.inputType = .Integer
+            field.inputType = .integer
             field.formatter = CardNumberFormatter()
             var validation = Validation()
             validation.minimumLength = "1234 5678 1234 5678".characters.count
@@ -76,7 +76,7 @@ struct Field {
         let expirationDateField: Field = {
             var field = Field(type: .field, title: "Expires", placeholder: "MM/YY")
             field.formatter = CardExpirationDateFormatter()
-            field.inputType = .Integer
+            field.inputType = .integer
             var validation = Validation()
             validation.required = true
             let inputValidator = CardExpirationDateInputValidator(validation: validation)
@@ -88,7 +88,7 @@ struct Field {
 
         let securityCodeField: Field = {
             var field = Field(type: .field, title: "CVC", placeholder: "Security Code")
-            field.inputType = .Integer
+            field.inputType = .integer
             var validation = Validation()
             validation.maximumLength = "CVC".characters.count
             validation.minimumLength = "CVC".characters.count
