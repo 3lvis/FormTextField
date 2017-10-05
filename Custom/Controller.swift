@@ -11,7 +11,7 @@ class Controller: UIViewController {
     lazy var emailField: FormTextField = {
         let margin = CGFloat(20)
         let textField = FormTextField(frame: CGRect(x: margin, y: self.initialY, width: self.view.frame.width - (margin * 2.0), height: self.height))
-        textField.inputType = .Email
+        textField.inputType = .email
         textField.placeholder = "Email"
 
         var validation = Validation()
@@ -28,7 +28,7 @@ class Controller: UIViewController {
         var previousFrame = self.emailField.frame
         previousFrame.origin.y = self.emailField.frame.maxY + margin
         let textField = FormTextField(frame: previousFrame)
-        textField.inputType = .Integer
+        textField.inputType = .integer
         textField.formatter = CardNumberFormatter()
         textField.placeholder = "Card Number"
 
@@ -51,7 +51,7 @@ class Controller: UIViewController {
         previousFrame.origin.y = self.cardNumberField.frame.maxY + margin
         previousFrame.size.width = previousFrame.size.width * 0.6
         let textField = FormTextField(frame: previousFrame)
-        textField.inputType = .Integer
+        textField.inputType = .integer
         textField.formatter = CardExpirationDateFormatter()
         textField.placeholder = "Expiration Date (MM/YY)"
 
@@ -70,7 +70,7 @@ class Controller: UIViewController {
         previousFrame.origin.y = self.cardNumberField.frame.maxY + margin
         previousFrame.size.width = previousFrame.size.width * 0.35
         let textField = FormTextField(frame: previousFrame)
-        textField.inputType = .Integer
+        textField.inputType = .integer
         textField.placeholder = "CVC"
 
         var validation = Validation()

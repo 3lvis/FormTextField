@@ -3,47 +3,47 @@ import UIKit
 extension UITextField {
     func updateInputType(_ type: FormTextFieldInputType) {
         switch type {
-        case .Name:
+        case .name:
             self.autocapitalizationType = .words
             self.autocorrectionType = .no
             break
 
-        case .Username:
+        case .username:
             self.autocapitalizationType = .none
             self.autocorrectionType = .no
             self.keyboardType = .namePhonePad
             break
 
-        case .PhoneNumber:
+        case .phoneNumber:
             self.autocapitalizationType = .none
             self.autocorrectionType = .no
             self.keyboardType = .phonePad
             break
 
-        case .Integer:
+        case .integer:
             self.autocapitalizationType = .none
             self.autocorrectionType = .no
             self.keyboardType = .phonePad
             break
 
-        case .Decimal:
+        case .decimal:
             self.autocapitalizationType = .none
             self.autocorrectionType = .no
             self.keyboardType = .numberPad
             break
 
-        case .Address:
+        case .address:
             self.autocapitalizationType = .words
             self.keyboardType = .asciiCapable
             break
 
-        case .Email:
+        case .email:
             self.autocapitalizationType = .none
             self.autocorrectionType = .no
             self.keyboardType = .emailAddress
             break
 
-        case .Password:
+        case .password:
             self.autocapitalizationType = .none
             self.autocorrectionType = .no
             self.keyboardType = .asciiCapable
