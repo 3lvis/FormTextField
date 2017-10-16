@@ -99,8 +99,7 @@ struct Field {
             return field
         }()
         items.append(securityCodeField)
-        
+
         return items
     }
 }
-
