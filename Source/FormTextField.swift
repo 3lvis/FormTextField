@@ -213,7 +213,7 @@ open class FormTextField: UITextField, UITextFieldDelegate {
     func textFieldDidUpdate(_ textField: FormTextField) {
         self.updateText(self.text)
 
-        if self.valid == false {
+        if !self.valid {
             self.valid = true
             self.updateValid(self.valid)
         }
