@@ -9,7 +9,9 @@ public struct Validation {
     public var characterSet: CharacterSet?
     public var format: String?
 
-    public init() {}
+    public init() {
+        
+    }
 
     // Making complete false will cause minimumLength, minimumValue and format to be ignored
     // this is useful for partial validations, or validations where the final string is
@@ -19,7 +21,7 @@ public struct Validation {
         var validationMinimumLength = self.minimumLength
 
         if complete {
-            if self.required == true {
+            if self.required {
                 validationMinimumLength = 1
             }
 
