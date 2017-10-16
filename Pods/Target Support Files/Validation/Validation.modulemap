@@ -1,6 +1,0 @@
-framework module Validation {
-  umbrella header "Validation-umbrella.h"
-
-  export *
-  module * { export * }
-}
