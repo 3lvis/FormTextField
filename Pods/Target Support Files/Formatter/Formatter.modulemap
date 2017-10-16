@@ -1,6 +1,0 @@
-framework module Formatter {
-  umbrella header "Formatter-umbrella.h"
-
-  export *
-  module * { export * }
-}

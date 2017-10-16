@@ -1,6 +1,4 @@
 import UIKit
-import Formatter
-import InputValidator
 
 public enum FormTextFieldInputType: String {
     case `default`, name, username, phoneNumber, integer, decimal, address, email, password, unknown
@@ -14,35 +12,35 @@ public enum FormTextFieldInputType: String {
 }
 
 open class FormTextField: UITextField, UITextFieldDelegate {
-    open dynamic var borderWidth: CGFloat = 0 { didSet { self.layer.borderWidth = borderWidth } }
-    open dynamic var cornerRadius: CGFloat = 0 { didSet { self.layer.cornerRadius = cornerRadius } }
-    open dynamic var leftMargin: CGFloat = 10.0 { didSet { self.leftView = UIView(frame: CGRect(x: 0, y: 0, width: self.leftMargin, height: 0)) } }
+    @objc open dynamic var borderWidth: CGFloat = 0 { didSet { self.layer.borderWidth = borderWidth } }
+    @objc open dynamic var cornerRadius: CGFloat = 0 { didSet { self.layer.cornerRadius = cornerRadius } }
+    @objc open dynamic var leftMargin: CGFloat = 10.0 { didSet { self.leftView = UIView(frame: CGRect(x: 0, y: 0, width: self.leftMargin, height: 0)) } }
 
-    open dynamic var enabledBackgroundColor: UIColor = UIColor.clear { didSet { self.updateEnabled(self.isEnabled) } }
-    open dynamic var enabledBorderColor: UIColor = UIColor.clear { didSet { self.updateEnabled(self.isEnabled) } }
-    open dynamic var enabledTextColor: UIColor = UIColor.black { didSet { self.updateEnabled(self.isEnabled) } }
+    @objc open dynamic var enabledBackgroundColor: UIColor = UIColor.clear { didSet { self.updateEnabled(self.isEnabled) } }
+    @objc open dynamic var enabledBorderColor: UIColor = UIColor.clear { didSet { self.updateEnabled(self.isEnabled) } }
+    @objc open dynamic var enabledTextColor: UIColor = UIColor.black { didSet { self.updateEnabled(self.isEnabled) } }
 
-    open dynamic var validBackgroundColor: UIColor = UIColor.clear
-    open dynamic var validBorderColor: UIColor = UIColor.clear
-    open dynamic var validTextColor: UIColor = UIColor.black
+    @objc open dynamic var validBackgroundColor: UIColor = UIColor.clear
+    @objc open dynamic var validBorderColor: UIColor = UIColor.clear
+    @objc open dynamic var validTextColor: UIColor = UIColor.black
 
-    open dynamic var activeBackgroundColor: UIColor = UIColor.clear
-    open dynamic var activeBorderColor: UIColor = UIColor.clear
-    open dynamic var activeTextColor: UIColor = UIColor.black
+    @objc open dynamic var activeBackgroundColor: UIColor = UIColor.clear
+    @objc open dynamic var activeBorderColor: UIColor = UIColor.clear
+    @objc open dynamic var activeTextColor: UIColor = UIColor.black
 
-    open dynamic var inactiveBackgroundColor: UIColor = UIColor.clear
-    open dynamic var inactiveBorderColor: UIColor = UIColor.clear
-    open dynamic var inactiveTextColor: UIColor = UIColor.black
+    @objc open dynamic var inactiveBackgroundColor: UIColor = UIColor.clear
+    @objc open dynamic var inactiveBorderColor: UIColor = UIColor.clear
+    @objc open dynamic var inactiveTextColor: UIColor = UIColor.black
 
-    open dynamic var disabledBackgroundColor: UIColor = UIColor.clear { didSet { self.updateEnabled(self.isEnabled) } }
-    open dynamic var disabledBorderColor: UIColor = UIColor.clear { didSet { self.updateEnabled(self.isEnabled) } }
-    open dynamic var disabledTextColor: UIColor = UIColor.gray { didSet { self.updateEnabled(self.isEnabled) } }
+    @objc open dynamic var disabledBackgroundColor: UIColor = UIColor.clear { didSet { self.updateEnabled(self.isEnabled) } }
+    @objc open dynamic var disabledBorderColor: UIColor = UIColor.clear { didSet { self.updateEnabled(self.isEnabled) } }
+    @objc open dynamic var disabledTextColor: UIColor = UIColor.gray { didSet { self.updateEnabled(self.isEnabled) } }
 
-    open dynamic var invalidBackgroundColor: UIColor = UIColor.clear
-    open dynamic var invalidBorderColor: UIColor = UIColor.clear
-    open dynamic var invalidTextColor: UIColor = UIColor.red
+    @objc open dynamic var invalidBackgroundColor: UIColor = UIColor.clear
+    @objc open dynamic var invalidBorderColor: UIColor = UIColor.clear
+    @objc open dynamic var invalidTextColor: UIColor = UIColor.red
 
-    open dynamic var defaultTextColor: UIColor? {
+    @objc open dynamic var defaultTextColor: UIColor? {
         didSet {
             if let defaultColor = self.defaultTextColor {
                 self.enabledTextColor = defaultColor
@@ -61,8 +59,8 @@ open class FormTextField: UITextField, UITextFieldDelegate {
 
     fileprivate static let AccessoryButtonWidth = 30.0
     fileprivate static let AccessoryButtonHeight = 20.0
-    open dynamic var accessoryViewMode: UITextFieldViewMode = .whileEditing { didSet { self.rightViewMode = self.accessoryViewMode } }
-    open dynamic var clearButtonColor: UIColor = UIColor(red: 0, green: 122 / 255, blue: 1, alpha: 1)
+    @objc open dynamic var accessoryViewMode: UITextFieldViewMode = .whileEditing { didSet { self.rightViewMode = self.accessoryViewMode } }
+    @objc open dynamic var clearButtonColor: UIColor = UIColor(red: 0, green: 122 / 255, blue: 1, alpha: 1)
     open var accessoryView: UIView?
 
     open fileprivate(set) var valid: Bool = true
@@ -210,7 +208,7 @@ open class FormTextField: UITextField, UITextFieldDelegate {
 
     // MARK: Notification
 
-    func textFieldDidUpdate(_: FormTextField) {
+    @objc func textFieldDidUpdate(_: FormTextField) {
         updateText(text)
 
         if !valid {
@@ -227,7 +225,7 @@ open class FormTextField: UITextField, UITextFieldDelegate {
 
     // MARK: Actions
 
-    func clearButtonAction() {
+    @objc func clearButtonAction() {
         text = nil
 
         textFieldDelegate?.formTextField?(self, didUpdateWithText: text)
