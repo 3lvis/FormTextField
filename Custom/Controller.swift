@@ -111,23 +111,23 @@ class Controller: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.addSubview(self.emailField)
-        self.view.addSubview(self.cardNumberField)
-        self.view.addSubview(self.cardExpirationDateField)
-        self.view.addSubview(self.cvcField)
-        self.view.addSubview(self.payButton)
+        view.addSubview(emailField)
+        view.addSubview(cardNumberField)
+        view.addSubview(cardExpirationDateField)
+        view.addSubview(cvcField)
+        view.addSubview(payButton)
     }
 
     func payAction() {
-        let validEmail = self.emailField.validate()
-        let validCardNumber = self.cardNumberField.validate()
-        let validCardExpirationDate = self.cardExpirationDateField.validate()
-        let validCVC = self.cvcField.validate()
+        let validEmail = emailField.validate()
+        let validCardNumber = cardNumberField.validate()
+        let validCardExpirationDate = cardExpirationDateField.validate()
+        let validCVC = cvcField.validate()
         if validEmail && validCardNumber && validCardExpirationDate && validCVC {
             let alertController = UIAlertController(title: "Valid!", message: "The payment details are valid", preferredStyle: .alert)
             let dismissAction = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
             alertController.addAction(dismissAction)
-            self.present(alertController, animated: true, completion: nil)
+            present(alertController, animated: true, completion: nil)
         }
     }
 }

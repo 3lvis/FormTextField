@@ -8,12 +8,12 @@ class FormTextFieldClearButton: UIView {
         super.init(frame: frame)
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
     override func draw(_ rect: CGRect) {
-        self.color.setStroke()
+        color.setStroke()
 
         let ovalPath = UIBezierPath(ovalIn: CGRect(x: 0.5, y: 0.5, width: rect.size.width - 1.0, height: rect.size.height - 1.0))
         ovalPath.lineWidth = 1

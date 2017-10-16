@@ -39,7 +39,3 @@ struct CustomStyle {
         FormTextField.appearance().invalidTextColor = UIColor(hex: "FF4B47")
     }
 }
-
-
-
-

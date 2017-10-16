@@ -9,22 +9,22 @@ class Controller: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(red: 239/255, green: 239/255, blue: 244/255, alpha: 1)
+        view.backgroundColor = UIColor(red: 239 / 255, green: 239 / 255, blue: 244 / 255, alpha: 1)
         self.tableView.register(FormTextFieldCell.self, forCellReuseIdentifier: FormTextFieldCell.Identifier)
         self.tableView.register(HeaderCell.self, forCellReuseIdentifier: HeaderCell.Identifier)
         self.tableView.tableFooterView = UIView()
 
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(Controller.done))
         doneButton.isEnabled = false
-        self.navigationItem.rightBarButtonItem = doneButton
+        navigationItem.rightBarButtonItem = doneButton
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.fields.count
+    override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
+        return fields.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let field = self.fields[(indexPath as NSIndexPath).row]
+        let field = fields[(indexPath as NSIndexPath).row]
         if field.type == .header {
             let cell = tableView.dequeueReusableCell(withIdentifier: HeaderCell.Identifier, for: indexPath) as! HeaderCell
             cell.textLabel?.text = field.title.uppercased()
@@ -37,14 +37,14 @@ class Controller: UITableViewController {
             cell.textField.inputType = field.inputType
             cell.textField.inputValidator = field.inputValidator
             cell.textField.formatter = field.formatter
-            self.showCheckAccessory(cell.textField)
+            showCheckAccessory(cell.textField)
 
             return cell
         }
     }
 
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let field = self.fields[(indexPath as NSIndexPath).row]
+    override func tableView(_: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let field = fields[(indexPath as NSIndexPath).row]
         if field.type == .header {
             return 60
         } else {
@@ -56,14 +56,14 @@ class Controller: UITableViewController {
         let alertController = UIAlertController(title: "The payment details are valid", message: nil, preferredStyle: .alert)
         let dismissAction = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
         alertController.addAction(dismissAction)
-        self.present(alertController, animated: true, completion: nil)
+        present(alertController, animated: true, completion: nil)
     }
 
     func validate() -> Bool {
         var valid = true
-        for (index, field) in self.fields.enumerated() {
+        for (index, field) in fields.enumerated() {
             if field.type == .field {
-                let cell = self.tableView.cellForRow(at: IndexPath(row: index, section: 0)) as! FormTextFieldCell
+                let cell = tableView.cellForRow(at: IndexPath(row: index, section: 0)) as! FormTextFieldCell
                 let validField = cell.textField.validate()
                 if validField == false {
                     valid = validField
@@ -89,9 +89,9 @@ class Controller: UITableViewController {
 }
 
 extension Controller: FormTextFieldDelegate {
-    func formTextField(_ textField: FormTextField, didUpdateWithText text: String?) {
-        self.showCheckAccessory(textField)
-        let valid = self.validate()
+    func formTextField(_ textField: FormTextField, didUpdateWithText _: String?) {
+        showCheckAccessory(textField)
+        let valid = validate()
         if let button = self.navigationItem.rightBarButtonItem {
             button.isEnabled = valid
         }
