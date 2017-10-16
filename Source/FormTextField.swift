@@ -16,7 +16,7 @@ public enum FormTextFieldInputType: String {
 open class FormTextField: UITextField, UITextFieldDelegate {
     dynamic open var borderWidth: CGFloat = 0 { didSet { self.layer.borderWidth = borderWidth } }
     dynamic open var cornerRadius: CGFloat = 0 { didSet { self.layer.cornerRadius = cornerRadius } }
-    dynamic open var leftMargin : CGFloat = 10.0 { didSet { self.leftView = UIView(frame: CGRect(x: 0, y: 0, width: self.leftMargin, height: 0)) } }
+    dynamic open var leftMargin: CGFloat = 10.0 { didSet { self.leftView = UIView(frame: CGRect(x: 0, y: 0, width: self.leftMargin, height: 0)) } }
 
     dynamic open var enabledBackgroundColor: UIColor = UIColor.clear { didSet { self.updateEnabled(self.isEnabled) } }
     dynamic open var enabledBorderColor: UIColor = UIColor.clear { didSet { self.updateEnabled(self.isEnabled) } }
@@ -61,7 +61,7 @@ open class FormTextField: UITextField, UITextFieldDelegate {
 
     static fileprivate let AccessoryButtonWidth = 30.0
     static fileprivate let AccessoryButtonHeight = 20.0
-    dynamic open var accessoryViewMode : UITextFieldViewMode = .whileEditing { didSet { self.rightViewMode = self.accessoryViewMode } }
+    dynamic open var accessoryViewMode: UITextFieldViewMode = .whileEditing { didSet { self.rightViewMode = self.accessoryViewMode } }
     dynamic open var clearButtonColor: UIColor = UIColor(red: 0, green: 122/255, blue: 1, alpha: 1)
     open var accessoryView: UIView?
 
@@ -213,7 +213,7 @@ open class FormTextField: UITextField, UITextFieldDelegate {
     func textFieldDidUpdate(_ textField: FormTextField) {
         self.updateText(self.text)
 
-        if self.valid == false {
+        if !self.valid {
             self.valid = true
             self.updateValid(self.valid)
         }
