@@ -1,7 +1,4 @@
 import UIKit
-import Formatter
-import InputValidator
-import Validation
 import FormTextField
 
 enum FieldType {
