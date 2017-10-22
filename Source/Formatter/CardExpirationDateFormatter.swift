@@ -1,5 +1,5 @@
 public struct CardExpirationDateFormatter: Formattable {
-    public init() { }
+    public init() {}
 
     public func formatString(_ string: String, reverse: Bool = false) -> String {
         var formattedString = String()
@@ -14,7 +14,7 @@ public struct CardExpirationDateFormatter: Formattable {
                 character = normalizedString[index]
 
                 formattedString.append(character)
-                if idx == 1{
+                if idx == 1 {
                     formattedString.append("/")
                 }
 

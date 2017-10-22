@@ -1,5 +1,5 @@
 public struct CardNumberFormatter: Formattable {
-    public init() { }
+    public init() {}
 
     public func formatString(_ string: String, reverse: Bool = false) -> String {
         var formattedString = String()

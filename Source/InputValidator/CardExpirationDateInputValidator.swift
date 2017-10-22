@@ -9,18 +9,18 @@ import Foundation
 public struct CardExpirationDateInputValidator: InputValidatable {
     public var validation: Validation?
 
-    public init(validation: Validation? = nil) {
+    public init(validation _: Validation? = nil) {
         var predefinedValidation = Validation()
         predefinedValidation.minimumLength = "MM/YY".characters.count
         predefinedValidation.maximumLength = "MM/YY".characters.count
-        //predefinedValidation.required = validation?.required ?? false
-        self.validation = predefinedValidation
+        // predefinedValidation.required = validation?.required ?? false
+        validation = predefinedValidation
     }
 
     public func validateReplacementString(_ replacementString: String?, fullString: String?, inRange range: NSRange?) -> Bool {
         var valid = true
         if let validation = self.validation {
-            let evaluatedString = self.composedString(replacementString, fullString: fullString, inRange: range)
+            let evaluatedString = composedString(replacementString, fullString: fullString, inRange: range)
             valid = validation.validateString(evaluatedString, complete: false)
         }
 
@@ -34,7 +34,6 @@ public struct CardExpirationDateInputValidator: InputValidatable {
                 if composedString.characters.count == 4 || composedString.characters.count == 5 {
                     let index = composedString.characters.index(composedString.startIndex, offsetBy: "MM/".characters.count)
                     precomposedString = String(composedString[..<index])
-
                 }
 
                 let formatter = NumberFormatter()

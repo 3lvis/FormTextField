@@ -20,7 +20,7 @@ extension InputValidatable {
         }
 
         if valid {
-            valid = self.validateReplacementString(nil, fullString: string, inRange: nil)
+            valid = validateReplacementString(nil, fullString: string, inRange: nil)
         }
 
         return valid
@@ -29,7 +29,7 @@ extension InputValidatable {
     public func validateReplacementString(_ replacementString: String?, fullString: String?, inRange range: NSRange?) -> Bool {
         var valid = true
         if let validation = self.validation {
-            let evaluatedString = self.composedString(replacementString, fullString: fullString, inRange: range)
+            let evaluatedString = composedString(replacementString, fullString: fullString, inRange: range)
             valid = validation.validateString(evaluatedString, complete: false)
         }
 

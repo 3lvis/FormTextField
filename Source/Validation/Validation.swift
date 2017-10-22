@@ -17,7 +17,7 @@ public struct Validation {
         var valid = true
 
         if complete {
-            valid = (string.characters.count >= self.minimumLength)
+            valid = (string.characters.count >= minimumLength)
         }
 
         if valid {
