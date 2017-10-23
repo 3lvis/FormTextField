@@ -1,4 +1,5 @@
 import XCTest
+import FormTextField
 
 class CardExpirationDateFormatterTests: XCTestCase {
     func testFormatString() {

@@ -12,7 +12,7 @@ class Controller: UIViewController {
         textField.placeholder = "Email"
 
         var validation = Validation()
-        validation.required = true
+        validation.minimumLength = 1
         validation.format = "[\\w._%+-]+@[\\w.-]+\\.\\w{2,}"
         let inputValidator = InputValidator(validation: validation)
         textField.inputValidator = inputValidator
@@ -32,7 +32,6 @@ class Controller: UIViewController {
         var validation = Validation()
         validation.maximumLength = "1234 5678 1234 5678".characters.count
         validation.minimumLength = "1234 5678 1234 5678".characters.count
-        validation.required = true
         let characterSet = NSMutableCharacterSet.decimalDigit()
         characterSet.addCharacters(in: " ")
         validation.characterSet = characterSet as CharacterSet
@@ -53,7 +52,7 @@ class Controller: UIViewController {
         textField.placeholder = "Expiration Date (MM/YY)"
 
         var validation = Validation()
-        validation.required = true
+        validation.minimumLength = 1
         let inputValidator = CardExpirationDateInputValidator(validation: validation)
         textField.inputValidator = inputValidator
 
@@ -115,7 +114,7 @@ class Controller: UIViewController {
         view.addSubview(payButton)
     }
 
-    func payAction() {
+    @objc func payAction() {
         let validEmail = emailField.validate()
         let validCardNumber = cardNumberField.validate()
         let validCardExpirationDate = cardExpirationDateField.validate()

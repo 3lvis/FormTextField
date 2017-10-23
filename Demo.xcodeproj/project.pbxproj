@@ -26,37 +26,26 @@
 		14647ADC1C45063C0046399A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14647ADB1C45063C0046399A /* Assets.xcassets */; };
 		14647ADF1C45063C0046399A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14647ADD1C45063C0046399A /* LaunchScreen.storyboard */; };
 		1469B03F1C4511670027138C /* Field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1469B03E1C4511670027138C /* Field.swift */; };
-		14A139B41AEFC72B00AD732F /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A139B31AEFC72B00AD732F /* Tests.swift */; };
-		14C60D2D1F955CF700FF2967 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C60D211F955CB700FF2967 /* Validation.swift */; };
-		14C60D301F955D0D00FF2967 /* CardExpirationDateInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C60D281F955CF400FF2967 /* CardExpirationDateInputValidator.swift */; };
-		14C60D311F955D0D00FF2967 /* DecimalInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C60D291F955CF400FF2967 /* DecimalInputValidator.swift */; };
-		14C60D321F955D0D00FF2967 /* InputValidatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C60D2A1F955CF400FF2967 /* InputValidatable.swift */; };
-		14C60D331F955D0D00FF2967 /* InputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C60D2B1F955CF400FF2967 /* InputValidator.swift */; };
-		14C60D341F955D0D00FF2967 /* RequiredInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C60D2C1F955CF400FF2967 /* RequiredInputValidator.swift */; };
-		14C60D3D1F955DC300FF2967 /* Formattable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C60D3C1F955DA500FF2967 /* Formattable.swift */; };
-		14C60D3E1F955DC800FF2967 /* CardNumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C60D3B1F955DA500FF2967 /* CardNumberFormatter.swift */; };
-		14C60D3F1F955DCB00FF2967 /* CardExpirationDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C60D3A1F955DA500FF2967 /* CardExpirationDateFormatter.swift */; };
-		14EAF2701F9D3E7D00BE6D20 /* FormTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 14EAF26F1F9D3E7D00BE6D20 /* FormTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		14E02DF61F9E76D8003A8F10 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E02DF51F9E76D8003A8F10 /* UIColor+Hex.swift */; };
-		14EAF2721F9D3F0200BE6D20 /* CardExpirationDateFormatter.swift in Headers */ = {isa = PBXBuildFile; fileRef = 14C60D3A1F955DA500FF2967 /* CardExpirationDateFormatter.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		14EAF2731F9D3F0200BE6D20 /* CardNumberFormatter.swift in Headers */ = {isa = PBXBuildFile; fileRef = 14C60D3B1F955DA500FF2967 /* CardNumberFormatter.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		14EAF2741F9D3F0200BE6D20 /* Formattable.swift in Headers */ = {isa = PBXBuildFile; fileRef = 14C60D3C1F955DA500FF2967 /* Formattable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		14EAF2751F9D3F0200BE6D20 /* CardExpirationDateInputValidator.swift in Headers */ = {isa = PBXBuildFile; fileRef = 14C60D281F955CF400FF2967 /* CardExpirationDateInputValidator.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		14EAF2761F9D3F0200BE6D20 /* DecimalInputValidator.swift in Headers */ = {isa = PBXBuildFile; fileRef = 14C60D291F955CF400FF2967 /* DecimalInputValidator.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		14EAF2771F9D3F0200BE6D20 /* InputValidatable.swift in Headers */ = {isa = PBXBuildFile; fileRef = 14C60D2A1F955CF400FF2967 /* InputValidatable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		14EAF2781F9D3F0200BE6D20 /* InputValidator.swift in Headers */ = {isa = PBXBuildFile; fileRef = 14C60D2B1F955CF400FF2967 /* InputValidator.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		14EAF2791F9D3F0200BE6D20 /* RequiredInputValidator.swift in Headers */ = {isa = PBXBuildFile; fileRef = 14C60D2C1F955CF400FF2967 /* RequiredInputValidator.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		14EAF27A1F9D3F0200BE6D20 /* Validation.swift in Headers */ = {isa = PBXBuildFile; fileRef = 14C60D211F955CB700FF2967 /* Validation.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		14EAF27B1F9D3F0200BE6D20 /* FormTextField.swift in Headers */ = {isa = PBXBuildFile; fileRef = 444679081D8A75FB0002A3BD /* FormTextField.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		14EAF27C1F9D3F0200BE6D20 /* FormTextFieldClearButton.swift in Headers */ = {isa = PBXBuildFile; fileRef = 444679091D8A75FB0002A3BD /* FormTextFieldClearButton.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		14EAF27D1F9D3F0200BE6D20 /* FormTextFieldTypeManager.swift in Headers */ = {isa = PBXBuildFile; fileRef = 4446790A1D8A75FB0002A3BD /* FormTextFieldTypeManager.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		14E02DF71F9E77CB003A8F10 /* CardExpirationDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C60D3A1F955DA500FF2967 /* CardExpirationDateFormatter.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		14E02DF81F9E77CB003A8F10 /* CardNumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C60D3B1F955DA500FF2967 /* CardNumberFormatter.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		14E02DF91F9E77CB003A8F10 /* Formattable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C60D3C1F955DA500FF2967 /* Formattable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		14E02DFA1F9E77CB003A8F10 /* CardExpirationDateInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C60D281F955CF400FF2967 /* CardExpirationDateInputValidator.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		14E02DFB1F9E77CB003A8F10 /* DecimalInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C60D291F955CF400FF2967 /* DecimalInputValidator.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		14E02DFC1F9E77CB003A8F10 /* InputValidatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C60D2A1F955CF400FF2967 /* InputValidatable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		14E02DFD1F9E77CB003A8F10 /* InputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C60D2B1F955CF400FF2967 /* InputValidator.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		14E02DFE1F9E77CB003A8F10 /* RequiredInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C60D2C1F955CF400FF2967 /* RequiredInputValidator.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		14E02DFF1F9E77CB003A8F10 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C60D211F955CB700FF2967 /* Validation.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		14E02E001F9E77CB003A8F10 /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444679081D8A75FB0002A3BD /* FormTextField.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		14E02E011F9E77CB003A8F10 /* FormTextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444679091D8A75FB0002A3BD /* FormTextFieldClearButton.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		14E02E021F9E77CB003A8F10 /* FormTextFieldTypeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4446790A1D8A75FB0002A3BD /* FormTextFieldTypeManager.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		14E02E041F9E7961003A8F10 /* FormTextField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14EAF2671F9D3E5100BE6D20 /* FormTextField.framework */; };
+		14E02E061F9E7970003A8F10 /* FormTextField.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 14EAF2671F9D3E5100BE6D20 /* FormTextField.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		14EAF2701F9D3E7D00BE6D20 /* FormTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 14EAF26F1F9D3E7D00BE6D20 /* FormTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		14EAF27E1F9D3F0F00BE6D20 /* FormTextField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14EAF2671F9D3E5100BE6D20 /* FormTextField.framework */; };
 		14EAF27F1F9D3F0F00BE6D20 /* FormTextField.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14EAF2671F9D3E5100BE6D20 /* FormTextField.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		14EAF2831F9D3F1600BE6D20 /* FormTextField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14EAF2671F9D3E5100BE6D20 /* FormTextField.framework */; };
 		14EAF2841F9D3F1600BE6D20 /* FormTextField.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14EAF2671F9D3E5100BE6D20 /* FormTextField.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4446790B1D8A75FB0002A3BD /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444679081D8A75FB0002A3BD /* FormTextField.swift */; };
-		4446790C1D8A75FB0002A3BD /* FormTextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444679091D8A75FB0002A3BD /* FormTextFieldClearButton.swift */; };
-		4446790D1D8A75FB0002A3BD /* FormTextFieldTypeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4446790A1D8A75FB0002A3BD /* FormTextFieldTypeManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +66,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		14E02E051F9E7965003A8F10 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				14E02E061F9E7970003A8F10 /* FormTextField.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		14EAF2821F9D3F0F00BE6D20 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -120,7 +119,6 @@
 		1469B03E1C4511670027138C /* Field.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Field.swift; sourceTree = "<group>"; };
 		146D72AC1AB782920058798C /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		146D72B11AB782920058798C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		14A139B31AEFC72B00AD732F /* Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		14C0AF811BD6D4230009ECBE /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		14C0AF821BD6D4230009ECBE /* CONTRIBUTING.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
 		14C0AF831BD6D4230009ECBE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -170,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14E02E041F9E7961003A8F10 /* FormTextField.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +220,7 @@
 				14647AD81C45063C0046399A /* Custom */,
 				146D72AF1AB782920058798C /* Tests */,
 				146D72941AB782920058798C /* Products */,
+				14E02E031F9E7961003A8F10 /* Frameworks */,
 			);
 			indentWidth = 4;
 			sourceTree = "<group>";
@@ -243,7 +243,6 @@
 				14C60D351F955D9700FF2967 /* FormatterTests */,
 				14C60D221F955CD700FF2967 /* InputValidatorTests */,
 				14C60D1E1F955C9B00FF2967 /* ValidationTests */,
-				14A139B31AEFC72B00AD732F /* Tests.swift */,
 				146D72B01AB782920058798C /* Supporting Files */,
 			);
 			path = Tests;
@@ -326,6 +325,13 @@
 			path = Formatter;
 			sourceTree = "<group>";
 		};
+		14E02E031F9E7961003A8F10 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		444679071D8A75FB0002A3BD /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,18 +354,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				14EAF2701F9D3E7D00BE6D20 /* FormTextField.h in Headers */,
-				14EAF2721F9D3F0200BE6D20 /* CardExpirationDateFormatter.swift in Headers */,
-				14EAF2731F9D3F0200BE6D20 /* CardNumberFormatter.swift in Headers */,
-				14EAF2741F9D3F0200BE6D20 /* Formattable.swift in Headers */,
-				14EAF2751F9D3F0200BE6D20 /* CardExpirationDateInputValidator.swift in Headers */,
-				14EAF2761F9D3F0200BE6D20 /* DecimalInputValidator.swift in Headers */,
-				14EAF2771F9D3F0200BE6D20 /* InputValidatable.swift in Headers */,
-				14EAF2781F9D3F0200BE6D20 /* InputValidator.swift in Headers */,
-				14EAF2791F9D3F0200BE6D20 /* RequiredInputValidator.swift in Headers */,
-				14EAF27A1F9D3F0200BE6D20 /* Validation.swift in Headers */,
-				14EAF27B1F9D3F0200BE6D20 /* FormTextField.swift in Headers */,
-				14EAF27C1F9D3F0200BE6D20 /* FormTextFieldClearButton.swift in Headers */,
-				14EAF27D1F9D3F0200BE6D20 /* FormTextFieldTypeManager.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +405,7 @@
 				146D72A81AB782920058798C /* Sources */,
 				146D72A91AB782920058798C /* Frameworks */,
 				146D72AA1AB782920058798C /* Resources */,
+				14E02E051F9E7965003A8F10 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -556,25 +551,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14C60D301F955D0D00FF2967 /* CardExpirationDateInputValidator.swift in Sources */,
-				14A139B41AEFC72B00AD732F /* Tests.swift in Sources */,
-				14C60D321F955D0D00FF2967 /* InputValidatable.swift in Sources */,
-				4446790B1D8A75FB0002A3BD /* FormTextField.swift in Sources */,
-				14C60D331F955D0D00FF2967 /* InputValidator.swift in Sources */,
-				4446790C1D8A75FB0002A3BD /* FormTextFieldClearButton.swift in Sources */,
-				14C60D2D1F955CF700FF2967 /* Validation.swift in Sources */,
-				4446790D1D8A75FB0002A3BD /* FormTextFieldTypeManager.swift in Sources */,
-				14C60D3D1F955DC300FF2967 /* Formattable.swift in Sources */,
 				145009131F955EB80037A35F /* CardNumberFormatterTests.swift in Sources */,
 				145009161F955EC60037A35F /* InputValidatableTests.swift in Sources */,
 				145009171F955ECA0037A35F /* RequiredInputValidatorTests.swift in Sources */,
 				145009141F955EC00037A35F /* CardExpirationDateInputValidatorTests.swift in Sources */,
-				14C60D341F955D0D00FF2967 /* RequiredInputValidator.swift in Sources */,
 				145009181F955ECE0037A35F /* ValidationTests.swift in Sources */,
-				14C60D311F955D0D00FF2967 /* DecimalInputValidator.swift in Sources */,
 				145009121F955EB50037A35F /* CardExpirationDateFormatterTests.swift in Sources */,
-				14C60D3E1F955DC800FF2967 /* CardNumberFormatter.swift in Sources */,
-				14C60D3F1F955DCB00FF2967 /* CardExpirationDateFormatter.swift in Sources */,
 				145009151F955EC30037A35F /* DecimalInputValidatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -583,6 +565,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14E02DF71F9E77CB003A8F10 /* CardExpirationDateFormatter.swift in Sources */,
+				14E02DF81F9E77CB003A8F10 /* CardNumberFormatter.swift in Sources */,
+				14E02DF91F9E77CB003A8F10 /* Formattable.swift in Sources */,
+				14E02DFA1F9E77CB003A8F10 /* CardExpirationDateInputValidator.swift in Sources */,
+				14E02DFB1F9E77CB003A8F10 /* DecimalInputValidator.swift in Sources */,
+				14E02DFC1F9E77CB003A8F10 /* InputValidatable.swift in Sources */,
+				14E02DFD1F9E77CB003A8F10 /* InputValidator.swift in Sources */,
+				14E02DFE1F9E77CB003A8F10 /* RequiredInputValidator.swift in Sources */,
+				14E02DFF1F9E77CB003A8F10 /* Validation.swift in Sources */,
+				14E02E001F9E77CB003A8F10 /* FormTextField.swift in Sources */,
+				14E02E011F9E77CB003A8F10 /* FormTextFieldClearButton.swift in Sources */,
+				14E02E021F9E77CB003A8F10 /* FormTextFieldTypeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,7 +630,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.demo.Native;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -654,7 +648,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.demo.Native;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -673,7 +667,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.demo.Custom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -691,7 +685,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.demo.Custom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -797,7 +791,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = C6K65RDJHL;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -818,7 +815,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = C6K65RDJHL;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sample.$(PRODUCT_NAME:rfc1034identifier)";
@@ -848,7 +848,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = FrameworkInfo.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.3lvis.FormTextField;
 				PRODUCT_NAME = FormTextField;
@@ -882,7 +882,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = FrameworkInfo.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.3lvis.FormTextField;
 				PRODUCT_NAME = FormTextField;

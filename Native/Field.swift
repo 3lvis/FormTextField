@@ -25,7 +25,7 @@ struct Field {
         items.append(Field(type: .header, title: "Cardholder"))
 
         var requiredValidation = Validation()
-        requiredValidation.required = true
+        requiredValidation.minimumLength = 1
         let requiredInputValidator = InputValidator(validation: requiredValidation)
 
         let emailField: Field = {
@@ -33,7 +33,7 @@ struct Field {
             field.inputType = .email
 
             var validation = Validation()
-            validation.required = true
+            validation.minimumLength = 1
             validation.format = "[\\w._%+-]+@[\\w.-]+\\.\\w{2,}"
             field.inputValidator = InputValidator(validation: validation)
 
@@ -59,7 +59,6 @@ struct Field {
             var validation = Validation()
             validation.minimumLength = "1234 5678 1234 5678".characters.count
             validation.maximumLength = "1234 5678 1234 5678".characters.count
-            validation.required = true
             let characterSet = NSMutableCharacterSet.decimalDigit()
             characterSet.addCharacters(in: " ")
             validation.characterSet = characterSet as CharacterSet
@@ -75,7 +74,7 @@ struct Field {
             field.formatter = CardExpirationDateFormatter()
             field.inputType = .integer
             var validation = Validation()
-            validation.required = true
+            validation.minimumLength = 1
             let inputValidator = CardExpirationDateInputValidator(validation: validation)
             field.inputValidator = inputValidator
 

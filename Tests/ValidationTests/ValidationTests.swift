@@ -1,5 +1,6 @@
 import UIKit
 import XCTest
+import FormTextField
 
 class ValidationTests: XCTestCase {
     func testEmptyValidation() {

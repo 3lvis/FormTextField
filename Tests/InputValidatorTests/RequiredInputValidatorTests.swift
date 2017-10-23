@@ -1,5 +1,6 @@
 import XCTest
 import Foundation
+import FormTextField
 
 class RequiredInputValidatorTests: XCTestCase {
     func testValidation() {

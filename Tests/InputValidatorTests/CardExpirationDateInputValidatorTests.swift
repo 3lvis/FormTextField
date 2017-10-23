@@ -1,5 +1,6 @@
 import XCTest
 import Foundation
+import FormTextField
 
 class CardExpirationDateInputValidatorTests: XCTestCase {
     func testCardExpirationDate() {
