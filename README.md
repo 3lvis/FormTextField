@@ -98,6 +98,23 @@ Learn more about [InputValidators here](/InputValidator) and about the [Validati
 
 ## Formatters
 
+`Formatter` objects are objects that convert your text to a specific formated implemented using the `Formattable` protocol. Out of the box `FormTextField` includes two `Formatters`:
+
+CardExpirationFormatter: Formats a number so it follows the MM/YY convention where MM is month and YY is year.
+
+CardNumberFormatter: Formats a number so it adds a separation after every 4th character, for example it will format 1234567812345678 as 1234 5678 1234 5678.
+
+### Making your own Formatters 
+
+Making a custom `Formatter` for `FormTextField` should be as simple as making a class that conforms to the `Formattable` protocol, meaning implementing the following method.
+
+```swift
+func formatString(_ string: String, reverse: Bool) -> String
+```
+
+Learn more about [Formatters here](/Formatter).
+
+
 ## Installation
 
 **FormTextField** is available through [CocoaPods](http://cocoapods.org). To install
