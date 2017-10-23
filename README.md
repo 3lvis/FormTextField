@@ -16,7 +16,7 @@ This a `UITextField` subclass that supports styling for checking for valid and i
   <img src="https://raw.githubusercontent.com/3lvis/FormTextField/master/GitHub/custom.gif"/>
 </p>
 
-### Styling
+## Styling
 
 **FormTextField** also supports styling using UIAppearance protocol. [The example shown above uses this for styling.](/Custom/CustomStyle.swift#L7-L39)
 
@@ -45,7 +45,7 @@ Typing 6 => Valid
 Typing 7 => Invalid
 ```
 
-## Included built-in input validators
+### Included built-in input validators
 
 - CardExpirationDate: Validates MM/YY, where MM is month and YY is year. MM shouldn't be more than 12 and year can be pretty much any number above the current year (this to ensure that the card is not expired).
  
@@ -53,7 +53,7 @@ Typing 7 => Invalid
 
 - Required: A convenience input validator for minimum length 1.
 
-## Making your own input validator
+### Making your own input validator
 
 `InputValidator` includes the `InputValidatable` protocol. Any class that conforms to this protocol can be considered an input validator. For example making an InputValidator that only allows letters could be as simple as this.
 
