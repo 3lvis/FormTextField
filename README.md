@@ -4,6 +4,20 @@
 
 This a `UITextField` subclass that supports styling for checking for valid and invalid inputs, and formatters so you can easily format credit card numbers, phone numbers and more. It supports input validators so you can limit the contents of a UITextField using maximum length, maximum value or even regex (perfect for validating emails).
 
+## Table of Contents
+
+* [Native Demo](#native-demo)
+* [Custom Demo](#custom-demo)
+* [Styling](#styling)
+* [Input Validators](#input-validators)
+  * [Making your own input validator](#making-your-own-input-validator)
+* [Formatters](#formatters)
+  * [Making your own formatters](#making-your-own-formatters)  
+* [Installation](#installation)
+* [License](#license)
+* [Author](#author)
+
+
 ## [Native Demo](/Native/Field.swift#L28-L92)
 
 <p align="center">
@@ -46,7 +60,7 @@ Typing 6 => Valid
 Typing 7 => Invalid
 ```
 
-### Included built-in input validators
+`FormTextField` includes 3 built-in input validators:
 
 - CardExpirationDate: Validates MM/YY, where MM is month and YY is year. MM shouldn't be more than 12 and year can be pretty much any number above the current year (this to ensure that the card is not expired).
  
