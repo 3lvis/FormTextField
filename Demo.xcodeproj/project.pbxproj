@@ -36,10 +36,69 @@
 		14C60D3D1F955DC300FF2967 /* Formattable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C60D3C1F955DA500FF2967 /* Formattable.swift */; };
 		14C60D3E1F955DC800FF2967 /* CardNumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C60D3B1F955DA500FF2967 /* CardNumberFormatter.swift */; };
 		14C60D3F1F955DCB00FF2967 /* CardExpirationDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C60D3A1F955DA500FF2967 /* CardExpirationDateFormatter.swift */; };
+		14EAF2701F9D3E7D00BE6D20 /* FormTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 14EAF26F1F9D3E7D00BE6D20 /* FormTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		14EAF2721F9D3F0200BE6D20 /* CardExpirationDateFormatter.swift in Headers */ = {isa = PBXBuildFile; fileRef = 14C60D3A1F955DA500FF2967 /* CardExpirationDateFormatter.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		14EAF2731F9D3F0200BE6D20 /* CardNumberFormatter.swift in Headers */ = {isa = PBXBuildFile; fileRef = 14C60D3B1F955DA500FF2967 /* CardNumberFormatter.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		14EAF2741F9D3F0200BE6D20 /* Formattable.swift in Headers */ = {isa = PBXBuildFile; fileRef = 14C60D3C1F955DA500FF2967 /* Formattable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		14EAF2751F9D3F0200BE6D20 /* CardExpirationDateInputValidator.swift in Headers */ = {isa = PBXBuildFile; fileRef = 14C60D281F955CF400FF2967 /* CardExpirationDateInputValidator.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		14EAF2761F9D3F0200BE6D20 /* DecimalInputValidator.swift in Headers */ = {isa = PBXBuildFile; fileRef = 14C60D291F955CF400FF2967 /* DecimalInputValidator.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		14EAF2771F9D3F0200BE6D20 /* InputValidatable.swift in Headers */ = {isa = PBXBuildFile; fileRef = 14C60D2A1F955CF400FF2967 /* InputValidatable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		14EAF2781F9D3F0200BE6D20 /* InputValidator.swift in Headers */ = {isa = PBXBuildFile; fileRef = 14C60D2B1F955CF400FF2967 /* InputValidator.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		14EAF2791F9D3F0200BE6D20 /* RequiredInputValidator.swift in Headers */ = {isa = PBXBuildFile; fileRef = 14C60D2C1F955CF400FF2967 /* RequiredInputValidator.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		14EAF27A1F9D3F0200BE6D20 /* Validation.swift in Headers */ = {isa = PBXBuildFile; fileRef = 14C60D211F955CB700FF2967 /* Validation.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		14EAF27B1F9D3F0200BE6D20 /* FormTextField.swift in Headers */ = {isa = PBXBuildFile; fileRef = 444679081D8A75FB0002A3BD /* FormTextField.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		14EAF27C1F9D3F0200BE6D20 /* FormTextFieldClearButton.swift in Headers */ = {isa = PBXBuildFile; fileRef = 444679091D8A75FB0002A3BD /* FormTextFieldClearButton.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		14EAF27D1F9D3F0200BE6D20 /* FormTextFieldTypeManager.swift in Headers */ = {isa = PBXBuildFile; fileRef = 4446790A1D8A75FB0002A3BD /* FormTextFieldTypeManager.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		14EAF27E1F9D3F0F00BE6D20 /* FormTextField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14EAF2671F9D3E5100BE6D20 /* FormTextField.framework */; };
+		14EAF27F1F9D3F0F00BE6D20 /* FormTextField.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14EAF2671F9D3E5100BE6D20 /* FormTextField.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		14EAF2831F9D3F1600BE6D20 /* FormTextField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14EAF2671F9D3E5100BE6D20 /* FormTextField.framework */; };
+		14EAF2841F9D3F1600BE6D20 /* FormTextField.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14EAF2671F9D3E5100BE6D20 /* FormTextField.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4446790B1D8A75FB0002A3BD /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444679081D8A75FB0002A3BD /* FormTextField.swift */; };
 		4446790C1D8A75FB0002A3BD /* FormTextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444679091D8A75FB0002A3BD /* FormTextFieldClearButton.swift */; };
 		4446790D1D8A75FB0002A3BD /* FormTextFieldTypeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4446790A1D8A75FB0002A3BD /* FormTextFieldTypeManager.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		14EAF2801F9D3F0F00BE6D20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146D728B1AB782920058798C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14EAF2661F9D3E5100BE6D20;
+			remoteInfo = "FormTextField-iOS";
+		};
+		14EAF2851F9D3F1600BE6D20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146D728B1AB782920058798C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14EAF2661F9D3E5100BE6D20;
+			remoteInfo = "FormTextField-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		14EAF2821F9D3F0F00BE6D20 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				14EAF27F1F9D3F0F00BE6D20 /* FormTextField.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14EAF2871F9D3F1600BE6D20 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				14EAF2841F9D3F1600BE6D20 /* FormTextField.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		145FDD0F1C4506AF00F9DC70 /* Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
@@ -80,6 +139,9 @@
 		14C60D3A1F955DA500FF2967 /* CardExpirationDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardExpirationDateFormatter.swift; sourceTree = "<group>"; };
 		14C60D3B1F955DA500FF2967 /* CardNumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardNumberFormatter.swift; sourceTree = "<group>"; };
 		14C60D3C1F955DA500FF2967 /* Formattable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formattable.swift; sourceTree = "<group>"; };
+		14EAF2671F9D3E5100BE6D20 /* FormTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FormTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		14EAF26F1F9D3E7D00BE6D20 /* FormTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormTextField.h; sourceTree = "<group>"; };
+		14EAF2711F9D3EAE00BE6D20 /* FrameworkInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FrameworkInfo.plist; sourceTree = "<group>"; };
 		444679081D8A75FB0002A3BD /* FormTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
 		444679091D8A75FB0002A3BD /* FormTextFieldClearButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTextFieldClearButton.swift; sourceTree = "<group>"; };
 		4446790A1D8A75FB0002A3BD /* FormTextFieldTypeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTextFieldTypeManager.swift; sourceTree = "<group>"; };
@@ -90,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14EAF27E1F9D3F0F00BE6D20 /* FormTextField.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,10 +160,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14EAF2831F9D3F1600BE6D20 /* FormTextField.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		146D72A91AB782920058798C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14EAF2631F9D3E5100BE6D20 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -158,6 +229,7 @@
 				146D72AC1AB782920058798C /* Tests.xctest */,
 				14647AC61C4506360046399A /* Native.app */,
 				14647AD71C45063C0046399A /* Custom.app */,
+				14EAF2671F9D3E5100BE6D20 /* FormTextField.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -188,6 +260,7 @@
 				14C0AF811BD6D4230009ECBE /* CHANGELOG.md */,
 				14C0AF821BD6D4230009ECBE /* CONTRIBUTING.md */,
 				14C0AF831BD6D4230009ECBE /* README.md */,
+				14EAF2711F9D3EAE00BE6D20 /* FrameworkInfo.plist */,
 			);
 			name = Metadata;
 			sourceTree = "<group>";
@@ -259,11 +332,35 @@
 				444679081D8A75FB0002A3BD /* FormTextField.swift */,
 				444679091D8A75FB0002A3BD /* FormTextFieldClearButton.swift */,
 				4446790A1D8A75FB0002A3BD /* FormTextFieldTypeManager.swift */,
+				14EAF26F1F9D3E7D00BE6D20 /* FormTextField.h */,
 			);
 			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		14EAF2641F9D3E5100BE6D20 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14EAF2701F9D3E7D00BE6D20 /* FormTextField.h in Headers */,
+				14EAF2721F9D3F0200BE6D20 /* CardExpirationDateFormatter.swift in Headers */,
+				14EAF2731F9D3F0200BE6D20 /* CardNumberFormatter.swift in Headers */,
+				14EAF2741F9D3F0200BE6D20 /* Formattable.swift in Headers */,
+				14EAF2751F9D3F0200BE6D20 /* CardExpirationDateInputValidator.swift in Headers */,
+				14EAF2761F9D3F0200BE6D20 /* DecimalInputValidator.swift in Headers */,
+				14EAF2771F9D3F0200BE6D20 /* InputValidatable.swift in Headers */,
+				14EAF2781F9D3F0200BE6D20 /* InputValidator.swift in Headers */,
+				14EAF2791F9D3F0200BE6D20 /* RequiredInputValidator.swift in Headers */,
+				14EAF27A1F9D3F0200BE6D20 /* Validation.swift in Headers */,
+				14EAF27B1F9D3F0200BE6D20 /* FormTextField.swift in Headers */,
+				14EAF27C1F9D3F0200BE6D20 /* FormTextFieldClearButton.swift in Headers */,
+				14EAF27D1F9D3F0200BE6D20 /* FormTextFieldTypeManager.swift in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		14647AC51C4506360046399A /* Native */ = {
@@ -273,10 +370,12 @@
 				14647AC21C4506360046399A /* Sources */,
 				14647AC31C4506360046399A /* Frameworks */,
 				14647AC41C4506360046399A /* Resources */,
+				14EAF2821F9D3F0F00BE6D20 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				14EAF2811F9D3F0F00BE6D20 /* PBXTargetDependency */,
 			);
 			name = Native;
 			productName = Native;
@@ -290,10 +389,12 @@
 				14647AD31C45063C0046399A /* Sources */,
 				14647AD41C45063C0046399A /* Frameworks */,
 				14647AD51C45063C0046399A /* Resources */,
+				14EAF2871F9D3F1600BE6D20 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				14EAF2861F9D3F1600BE6D20 /* PBXTargetDependency */,
 			);
 			name = Custom;
 			productName = Custom;
@@ -316,6 +417,24 @@
 			productName = PodTests;
 			productReference = 146D72AC1AB782920058798C /* Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		14EAF2661F9D3E5100BE6D20 /* FormTextField-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14EAF26E1F9D3E5100BE6D20 /* Build configuration list for PBXNativeTarget "FormTextField-iOS" */;
+			buildPhases = (
+				14EAF2621F9D3E5100BE6D20 /* Sources */,
+				14EAF2631F9D3E5100BE6D20 /* Frameworks */,
+				14EAF2641F9D3E5100BE6D20 /* Headers */,
+				14EAF2651F9D3E5100BE6D20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FormTextField-iOS";
+			productName = "FormTextField-iOS";
+			productReference = 14EAF2671F9D3E5100BE6D20 /* FormTextField.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -343,6 +462,11 @@
 						DevelopmentTeam = C6K65RDJHL;
 						LastSwiftMigration = 0900;
 					};
+					14EAF2661F9D3E5100BE6D20 = {
+						CreatedOnToolsVersion = 9.0.1;
+						DevelopmentTeam = C6K65RDJHL;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 146D728E1AB782920058798C /* Build configuration list for PBXProject "Demo" */;
@@ -361,6 +485,7 @@
 				146D72AB1AB782920058798C /* Tests */,
 				14647AC51C4506360046399A /* Native */,
 				14647AD61C45063C0046399A /* Custom */,
+				14EAF2661F9D3E5100BE6D20 /* FormTextField-iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -385,6 +510,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		146D72AA1AB782920058798C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14EAF2651F9D3E5100BE6D20 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -443,7 +575,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		14EAF2621F9D3E5100BE6D20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		14EAF2811F9D3F0F00BE6D20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14EAF2661F9D3E5100BE6D20 /* FormTextField-iOS */;
+			targetProxy = 14EAF2801F9D3F0F00BE6D20 /* PBXContainerItemProxy */;
+		};
+		14EAF2861F9D3F1600BE6D20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14EAF2661F9D3E5100BE6D20 /* FormTextField-iOS */;
+			targetProxy = 14EAF2851F9D3F1600BE6D20 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		14647ACC1C4506360046399A /* LaunchScreen.storyboard */ = {
@@ -470,6 +622,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = C6K65RDJHL;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -488,6 +641,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = C6K65RDJHL;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -505,6 +659,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = C6K65RDJHL;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -523,6 +678,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = C6K65RDJHL;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -668,6 +824,72 @@
 			};
 			name = Release;
 		};
+		14EAF26C1F9D3E5100BE6D20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = C6K65RDJHL;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = FrameworkInfo.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.3lvis.FormTextField;
+				PRODUCT_NAME = FormTextField;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		14EAF26D1F9D3E5100BE6D20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = C6K65RDJHL;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = FrameworkInfo.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.3lvis.FormTextField;
+				PRODUCT_NAME = FormTextField;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -703,6 +925,15 @@
 			buildConfigurations = (
 				146D72BA1AB782920058798C /* Debug */,
 				146D72BB1AB782920058798C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14EAF26E1F9D3E5100BE6D20 /* Build configuration list for PBXNativeTarget "FormTextField-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14EAF26C1F9D3E5100BE6D20 /* Debug */,
+				14EAF26D1F9D3E5100BE6D20 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
