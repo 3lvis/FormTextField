@@ -20,6 +20,10 @@ This a `UITextField` subclass that supports styling for checking for valid and i
 
 **FormTextField** also supports styling using UIAppearance protocol. [The example shown above uses this for styling.](https://github.com/3lvis/FormTextField/blob/master/Custom/CustomStyle.swift#L7-L39)
 
+## Input Validators
+
+## Formatters
+
 ## Installation
 
 **FormTextField** is available through [CocoaPods](http://cocoapods.org). To install
