@@ -48,9 +48,7 @@ public struct CardExpirationDateInputValidator: InputValidatable {
                         valid = (number > 0 && number <= maximumMonth)
                         break
                     case 3:
-                        let index = composedString.characters.index(composedString.startIndex, offsetBy: "MM".characters.count)
-                        precomposedString = String(composedString[index...])
-                        valid = (composedString == "/")
+                        valid = (replacementString == "/")
                         break
                     case 4, 5:
                         let year = Calendar.current.component(.year, from: Date())
