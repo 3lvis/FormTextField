@@ -1,4 +1,5 @@
 import XCTest
+import FormTextField
 
 class CardNumberFormatterTests: XCTestCase {
     func testFormatString() {

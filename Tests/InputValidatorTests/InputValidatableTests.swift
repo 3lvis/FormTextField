@@ -1,5 +1,6 @@
 import XCTest
 import Foundation
+import FormTextField
 
 class InputValidatableTests: XCTestCase {
     func testComposedStringStrings() {
