@@ -37,7 +37,8 @@ For example if you have a FormTextField where you only want to allow values betw
 let validation = Validation()
 validation.minimumValue = 5
 validation.maximumValue = 6
-textField.inputValidator = InputValidator(validation: validation)
+
+formTextField.inputValidator = InputValidator(validation: validation)
 
 Typing 4 => Invalid
 Typing 5 => Valid
@@ -85,7 +86,7 @@ public struct LetterInputValidator: InputValidatable {
     }
 }
 
-textField.inputValidator = LetterInputValidator()
+formTextField.inputValidator = LetterInputValidator()
 Typing A => Valid
 Typing 2 => Invalid
 Typing AA => Valid
