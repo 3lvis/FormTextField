@@ -49,7 +49,7 @@ class Controller: UITableViewController {
         }
     }
 
-    func done() {
+    @objc func done() {
         let alertController = UIAlertController(title: "The payment details are valid", message: nil, preferredStyle: .alert)
         let dismissAction = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
         alertController.addAction(dismissAction)
