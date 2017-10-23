@@ -1,5 +1,4 @@
 import Foundation
-import Hex
 import FormTextField
 
 struct CustomStyle {

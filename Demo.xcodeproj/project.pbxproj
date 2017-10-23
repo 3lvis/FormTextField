@@ -37,6 +37,7 @@
 		14C60D3E1F955DC800FF2967 /* CardNumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C60D3B1F955DA500FF2967 /* CardNumberFormatter.swift */; };
 		14C60D3F1F955DCB00FF2967 /* CardExpirationDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C60D3A1F955DA500FF2967 /* CardExpirationDateFormatter.swift */; };
 		14EAF2701F9D3E7D00BE6D20 /* FormTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 14EAF26F1F9D3E7D00BE6D20 /* FormTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		14E02DF61F9E76D8003A8F10 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E02DF51F9E76D8003A8F10 /* UIColor+Hex.swift */; };
 		14EAF2721F9D3F0200BE6D20 /* CardExpirationDateFormatter.swift in Headers */ = {isa = PBXBuildFile; fileRef = 14C60D3A1F955DA500FF2967 /* CardExpirationDateFormatter.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		14EAF2731F9D3F0200BE6D20 /* CardNumberFormatter.swift in Headers */ = {isa = PBXBuildFile; fileRef = 14C60D3B1F955DA500FF2967 /* CardNumberFormatter.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		14EAF2741F9D3F0200BE6D20 /* Formattable.swift in Headers */ = {isa = PBXBuildFile; fileRef = 14C60D3C1F955DA500FF2967 /* Formattable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -139,6 +140,7 @@
 		14C60D3A1F955DA500FF2967 /* CardExpirationDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardExpirationDateFormatter.swift; sourceTree = "<group>"; };
 		14C60D3B1F955DA500FF2967 /* CardNumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardNumberFormatter.swift; sourceTree = "<group>"; };
 		14C60D3C1F955DA500FF2967 /* Formattable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formattable.swift; sourceTree = "<group>"; };
+		14E02DF51F9E76D8003A8F10 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		14EAF2671F9D3E5100BE6D20 /* FormTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FormTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		14EAF26F1F9D3E7D00BE6D20 /* FormTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormTextField.h; sourceTree = "<group>"; };
 		14EAF2711F9D3EAE00BE6D20 /* FrameworkInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FrameworkInfo.plist; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				14647ADB1C45063C0046399A /* Assets.xcassets */,
 				14647ADD1C45063C0046399A /* LaunchScreen.storyboard */,
 				14647AE01C45063C0046399A /* Info.plist */,
+				14E02DF51F9E76D8003A8F10 /* UIColor+Hex.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -543,6 +546,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14647ADA1C45063C0046399A /* AppDelegate.swift in Sources */,
+				14E02DF61F9E76D8003A8F10 /* UIColor+Hex.swift in Sources */,
 				145FDD181C4506D800F9DC70 /* CustomStyle.swift in Sources */,
 				145FDD171C4506D800F9DC70 /* Controller.swift in Sources */,
 			);
