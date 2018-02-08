@@ -129,8 +129,8 @@ open class FormTextField: UITextField, UITextFieldDelegate {
             let textRange = selectedTextRange
             let newRawText = formatter!.formatString(text, reverse: false)
 
-            let didAddText = (newRawText.characters.count > (self.text ?? "").characters.count)
-            let didFormat = (newRawText.characters.count > (self.text ?? "").characters.count)
+            let didAddText = (newRawText.count > (self.text ?? "").count)
+            let didFormat = (newRawText.count > (self.text ?? "").count)
             let cursorAtStart = (selectedTextRange!.start == position(from: beginningOfDocument, offset: 1))
             if didAddText && cursorAtStart {
                 self.text = newRawText

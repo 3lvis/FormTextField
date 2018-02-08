@@ -9,8 +9,8 @@ public struct CardExpirationDateFormatter: Formattable {
         } else {
             var idx = 0
             var character: Character
-            while idx < normalizedString.characters.count {
-                let index = normalizedString.characters.index(normalizedString.startIndex, offsetBy: idx)
+            while idx < normalizedString.count {
+                let index = normalizedString.index(normalizedString.startIndex, offsetBy: idx)
                 character = normalizedString[index]
 
                 formattedString.append(character)

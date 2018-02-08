@@ -11,8 +11,8 @@ public struct CardExpirationDateInputValidator: InputValidatable {
 
     public init(validation _: Validation? = nil) {
         var predefinedValidation = Validation()
-        predefinedValidation.minimumLength = "MM/YY".characters.count
-        predefinedValidation.maximumLength = "MM/YY".characters.count
+        predefinedValidation.minimumLength = "MM/YY".count
+        predefinedValidation.maximumLength = "MM/YY".count
         // predefinedValidation.required = validation?.required ?? false
         validation = predefinedValidation
     }
@@ -27,19 +27,18 @@ public struct CardExpirationDateInputValidator: InputValidatable {
         if valid {
             guard let replacementString = replacementString, let range = range else { return valid }
 
-            var composedString = self.composedString(replacementString, fullString: fullString, inRange: range)
-
-            if composedString.characters.count > 0 {
+            let composedString = self.composedString(replacementString, fullString: fullString, inRange: range)
+            if composedString.count > 0 {
                 var precomposedString = composedString
-                if composedString.characters.count == 4 || composedString.characters.count == 5 {
-                    let index = composedString.characters.index(composedString.startIndex, offsetBy: "MM/".characters.count)
+                if composedString.count == 4 || composedString.count == 5 {
+                    let index = composedString.index(composedString.startIndex, offsetBy: "MM/".count)
                     precomposedString = String(composedString[index...])
                 }
 
                 let formatter = NumberFormatter()
                 let number = formatter.number(from: precomposedString)?.intValue
                 if let number = number {
-                    switch composedString.characters.count {
+                    switch composedString.count {
                     case 1:
                         valid = (number == 0 || number == 1)
                         break
@@ -56,8 +55,8 @@ public struct CardExpirationDateInputValidator: InputValidatable {
                         let basicYear = Double(year) - (century * 100.0)
                         let decade = floor(basicYear / 10.0)
 
-                        let isDecimal = (precomposedString.characters.count == 1)
-                        let isYear = (precomposedString.characters.count == 2)
+                        let isDecimal = (precomposedString.count == 1)
+                        let isYear = (precomposedString.count == 2)
                         if isDecimal {
                             valid = number >= Int(decade)
                         } else if isYear {
