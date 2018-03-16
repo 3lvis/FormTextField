@@ -15,7 +15,7 @@ class DecimalInputValidatorTests: XCTestCase {
 
         // 1st character
         var fullString = ""
-        var fullStringLength = fullString.characters.count
+        var fullStringLength = fullString.count
         XCTAssertTrue(validator.validateReplacementString("0", fullString: fullString, inRange: NSRange(location: fullStringLength, length: 0)))
         XCTAssertFalse(validator.validateReplacementString(",", fullString: fullString, inRange: NSRange(location: fullStringLength, length: 0)))
         XCTAssertFalse(validator.validateReplacementString(".", fullString: fullString, inRange: NSRange(location: fullStringLength, length: 0)))
@@ -23,7 +23,7 @@ class DecimalInputValidatorTests: XCTestCase {
 
         // 2nd character:
         fullString = "1"
-        fullStringLength = fullString.characters.count
+        fullStringLength = fullString.count
         XCTAssertTrue(validator.validateReplacementString("1", fullString: fullString, inRange: NSRange(location: fullStringLength, length: 0)))
         XCTAssertTrue(validator.validateReplacementString(",", fullString: fullString, inRange: NSRange(location: fullStringLength, length: 0)))
         XCTAssertTrue(validator.validateReplacementString(".", fullString: fullString, inRange: NSRange(location: fullStringLength, length: 0)))
@@ -31,7 +31,7 @@ class DecimalInputValidatorTests: XCTestCase {
 
         // 3rd character:
         fullString = "1,"
-        fullStringLength = fullString.characters.count
+        fullStringLength = fullString.count
         XCTAssertTrue(validator.validateReplacementString("1", fullString: fullString, inRange: NSRange(location: fullStringLength, length: 0)))
         XCTAssertFalse(validator.validateReplacementString(",", fullString: fullString, inRange: NSRange(location: fullStringLength, length: 0)))
         XCTAssertFalse(validator.validateReplacementString(".", fullString: fullString, inRange: NSRange(location: fullStringLength, length: 0)))
@@ -39,7 +39,7 @@ class DecimalInputValidatorTests: XCTestCase {
 
         // 3rd character alternative:
         fullString = "1."
-        fullStringLength = fullString.characters.count
+        fullStringLength = fullString.count
         XCTAssertTrue(validator.validateReplacementString("1", fullString: fullString, inRange: NSRange(location: fullStringLength, length: 0)))
         XCTAssertFalse(validator.validateReplacementString(",", fullString: fullString, inRange: NSRange(location: fullStringLength, length: 0)))
         XCTAssertFalse(validator.validateReplacementString(".", fullString: fullString, inRange: NSRange(location: fullStringLength, length: 0)))

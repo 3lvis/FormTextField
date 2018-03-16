@@ -28,7 +28,6 @@ public struct CardExpirationDateInputValidator: InputValidatable {
             guard let replacementString = replacementString, let range = range else { return valid }
 
             let composedString = self.composedString(replacementString, fullString: fullString, inRange: range)
-
             if composedString.count > 0 {
                 var precomposedString = composedString
                 if composedString.count == 4 || composedString.count == 5 {

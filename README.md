@@ -89,7 +89,7 @@ public struct LetterInputValidator: InputValidatable {
 
         if valid {
             let composedString = self.composedString(replacementString, fullString: fullString, inRange: range)
-            if composedString.characters.count > 0 {
+            if composedString.count > 0 {
                 let letterCharacterSet = NSCharacterSet.letterCharacterSet()
                 let stringCharacterSet = NSCharacterSet(charactersInString: composedString)
                 valid = letterCharacterSet.isSupersetOfSet(stringCharacterSet)

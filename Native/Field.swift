@@ -57,8 +57,8 @@ struct Field {
             field.inputType = .integer
             field.formatter = CardNumberFormatter()
             var validation = Validation()
-            validation.minimumLength = "1234 5678 1234 5678".characters.count
-            validation.maximumLength = "1234 5678 1234 5678".characters.count
+            validation.minimumLength = "1234 5678 1234 5678".count
+            validation.maximumLength = "1234 5678 1234 5678".count
             let characterSet = NSMutableCharacterSet.decimalDigit()
             characterSet.addCharacters(in: " ")
             validation.characterSet = characterSet as CharacterSet
@@ -86,8 +86,8 @@ struct Field {
             var field = Field(type: .field, title: "CVC", placeholder: "Security Code")
             field.inputType = .integer
             var validation = Validation()
-            validation.maximumLength = "CVC".characters.count
-            validation.minimumLength = "CVC".characters.count
+            validation.maximumLength = "CVC".count
+            validation.minimumLength = "CVC".count
             validation.characterSet = CharacterSet.decimalDigits
             let inputValidator = InputValidator(validation: validation)
             field.inputValidator = inputValidator
