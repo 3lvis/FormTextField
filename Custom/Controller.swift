@@ -30,8 +30,8 @@ class Controller: UIViewController {
         textField.placeholder = "Card Number"
 
         var validation = Validation()
-        validation.maximumLength = "1234 5678 1234 5678".characters.count
-        validation.minimumLength = "1234 5678 1234 5678".characters.count
+        validation.maximumLength = "1234 5678 1234 5678".count
+        validation.minimumLength = "1234 5678 1234 5678".count
         let characterSet = NSMutableCharacterSet.decimalDigit()
         characterSet.addCharacters(in: " ")
         validation.characterSet = characterSet as CharacterSet
@@ -70,8 +70,8 @@ class Controller: UIViewController {
         textField.placeholder = "CVC"
 
         var validation = Validation()
-        validation.maximumLength = "CVC".characters.count
-        validation.minimumLength = "CVC".characters.count
+        validation.maximumLength = "CVC".count
+        validation.minimumLength = "CVC".count
         validation.characterSet = NSCharacterSet.decimalDigits
         let inputValidator = InputValidator(validation: validation)
         textField.inputValidator = inputValidator

@@ -16,18 +16,18 @@ public struct DecimalInputValidator: InputValidatable {
 
         if valid {
             let composedString = self.composedString(replacementString, fullString: fullString, inRange: range)
-            if composedString.characters.count > 0 {
+            if composedString.count > 0 {
                 let stringSet = CharacterSet(charactersIn: composedString)
                 var floatSet = CharacterSet.decimalDigits
                 floatSet.insert(charactersIn: ".,")
                 let hasValidElements = floatSet.superSetOf(other: stringSet)
                 if hasValidElements {
-                    let firstElementSet = CharacterSet(charactersIn: String(composedString.characters.first!))
+                    let firstElementSet = CharacterSet(charactersIn: String(composedString.first!))
                     let integerSet = CharacterSet.decimalDigits
                     let firstCharacterIsNumber = integerSet.isSuperset(of: firstElementSet)
                     if firstCharacterIsNumber {
                         if replacementString == nil {
-                            let lastElementSet = CharacterSet(charactersIn: String(composedString.characters.last!))
+                            let lastElementSet = CharacterSet(charactersIn: String(composedString.last!))
                             let lastCharacterIsInvalid = !integerSet.isSuperset(of: lastElementSet)
                             if lastCharacterIsInvalid {
                                 valid = false
