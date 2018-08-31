@@ -243,6 +243,8 @@ extension FormTextField {
         }
 
         updateActive(true)
+        
+        textFieldDelegate?.formTextFieldDidBeginEditing?(self)
     }
 
     public func textFieldDidEndEditing(_: UITextField) {
