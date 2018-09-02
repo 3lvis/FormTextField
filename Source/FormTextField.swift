@@ -118,6 +118,7 @@ open class FormTextField: UITextField, UITextFieldDelegate {
 
     // Sets the textfields at the initial state, clear text and resets appearance too
     open func reset() {
+        inputValidator?.validation?.errors.reset()
         updateText(nil)
         updateEnabled(isEnabled)
     }
@@ -194,6 +195,7 @@ open class FormTextField: UITextField, UITextFieldDelegate {
 
     open func validate(updatingUI: Bool = true) -> Bool {
         var isValid = true
+        inputValidator?.validation?.errors.reset()
         if let inputValidator = self.inputValidator {
             isValid = inputValidator.validateString(text ?? "")
         }
@@ -243,6 +245,8 @@ extension FormTextField {
         }
 
         updateActive(true)
+        
+        textFieldDelegate?.formTextFieldDidBeginEditing?(self)
     }
 
     public func textFieldDidEndEditing(_: UITextField) {
