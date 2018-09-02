@@ -10,7 +10,7 @@ public struct CardExpirationDateInputValidator: InputValidatable {
     public var validation: Validation?
 
     public init(validation _: Validation? = nil) {
-        var predefinedValidation = Validation()
+        var predefinedValidation = Validation(name: "Card expiration date")
         predefinedValidation.minimumLength = "MM/YY".count
         predefinedValidation.maximumLength = "MM/YY".count
         // predefinedValidation.required = validation?.required ?? false
