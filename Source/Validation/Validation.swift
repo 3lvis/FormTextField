@@ -65,16 +65,16 @@ public class Validation {
         reloadErrorTexts()
     }
     
-    /// Sets default texts for different error types. Depends on `name` field, it must be non-nil to proceed.
+    /// Sets default texts for different error types. Depends on the `name` field, it must be non-nil to proceed.
     public func reloadErrorTexts() {
         guard let name = name else {
             return
         }
-        if errors.minimumLength.text == nil {
+        if errors.minimumLength.text == nil && minimumLength > 0 {
             errors.minimumLength.text = (
                 minimumLength == 1
-                    ? "\(name) is required."
-                    : "\(name) must contain \(minimumLength) characters or more."
+                ? "\(name) is required."
+                : "\(name) must contain \(minimumLength) characters or more."
             )
         }
         if errors.maximumLength.text == nil && maximumLength != nil {
