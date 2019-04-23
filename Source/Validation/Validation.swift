@@ -45,7 +45,7 @@ public struct Validation {
         if valid {
             if let characterSet = self.characterSet {
                 let stringCharacterSet = CharacterSet(charactersIn: string)
-                valid = characterSet.superSetOf(other: stringCharacterSet)
+                valid = characterSet.isSuperset(of: stringCharacterSet)
             }
         }
 
@@ -58,13 +58,5 @@ public struct Validation {
         }
 
         return valid
-    }
-}
-
-extension CharacterSet {
-    // Workaround for crash in Swift:
-    // https://github.com/apple/swift/pull/4162
-    func superSetOf(other: CharacterSet) -> Bool {
-        return CFCharacterSetIsSupersetOfSet(self as CFCharacterSet, (other as NSCharacterSet).copy() as! CFCharacterSet)
     }
 }

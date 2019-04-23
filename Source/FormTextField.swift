@@ -59,7 +59,7 @@ open class FormTextField: UITextField, UITextFieldDelegate {
 
     fileprivate static let AccessoryButtonWidth = 30.0
     fileprivate static let AccessoryButtonHeight = 20.0
-    @objc open dynamic var accessoryViewMode: UITextFieldViewMode = .whileEditing { didSet { self.rightViewMode = self.accessoryViewMode } }
+    @objc open dynamic var accessoryViewMode: UITextField.ViewMode = .whileEditing { didSet { self.rightViewMode = self.accessoryViewMode } }
     @objc open dynamic var clearButtonColor: UIColor = UIColor(red: 0, green: 122 / 255, blue: 1, alpha: 1)
     open var accessoryView: UIView?
 
@@ -97,7 +97,7 @@ open class FormTextField: UITextField, UITextFieldDelegate {
     fileprivate lazy var clearButton: UIButton = {
         let image = FormTextFieldClearButton.imageForSize(CGSize(width: 18, height: 18), color: self.clearButtonColor)
         let button = UIButton(type: .custom)
-        button.setImage(image, for: UIControlState())
+        button.setImage(image, for: UIControl.State())
         button.addTarget(self, action: #selector(FormTextField.clearButtonAction), for: .touchUpInside)
         button.frame = CGRect(x: 0, y: 0, width: FormTextField.AccessoryButtonWidth, height: FormTextField.AccessoryButtonHeight)
 

@@ -4,7 +4,7 @@ public extension UIColor {
     /// Base initializer, it creates an instance of `UIColor` using an HEX string.
     ///
     /// - Parameter hex: The base HEX string to create the color.
-    public convenience init(hex: String) {
+    convenience init(hex: String) {
         let noHashString = hex.replacingOccurrences(of: "#", with: "")
         let scanner = Scanner(string: noHashString)
         scanner.charactersToBeSkipped = CharacterSet.symbols
@@ -28,7 +28,7 @@ public extension UIColor {
     ///   - green: The green part, ranging from 0 to 255.
     ///   - blue: The blue part, ranging from 0 to 255.
     ///   - alpha: The alpha part, ranging from 0 to 100.
-    public convenience init(r red: Double, g green: Double, b blue: Double, a alpha: Double = 100) {
+    convenience init(r red: Double, g green: Double, b blue: Double, a alpha: Double = 100) {
         self.init(red: CGFloat(red)/CGFloat(255.0), green: CGFloat(green)/CGFloat(255.0), blue: CGFloat(blue)/CGFloat(255.0), alpha: CGFloat(alpha)/CGFloat(100.0))
     }
 
@@ -36,7 +36,7 @@ public extension UIColor {
     ///
     /// - Parameter color: A UIColor to compare.
     /// - Returns: A boolean, true if same (or very similar) and false otherwise.
-    public func isEqual(to color: UIColor) -> Bool {
+    func isEqual(to color: UIColor) -> Bool {
         let currentRGBA = self.RGBA
         let comparedRGBA = color.RGBA
 
