@@ -107,9 +107,6 @@ Typing AA => Valid
 Typing A7 => Invalid
 ```
 
-Learn more about [InputValidators here](/InputValidator) and about the [Validation here](/Source/Validation/Validation.swift).
-
-
 ## Formatters
 
 `Formatter` objects are objects that convert your text to a specific formated implemented using the `Formattable` protocol. Out of the box `FormTextField` includes two `Formatters`:
