@@ -1,7 +1,5 @@
 # FormTextField
 
-[![Join the chat at https://gitter.im/FormTextField/Lobby](https://badges.gitter.im/FormTextField/Lobby.svg)](https://gitter.im/FormTextField/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
 This a `UITextField` subclass that supports styling for checking for valid and invalid inputs, and formatters so you can easily format credit card numbers, phone numbers and more. It supports input validators so you can limit the contents of a UITextField using maximum length, maximum value or even regex (perfect for validating emails).
 
 ## Table of Contents
