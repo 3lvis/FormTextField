@@ -126,9 +126,6 @@ Making a custom `Formatter` for `FormTextField` should be as simple as making a 
 func formatString(_ string: String, reverse: Bool) -> String
 ```
 
-Learn more about [Formatters here](/Formatter).
-
-
 ## Installation
 
 **FormTextField** is available through [CocoaPods](http://cocoapods.org). To install
