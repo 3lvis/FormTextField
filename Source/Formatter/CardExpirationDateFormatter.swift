@@ -13,10 +13,10 @@ public struct CardExpirationDateFormatter: Formattable {
                 let index = normalizedString.index(normalizedString.startIndex, offsetBy: idx)
                 character = normalizedString[index]
 
-                formattedString.append(character)
-                if idx == 1 {
+                if idx == 2 {
                     formattedString.append("/")
                 }
+                formattedString.append(character)
 
                 idx += 1
             }

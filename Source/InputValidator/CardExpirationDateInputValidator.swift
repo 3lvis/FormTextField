@@ -46,10 +46,7 @@ public struct CardExpirationDateInputValidator: InputValidatable {
                         let maximumMonth = 12
                         valid = (number > 0 && number <= maximumMonth)
                         break
-                    case 3:
-                        valid = (replacementString == "/")
-                        break
-                    case 4, 5:
+                    case 3, 4, 5:
                         let year = Calendar.current.component(.year, from: Date())
                         let century = floor(Double(year) / 100.0)
                         let basicYear = Double(year) - (century * 100.0)
