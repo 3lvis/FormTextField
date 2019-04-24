@@ -49,6 +49,6 @@ class CardExpirationDateInputValidatorTests: XCTestCase {
         let fifthCharacterLength = fifthCharacter.count
         XCTAssertFalse(validator.validateReplacementString(previousYear, fullString: "12/1", inRange: NSRange(location: fifthCharacterLength, length: 0)))
         XCTAssertTrue(validator.validateReplacementString(currentYear, fullString: "12/1", inRange: NSRange(location: fifthCharacterLength, length: 0)))
-        XCTAssertTrue(validator.validateReplacementString(nextYear, fullString: "12/1", inRange: NSRange(location: fifthCharacterLength, length: 0)))
+        XCTAssertTrue(validator.validateReplacementString(nextYear, fullString: "12/2", inRange: NSRange(location: fifthCharacterLength, length: 0)))
     }
 }

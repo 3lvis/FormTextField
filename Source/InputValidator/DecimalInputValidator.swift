@@ -20,7 +20,7 @@ public struct DecimalInputValidator: InputValidatable {
                 let stringSet = CharacterSet(charactersIn: composedString)
                 var floatSet = CharacterSet.decimalDigits
                 floatSet.insert(charactersIn: ".,")
-                let hasValidElements = floatSet.superSetOf(other: stringSet)
+                let hasValidElements = floatSet.isSuperset(of: stringSet)
                 if hasValidElements {
                     let firstElementSet = CharacterSet(charactersIn: String(composedString.first!))
                     let integerSet = CharacterSet.decimalDigits
