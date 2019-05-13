@@ -1,9 +1,9 @@
 import Foundation
 
 public struct DecimalInputValidator: InputValidatable {
-    public var validation: Validation?
+    public var validation: ValidationRules?
 
-    public init(validation: Validation? = nil) {
+    public init(validation: ValidationRules? = nil) {
         self.validation = validation
     }
 

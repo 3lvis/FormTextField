@@ -35,7 +35,7 @@
 		14E02DFC1F9E77CB003A8F10 /* InputValidatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C60D2A1F955CF400FF2967 /* InputValidatable.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		14E02DFD1F9E77CB003A8F10 /* InputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C60D2B1F955CF400FF2967 /* InputValidator.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		14E02DFE1F9E77CB003A8F10 /* RequiredInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C60D2C1F955CF400FF2967 /* RequiredInputValidator.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		14E02DFF1F9E77CB003A8F10 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C60D211F955CB700FF2967 /* Validation.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		14E02DFF1F9E77CB003A8F10 /* ValidationRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C60D211F955CB700FF2967 /* ValidationRules.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		14E02E001F9E77CB003A8F10 /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444679081D8A75FB0002A3BD /* FormTextField.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		14E02E011F9E77CB003A8F10 /* FormTextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444679091D8A75FB0002A3BD /* FormTextFieldClearButton.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		14E02E021F9E77CB003A8F10 /* FormTextFieldTypeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4446790A1D8A75FB0002A3BD /* FormTextFieldTypeManager.swift */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -123,7 +123,7 @@
 		14C0AF821BD6D4230009ECBE /* CONTRIBUTING.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
 		14C0AF831BD6D4230009ECBE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		14C60D1F1F955C9B00FF2967 /* ValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationTests.swift; sourceTree = "<group>"; };
-		14C60D211F955CB700FF2967 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		14C60D211F955CB700FF2967 /* ValidationRules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationRules.swift; sourceTree = "<group>"; };
 		14C60D231F955CD700FF2967 /* CardExpirationDateInputValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardExpirationDateInputValidatorTests.swift; sourceTree = "<group>"; };
 		14C60D241F955CD700FF2967 /* DecimalInputValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalInputValidatorTests.swift; sourceTree = "<group>"; };
 		14C60D251F955CD700FF2967 /* InputValidatableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputValidatableTests.swift; sourceTree = "<group>"; };
@@ -275,12 +275,12 @@
 			path = ValidationTests;
 			sourceTree = "<group>";
 		};
-		14C60D201F955CB700FF2967 /* Validation */ = {
+		14C60D201F955CB700FF2967 /* ValidationRules */ = {
 			isa = PBXGroup;
 			children = (
-				14C60D211F955CB700FF2967 /* Validation.swift */,
+				14C60D211F955CB700FF2967 /* ValidationRules.swift */,
 			);
-			path = Validation;
+			path = ValidationRules;
 			sourceTree = "<group>";
 		};
 		14C60D221F955CD700FF2967 /* InputValidatorTests */ = {
@@ -337,7 +337,7 @@
 			children = (
 				14C60D391F955DA500FF2967 /* Formatter */,
 				14C60D271F955CF400FF2967 /* InputValidator */,
-				14C60D201F955CB700FF2967 /* Validation */,
+				14C60D201F955CB700FF2967 /* ValidationRules */,
 				444679081D8A75FB0002A3BD /* FormTextField.swift */,
 				444679091D8A75FB0002A3BD /* FormTextFieldClearButton.swift */,
 				4446790A1D8A75FB0002A3BD /* FormTextFieldTypeManager.swift */,
@@ -574,7 +574,7 @@
 				14E02DFC1F9E77CB003A8F10 /* InputValidatable.swift in Sources */,
 				14E02DFD1F9E77CB003A8F10 /* InputValidator.swift in Sources */,
 				14E02DFE1F9E77CB003A8F10 /* RequiredInputValidator.swift in Sources */,
-				14E02DFF1F9E77CB003A8F10 /* Validation.swift in Sources */,
+				14E02DFF1F9E77CB003A8F10 /* ValidationRules.swift in Sources */,
 				14E02E001F9E77CB003A8F10 /* FormTextField.swift in Sources */,
 				14E02E011F9E77CB003A8F10 /* FormTextFieldClearButton.swift in Sources */,
 				14E02E021F9E77CB003A8F10 /* FormTextFieldTypeManager.swift in Sources */,

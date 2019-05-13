@@ -1,9 +1,9 @@
 import Foundation
 
 public protocol InputValidatable {
-    var validation: Validation? { get }
+    var validation: ValidationRules? { get }
 
-    init(validation: Validation?)
+    init(validation: ValidationRules?)
 
     func validateString(_ string: String) -> Bool
 

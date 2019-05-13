@@ -7,10 +7,10 @@ import Foundation
  card is not expired).
  */
 public struct CardExpirationDateInputValidator: InputValidatable {
-    public var validation: Validation?
+    public var validation: ValidationRules?
 
-    public init(validation _: Validation? = nil) {
-        var predefinedValidation = Validation()
+    public init(validation _: ValidationRules? = nil) {
+        var predefinedValidation = ValidationRules()
         predefinedValidation.minimumLength = "MM/YY".count
         predefinedValidation.maximumLength = "MM/YY".count
         // predefinedValidation.required = validation?.required ?? false

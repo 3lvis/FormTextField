@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Validation {
+public struct ValidationRules {
     public var minimumLength = 0
     public var maximumLength: Int?
     public var maximumValue: Double?
