@@ -8,13 +8,16 @@ import Foundation
  */
 public struct CardExpirationDateInputValidator: InputValidatable {
     public var validation: Validation?
+    public var baselineDate = Date()
 
-    public init(validation _: Validation? = nil) {
+    public init(validation: Validation? = nil) {
         var predefinedValidation = Validation()
         predefinedValidation.minimumLength = "MM/YY".count
         predefinedValidation.maximumLength = "MM/YY".count
-        // predefinedValidation.required = validation?.required ?? false
-        validation = predefinedValidation
+        var characterSet = CharacterSet.decimalDigits
+        characterSet.insert(charactersIn: "/")
+        predefinedValidation.characterSet = characterSet
+        self.validation = predefinedValidation
     }
 
     public func validateReplacementString(_ replacementString: String?, fullString: String?, inRange range: NSRange?) -> Bool {
@@ -25,9 +28,16 @@ public struct CardExpirationDateInputValidator: InputValidatable {
         }
 
         if valid {
-            guard let replacementString = replacementString, let range = range else { return valid }
-
             let composedString = self.composedString(replacementString, fullString: fullString, inRange: range)
+
+            // Ensure the first two digits form a valid month (01-12)
+            if composedString.count >= 2 {
+                let monthString = composedString.prefix(2)
+                if let month = Int(monthString), month < 1 || month > 12 {
+                    return false
+                }
+            }
+
             if composedString.count > 0 {
                 var precomposedString = composedString
                 if composedString.count == 4 || composedString.count == 5 {
@@ -41,13 +51,14 @@ public struct CardExpirationDateInputValidator: InputValidatable {
                     switch composedString.count {
                     case 1:
                         valid = (number == 0 || number == 1)
-                        break
                     case 2:
                         let maximumMonth = 12
                         valid = (number > 0 && number <= maximumMonth)
-                        break
-                    case 3, 4, 5:
-                        let year = Calendar.current.component(.year, from: Date())
+                    case 3:
+                        valid = (replacementString == "/")
+                    case 4, 5:
+                        let year = Calendar.current.component(.year, from: baselineDate)
+                        let currentMonth = Calendar.current.component(.month, from: baselineDate)
                         let century = floor(Double(year) / 100.0)
                         let basicYear = Double(year) - (century * 100.0)
                         let decade = floor(basicYear / 10.0)
@@ -60,6 +71,17 @@ public struct CardExpirationDateInputValidator: InputValidatable {
                             valid = number >= Int(basicYear)
                         }
 
+                        if composedString.count == 5, valid {
+                            let monthString = composedString.prefix(2)
+                            let yearString = composedString.suffix(2)
+                            if let month = Int(monthString), let expYear = Int(yearString) {
+                                if expYear == Int(basicYear) && month < currentMonth {
+                                    valid = false
+                                } else if expYear < Int(basicYear) {
+                                    valid = false
+                                }
+                            }
+                        }
                         break
                     default:
                         break
