@@ -79,5 +79,33 @@ class CardExpirationDateInputValidatorTests: XCTestCase {
         // Any month and previous year (should be invalid)
         let anyMonthAndPreviousYear = "12/\(previousYearString)"
         XCTAssertFalse(validator.validateString(anyMonthAndPreviousYear))
+
+        // Check for specific cases:
+        XCTAssertFalse(validator.validateString("05/24"))
+        XCTAssertTrue(validator.validateString("06/24"))
+        XCTAssertTrue(validator.validateString("05/25"))
+        XCTAssertTrue(validator.validateString("06/25"))
+
+        // Additional edge cases
+        // Single digit months
+        XCTAssertFalse(validator.validateString("01/\(currentYearString)"))
+        XCTAssertTrue(validator.validateString("09/\(currentYearString)"))
+        XCTAssertFalse(validator.validateString("00/\(currentYearString)"))
+        XCTAssertFalse(validator.validateString("13/\(currentYearString)"))
+
+        // Invalid characters
+        XCTAssertFalse(validator.validateString("0A/24"))
+        XCTAssertFalse(validator.validateString("1B/24"))
+        XCTAssertFalse(validator.validateString("12/2C"))
+
+        // Transition year edge case
+        XCTAssertTrue(validator.validateString("12/24"))
+        XCTAssertTrue(validator.validateString("01/25"))
+
+        // Boundary values
+        XCTAssertFalse(validator.validateString("00/24")) // Invalid month
+        XCTAssertFalse(validator.validateString("13/24")) // Invalid month
+        XCTAssertFalse(validator.validateString("06/23")) // Invalid year (past)
+        XCTAssertFalse(validator.validateString("06/234")) // Invalid year long
     }
 }
