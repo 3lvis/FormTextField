@@ -13,11 +13,12 @@ public struct CardExpirationDateInputValidator: InputValidatable {
         var predefinedValidation = Validation()
         predefinedValidation.minimumLength = "MM/YY".count
         predefinedValidation.maximumLength = "MM/YY".count
-        // predefinedValidation.required = validation?.required ?? false
         validation = predefinedValidation
     }
 
     public func validateReplacementString(_ replacementString: String?, fullString: String?, inRange range: NSRange?) -> Bool {
+        guard let replacementString = replacementString, let range = range else { return true }
+
         var valid = true
         if let validation = self.validation {
             let evaluatedString = composedString(replacementString, fullString: fullString, inRange: range)
@@ -25,8 +26,6 @@ public struct CardExpirationDateInputValidator: InputValidatable {
         }
 
         if valid {
-            guard let replacementString = replacementString, let range = range else { return valid }
-
             let composedString = self.composedString(replacementString, fullString: fullString, inRange: range)
             if composedString.count > 0 {
                 var precomposedString = composedString
@@ -41,26 +40,18 @@ public struct CardExpirationDateInputValidator: InputValidatable {
                     switch composedString.count {
                     case 1:
                         valid = (number == 0 || number == 1)
-                        break
                     case 2:
                         let maximumMonth = 12
                         valid = (number > 0 && number <= maximumMonth)
-                        break
-                    case 3, 4, 5:
-                        let year = Calendar.current.component(.year, from: Date())
-                        let century = floor(Double(year) / 100.0)
-                        let basicYear = Double(year) - (century * 100.0)
-                        let decade = floor(basicYear / 10.0)
-
-                        let isDecimal = (precomposedString.count == 1)
-                        let isYear = (precomposedString.count == 2)
-                        if isDecimal {
-                            valid = number >= Int(decade)
-                        } else if isYear {
-                            valid = number >= Int(basicYear)
+                    case 3:
+                        valid = (replacementString == "/")
+                    case 4, 5:
+                        let currentYear = Calendar.current.component(.year, from: Date()) % 100
+                        if composedString.count == 4 {
+                            valid = (number >= currentYear / 10)
+                        } else {
+                            valid = (number >= currentYear)
                         }
-
-                        break
                     default:
                         break
                     }
