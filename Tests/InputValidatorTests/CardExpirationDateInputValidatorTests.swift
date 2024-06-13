@@ -27,29 +27,29 @@ class CardExpirationDateInputValidatorTests: XCTestCase {
         XCTAssertFalse(validator.validateReplacementString("0", fullString: "12", inRange: NSRange(location: thirdCharacterLength, length: 0)))
         XCTAssertTrue(validator.validateReplacementString("/", fullString: "12", inRange: NSRange(location: thirdCharacterLength, length: 0)))
 
-        // 4th character: The fourth character has to be higher than or equal to the decimal of the current year.
-        // For example if the current year is 2024, then the fourth character has to be equal or higher than 2
-        let fourthCharacter = "MM/"
-        let fourthCharacterLength = fourthCharacter.count
-        XCTAssertFalse(validator.validateReplacementString("0", fullString: "12/", inRange: NSRange(location: fourthCharacterLength, length: 0)))
-        XCTAssertFalse(validator.validateReplacementString("1", fullString: "12/", inRange: NSRange(location: fourthCharacterLength, length: 0)))
-        XCTAssertTrue(validator.validateReplacementString("2", fullString: "12/", inRange: NSRange(location: fourthCharacterLength, length: 0)))
-        XCTAssertTrue(validator.validateReplacementString("3", fullString: "12/", inRange: NSRange(location: fourthCharacterLength, length: 0)))
-
+        // Dynamically determine the current decade and year
         let date = Date()
         let calendar = Calendar.current
         let components = calendar.dateComponents([.year], from: date)
+        let currentYear = components.year!
 
-        let previousYear = String(String(components.year! - 1).last!)
-        let currentYear = String(String(describing: components.year).last!)
-        let nextYear = String(String(components.year! + 1).last!)
+        let decade = (currentYear / 10) % 10
+        let yearLastDigit = currentYear % 10
+        let nextYearLastDigit = (yearLastDigit + 1) % 10
 
-        // 5th character: The fifth character composed with the fourth character should be equal or higher than
-        // the current year
-        let fifthCharacter = "MM/2"
+        // 4th character: The fourth character has to be higher than or equal to the decimal of the current year.
+        // For example, if the current year is 2024, then the fourth character has to be equal or higher than 2
+        let fourthCharacter = "MM/"
+        let fourthCharacterLength = fourthCharacter.count
+        XCTAssertFalse(validator.validateReplacementString(String(decade - 1), fullString: "12/", inRange: NSRange(location: fourthCharacterLength, length: 0)))
+        XCTAssertTrue(validator.validateReplacementString(String(decade), fullString: "12/", inRange: NSRange(location: fourthCharacterLength, length: 0)))
+        XCTAssertTrue(validator.validateReplacementString(String(decade + 1), fullString: "12/", inRange: NSRange(location: fourthCharacterLength, length: 0)))
+
+        // 5th character: The fifth character composed with the fourth character should be equal or higher than the current year
+        let fifthCharacter = "MM/\(decade)"
         let fifthCharacterLength = fifthCharacter.count
-        XCTAssertFalse(validator.validateReplacementString(previousYear, fullString: "12/2", inRange: NSRange(location: fifthCharacterLength, length: 0)))
-        XCTAssertTrue(validator.validateReplacementString(currentYear, fullString: "12/2", inRange: NSRange(location: fifthCharacterLength, length: 0)))
-        XCTAssertTrue(validator.validateReplacementString(nextYear, fullString: "12/2", inRange: NSRange(location: fifthCharacterLength, length: 0)))
+        XCTAssertFalse(validator.validateReplacementString(String(yearLastDigit - 1), fullString: "12/\(decade)", inRange: NSRange(location: fifthCharacterLength, length: 0)))
+        XCTAssertTrue(validator.validateReplacementString(String(yearLastDigit), fullString: "12/\(decade)", inRange: NSRange(location: fifthCharacterLength, length: 0)))
+        XCTAssertTrue(validator.validateReplacementString(String(nextYearLastDigit), fullString: "12/\(decade)", inRange: NSRange(location: fifthCharacterLength, length: 0)))
     }
 }
