@@ -1,10 +1,10 @@
 import XCTest
-import FormTextField
 import Foundation
+import FormTextField
 
-class NorwegianPhoneNumberInputValidatorTests: XCTestCase {
-    func testNorwegianPhoneNumberValidator() {
-        let validator = NorwegianPhoneNumberInputValidator()
+class MixedPhoneNumberInputValidatorTests: XCTestCase {
+    func testNorwegianPhoneNumbers() {
+        let validator = MixedPhoneNumberInputValidator()
 
         // Test valid numbers
         XCTAssertTrue(validator.validateReplacementString("23456789", fullString: "", inRange: NSRange(location: 0, length: 0)))
@@ -47,5 +47,30 @@ class NorwegianPhoneNumberInputValidatorTests: XCTestCase {
 
         // Test other invalid patterns
         XCTAssertFalse(validator.validateReplacementString("12345678", fullString: "", inRange: NSRange(location: 0, length: 0))) // Invalid start
+    }
+
+    func testEuropeanPhoneNumbers() {
+        let validator = MixedPhoneNumberInputValidator()
+
+        // Test valid European numbers
+        XCTAssertTrue(validator.validateReplacementString("+447911123456", fullString: "", inRange: NSRange(location: 0, length: 0))) // UK
+        XCTAssertTrue(validator.validateReplacementString("+33612345678", fullString: "", inRange: NSRange(location: 0, length: 0))) // France
+        XCTAssertTrue(validator.validateReplacementString("+491711234567", fullString: "", inRange: NSRange(location: 0, length: 0))) // Germany
+        XCTAssertTrue(validator.validateReplacementString("+390212345678", fullString: "", inRange: NSRange(location: 0, length: 0))) // Italy
+
+        // Test invalid European numbers
+        XCTAssertFalse(validator.validateReplacementString("+336123456789012345", fullString: "", inRange: NSRange(location: 0, length: 0))) // Too long
+        XCTAssertFalse(validator.validateReplacementString("+0044711123456", fullString: "", inRange: NSRange(location: 0, length: 0))) // Invalid country code
+        XCTAssertFalse(validator.validateReplacementString("491711234567", fullString: "", inRange: NSRange(location: 0, length: 0))) // Missing +
+
+        // Test partial valid sequences
+        XCTAssertTrue(validator.validateReplacementString("+", fullString: "", inRange: NSRange(location: 0, length: 0)))
+        XCTAssertTrue(validator.validateReplacementString("4", fullString: "+", inRange: NSRange(location: 1, length: 0)))
+        XCTAssertTrue(validator.validateReplacementString("4", fullString: "+4", inRange: NSRange(location: 2, length: 0)))
+
+        // Test partial invalid sequences
+        XCTAssertFalse(validator.validateReplacementString("+0", fullString: "", inRange: NSRange(location: 0, length: 0))) // Invalid start
+        XCTAssertFalse(validator.validateReplacementString("+01", fullString: "", inRange: NSRange(location: 0, length: 0))) // Invalid start
+        XCTAssertFalse(validator.validateReplacementString("+004", fullString: "", inRange: NSRange(location: 0, length: 0))) // Invalid start
     }
 }
