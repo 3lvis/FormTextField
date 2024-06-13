@@ -1,16 +1,16 @@
 import UIKit
 
-public extension UIColor {
+extension UIColor {
     /// Base initializer, it creates an instance of `UIColor` using an HEX string.
     ///
     /// - Parameter hex: The base HEX string to create the color.
-    convenience init(hex: String) {
+    public convenience init(hex: String) {
         let noHashString = hex.replacingOccurrences(of: "#", with: "")
         let scanner = Scanner(string: noHashString)
         scanner.charactersToBeSkipped = CharacterSet.symbols
 
-        var hexInt: UInt32 = 0
-        if (scanner.scanHexInt32(&hexInt)) {
+        var hexInt: UInt64 = 0
+        if scanner.scanHexInt64(&hexInt) {
             let red = (hexInt >> 16) & 0xFF
             let green = (hexInt >> 8) & 0xFF
             let blue = (hexInt) & 0xFF
@@ -21,43 +21,35 @@ public extension UIColor {
         }
     }
 
-    /// Convenience initializers for RGB colors.
-    ///
+    /// Convenience method to create dynamic colors for dark mode if the OS supports it (independant of Pinwheel
+    /// settings)
     /// - Parameters:
-    ///   - red: The red part, ranging from 0 to 255.
-    ///   - green: The green part, ranging from 0 to 255.
-    ///   - blue: The blue part, ranging from 0 to 255.
-    ///   - alpha: The alpha part, ranging from 0 to 100.
-    convenience init(r red: Double, g green: Double, b blue: Double, a alpha: Double = 100) {
-        self.init(red: CGFloat(red)/CGFloat(255.0), green: CGFloat(green)/CGFloat(255.0), blue: CGFloat(blue)/CGFloat(255.0), alpha: CGFloat(alpha)/CGFloat(100.0))
+    ///   - defaultColor: light mode version of the color
+    ///   - darkModeColor: dark mode version of the color
+    public class func dynamicColor(defaultColor: UIColor, darkModeColor: UIColor) -> UIColor {
+        UIColor { traitCollection -> UIColor in
+            switch traitCollection.userInterfaceStyle {
+            case .dark:
+                return darkModeColor
+            default:
+                return defaultColor
+            }
+        }
     }
 
-    /// Compares if two colors are equal.
-    ///
-    /// - Parameter color: A UIColor to compare.
-    /// - Returns: A boolean, true if same (or very similar) and false otherwise.
-    func isEqual(to color: UIColor) -> Bool {
-        let currentRGBA = self.RGBA
-        let comparedRGBA = color.RGBA
-
-        return self.compareColorComponents(a: currentRGBA[0], b: comparedRGBA[0]) &&
-            self.compareColorComponents(a: currentRGBA[1], b: comparedRGBA[1]) &&
-            self.compareColorComponents(a: currentRGBA[2], b: comparedRGBA[2]) &&
-            self.compareColorComponents(a: currentRGBA[3], b: comparedRGBA[3])
-    }
-
-
-    /// Get the red, green, blue and alpha values.
-    private var RGBA: [CGFloat] {
-        var r: CGFloat = 0
-        var g: CGFloat = 0
-        var b: CGFloat = 0
-        var a: CGFloat = 0
-        self.getRed(&r, green: &g, blue: &b, alpha: &a)
-        return [r, g, b, a]
-    }
-
-    private func compareColorComponents(a: CGFloat, b: CGFloat) -> Bool {
-        return abs(b - a) <= 0
+    /// Returns hexadecimal representation of a color converted to the sRGB color space.
+    var hexString: String {
+        guard
+            let targetColorSpace = CGColorSpace(name: CGColorSpace.sRGB),
+            let cgColor = self.cgColor.converted(to: targetColorSpace, intent: .relativeColorimetric, options: nil)
+        else {
+            // Not possible to convert source color space to RGB
+            return "#000000"
+        }
+        let components = cgColor.components
+        let red = components?[0] ?? 0.0
+        let green = components?[1] ?? 0.0
+        let blue = components?[2] ?? 0.0
+        return String(format: "#%02x%02x%02x", (Int)(red * 255), (Int)(green * 255), (Int)(blue * 255))
     }
 }
