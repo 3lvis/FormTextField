@@ -2,26 +2,20 @@ public struct CardExpirationDateFormatter: Formattable {
     public init() {}
 
     public func formatString(_ string: String, reverse: Bool = false) -> String {
-        var formattedString = String()
-        let normalizedString = string.replacingOccurrences(of: "/", with: "")
         if reverse {
-            formattedString = normalizedString
+            // Remove the "/" character if present
+            return string.replacingOccurrences(of: "/", with: "")
         } else {
-            var idx = 0
-            var character: Character
-            while idx < normalizedString.count {
-                let index = normalizedString.index(normalizedString.startIndex, offsetBy: idx)
-                character = normalizedString[index]
-
-                if idx == 2 {
+            // Add the "/" character after the second digit
+            let normalizedString = string.replacingOccurrences(of: "/", with: "")
+            var formattedString = ""
+            for (index, character) in normalizedString.enumerated() {
+                formattedString.append(character)
+                if index == 1 {
                     formattedString.append("/")
                 }
-                formattedString.append(character)
-
-                idx += 1
             }
+            return formattedString
         }
-
-        return formattedString
     }
 }
