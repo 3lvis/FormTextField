@@ -14,6 +14,9 @@ public struct CardExpirationDateInputValidator: InputValidatable {
         var predefinedValidation = Validation()
         predefinedValidation.minimumLength = "MM/YY".count
         predefinedValidation.maximumLength = "MM/YY".count
+        var characterSet = CharacterSet.decimalDigits
+        characterSet.insert(charactersIn: "/")
+        predefinedValidation.characterSet = characterSet
         self.validation = predefinedValidation
     }
 
@@ -26,6 +29,15 @@ public struct CardExpirationDateInputValidator: InputValidatable {
 
         if valid {
             let composedString = self.composedString(replacementString, fullString: fullString, inRange: range)
+
+            // Ensure the first two digits form a valid month (01-12)
+            if composedString.count >= 2 {
+                let monthString = composedString.prefix(2)
+                if let month = Int(monthString), month < 1 || month > 12 {
+                    return false
+                }
+            }
+
             if composedString.count > 0 {
                 var precomposedString = composedString
                 if composedString.count == 4 || composedString.count == 5 {
