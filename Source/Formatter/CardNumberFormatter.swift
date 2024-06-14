@@ -10,13 +10,11 @@ public struct CardNumberFormatter: Formattable {
 private extension String {
     func addSpaceEveryFourCharacters() -> String {
         var formattedString = ""
-        var idx = 0
-        for character in self {
-            if idx != 0 && idx % 4 == 0 {
+        for (index, character) in self.enumerated() {
+            if index != 0 && index % 4 == 0 {
                 formattedString.append(" ")
             }
             formattedString.append(character)
-            idx += 1
         }
         return formattedString
     }
