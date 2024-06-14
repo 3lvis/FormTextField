@@ -4,4 +4,7 @@
    <FileRef
       location = "group:FormTextField">
    </FileRef>
+   <FileRef
+      location = "group:Vanilla/Vanilla.xcodeproj">
+   </FileRef>
 </Workspace>
