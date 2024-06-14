@@ -32,11 +32,9 @@ class ViewController: UIViewController {
         ])
     }
 
-    var reverse = false
-
     @objc func textFieldDidUpdate() {
         let phoneNumber = textField.text ?? ""
-        textField.backgroundColor = self.inputValidator.validateString(phoneNumber) ? .secondaryLabel : .secondarySystemFill
+        textField.backgroundColor = self.inputValidator.validateString(phoneNumber) ? .systemMint : .secondarySystemBackground
     }
 }
 
@@ -46,8 +44,6 @@ extension ViewController: UITextFieldDelegate {
         if isNewline {
             return true
         }
-
-        self.reverse = string.isEmpty
 
         return self.inputValidator.validateReplacementString(string, fullString: textField.text, inRange: range)
     }

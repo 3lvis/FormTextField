@@ -10,9 +10,15 @@ public struct MixedPhoneNumberInputValidator: InputValidatable {
         self.validation = validation
     }
 
-    public func validateReplacementString(_ replacementString: String?, fullString: String?, inRange range: NSRange?) -> Bool {
-        guard let replacementString = replacementString, let range = range else { return false }
+    public func validateString(_ string: String) -> Bool {
+        if string.hasPrefix("+") {
+            return europeanValidator.validateString(string)
+        } else {
+            return norwegianValidator.validateString(string)
+        }
+    }
 
+    public func validateReplacementString(_ replacementString: String?, fullString: String?, inRange range: NSRange?) -> Bool {
         let composedString = self.composedString(replacementString, fullString: fullString, inRange: range)
 
         if composedString.hasPrefix("+") {

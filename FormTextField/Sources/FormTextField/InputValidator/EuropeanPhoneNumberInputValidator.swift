@@ -21,8 +21,6 @@ public struct EuropeanPhoneNumberInputValidator: InputValidatable {
         }
 
         if valid {
-            guard let replacementString = replacementString, let range = range else { return false }
-
             let composedString = self.composedString(replacementString, fullString: fullString, inRange: range)
             valid = validatePartialEuropeanPhoneNumber(composedString)
         }
