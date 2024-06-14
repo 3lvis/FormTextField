@@ -59,6 +59,7 @@ class MixedPhoneNumberInputValidatorTests: XCTestCase {
         XCTAssertTrue(validator.validateReplacementString("+390212345678", fullString: "", inRange: NSRange(location: 0, length: 0))) // Italy
         XCTAssertTrue(validator.validateReplacementString("+46701234567", fullString: "", inRange: NSRange(location: 0, length: 0))) // Sweden
         XCTAssertTrue(validator.validateReplacementString("+358401234567", fullString: "", inRange: NSRange(location: 0, length: 0))) // Finland
+        XCTAssertTrue(validator.validateReplacementString("+4746171500", fullString: "", inRange: NSRange(location: 0, length: 0))) // Finland
 
         // Test invalid European numbers
         XCTAssertFalse(validator.validateReplacementString("+336123456789012345", fullString: "", inRange: NSRange(location: 0, length: 0))) // Too long
@@ -72,6 +73,12 @@ class MixedPhoneNumberInputValidatorTests: XCTestCase {
         XCTAssertTrue(validator.validateReplacementString("4", fullString: "+4", inRange: NSRange(location: 2, length: 0)))
         XCTAssertTrue(validator.validateReplacementString("7", fullString: "+44", inRange: NSRange(location: 3, length: 0)))
         XCTAssertTrue(validator.validateReplacementString("9", fullString: "+447", inRange: NSRange(location: 4, length: 0)))
+        XCTAssertTrue(validator.validateReplacementString("9", fullString: "+4479", inRange: NSRange(location: 5, length: 0)))
+        XCTAssertTrue(validator.validateReplacementString("9", fullString: "+44791", inRange: NSRange(location: 6, length: 0)))
+        XCTAssertTrue(validator.validateReplacementString("9", fullString: "+447915", inRange: NSRange(location: 7, length: 0)))
+        XCTAssertTrue(validator.validateReplacementString("9", fullString: "+4479151", inRange: NSRange(location: 8, length: 0)))
+        XCTAssertTrue(validator.validateReplacementString("9", fullString: "+44791514", inRange: NSRange(location: 9, length: 0)))
+        XCTAssertTrue(validator.validateReplacementString("+492234567", fullString: "", inRange: NSRange(location: 0, length: 0)))
         XCTAssertTrue(validator.validateReplacementString("+492234567", fullString: "", inRange: NSRange(location: 0, length: 0)))
         XCTAssertTrue(validator.validateReplacementString("+441234", fullString: "", inRange: NSRange(location: 0, length: 0)))
 

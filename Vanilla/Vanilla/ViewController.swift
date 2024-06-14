@@ -2,14 +2,7 @@ import UIKit
 import FormTextField
 
 class ViewController: UIViewController {
-    let formatter = CardExpirationDateFormatter()
-
-    lazy var inputValidator: CardExpirationDateInputValidator = {
-        var validation = Validation()
-        validation.minimumLength = 1
-        let inputValidator = CardExpirationDateInputValidator(validation: validation)
-        return inputValidator
-    }()
+    let inputValidator = MixedPhoneNumberInputValidator()
 
     lazy var textField: UITextField = {
         let textField = UITextField(frame: .zero)
@@ -19,7 +12,8 @@ class ViewController: UIViewController {
         textField.autocapitalizationType = .none
         textField.autocorrectionType = .no
         textField.keyboardType = .phonePad
-        textField.placeholder = "Expiration Date (MM/YY)"
+        textField.textContentType = .telephoneNumber
+        textField.placeholder = "Phone number"
         textField.delegate = self
         textField.addTarget(self, action: #selector(textFieldDidUpdate), for: .editingChanged)
         textField.clearButtonMode = .whileEditing
@@ -41,21 +35,8 @@ class ViewController: UIViewController {
     var reverse = false
 
     @objc func textFieldDidUpdate() {
-        updateText(textField.text)
-    }
-
-    func updateText(_ newValue: String?) {
-        let text = newValue ?? ""
-        let textRange = textField.selectedTextRange
-        let newRawText = formatter.formatString(text, reverse: self.reverse)
-        let didAddText = (newRawText.count > (textField.text ?? "").count)
-        textField.text = newRawText
-
-        // If no text was added, restore the previous text selection range
-        // This ensures the cursor remains where it was before the text update
-        if !didAddText {
-            textField.selectedTextRange = textRange
-        }
+        let phoneNumber = textField.text ?? ""
+        textField.backgroundColor = self.inputValidator.validateString(phoneNumber) ? .secondaryLabel : .secondarySystemFill
     }
 }
 

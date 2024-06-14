@@ -7,6 +7,9 @@ public struct EuropeanPhoneNumberInputValidator: InputValidatable {
         var predefinedValidation = Validation()
         predefinedValidation.minimumLength = 8
         predefinedValidation.maximumLength = 15
+        var characterSet = CharacterSet.decimalDigits
+        characterSet.insert(charactersIn: "+")
+        predefinedValidation.characterSet = characterSet
         self.validation = predefinedValidation
     }
 
@@ -35,11 +38,6 @@ public struct EuropeanPhoneNumberInputValidator: InputValidatable {
             return true
         }
 
-        // Handle valid complete numbers within length limits
-        if phoneNumber.count >= 8 && phoneNumber.count <= 15 {
-            return validateEuropeanPhoneNumber(phoneNumber)
-        }
-
         // Handle partial sequences starting with "+"
         if phoneNumber.hasPrefix("+") {
             let withoutPlus = String(phoneNumber.dropFirst())
@@ -52,11 +50,5 @@ public struct EuropeanPhoneNumberInputValidator: InputValidatable {
         }
 
         return false
-    }
-    private func validateEuropeanPhoneNumber(_ phoneNumber: String) -> Bool {
-        let phoneNumberPattern = "^\\+([1-9]\\d{0,2})\\d{7,14}$"
-        let regex = try! NSRegularExpression(pattern: phoneNumberPattern)
-        let range = NSRange(location: 0, length: phoneNumber.utf16.count)
-        return regex.firstMatch(in: phoneNumber, options: [], range: range) != nil
     }
 }
