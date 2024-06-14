@@ -12,6 +12,7 @@
 		282B13122C1BE91F00FB13F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 282B13112C1BE91F00FB13F1 /* Assets.xcassets */; };
 		282B13152C1BE91F00FB13F1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 282B13142C1BE91F00FB13F1 /* Base */; };
 		2867CE842C1BE96E004C821F /* FormTextField in Frameworks */ = {isa = PBXBuildFile; productRef = 2867CE832C1BE96E004C821F /* FormTextField */; };
+		28EE88A42C1C8020000EBFCF /* CreditCardDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EE88A32C1C8020000EBFCF /* CreditCardDetailsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,8 @@
 		282B13112C1BE91F00FB13F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		282B13142C1BE91F00FB13F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		282B13162C1BE91F00FB13F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28EE88A32C1C8020000EBFCF /* CreditCardDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardDetailsController.swift; sourceTree = "<group>"; };
+		28EE88A52C1C8231000EBFCF /* Vanilla.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Vanilla.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +58,10 @@
 		282B13072C1BE91E00FB13F1 /* Vanilla */ = {
 			isa = PBXGroup;
 			children = (
+				28EE88A52C1C8231000EBFCF /* Vanilla.entitlements */,
 				282B13082C1BE91E00FB13F1 /* AppDelegate.swift */,
 				282B130C2C1BE91E00FB13F1 /* ViewController.swift */,
+				28EE88A32C1C8020000EBFCF /* CreditCardDetailsController.swift */,
 				282B13112C1BE91F00FB13F1 /* Assets.xcassets */,
 				282B13132C1BE91F00FB13F1 /* LaunchScreen.storyboard */,
 				282B13162C1BE91F00FB13F1 /* Info.plist */,
@@ -144,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28EE88A42C1C8020000EBFCF /* CreditCardDetailsController.swift in Sources */,
 				282B130D2C1BE91E00FB13F1 /* ViewController.swift in Sources */,
 				282B13092C1BE91E00FB13F1 /* AppDelegate.swift in Sources */,
 			);
@@ -287,6 +293,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Vanilla/Vanilla.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -319,6 +326,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Vanilla/Vanilla.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
