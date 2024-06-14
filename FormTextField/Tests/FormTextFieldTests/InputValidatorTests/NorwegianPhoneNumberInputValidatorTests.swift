@@ -22,6 +22,7 @@ class NorwegianPhoneNumberInputValidatorTests: XCTestCase {
         XCTAssertFalse(validator.validateReplacementString("123456789", fullString: "", inRange: NSRange(location: 0, length: 0))) // Too long
 
         // Test partial valid sequences
+        XCTAssertTrue(validator.validateReplacementString("", fullString: "2", inRange: NSRange(location: 0, length: 1))) // Was 2 to become empty
         XCTAssertTrue(validator.validateReplacementString("4", fullString: "", inRange: NSRange(location: 0, length: 0))) // Starts with 4
         XCTAssertTrue(validator.validateReplacementString("2", fullString: "", inRange: NSRange(location: 0, length: 0))) // Starts with 2
         XCTAssertTrue(validator.validateReplacementString("9", fullString: "", inRange: NSRange(location: 0, length: 0))) // Starts with 9

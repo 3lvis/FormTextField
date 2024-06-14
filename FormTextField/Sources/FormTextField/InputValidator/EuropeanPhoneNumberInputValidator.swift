@@ -28,6 +28,8 @@ public struct EuropeanPhoneNumberInputValidator: InputValidatable {
     }
 
     private func validatePartialEuropeanPhoneNumber(_ phoneNumber: String) -> Bool {
+        guard !phoneNumber.isEmpty else { return true }
+
         // Allow a single "+" as valid partial input
         if phoneNumber == "+" {
             return true

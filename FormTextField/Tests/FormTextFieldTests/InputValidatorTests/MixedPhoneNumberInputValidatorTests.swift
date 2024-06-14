@@ -66,6 +66,7 @@ class MixedPhoneNumberInputValidatorTests: XCTestCase {
         XCTAssertFalse(validator.validateReplacementString("+4479111234567890123456", fullString: "", inRange: NSRange(location: 0, length: 0))) // Too long
 
         // Test partial valid sequences
+        XCTAssertTrue(validator.validateReplacementString("", fullString: "+", inRange: NSRange(location: 0, length: 1))) // Was + to become empty
         XCTAssertTrue(validator.validateReplacementString("+", fullString: "", inRange: NSRange(location: 0, length: 0)))
         XCTAssertTrue(validator.validateReplacementString("4", fullString: "+", inRange: NSRange(location: 1, length: 0)))
         XCTAssertTrue(validator.validateReplacementString("4", fullString: "+4", inRange: NSRange(location: 2, length: 0)))

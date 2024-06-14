@@ -28,6 +28,8 @@ public struct NorwegianPhoneNumberInputValidator: InputValidatable {
     }
 
     private func validatePartialNorwegianPhoneNumber(_ phoneNumber: String) -> Bool {
+        guard !phoneNumber.isEmpty else { return true }
+        
         if phoneNumber.count == 8 {
             return validateNorwegianPhoneNumber(phoneNumber)
         }
