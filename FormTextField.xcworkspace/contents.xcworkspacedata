@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:FormTextField">
+   </FileRef>
+   <FileRef
+      location = "group:Custom/Custom.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Native/Native.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Vanilla/Vanilla.xcodeproj">
+   </FileRef>
+</Workspace>
