@@ -19,12 +19,16 @@ public struct MixedPhoneNumberInputValidator: InputValidatable {
     }
 
     public func validateReplacementString(_ replacementString: String?, fullString: String?, inRange range: NSRange?) -> Bool {
-        let composedString = self.composedString(replacementString, fullString: fullString, inRange: range)
+        if let aFullString = fullString, let aReplacementString = replacementString, aFullString.isEmpty && aReplacementString.isEmpty && range == NSRange(location: 0, length: 0) {
+            return true
+        }
 
+        let noSpacesReplacementString = replacementString?.replacingOccurrences(of: " ", with: "")
+        let composedString = self.composedString(noSpacesReplacementString, fullString: fullString, inRange: range)
         if composedString.hasPrefix("+") {
-            return europeanValidator.validateReplacementString(replacementString, fullString: fullString, inRange: range)
+            return europeanValidator.validateReplacementString(noSpacesReplacementString, fullString: fullString, inRange: range)
         } else {
-            return norwegianValidator.validateReplacementString(replacementString, fullString: fullString, inRange: range)
+            return norwegianValidator.validateReplacementString(noSpacesReplacementString, fullString: fullString, inRange: range)
         }
     }
 }

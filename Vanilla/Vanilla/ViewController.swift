@@ -33,18 +33,15 @@ class ViewController: UIViewController {
     }
 
     @objc func textFieldDidUpdate() {
-        let phoneNumber = textField.text ?? ""
+        var phoneNumber = textField.text ?? ""
+        phoneNumber = phoneNumber.replacingOccurrences(of: " ", with: "")
+        textField.text = phoneNumber
         textField.backgroundColor = self.inputValidator.validateString(phoneNumber) ? .systemMint : .secondarySystemBackground
     }
 }
 
 extension ViewController: UITextFieldDelegate {
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let isNewline = string == "\n"
-        if isNewline {
-            return true
-        }
-
         return self.inputValidator.validateReplacementString(string, fullString: textField.text, inRange: range)
     }
 }
