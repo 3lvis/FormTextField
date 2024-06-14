@@ -6,29 +6,20 @@ public struct CardExpirationDateFormatter: Formattable {
             let newString = string.replacingOccurrences(of: "/", with: "")
             return insertSlash(at: 2, in: newString)
         } else if reverse {
-            switch string.count {
-            case 0, 1, 2:
+            if string.count == 2 {
+                return String(string.dropLast())
+            } else {
                 return string
-            case 3:
-                var newString = string.replacingOccurrences(of: "/", with: "")
-                if newString.count == 3 {
-                    newString = insertSlash(at: 2, in: newString)
-                }
-                return newString
-            default:
-                return ""
             }
         } else {
             switch string.count {
-            case 0, 1:
-                return string
             case 2:
                 return "\(string)/"
             case 3:
                 let newString = string.replacingOccurrences(of: "/", with: "")
                 return insertSlash(at: 2, in: newString)
             default:
-                return ""
+                return string
             }
         }
     }
