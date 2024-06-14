@@ -28,13 +28,20 @@ public struct EuropeanPhoneNumberInputValidator: InputValidatable {
     }
 
     private func validatePartialEuropeanPhoneNumber(_ phoneNumber: String) -> Bool {
+        // Allow a single "+" as valid partial input
+        if phoneNumber == "+" {
+            return true
+        }
+
+        // Handle valid complete numbers within length limits
         if phoneNumber.count >= 8 && phoneNumber.count <= 15 {
             return validateEuropeanPhoneNumber(phoneNumber)
         }
 
+        // Handle partial sequences starting with "+"
         if phoneNumber.hasPrefix("+") {
             let withoutPlus = String(phoneNumber.dropFirst())
-            // Ensure that after the +, the first digit is between 1 and 9
+            // Ensure the first digit after "+" is between 1 and 9
             if let firstDigit = withoutPlus.first {
                 if ("1"..."9").contains(firstDigit) {
                     return true
@@ -44,7 +51,6 @@ public struct EuropeanPhoneNumberInputValidator: InputValidatable {
 
         return false
     }
-
     private func validateEuropeanPhoneNumber(_ phoneNumber: String) -> Bool {
         let phoneNumberPattern = "^\\+([1-9]\\d{0,2})\\d{7,14}$"
         let regex = try! NSRegularExpression(pattern: phoneNumberPattern)
