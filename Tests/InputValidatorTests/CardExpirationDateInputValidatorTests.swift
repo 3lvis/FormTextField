@@ -32,6 +32,9 @@ class CardExpirationDateInputValidatorTests: XCTestCase {
         // 1st character: First character can be 0, 1
         let oneCharacter = ""
         let oneCharacterLength = oneCharacter.count
+
+        XCTAssertTrue(validator.validateReplacementString("", fullString: "11/", inRange: NSRange(location: 2, length: 1)))
+
         XCTAssertTrue(validator.validateReplacementString("0", fullString: "", inRange: NSRange(location: oneCharacterLength, length: 0)))
         XCTAssertTrue(validator.validateReplacementString("1", fullString: "", inRange: NSRange(location: oneCharacterLength, length: 0)))
         XCTAssertFalse(validator.validateReplacementString("2", fullString: "", inRange: NSRange(location: oneCharacterLength, length: 0)))

@@ -122,12 +122,14 @@ open class FormTextField: UITextField, UITextFieldDelegate {
         updateEnabled(isEnabled)
     }
 
+    var reverse = false
+
     func updateText(_ newValue: String?) {
         let text = newValue ?? ""
 
         if formatter != nil {
             let textRange = selectedTextRange
-            let newRawText = formatter!.formatString(text, reverse: false)
+            let newRawText = formatter!.formatString(text, reverse: self.reverse)
 
             let didAddText = (newRawText.count > (self.text ?? "").count)
             let didFormat = (newRawText.count > (self.text ?? "").count)
@@ -251,10 +253,13 @@ extension FormTextField {
         textFieldDelegate?.formTextFieldDidEndEditing?(self)
     }
 
-    @objc(textField:shouldChangeCharactersInRange:replacementString:) public func textField(_: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    @objc(textField:shouldChangeCharactersInRange:replacementString:) 
+    public func textField(_: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if string == "\n" {
             return true
         }
+
+        self.reverse = string.isEmpty
 
         var valid = true
         if let inputValidator = self.inputValidator {
