@@ -45,6 +45,11 @@
 		14EAF27F1F9D3F0F00BE6D20 /* FormTextField.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14EAF2671F9D3E5100BE6D20 /* FormTextField.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		14EAF2831F9D3F1600BE6D20 /* FormTextField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14EAF2671F9D3E5100BE6D20 /* FormTextField.framework */; };
 		14EAF2841F9D3F1600BE6D20 /* FormTextField.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14EAF2671F9D3E5100BE6D20 /* FormTextField.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2889B9362C1B973200AA8D62 /* MixedPhoneNumberInputValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2889B9352C1B973200AA8D62 /* MixedPhoneNumberInputValidatorTests.swift */; };
+		2889B9392C1B977900AA8D62 /* MixedPhoneNumberInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2889B9372C1B974A00AA8D62 /* MixedPhoneNumberInputValidator.swift */; };
+		2889B93B2C1B997A00AA8D62 /* EuropeanPhoneNumberInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2889B93A2C1B997A00AA8D62 /* EuropeanPhoneNumberInputValidator.swift */; };
+		289982992C1B740000BC07F2 /* NorwegianPhoneNumberInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289982982C1B740000BC07F2 /* NorwegianPhoneNumberInputValidator.swift */; };
+		2899829B2C1B748200BC07F2 /* NorwegianPhoneNumberInputValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2899829A2C1B748200BC07F2 /* NorwegianPhoneNumberInputValidatorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +145,11 @@
 		14E02DF51F9E76D8003A8F10 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		14EAF2671F9D3E5100BE6D20 /* FormTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FormTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		14EAF2711F9D3EAE00BE6D20 /* FrameworkInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FrameworkInfo.plist; sourceTree = "<group>"; };
+		2889B9352C1B973200AA8D62 /* MixedPhoneNumberInputValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixedPhoneNumberInputValidatorTests.swift; sourceTree = "<group>"; };
+		2889B9372C1B974A00AA8D62 /* MixedPhoneNumberInputValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixedPhoneNumberInputValidator.swift; sourceTree = "<group>"; };
+		2889B93A2C1B997A00AA8D62 /* EuropeanPhoneNumberInputValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EuropeanPhoneNumberInputValidator.swift; sourceTree = "<group>"; };
+		289982982C1B740000BC07F2 /* NorwegianPhoneNumberInputValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NorwegianPhoneNumberInputValidator.swift; sourceTree = "<group>"; };
+		2899829A2C1B748200BC07F2 /* NorwegianPhoneNumberInputValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NorwegianPhoneNumberInputValidatorTests.swift; sourceTree = "<group>"; };
 		444679081D8A75FB0002A3BD /* FormTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
 		444679091D8A75FB0002A3BD /* FormTextFieldClearButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTextFieldClearButton.swift; sourceTree = "<group>"; };
 		4446790A1D8A75FB0002A3BD /* FormTextFieldTypeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTextFieldTypeManager.swift; sourceTree = "<group>"; };
@@ -288,6 +298,8 @@
 				14C60D241F955CD700FF2967 /* DecimalInputValidatorTests.swift */,
 				14C60D251F955CD700FF2967 /* InputValidatableTests.swift */,
 				14C60D261F955CD700FF2967 /* RequiredInputValidatorTests.swift */,
+				2899829A2C1B748200BC07F2 /* NorwegianPhoneNumberInputValidatorTests.swift */,
+				2889B9352C1B973200AA8D62 /* MixedPhoneNumberInputValidatorTests.swift */,
 			);
 			path = InputValidatorTests;
 			sourceTree = "<group>";
@@ -300,6 +312,9 @@
 				14C60D2A1F955CF400FF2967 /* InputValidatable.swift */,
 				14C60D2B1F955CF400FF2967 /* InputValidator.swift */,
 				14C60D2C1F955CF400FF2967 /* RequiredInputValidator.swift */,
+				289982982C1B740000BC07F2 /* NorwegianPhoneNumberInputValidator.swift */,
+				2889B9372C1B974A00AA8D62 /* MixedPhoneNumberInputValidator.swift */,
+				2889B93A2C1B997A00AA8D62 /* EuropeanPhoneNumberInputValidator.swift */,
 			);
 			path = InputValidator;
 			sourceTree = "<group>";
@@ -553,7 +568,9 @@
 				145009141F955EC00037A35F /* CardExpirationDateInputValidatorTests.swift in Sources */,
 				145009181F955ECE0037A35F /* ValidationTests.swift in Sources */,
 				145009121F955EB50037A35F /* CardExpirationDateFormatterTests.swift in Sources */,
+				2899829B2C1B748200BC07F2 /* NorwegianPhoneNumberInputValidatorTests.swift in Sources */,
 				145009151F955EC30037A35F /* DecimalInputValidatorTests.swift in Sources */,
+				2889B9362C1B973200AA8D62 /* MixedPhoneNumberInputValidatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,8 +585,11 @@
 				14E02DFB1F9E77CB003A8F10 /* DecimalInputValidator.swift in Sources */,
 				14E02DFC1F9E77CB003A8F10 /* InputValidatable.swift in Sources */,
 				14E02DFD1F9E77CB003A8F10 /* InputValidator.swift in Sources */,
+				2889B9392C1B977900AA8D62 /* MixedPhoneNumberInputValidator.swift in Sources */,
+				289982992C1B740000BC07F2 /* NorwegianPhoneNumberInputValidator.swift in Sources */,
 				14E02DFE1F9E77CB003A8F10 /* RequiredInputValidator.swift in Sources */,
 				14E02DFF1F9E77CB003A8F10 /* Validation.swift in Sources */,
+				2889B93B2C1B997A00AA8D62 /* EuropeanPhoneNumberInputValidator.swift in Sources */,
 				14E02E001F9E77CB003A8F10 /* FormTextField.swift in Sources */,
 				14E02E011F9E77CB003A8F10 /* FormTextFieldClearButton.swift in Sources */,
 				14E02E021F9E77CB003A8F10 /* FormTextFieldTypeManager.swift in Sources */,
