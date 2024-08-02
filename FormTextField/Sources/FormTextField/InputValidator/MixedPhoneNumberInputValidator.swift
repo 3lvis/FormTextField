@@ -4,7 +4,7 @@ public struct MixedPhoneNumberInputValidator: InputValidatable {
     public var validation: Validation?
 
     private let norwegianValidator = NorwegianPhoneNumberInputValidator()
-    private let europeanValidator = EuropeanPhoneNumberInputValidator()
+    private let europeanValidator = PhoneNumberInputValidator()
 
     public init(validation: Validation? = nil) {
         self.validation = validation

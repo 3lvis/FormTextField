@@ -1,6 +1,6 @@
 import Foundation
 
-public struct EuropeanPhoneNumberInputValidator: InputValidatable {
+public struct PhoneNumberInputValidator: InputValidatable {
     public var validation: Validation?
 
     public init(validation: Validation? = nil) {
